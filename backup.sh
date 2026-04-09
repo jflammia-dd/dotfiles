@@ -79,12 +79,14 @@ rsync -a --no-links --delete \
   --exclude='*.pyc' \
   "$CLAUDE/" "$DOTFILES/.claude/"
 
-# Memory files live nested inside projects/ — sync them separately
+# Memory files live nested inside projects/ — sync them separately.
+# --no-links skips symlinks; post-migrate, memory files are symlinks into this
+# repo and would become circular self-references if copied as symlinks.
 find "$CLAUDE/projects" -type d -name "memory" 2>/dev/null | while read mem_dir; do
   rel="${mem_dir#"$CLAUDE/"}"
   dest="$DOTFILES/.claude/$rel"
   mkdir -p "$dest"
-  rsync -a "$mem_dir/" "$dest/"
+  rsync -a --no-links "$mem_dir/" "$dest/"
 done
 
 cd "$DOTFILES"

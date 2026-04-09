@@ -1,1 +1,2 @@
-/Users/justin.flammia/dotfiles/.claude/projects/-Users-justin-flammia/memory/MEMORY.md
+# Memory Index
+
