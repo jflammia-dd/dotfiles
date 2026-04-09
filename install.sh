@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
+# Fresh machine setup: symlink dotfiles and configure scheduled backup.
+# On an existing machine with files already in place, use migrate.sh instead.
 set -euo pipefail
 
-DOTFILES_PATH="$HOME/dotfiles"
+DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 
-# Symlink dotfiles to the home directory
-find "$DOTFILES_PATH" -type f -path "$DOTFILES_PATH/.*" |
-while read df; do
-  link=${df/$DOTFILES_PATH/$HOME}
+echo "Symlinking dotfiles from $DOTFILES ..."
+find "$DOTFILES" -type f -path "$DOTFILES/.*" | while read -r df; do
+  link="${df/$DOTFILES/$HOME}"
   mkdir -p "$(dirname "$link")"
   ln -sf "$df" "$link"
+  echo "  $link"
 done
 
 # Install Oh My Zsh if not already installed
@@ -30,3 +32,16 @@ fi
 if [ ! -d "$ZSH_CUSTOM/plugins/fzf-tab" ]; then
   git clone https://github.com/Aloxaf/fzf-tab.git "$ZSH_CUSTOM/plugins/fzf-tab"
 fi
+
+# Install daily backup LaunchAgent
+PLIST_SRC="$DOTFILES/launchd/com.justin.dotfiles-backup.plist"
+PLIST_DEST="$HOME/Library/LaunchAgents/com.justin.dotfiles-backup.plist"
+if [ -f "$PLIST_SRC" ]; then
+  mkdir -p "$HOME/Library/LaunchAgents"
+  cp "$PLIST_SRC" "$PLIST_DEST"
+  launchctl load "$PLIST_DEST" 2>/dev/null || true
+  echo "Daily backup LaunchAgent installed (runs at 5pm)."
+fi
+
+echo ""
+echo "Setup complete. Run ./backup.sh anytime to push a manual backup."

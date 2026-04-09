@@ -1,0 +1,23 @@
+{
+  "skill_name": "edit-doc",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Update the following paragraph to say we reviewed the architecture this quarter instead of last quarter:\n\nThe new architecture was reviewed by the team last quarter. Three core components were identified: the ingestion layer, the processing pipeline, and the storage tier. The ingestion layer — which handles incoming events — was built by our platform team. Data was processed using two methods; the first was synchronous, the second asynchronous. The results were validated, analyzed, and reported to stakeholders.",
+      "expected_output": "The edit is made (last quarter -> this quarter) and all style violations are caught and fixed before output is shown. Violations to fix include: em dash around 'which handles incoming events', semicolon joining two independent clauses, Oxford comma before 'and reported', and multiple passive voice constructions (was reviewed, were identified, was built, was processed, were validated). The output includes a summary block showing violations caught and how many passes were needed.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Add a sentence at the end of this paragraph mentioning that we use feature flags to control rollout:\n\nWe ship changes to the entity resolution pipeline on a rolling basis. The team runs a full integration test before each deployment. Failures in staging block the release until the issue is resolved.",
+      "expected_output": "A sentence about feature flags is added to the paragraph. The edit introduces no style violations. The summary block shows 'passed in 1 pass, violations caught and fixed: 0' (or equivalent language saying the prose was already conformant).",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Revise this paragraph to be more direct and clear:\n\nThe entity model was designed to support temporal queries. The decision was made to use composite versioning because it eliminates write conflicts. The service was first deployed in 2021 and has been running in production since then.",
+      "expected_output": "Passive voice is fixed where the actor is clear: 'we designed the entity model to support temporal queries', 'we chose composite versioning because it eliminates write conflicts'. The third sentence 'was first deployed in 2021' is either fixed with an actor identified from context, or flagged as ambiguous because the deploying party is genuinely unknown. The output shows a summary with pass count and violation breakdown. The 'ambiguous' field is populated if any passive constructions were left unfixed.",
+      "files": []
+    }
+  ]
+}

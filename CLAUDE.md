@@ -1,0 +1,183 @@
+# CLAUDE.md
+
+This is a personal dotfiles repository. It tracks shell configuration, Claude Code configuration (hooks, skills, settings, memory) and the scripts that keep everything backed up and restorable.
+
+## What this repo contains
+
+**Shell:** `.zshrc`, `.zshenv`, `.zprofile` and `.gitconfig` in the repo root.
+
+**Claude Code config** under `.claude/`:
+- `CLAUDE.md`, `RTK.md`, `settings.json` and `settings.local.json`
+- `hooks/` contains all PreToolUse, PostToolUse and session hooks
+- `skills/` contains custom skills (SKILL.md plus any supporting scripts, evals and tests)
+- `output-styles/` contains output style definitions
+- `scripts/` contains utility scripts used by hooks and skills
+- `commands/` contains slash command definitions
+- `projects/*/memory/` contains memory files from each project context
+
+**Scripts:**
+- `backup.sh` syncs local changes and pushes to GitHub (run any time or let launchd trigger it)
+- `install.sh` sets up a fresh machine by symlinking all tracked dotfiles and installing the launchd backup agent
+- `migrate.sh` runs once on an existing machine, creating a timestamped backup of `~/.claude/` before replacing files with symlinks
+
+**Launchd:**
+- `launchd/com.justin.dotfiles-backup.plist` runs `backup.sh` daily at 3 PM
+
+## What is deliberately excluded
+
+These items are either ephemeral, machine-specific or reinstallable and do not belong in this repo:
+
+- `.claude/.credentials.json` (Claude Code auth credentials)
+- `.claude/history.jsonl` (full session history)
+- `.claude/projects/**/*.jsonl` (per-session JSONL files)
+- `.claude/plugins/` (superpowers plugins, reinstall with `claude plugins install`)
+- `.claude/skills/find-skills`, `first-principles-decomposer` and `slackfmt` (plugin-managed symlinks)
+- All runtime/cache dirs: `backups/`, `cache/`, `debug/`, `downloads/`, `file-history/`, `ide/`, `image-cache/`, `paste-cache/`, `sessions/`, `shell-snapshots/`, `skill-workspaces/`, `statsig/`, `tasks/`, `telemetry/`, `todos/`, `usage-data/`
+- `.claude/plans/` (session-scoped planning files)
+- `*.bak`, `*.orig` and generated state files
+
+The `.gitignore` enforces all of these.
+
+## Secrets: never commit them
+
+No secret values belong in tracked files. Shell secrets load from 1Password at shell startup via the `op` CLI. Claude Code secrets (Confluence API token, etc.) are stored in the `Employee` vault with the item title documented in the relevant memory file and are never written into settings, hooks or skill files.
+
+`backup.sh` runs a pre-commit scan for common token patterns before every push. If the guard triggers, redact the value, store it in 1Password and update the export to load dynamically.
+
+### Prerequisites
+
+The 1Password CLI must be installed and the desktop app signed in:
+
+```bash
+brew install 1password-cli
+```
+
+Enable biometric unlock in 1Password desktop under Settings > Developer > "Integrate with 1Password CLI". After that, `op read` works without an explicit `op signin`.
+
+### Managing 1Password secrets
+
+All secrets live in the `Employee` vault as **API Credential** items. The `op read` URI format is `op://Employee/<item-title>/credential`.
+
+**Create** a new secret:
+```bash
+op item create \
+  --vault Employee \
+  --category "API Credential" \
+  --title "<item-title>" \
+  "credential=<value>"
+```
+
+**Rotate** an existing secret:
+```bash
+op item edit "<item-title>" --vault Employee "credential=<new-value>"
+```
+
+**Remove** a secret:
+```bash
+op item delete "<item-title>" --vault Employee
+```
+
+**Verify** a secret is set:
+```bash
+op read "op://Employee/<item-title>/credential"
+```
+
+Currently tracked secrets in `.zshrc`:
+
+| 1Password item title | Variable | Notes |
+|---|---|---|
+| `github-pat` | `GITHUB_PERSONAL_ACCESS_TOKEN` | Rotate at GitHub > Settings > Developer settings |
+| `figma-token` | `FIGMA_TOKEN` | Expires 90 days from issue date; rotate at figma.com |
+
+### Adding a new shell secret
+
+1. Pick an item title (kebab-case, e.g. `datadog-api-key`)
+2. Create the item: `op item create --vault Employee --category "API Credential" --title "datadog-api-key" "credential=<value>"`
+3. Add an export to `.zshrc` in the secrets block:
+   ```zsh
+   export DATADOG_API_KEY="$(op read 'op://Employee/datadog-api-key/credential' 2>/dev/null)"
+   ```
+4. Add a row to the table above
+5. If the token has a recognizable prefix (e.g. `ghp_`, `sk-`), add that pattern to the guard in `backup.sh`
+
+### Rotating a secret
+
+1. Generate the new value from the issuing service
+2. Run: `op item edit "<item-title>" --vault Employee "credential=<new-value>"`
+3. Open a new shell or run `source ~/.zshrc` to pick up the new value
+4. Revoke the old value at the issuing service
+
+### Removing a secret
+
+1. Delete the 1Password item: `op item delete "<item-title>" --vault Employee`
+2. Remove the export line from `.zshrc`
+3. Remove the row from the table above
+4. Remove the token pattern from the guard in `backup.sh` if one was added
+
+## Workflows
+
+### Fresh machine setup
+
+```bash
+git clone git@github.com:jflammia-dd/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+./install.sh
+```
+
+`install.sh` symlinks every hidden file in the repo to the corresponding path under `$HOME`, installs Oh My Zsh and the three custom plugins and loads the launchd backup agent.
+
+After running `install.sh`:
+1. Create the 1Password items listed in the table above
+2. Reinstall Claude Code plugins via `claude plugins install <marketplace>`
+3. In `.gitconfig`, update `[maintenance].repo` to point to wherever you clone `dd-source`
+
+### Migrating an existing machine to use this repo
+
+If you already have a configured machine with files in place, run `migrate.sh` instead of `install.sh`. It creates a timestamped backup of your current `~/.claude/` and then replaces each tracked file with a symlink into `~/dotfiles`. Once the symlinks are in place, every change you make to a hook or skill lands directly in the repo without any extra sync step.
+
+```bash
+git clone git@github.com:jflammia-dd/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+./migrate.sh
+```
+
+### Ongoing backups
+
+`backup.sh` copies home dotfiles (`.zshrc`, `.zshenv`, `.zprofile`, `.gitconfig`) and syncs `~/.claude/` into the repo, then commits and pushes if anything changed.
+
+```bash
+~/dotfiles/backup.sh
+```
+
+The launchd agent runs this automatically at 3 PM every day. To load it manually on a machine where `install.sh` hasn't been run:
+
+```bash
+cp ~/dotfiles/launchd/com.justin.dotfiles-backup.plist ~/Library/LaunchAgents/
+launchctl load ~/Library/LaunchAgents/com.justin.dotfiles-backup.plist
+```
+
+To check that the agent is loaded: `launchctl list | grep dotfiles`
+
+## Adding new files to track
+
+To start tracking a new dotfile:
+1. Copy it into the repo at the corresponding relative path (e.g., `~/.foo` goes to `dotfiles/.foo`)
+2. Add any exclusion rules needed to `.gitignore`
+3. If it can contain secrets, follow the steps in "Adding a new shell secret" above
+4. Run `backup.sh` to commit it
+
+After the next `migrate.sh` or `install.sh` run, the file will be replaced with a symlink so future edits land directly in the repo.
+
+## Adding new Claude Code skills
+
+Custom skills go under `.claude/skills/<skill-name>/SKILL.md` plus any supporting files. Skills installed via the superpowers plugin marketplace are managed externally and belong in `.gitignore` as symlinks, not tracked here.
+
+When a skill has supporting scripts, tests or eval data, those go in subdirectories of the skill directory and get backed up alongside the SKILL.md.
+
+## Machine-specific items to update after restore
+
+A few entries in tracked files contain absolute paths that need manual attention on a new machine:
+
+1. `.gitconfig` `[maintenance].repo` needs to point to wherever you clone `dd-source`
+2. `.gitconfig` `[include].path` points to the gitsign config; install gitsign and it will recreate this file
+3. The launchd plist hardcodes `/Users/justin.flammia/dotfiles/backup.sh`; update the path before loading if your username differs

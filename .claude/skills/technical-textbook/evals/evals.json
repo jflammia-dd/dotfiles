@@ -1,0 +1,102 @@
+{
+  "skill_name": "technical-textbook",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "This document was written by an engineer who knows the system cold. I need it to read like a textbook chapter that someone with no background in caching or distributed systems could follow from start to finish. They shouldn't be left asking 'wait, what is that?' at any point. Please review it and implement your improvements.\n\nDocument: /Users/justin.flammia/.claude/skills/technical-textbook/evals/test-docs/cache-invalidation.md",
+      "expected_output": "The document should gain: (1) an introduction that explains what cache invalidation is and why it matters before any system specifics, (2) definitions for all acronyms (IP, ISM, KEI, OCSF, GPC, MIP, EVP) before first use, (3) the vague 'GPC and MIP logs, the code reads equivalent provider-specific fields' replaced with actual field names or an honest statement that they aren't covered, (4) step numbering that reflects logical scope (not a single step covering both paths + filtering + flushing), (5) passive voice fixed throughout, (6) no em dashes.",
+      "files": ["/Users/justin.flammia/.claude/skills/technical-textbook/evals/test-docs/cache-invalidation.md"],
+      "assertions": [
+        {
+          "name": "introduces_system_before_mechanics",
+          "description": "The revised document explains what cache invalidation is and why it exists before describing any components or steps",
+          "type": "qualitative"
+        },
+        {
+          "name": "no_undefined_acronyms",
+          "description": "Every acronym (IP, ISM, KEI, EVP, OCSF, GPC, MIP) is expanded on first use",
+          "type": "qualitative"
+        },
+        {
+          "name": "vague_equivalences_resolved",
+          "description": "The phrase 'GPC and MIP logs, the code reads equivalent provider-specific fields' is either expanded with actual field names or explicitly flagged as a gap",
+          "type": "qualitative"
+        },
+        {
+          "name": "no_em_dashes",
+          "description": "The output contains no em dashes (—)",
+          "type": "string_absent",
+          "value": "—"
+        },
+        {
+          "name": "passive_voice_reduced",
+          "description": "The revised document has meaningfully fewer passive constructions than the original",
+          "type": "qualitative"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "I want this auth middleware doc to be something I could hand to a new engineer on their first day and have them genuinely understand the system, not just have read it. Review it and make it read like a textbook. Don't gloss over anything.\n\nDocument: /Users/justin.flammia/.claude/skills/technical-textbook/evals/test-docs/auth-middleware.md",
+      "expected_output": "The document should gain: (1) context about what authentication middleware is and why it exists in a distributed system, (2) the two parallel authentication paths (JWT and API key) broken into separate numbered steps or subsections rather than mixed together in the same step, (3) the 'two validation paths' (synchronous and asynchronous) explained with a motivation — why does the async path exist and when does it activate?, (4) the sidecar deployment model explained briefly rather than assumed known, (5) no em dashes, (6) no passive voice.",
+      "files": ["/Users/justin.flammia/.claude/skills/technical-textbook/evals/test-docs/auth-middleware.md"],
+      "assertions": [
+        {
+          "name": "motivation_present",
+          "description": "The revised document explains why authentication middleware exists in a distributed system before describing its mechanics",
+          "type": "qualitative"
+        },
+        {
+          "name": "sync_async_distinction_explained",
+          "description": "The synchronous vs asynchronous validation path distinction is explained with a reason (not just stated as a fact)",
+          "type": "qualitative"
+        },
+        {
+          "name": "sidecar_defined",
+          "description": "The term 'sidecar' is defined or briefly explained for a reader who may not know the pattern",
+          "type": "qualitative"
+        },
+        {
+          "name": "no_em_dashes",
+          "description": "The output contains no em dashes (—)",
+          "type": "string_absent",
+          "value": "—"
+        },
+        {
+          "name": "steps_appropriately_scoped",
+          "description": "JWT and API key validation are presented as parallel paths with equal detail rather than one being primary and one being an aside",
+          "type": "qualitative"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "This event pipeline doc is reasonably well structured but I want it polished — textbook quality, accessible to someone joining the team for the first time. Review it, tell me what's working and what isn't, and improve it.\n\nDocument: /Users/justin.flammia/.claude/skills/technical-textbook/evals/test-docs/event-pipeline.md",
+      "expected_output": "This document is structurally sound (motivation → concepts → mechanics → troubleshooting) so the skill should correctly identify that there are no major structural changes needed. It should then focus on narrative gaps (the 'filter DSL' is mentioned but not described at all; 'reference data' for enrichment is unexplained) and style fixes (mostly minor). The skill should NOT recommend moving sections around.",
+      "files": ["/Users/justin.flammia/.claude/skills/technical-textbook/evals/test-docs/event-pipeline.md"],
+      "assertions": [
+        {
+          "name": "correctly_identifies_no_structural_issues",
+          "description": "The skill correctly identifies that the document's overall structure (intro → concepts → mechanics → troubleshooting) is sound and does not propose reordering major sections",
+          "type": "qualitative"
+        },
+        {
+          "name": "filter_dsl_explained",
+          "description": "The vague reference to 'filter DSL' is expanded to give the reader at least a sense of what that means",
+          "type": "qualitative"
+        },
+        {
+          "name": "reference_data_explained",
+          "description": "The phrase 'reference data' used in the enrichment processor description is clarified",
+          "type": "qualitative"
+        },
+        {
+          "name": "no_em_dashes",
+          "description": "The output contains no em dashes (—)",
+          "type": "string_absent",
+          "value": "—"
+        }
+      ]
+    }
+  ]
+}
