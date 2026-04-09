@@ -19,3 +19,5 @@
 	repo = /Users/justin.flammia/go/src/github.com/DataDog/dd-source
 [commit]
 	gpgsign = true
+[rebase]
+	autoStash = true
