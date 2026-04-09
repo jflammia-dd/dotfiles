@@ -36,6 +36,7 @@
 .claude/plugins/
 .claude/skills/find-skills
 .claude/skills/first-principles-decomposer
+.claude/skills/humanizer
 .claude/skills/slackfmt
 .claude/skills/*-workspace/
 
