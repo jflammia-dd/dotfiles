@@ -6,7 +6,13 @@ set -euo pipefail
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 
 echo "Symlinking dotfiles from $DOTFILES ..."
-find "$DOTFILES" -type f -path "$DOTFILES/.*" | while read -r df; do
+find "$DOTFILES" \
+    \( -name ".git" -prune \) -o \
+    \( -type f \
+       -path "$DOTFILES/.*" \
+       ! -name ".gitignore" \
+       -print \) \
+  | while read -r df; do
   link="${df/$DOTFILES/$HOME}"
   mkdir -p "$(dirname "$link")"
   ln -sf "$df" "$link"
@@ -40,7 +46,7 @@ if [ -f "$PLIST_SRC" ]; then
   mkdir -p "$HOME/Library/LaunchAgents"
   cp "$PLIST_SRC" "$PLIST_DEST"
   launchctl load "$PLIST_DEST" 2>/dev/null || true
-  echo "Daily backup LaunchAgent installed (runs at 5pm)."
+  echo "Daily backup LaunchAgent installed (runs at 3pm)."
 fi
 
 echo ""
