@@ -114,6 +114,19 @@ if git diff --quiet && git diff --cached --quiet && [ -z "$(git ls-files --other
 fi
 
 git add -A
-git commit -m "dotfiles backup $(date '+%Y-%m-%d %H:%M')"
+
+# Ask Claude to write the commit message based on what changed.
+# Falls back to a timestamp message if the claude CLI is unavailable or errors.
+DIFF_STAT="$(git diff --cached --stat)"
+COMMIT_MSG="$(claude -p "Write a concise, specific one-line git commit message for these dotfiles changes. \
+Output only the message text — no quotes, no conventional-commit prefixes, no explanation.
+
+$DIFF_STAT" 2>/dev/null || true)"
+
+if [ -z "$COMMIT_MSG" ]; then
+  COMMIT_MSG="dotfiles backup $(date '+%Y-%m-%d %H:%M')"
+fi
+
+git commit -m "$COMMIT_MSG"
 git push
 echo "Backup pushed: $(date)"
