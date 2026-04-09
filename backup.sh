@@ -12,6 +12,20 @@ for f in .zshrc .zshenv .zprofile .gitconfig; do
   [ -f "$HOME/$f" ] && cp "$HOME/$f" "$DOTFILES/$f"
 done
 
+# Sync git config (global ignore)
+mkdir -p "$DOTFILES/.config/git"
+[ -f "$HOME/.config/git/ignore" ] && cp "$HOME/.config/git/ignore" "$DOTFILES/.config/git/ignore"
+
+# Sync gitsign config (public files only — signing-key is a private key and never synced)
+if [ -d "$HOME/.config/gitsign" ]; then
+  mkdir -p "$DOTFILES/.config/gitsign"
+  rsync -a \
+    --exclude='signing-key' \
+    --exclude='signing-key.pub' \
+    --exclude='.install_id' \
+    "$HOME/.config/gitsign/" "$DOTFILES/.config/gitsign/"
+fi
+
 echo "Syncing ~/.claude/ ..."
 
 rsync -a --no-links \

@@ -40,6 +40,11 @@
 .claude/skills/slackfmt
 .claude/skills/*-workspace/
 
+# ── gitsign: private key and generated files (public key files are tracked) ───
+.config/gitsign/signing-key
+.config/gitsign/signing-key.pub
+.config/gitsign/.install_id
+
 # ── Generated/temporary files ─────────────────────────────────────────────────
 .claude/security_warnings_state_*.json
 .claude/stats-cache.json
