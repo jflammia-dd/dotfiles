@@ -111,10 +111,28 @@ assert_excluded ".config/gitsign/signing-key"
 assert_excluded ".config/gitsign/signing-key.pub"
 assert_excluded ".config/gitsign/.install_id"
 
-# ── Test 2: Idempotency ────────────────────────────────────────────────────────
+# ── Test 2: Deletions propagate ───────────────────────────────────────────────
 
 echo ""
-echo "--- Test 2: Idempotency ---"
+echo "--- Test 2: Deletions propagate ---"
+
+# Delete the hook from HOME and verify the next backup removes it from the repo
+rm "$FAKE_HOME/.claude/hooks/em-dash-check.sh"
+HOME="$FAKE_HOME" bash "$FAKE_REPO/.claude-dotfiles/backup.sh" > /dev/null
+if not_in_repo ".claude/hooks/em-dash-check.sh"; then
+  pass "deleted file removed from repo"
+else
+  fail "deleted file still present in repo after backup"
+fi
+
+# Restore it for subsequent tests
+echo "hook content" > "$FAKE_HOME/.claude/hooks/em-dash-check.sh"
+HOME="$FAKE_HOME" bash "$FAKE_REPO/.claude-dotfiles/backup.sh" > /dev/null
+
+# ── Test 3: Idempotency ────────────────────────────────────────────────────────
+
+echo ""
+echo "--- Test 3: Idempotency ---"
 output="$(HOME="$FAKE_HOME" bash "$FAKE_REPO/.claude-dotfiles/backup.sh" 2>&1)"
 if echo "$output" | grep -q "Nothing changed"; then
   pass "second run with no changes exits cleanly without committing"
@@ -136,7 +154,7 @@ fi
 # ── Test 3: Secret guard blocks hardcoded tokens ───────────────────────────────
 
 echo ""
-echo "--- Test 3: Secret guard ---"
+echo "--- Test 4: Secret guard ---"
 
 # Plant a fake GitHub PAT
 echo 'export GH="github_pat_11ABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901234"' >> "$FAKE_HOME/.zshrc"
@@ -167,7 +185,7 @@ HOME="$FAKE_HOME" bash "$FAKE_REPO/.claude-dotfiles/backup.sh" > /dev/null
 # ── Test 4: op read pattern passes the guard ───────────────────────────────────
 
 echo ""
-echo "--- Test 4: op read pattern is allowed ---"
+echo "--- Test 5: op read pattern is allowed ---"
 printf 'export GH="$(op read '"'"'op://Employee/github-pat/credential'"'"' 2>/dev/null)"\n' >> "$FAKE_HOME/.zshrc"
 output="$(HOME="$FAKE_HOME" bash "$FAKE_REPO/.claude-dotfiles/backup.sh" 2>&1)"
 if echo "$output" | grep -q "ERROR"; then

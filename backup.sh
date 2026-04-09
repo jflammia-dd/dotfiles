@@ -6,20 +6,31 @@ set -euo pipefail
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 CLAUDE="$HOME/.claude"
 
+# Copy a single file from HOME to DOTFILES, skipping it if it is already
+# a symlink pointing at the destination (which happens after migrate.sh).
+sync_file() {
+  local src="$HOME/$1" dest="$DOTFILES/$1"
+  [ -f "$src" ] || return 0
+  if [ -L "$src" ] && [ "$(readlink "$src")" = "$dest" ]; then
+    return 0  # symlink already points here; file IS the repo version
+  fi
+  cp "$src" "$dest"
+}
+
 # Sync home dotfiles
 echo "Syncing home dotfiles ..."
 for f in .zshrc .zshenv .zprofile .gitconfig; do
-  [ -f "$HOME/$f" ] && cp "$HOME/$f" "$DOTFILES/$f"
+  sync_file "$f"
 done
 
 # Sync git config (global ignore)
 mkdir -p "$DOTFILES/.config/git"
-[ -f "$HOME/.config/git/ignore" ] && cp "$HOME/.config/git/ignore" "$DOTFILES/.config/git/ignore"
+sync_file ".config/git/ignore"
 
 # Sync gitsign config (public files only — signing-key is a private key and never synced)
 if [ -d "$HOME/.config/gitsign" ]; then
   mkdir -p "$DOTFILES/.config/gitsign"
-  rsync -a \
+  rsync -a --no-links \
     --exclude='signing-key' \
     --exclude='signing-key.pub' \
     --exclude='.install_id' \
@@ -28,7 +39,7 @@ fi
 
 echo "Syncing ~/.claude/ ..."
 
-rsync -a --no-links \
+rsync -a --no-links --delete \
   --exclude='.credentials.json' \
   --exclude='.credentials.json.bak' \
   --exclude='history.jsonl' \
