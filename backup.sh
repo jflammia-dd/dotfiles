@@ -79,6 +79,7 @@ done
 cd "$DOTFILES"
 
 # Guard: refuse to commit if any hardcoded secret patterns are present
+# (tests/ is excluded since test scripts intentionally contain fake token patterns)
 SECRET_HITS=$(grep -rn \
   -e "github_pat_[A-Za-z0-9_]\{20,\}" \
   -e "ghp_[A-Za-z0-9]\{36\}" \
@@ -86,6 +87,7 @@ SECRET_HITS=$(grep -rn \
   -e "sk-[A-Za-z0-9]\{20,\}" \
   --include="*.sh" --include="*.zsh" --include="*.zshrc" --include="*.zshenv" \
   --include="*.zprofile" --include="*.json" --include="*.py" \
+  --exclude-dir="tests" \
   . 2>/dev/null | grep -v "Binary" || true)
 if [ -n "$SECRET_HITS" ]; then
   echo "ERROR: Possible secret found in tracked files. Aborting backup."
