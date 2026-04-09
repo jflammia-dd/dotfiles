@@ -138,16 +138,9 @@ autoload -Uz _git_dd
 
 export DATADOG_ROOT="$HOME/dd"
 
-# Secrets load from 1Password (vault: Employee) via the op CLI.
-# Requires: brew install 1password-cli
-# Enable biometric unlock in 1Password > Settings > Developer > "Integrate with 1Password CLI"
-#
-# Create:  op item create --vault Employee --category "API Credential" --title "<name>" "credential=<value>"
-# Rotate:  op item edit "<name>" --vault Employee "credential=<new-value>"
-# Remove:  op item delete "<name>" --vault Employee
-# Verify:  op read "op://Employee/<name>/credential"
-export GITHUB_PERSONAL_ACCESS_TOKEN="$(op read 'op://Employee/github-pat/credential' 2>/dev/null)"
-export FIGMA_TOKEN="$(op read 'op://Employee/figma-token/credential' 2>/dev/null)"
+# gh authenticates via its own keyring (run `gh auth login` to set up).
+# The Figma MCP uses OAuth via https://mcp.figma.com/mcp.
+# Neither needs tokens injected from the shell.
 
 # Claude code
 #export CLAUDE_CODE_NO_FLICKER=1

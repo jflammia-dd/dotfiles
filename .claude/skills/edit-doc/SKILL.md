@@ -93,6 +93,7 @@ The five categories to check in each pass:
 3. **Semicolons joining independent clauses**: split into two sentences or use a conjunction; semicolons in comma-containing lists are fine
 4. **Colons joining independent clauses in narrative prose**: split or restructure; colons in headings and labels are fine
 5. **Passive voice**: rewrite with a clear subject performing the action; passive is acceptable only when the actor is genuinely unknown or irrelevant
+6. **Unnecessary complexity**: for every sentence, ask whether a simpler construction carries the same meaning with equal precision. When two phrasings are both accurate, always use the simpler one.
 
 See justins-voice for high-risk patterns, edge cases and examples for each rule.
 
@@ -103,6 +104,8 @@ See justins-voice for high-risk patterns, edge cases and examples for each rule.
 3. Fix all violations in one edit.
 4. Record the count and breakdown by rule.
 5. If zero violations found: stop. The document has passed.
+
+Once the gate has passed, invoke the `humanizer` skill on all edited prose sections to remove any remaining AI writing patterns.
 
 ### If violations remain after 3 passes
 

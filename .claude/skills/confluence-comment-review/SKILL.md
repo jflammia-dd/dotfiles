@@ -180,10 +180,13 @@ These rules come directly from observed preferences. The reasoning behind each o
 
 Run this scan on every draft before showing it to the user. Do not skip it because the draft "feels right."
 
-1. **Em dashes** — search the draft character by character for `—`. If found, rewrite the clause as two sentences or use parentheses. There are no acceptable em dashes in these responses.
-2. **Unnecessary content** — read the draft and ask: did the reviewer ask for this? If a sentence adds context, a caveat or a follow-up thought that the reviewer didn't request and that doesn't directly answer their question, delete it. "If the point is made, stop" means stop at the point — not after one more sentence.
-3. **Sycophantic opener** — if the first word or phrase acknowledges the reviewer positively ("Good," "Thanks for," "That's"), delete it and start with the answer.
-4. **"we'll" vs "I'll"** — scan for "we'll" in doc-update commitments. Replace with "I'll."
+1. **Em dashes.** Search the draft for U+2014 (the em dash character). If found, rewrite the clause as two sentences or use parentheses. There are no acceptable em dashes in these responses.
+2. **Oxford commas.** Scan every list of three or more items. If a comma appears before the final "and" or "or", remove it. This applies to lists of nouns, predicates and clauses alike.
+3. **Comma splices.** Scan for independent clauses joined by only a comma with no conjunction. "The pipeline runs, it finds nothing" is a comma splice. Split into two sentences or add a conjunction. High-risk pattern: sentences explaining a consequence or follow-on action ("X happens, Y follows").
+4. **Filler transitions.** Scan for "That said," "Additionally," "Furthermore," "Moreover" and similar openers. Delete them and restructure the sentence that follows so it connects naturally to the prior sentence without a transitional crutch.
+5. **Unnecessary content.** Read the draft and ask: did the reviewer ask for this? If a sentence adds context, a caveat or a follow-up thought that the reviewer didn't request and that doesn't directly answer their question, delete it. "If the point is made, stop" means stop at the point, not after one more sentence.
+6. **Sycophantic opener.** If the first word or phrase acknowledges the reviewer positively ("Good," "Thanks for," "That's"), delete it and start with the answer.
+7. **"we'll" vs "I'll".** Scan for "we'll" in doc-update commitments. Replace with "I'll."
 
 If any of these fail, fix before presenting. Presenting a draft with a known violation and hoping the user won't notice is not acceptable.
 
@@ -330,21 +333,26 @@ After updating, briefly tell the user what changed and why. One sentence per cha
 
 ## Working Through Action Items
 
-When the user is ready to execute doc edits from the Action Items list, do NOT use the `updateConfluencePage` API. The API requires submitting the full page body, which risks:
+Use `confluence-write.py` for all text edits. It fetches the current page, makes a targeted text replacement and resubmits. Inline comment anchors and page formatting are preserved exactly because only the matched text nodes change.
 
-1. **Dangling comments.** Inline comments are anchored to specific text. Renaming or removing anchored text causes the comment to lose its anchor. The comment persists but shows as dangling.
-2. **Format degradation.** The ADF/storage XML round-trip can subtly alter panels, code blocks and structured macros.
+Script location: `~/.claude/plugins/marketplaces/datadog-claude-plugins/confluence-write/scripts/confluence-write.py`
 
-**The correct workflow for doc edits:**
+**Workflow for text edits:**
 
-1. For each action item, draft the exact text change — the precise wording to add, the specific string to rename, or the new section content.
-2. Tell the user exactly where in the Confluence page to apply it (section name, heading, specific sentence).
-3. Copy the text to the macOS clipboard using `pbcopy` so the user can paste it directly. Do this every time without being asked — for prose additions use plain text via `pbcopy`, for code block content use plain text via `pbcopy`. Only use the HTML clipboard method (hexdump + osascript) for rich text that needs formatting preserved outside of code blocks.
-4. For diagram action items, generate the diagram using `npx @mermaid-js/mermaid-cli`. Write the Mermaid source to `/tmp/diagram-name.mmd`, render to PNG at `attachments/diagram-name.png` with `--theme neutral --width 1600 --scale 2`, then display the rendered image for review. Save the Mermaid source code in the Obsidian tracking note alongside the action item so it can be regenerated. Tell the user to upload the PNG manually to Confluence via the page editor's image upload. The user inserts the image where the diagram belongs in the doc.
-4. For global renames (e.g. `siem_entity_resolution` → `siem_er`), direct the user to use Confluence's built-in Find & Replace in the page editor — it's a native operation that preserves comment anchors.
-5. Once the user confirms the edit is applied, mark the action item done in the Obsidian tracking note.
+1. Identify the exact old text (the string to find on the page) and the new text (the replacement). Get explicit user approval before applying.
+2. Run a `--dry-run` first to verify the match and the result look correct.
+3. Apply: `uv run python3 confluence-write.py PAGE_ID "old text" "new text"`
+4. Mark the action item done in the Obsidian tracking note.
 
-Work through one action item at a time. Present the draft text, specify the location, wait for confirmation, then move to the next.
+**Inline mark limitations.** The script inherits marks (bold, code, annotation) from the first character of the matched selection. If new text needs a code mark on a specific word, the replacement will land as plain text. Note this to the user and ask them to apply the formatting manually in Confluence after the edit goes in.
+
+**Annotation preservation.** When the old text overlaps with an inline comment anchor, the script preserves the annotation mark on surviving characters and warns only if the anchor is deleted entirely (dangling comment risk). Do not replace text that is itself the complete annotation anchor unless you intend to dangle the comment.
+
+**Diagram action items.** Re-render from the local `.mmd` sources: `npx @mermaid-js/mermaid-cli -i <file>.mmd -o <file>.png --theme neutral --width 1600 --scale 2`. Display the rendered image for review. Tell the user to upload the PNG manually in the Confluence page editor. The script cannot insert images.
+
+**Global renames.** For renames that span the whole page, direct the user to use Confluence's built-in Find & Replace in the page editor. It is a native operation that preserves comment anchors.
+
+Work through one action item at a time. Show the before/after, wait for approval, apply, then move to the next.
 
 ---
 

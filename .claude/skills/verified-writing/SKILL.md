@@ -130,12 +130,9 @@ After the draft, list every placeholder and unresolved question. These are block
 
 ## After the Draft
 
-Once the draft is complete and gaps are resolved:
+Once the draft is complete and gaps are resolved, apply `edit-doc` for style enforcement, coherence checking and humanizer cleanup. `edit-doc` reads `justins-voice` automatically and handles the full cleanup pipeline.
 
-1. Apply `justins-voice` for voice and style
-2. Apply `edit-doc` for adversarial style enforcement (em dashes, Oxford commas, passive voice, etc.)
-
-These are downstream steps. Do not apply them before the factual content is verified.
+This is a downstream step. Do not apply it before the factual content is verified.
 
 ---
 

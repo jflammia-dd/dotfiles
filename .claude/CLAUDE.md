@@ -29,7 +29,8 @@
 - NEVER use Oxford commas (serial commas before "and" or "or" in a list). Wrong: "apples, oranges, and pears". Right: "apples, oranges and pears".
 - NEVER use semicolons to join independent clauses in prose. Use a period, comma or conjunction instead.
 - NEVER use a colon to join two independent clauses.
-- ALWAYS invoke the `justins-voice` skill before drafting or editing documents, announcements or distributed written content. A UserPromptSubmit hook (`justins-voice-detect.sh`) detects writing tasks and prompts invocation. Treat its trigger as a strong signal to invoke the skill.
+- Prioritize simplicity. When two phrasings are both accurate, always choose the simpler one. Complexity in explanation signals unclear thinking, not a complex subject. Find the simpler sentence before reaching for qualifications.
+- ALWAYS invoke the `justins-voice` skill before drafting or editing documents, announcements or distributed written content. A UserPromptSubmit hook (`justins-voice-detect.sh`) detects writing tasks and prompts invocation. Treat its trigger as a strong signal to invoke the skill. This rule does not apply to machine-consumed content: skill files, hook scripts, memory files, CLAUDE.md, settings and any output written for Claude to read rather than a human.
 
 ## Confluence Rules
 

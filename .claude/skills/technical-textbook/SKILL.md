@@ -72,20 +72,9 @@ For each gap, use this format: "At [location], a reader would ask [question]. Fi
 
 ## Phase 4: Style corrections
 
-Before writing or rewriting any prose, invoke the `justins-voice` skill and follow it. `justins-voice` is the authoritative style guide for this work — it covers em dashes, passive voice, Oxford commas, counting preambles, numbered vs bullet lists, bold usage and sentence structure. Apply it to every sentence you write, not just to the original document.
+`justins-voice` is the authoritative style guide for all prose written or rewritten by this skill. It covers em dashes, passive voice, Oxford commas, counting preambles, numbered vs bullet lists, bold usage and sentence structure. Apply it to every sentence you write, not just to the original document.
 
-After writing or rewriting a section, run a `justins-voice` self-check by grepping for the four most common violations before moving on. New prose is as subject to the style rules as old prose, and these violations appear frequently in rewrites:
-
-```bash
-grep -n " — "   # em dashes in prose — replace with comma, period or parentheses
-grep -n ";"     # semicolons joining clauses — split into two sentences or use "and"
-grep -n ": "    # narrative colons — restructure or remove (colons are fine in headings/labels)
-grep -rn ", and \|, but \|, or "  # comma before coordinating conjunction — drop the comma
-```
-
-Run these on the file after every batch of edits. The goal is zero hits in narrative prose (non-headings, non-code-blocks, non-tables).
-
-Invoke the `humanizer` skill on completed prose sections to remove AI writing patterns after the `justins-voice` pass.
+For enforcement, run `edit-doc` Step 3 (style gate loop) on all edited sections after each batch of changes. `edit-doc` operationalizes the justins-voice rules with a systematic multi-pass check and runs the humanizer pass automatically.
 
 ## Phase 5: Implement in the right order
 
@@ -93,7 +82,7 @@ For **structural changes** (reordering sections, splitting steps, adding a missi
 
 For **narrative gap-filling and style corrections**: implement directly. These are unambiguously improvements. Batch-report them after: "I expanded [location] to explain [concept] because a new reader would ask [question]."
 
-When filling a gap, match the voice and technical register of the surrounding text. Preserve every technical detail — the goal is accessibility, not simplification. Defining a term inline ("the projection system, Datadog's field normalization layer, runs on every matching event") is often lighter and more readable than creating a separate definition section.
+When filling a gap, match the voice and technical register of the surrounding text. Preserve every technical detail. The goal is accessibility, not simplification. Defining a term inline ("the projection system, Datadog's field normalization layer, runs on every matching event") is often lighter and more readable than creating a separate definition section.
 
 **Scope constraint.** Fill gaps using information that is already present or implied in the document. Do not add new sections, tables, diagrams or content types that the original document doesn't include unless a structural issue genuinely requires it. A document that lacks a motivation section needs one added; a document that lacks a failure-modes table doesn't need one invented. The test is whether the original author would recognize the improved document as their own, only clearer.
 
@@ -112,4 +101,4 @@ If there are no structural or artifact issues, say so and proceed directly to im
 
 Phase 3 asks you to fill gaps using "information that is already present or implied in the document." This assumes the document is factually correct. When the document describes the behavior of a system whose source code can be read, that assumption needs testing before you fill gaps.
 
-Specifically: if a worked example or stage description attributes a behavior to a specific trigger (e.g., "when event X arrives, Y happens"), check whether that attribution is plausible before repeating it in a gap fill. A gap fill that adds detail to a wrong claim embeds the error more deeply into the document. When in doubt, state what the document implies ("the pane is finalized on the last event's arrival") and flag it for code verification rather than expanding it with invented detail. For Datadog internal documents, combine this skill with `dd-research` so that narrative gaps are filled from code, not from inference.
+Specifically: if a worked example or stage description attributes a behavior to a specific trigger (e.g., "when event X arrives, Y happens"), check whether that attribution is plausible before repeating it in a gap fill. A gap fill that adds detail to a wrong claim embeds the error more deeply into the document. When in doubt, state what the document implies ("the pane is finalized on the last event's arrival") and flag it for code verification rather than expanding it with invented detail. For Datadog internal documents, use `verified-writing` (which coordinates `dd-research` and source code reads) so that narrative gaps are filled from code, not from inference.

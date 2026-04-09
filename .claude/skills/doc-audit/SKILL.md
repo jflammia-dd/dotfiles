@@ -97,3 +97,16 @@ Recommendation: [specific action]
 **Priority order**: Surface the issues that most damage the reader's ability to build an accurate model first. A cold concept that a reader hits on page one is more urgent than a proportionality issue in a late section.
 
 If the document is in good shape, say so plainly and note what is working well. A clean audit result is meaningful information.
+
+---
+
+## After the audit: which skill to use
+
+Match the primary issue type to the skill that fixes it:
+
+- Pedagogical structure (cold concepts, prerequisite gaps, wrong section ordering) → `technical-textbook`
+- Technical accuracy (wrong field names, stale component descriptions, unverified claims) → `revise-doc`
+- Specific edits with flow and coherence concerns → `edit-doc`
+- Net-new sections that need research before drafting → `verified-writing`
+
+For documents with multiple issue types, address technical accuracy with `revise-doc` first, then tackle structural and pedagogical flow with `technical-textbook`.

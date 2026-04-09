@@ -51,8 +51,14 @@
 ## Obsidian Formatting
 - [Mermaid newlines](feedback_mermaid_newlines.md) — use `<br/>` inside Mermaid node labels, not `\n`
 
+## Shell & Credentials
+- [1Password shell secrets removed](feedback_op_shell_secrets.md): gh and Figma MCP handle auth independently; no op read calls needed in .zshrc
+
 ## Credentials & Tokens
 - [Confluence API token](confluence-api-token.md) — expires 2027-03-22; stored in macOS Keychain under `confluence-api-token`
+
+## Ghostty
+- [Ghostty Settings Editor](reference_ghostty_settings_editor.md): no config key to set editor for Settings menu; use `ghostty +edit-config` with `$EDITOR` instead
 
 ## Key Files
 - [GoLand Setup](goland-setup.md) — GoLand configuration for dd-source

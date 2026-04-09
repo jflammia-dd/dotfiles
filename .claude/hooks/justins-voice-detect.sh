@@ -14,6 +14,13 @@ if echo "$prompt" | grep -qi 'justins.voice'; then
   exit 0
 fi
 
+# Skip machine-consumed content: skill files, hooks, memory, Claude config
+# These are written for Claude to read, not for humans, so voice styling doesn't apply.
+if echo "$prompt" | grep -qiE \
+  'SKILL\.md|skill files?|my (writing )?skills?|\.claude/(skills|hooks|memory)|hook (file|script)|(write|create|update|edit).*\bhook\b|memory files?|update.*memory|CLAUDE\.md|settings\.json'; then
+  exit 0
+fi
+
 # Check for writing intent first — writing verbs win even if review/analysis verbs are also present.
 # This ensures "review and rewrite this doc" triggers, not just "write this doc".
 if echo "$prompt" | grep -qiE \

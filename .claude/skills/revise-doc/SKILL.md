@@ -13,26 +13,7 @@ The three phases are: verify what's already there and what you're about to write
 
 ## Phase 1: Claim inventory and verification
 
-Before touching any text, identify every technical claim that needs verification. Follow the `verified-writing` skill's approach for this phase.
-
-**Read the full document first.** Understand the document's current state, what it argues and where the sections being revised sit in the larger flow.
-
-**Inventory two categories of claims:**
-
-1. **Existing claims in sections being modified**: Do not assume existing prose is accurate. Scan the sections you are about to touch for technical assertions (field names, types, component names, behavioral descriptions, design rationale) and add them to the verification list.
-
-2. **New claims being introduced**: Everything you plan to write that asserts a technical fact.
-
-**For each claim, identify the authoritative source:**
-- Source code first (proto definitions, Go/Java structs, schema files, tests)
-- Configuration second (deploy.yaml, Helm values, feature flags)
-- Design documents third (Confluence RFCs, Google Docs specs)
-
-**Read the source before writing.** If a source cannot be located, do not guess. Surface the gap: "I couldn't locate [X]. Do you have a file path or Confluence URL?" Insert `[TODO: verify: <what's missing>]` as a placeholder in the draft.
-
-**If sources conflict**, surface the conflict before writing. Do not pick one silently.
-
-Produce a brief synthesis of verified facts before moving to the edit. This is what the prose will rest on.
+Run `verified-writing` Phases 1 through 3 (claim inventory, source resolution and synthesis) before touching any text. The synthesis from verified-writing Phase 3 is the factual foundation for Phase 2 of this skill.
 
 ---
 
@@ -46,31 +27,13 @@ If a claim cannot be grounded in a verified source, either omit it or use `[TODO
 
 ## Phase 3: Coherence check
 
-After making the edit, check it against the rest of the document. Run the five coherence checks from the `edit-doc` skill:
-
-1. **First-appearance integrity**: Every concept the edited section introduces or uses: is it properly set up somewhere in the document? If the edit is the first appearance, does it give enough context?
-
-2. **Repetition**: Does the edited content cover ground already covered elsewhere?
-
-3. **Framing currency**: Does the document's introduction or overview still accurately represent what the document covers?
-
-4. **Backward dependencies**: Does the edited section assume knowledge that only appears later in the document?
-
-5. **Flow continuity**: Do the transitions from the preceding section and to the following section still work?
+Run `edit-doc` Step 2 (coherence check) exactly. Collect any issues found for inclusion in the Phase 5 output block.
 
 ---
 
 ## Phase 4: Style gate
 
-Run up to 3 passes checking for style violations. Read `~/.claude/skills/justins-voice/SKILL.md` for the complete rule set.
-
-Categories to check:
-
-1. **Em dashes and double-hyphens**: restructure the sentence
-2. **Oxford commas**: remove the comma before the final "and"/"or"
-3. **Semicolons joining independent clauses**: split or use a conjunction
-4. **Colons joining independent clauses in narrative prose**: split or restructure
-5. **Passive voice**: rewrite with a clear subject performing the action
+Run `edit-doc` Step 3 (style gate loop) exactly, including the humanizer pass at the end. Record violation counts and any remaining ambiguous cases for the Phase 5 output block.
 
 ---
 

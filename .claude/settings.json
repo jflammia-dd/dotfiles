@@ -248,7 +248,8 @@
     "reference-tables@datadog-claude-plugins": true,
     "saas-integrations@datadog-claude-plugins": true,
     "work-analyzer@datadog-claude-plugins": true,
-    "codex@openai-codex": true
+    "codex@openai-codex": true,
+    "confluence-write@datadog-claude-plugins": true
   },
   "extraKnownMarketplaces": {
     "trailofbits": {

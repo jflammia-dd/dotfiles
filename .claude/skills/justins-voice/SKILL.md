@@ -7,6 +7,8 @@ description: "Canonical source of Justin's style and voice rules. Apply when dra
 
 This skill defines how Justin writes. The goal is writing that builds the reader's mental model with precision and clarity, at every scale from a design doc to a two-sentence Slack reply. It should sound like a technically capable peer, not a language model filling a page.
 
+**Scope**: Apply this skill only to human-facing prose. That includes documents, announcements, Confluence pages, Slack messages, emails, meeting notes, RFCs, proposals and any other content a person will read. Do NOT apply to machine-consumed content: skill files, hook scripts, memory files, CLAUDE.md, settings, code and any output written for Claude to read rather than a human.
+
 ## Punctuation
 
 - No Oxford commas. In a list of three or more items, omit the comma before the final "and" or "or." This applies everywhere: lists of nouns, lists of predicates, lists of clauses. "X, Y and Z" not "X, Y, and Z."
@@ -52,7 +54,19 @@ The purpose of every piece of writing is to transfer an accurate model of someth
 
 **Short writing can still teach.** A Confluence comment can advance the reader's model in two sentences. A Slack reply can resolve a conceptual confusion without becoming a document. Length is not the variable. Precision is.
 
-Write for peers who are already technically capable: don't over-explain what they know, but don't assume they've worked through the same edge cases or constraints you have. The gap to close is specific and technical, not general.
+Write for peers who are already technically capable. Don't over-explain what they know but don't assume they've worked through the same edge cases or constraints you have. The gap to close is specific and technical, not general.
+
+## Simplicity as mastery
+
+True mastery over an idea shows in the ability to explain it simply. Fluency with a system isn't enough. The test is whether you can explain it to someone who lacks your context.
+
+When an explanation grows complex, that usually signals unclear thinking, not a complex subject. Stop and find the simpler sentence before reaching for qualifications and structure to compensate.
+
+When two phrasings are both accurate, always choose the simpler one. "The event triggers a lookup" is clearer than "upon event receipt, a lookup operation is initiated" and equally precise.
+
+Use technical terms when they genuinely compress meaning because the reader knows them and no simpler substitute exists. Don't use them to signal domain familiarity or make reasoning feel more rigorous.
+
+Genuinely complex systems require carrying their complexity. When that's unavoidable, simple structure still matters. One idea per sentence. One argument per paragraph. The reader's cognitive load comes from the subject. Don't add to it.
 
 ## Length discipline and cutting
 
