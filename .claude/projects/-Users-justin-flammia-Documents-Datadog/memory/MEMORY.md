@@ -36,7 +36,12 @@
 - [Entity Resolution RFC](project_er_proposal.md) — Complete draft RFC at `docs/Entity Resolution - Design Proposal.md`; not yet published to Confluence; Phase 1 (GW→AWS) is the dependency for the User Entity Roll-up project
 
 ## Investigation Methodology
-- [Verify data sources before comparing results](feedback_investigation_methodology.md) — when two sources show different results, first check if both are live and receiving the same data before theorizing about application logic
+- [Verify data sources before comparing results](feedback_investigation_methodology.md). When two sources show different results, first check if both are live and receiving the same data before theorizing about application logic.
+
+## Confluence Workflow
+- [Confluence edit approval](feedback_confluence_edit_approval.md). Show verbatim before/after and get explicit approval before applying any page edit. Never apply after a dry-run without pausing.
+- [Review comment workflow](feedback_review_comment_workflow.md). One comment at a time. Pre-load context and draft. Move items to Responded immediately after posting.
+- [Tool limitations](feedback_tool_limitations.md). Before claiming a tool can't do something, check whether a Python/ADF API approach can. confluence-write.py can't inject link marks but Python ADF scripts can.
 
 ## Office Tracking
 - [Week boundary rule](feedback_office_week_boundaries.md) — weeks are full Mon-Fri units owned by the month containing the Monday; no partial weeks at month boundaries

@@ -110,33 +110,69 @@ This returns each comment with an `author.displayName` field. Run this once afte
 
 ## Phase 3: Triage New Items
 
+**Always surface every new item to the user.** Never silently log a reply as "no response needed" without presenting it first. Even a one-word acknowledgment ("ok", "thanks", "👍") is a new item the user should see. The user decides what is worth their attention. Your job is to surface everything new and let them make that call.
+
 Before drafting anything, categorize each new item:
 
-- **Quick answer** — the answer is clear from context and no external lookup is needed
-- **Needs research** — a code link, external doc, or data lookup is required; do the research first
-- **Defer** — the item is out of scope for this doc or belongs to a later phase; say so directly
-- **Blocking** — the item requires external input (a PR link, a reviewer reply) before action is possible
+- **Quick answer.** The answer is clear from context and no external lookup is needed.
+- **Needs research.** A code link, external doc or data lookup is required. Do the research before drafting.
+- **Needs author input.** The comment raises a design question or trade-off only the doc author can resolve (e.g. "would it be cleaner to use X instead of Y?"). Summarize the trade-off for the user, present the options, get their decision, then draft the response. Do not draft a response before the author has weighed in.
+- **Acknowledgment only.** The reviewer is confirming understanding or reacting (e.g. "ok that makes more sense", "👍", "🔥"). Surface it to the user and confirm no response is needed before logging and moving on.
+- **Defer.** The item is out of scope for this doc or belongs to a later phase. Say so directly.
+- **Blocking.** The item requires external input (a PR link, a reviewer reply) before action is possible.
 
 If a comment contains a link to code, follow the link and read the code before forming an opinion. Comments that look like they might change the doc's correctness claims (e.g. "I believe this can already be done") deserve verification, not just acknowledgment.
 
 Flag blocking items with ⚠️ BLOCKING in both the action item list and the note entry. Do not attempt the associated doc edit until unblocked.
 
+**Research obligation before escalating.** Never categorize an item as "needs clarification" or ask the user for information until you have exhausted available tools. Do this research as part of triage, before presenting anything:
+
+- **Unknown term or system** (e.g., "Who is Iris?"). Search local vault docs with `Grep` before asking. The vault often has extensive notes on internal systems, pipelines and services.
+- **Ambiguous anchor** (a single character, short phrase or period). Fetch the Confluence page with `getConfluencePage` and search for the text in context. If still ambiguous, use the comment's timestamp position relative to other comments from the same reading session to infer which section of the doc the reviewer was in. Comments from a single reviewer reading top-to-bottom are ordered by document position.
+- **Diagram or API reference** (e.g., "I don't see X on the diagram"). Read the local source files (`.mmd`, `.yml`, etc.) to confirm whether the element exists before assuming it's missing.
+
+The threshold for asking the user is genuine inability to determine the answer after using these tools, not uncertainty alone.
+
 ---
 
 ## Phase 4: Work Through Comments One at a Time
 
+**Never present multiple comments at once.** One comment per turn, always. Wait for explicit approval or a decision before moving to the next.
+
 Process items in this order: quick answers first, then research items, then deferrals, then blocking.
 
-For each item:
+For each item, present it using this mandatory format before asking for approval:
 
-1. Show the user the comment, its anchored text and any existing thread replies
-2. Draft a response (see drafting rules below)
-3. Show the draft and ask for approval — **never post without explicit approval**
-4. After approval, post via `createConfluenceInlineComment` with `parentCommentId` set to the original comment's ID
-5. Update the Obsidian note (Phase 5)
-6. If the response generated a doc edit, research task or implementation requirement, add it to the relevant Action Items subsection
+```
+**Comment [N] of [total]**
+**Reviewer:** [name]
+**Anchored text:** "[exact text the comment is attached to]"
+**Direct link:** [full Confluence comment URL with focusedCommentId]
+**Comment:**
+> [full quoted comment text]
 
-Continue until all items in "Open — Needs Response" have been addressed.
+[Any existing thread replies, quoted in full]
+
+**Draft response:**
+[the proposed reply]
+
+Approve to post or let me know if you want to adjust.
+```
+
+Everything in that block is mandatory. Do not omit the direct link, the anchored text or the full comment quote. The user must have everything they need to evaluate the response without opening Confluence.
+
+After presenting, wait. Do not move to the next comment until the user explicitly approves, rejects or defers.
+
+Steps for each item:
+
+1. Present using the format above
+2. Wait for explicit approval. Never post without it.
+3. Post via `createConfluenceInlineComment` with `parentCommentId` set to the original comment's ID
+4. Update the Obsidian note (Phase 5)
+5. If the response generated a doc edit, research task or implementation requirement, add it to the relevant Action Items subsection
+6. Then and only then, present the next comment
+
+Continue until all items in the Open section have been addressed.
 
 ---
 
@@ -158,11 +194,11 @@ After each response is posted:
 **Response posted YYYY-MM-DD:** [one-sentence summary of what was said]
 ```
 
-3. Add the comment ID to the **Known IDs** line at the top of the "Responded" section. The format is a space-separated list of backtick-quoted IDs on a single line. Just append — no prose description needed.
+3. Add **every ID that appeared in this thread** to the **Known IDs** line at the top of the "Responded" section: the top-level comment ID, every reviewer reply ID and every reply ID you posted. The format is a space-separated list of backtick-quoted IDs on a single line. This includes emoji reactions, one-word replies and any thread activity that needs no response. If an ID is not in the list, the next session will flag it as new and waste time re-triaging it. On the next session `getConfluenceCommentChildren` returns all children of each known comment. Any child ID not already in Known IDs is genuinely new and needs attention.
 4. If a new reply arrived on an existing thread, append it as a sub-entry:
 
 ```markdown
-**Reply (REPLY_ID) — new YYYY-MM-DD:** [summary of what they said]
+**Reply (REPLY_ID), new YYYY-MM-DD:** [summary of what they said]
 [our reply](REPLY_URL): [one-sentence summary]
 ```
 
@@ -187,6 +223,8 @@ Run this scan on every draft before showing it to the user. Do not skip it becau
 5. **Unnecessary content.** Read the draft and ask: did the reviewer ask for this? If a sentence adds context, a caveat or a follow-up thought that the reviewer didn't request and that doesn't directly answer their question, delete it. "If the point is made, stop" means stop at the point, not after one more sentence.
 6. **Sycophantic opener.** If the first word or phrase acknowledges the reviewer positively ("Good," "Thanks for," "That's"), delete it and start with the answer.
 7. **"we'll" vs "I'll".** Scan for "we'll" in doc-update commitments. Replace with "I'll."
+8. **Phasing language.** Scan for "Phase 1," "Phase 2" and similar references. If the doc under review does not define these phases, replace with "this design," "this proposal" or an equivalent scope marker. Phase references that mean nothing without an external roadmap confuse readers and weaken the response.
+9. **Dismissive openers.** Scan for openers that close the conversation rather than engage it. "The [X] design covers this," "That's already handled by," and similar framings signal that the reviewer's concern is a distraction. Rewrite to lead with what the design does, not with the fact that the concern is resolved.
 
 If any of these fail, fix before presenting. Presenting a draft with a known violation and hoping the user won't notice is not acceptable.
 
@@ -212,7 +250,7 @@ The following rules are specific to Confluence comment replies and are not cover
 
 **Deferring — give a brief reason.** "Deferred to a later phase" is fine if the reason is obvious. If it isn't, one sentence of explanation earns trust.
 
-**Research before drafting.** If a comment references a code file, follow the link, read the code, and form an actual opinion before writing anything. Comments that look like they might invalidate a doc claim deserve verification.
+**Research before drafting.** If a comment references a code file, follow the link, read the code, and form an actual opinion before writing anything. Comments that look like they might invalidate a doc claim deserve verification. This extends to any question resolvable with tools: unknown internal system names, ambiguous anchor context, diagram discrepancies and "does X exist?" questions. See the Phase 3 research obligation for the specific tools to use.
 
 **Blocking — ask specifically.** "Can you share the PR link?" is better than "We need more information." Be precise about what's needed.
 
@@ -344,11 +382,62 @@ Script location: `~/.claude/plugins/marketplaces/datadog-claude-plugins/confluen
 3. Apply: `uv run python3 confluence-write.py PAGE_ID "old text" "new text"`
 4. Mark the action item done in the Obsidian tracking note.
 
-**Inline mark limitations.** The script inherits marks (bold, code, annotation) from the first character of the matched selection. If new text needs a code mark on a specific word, the replacement will land as plain text. Note this to the user and ask them to apply the formatting manually in Confluence after the edit goes in.
+**Critical: plain-text-only match targets.** `confluence-write.py` searches text nodes inside `_INLINE_CONTAINERS` (paragraph, heading, table cell, list item, etc.). It cannot match text that spans across inline code marks. A search string like "`RESOLVED`. If the anchor" looks like one string in rendered markdown but is stored as two separate ADF nodes: a code-marked text node ("RESOLVED") and a plain text node (". If the anchor"). The script only matches within a single contiguous run of text sharing the same marks.
 
-**Annotation preservation.** When the old text overlaps with an inline comment anchor, the script preserves the annotation mark on surviving characters and warns only if the anchor is deleted entirely (dangling comment risk). Do not replace text that is itself the complete annotation anchor unless you intend to dangle the comment.
+Always choose match targets that are entirely plain text (no backtick code spans). If the section you need to edit starts with or contains inline code marks, split the edit into multiple smaller replacements, each targeting a plain-text-only segment between code spans. Verify with `--dry-run` before applying.
 
-**Diagram action items.** Re-render from the local `.mmd` sources: `npx @mermaid-js/mermaid-cli -i <file>.mmd -o <file>.png --theme neutral --width 1600 --scale 2`. Display the rendered image for review. Tell the user to upload the PNG manually in the Confluence page editor. The script cannot insert images.
+**Code blocks cannot be edited with this script.** `codeBlock` nodes are not in `_INLINE_CONTAINERS`. The script will never find text inside a code block, even on a single-line match. Use a direct ADF patch for code block edits:
+1. Fetch the ADF: `curl ... "https://datadoghq.atlassian.net/wiki/api/v2/pages/PAGE_ID?body-format=atlas_doc_format"`
+2. Locate the target `codeBlock` node by index (enumerate `adf['content']`) and check its text content
+3. Verify no annotation marks are on the block (`"marks"` with `"type": "annotation"`)
+4. Replace the text node content: `block['content'] = [{"type": "text", "text": NEW_CODE}]`
+5. PUT the updated ADF back with version+1
+
+**Inline mark limitations.** The script inherits marks (bold, code, annotation) from the first character of the matched selection. If new text needs a code mark on a specific word, the replacement will land as plain text. Fix this with a direct ADF patch: fetch the page ADF via the v2 API, locate the text node, split it into three nodes (before / target word with `{"type": "code"}` mark / after), then PUT the updated ADF back. This handles any sub-span formatting the script cannot express. Do not tell the user to apply formatting manually.
+
+**Annotation preservation.** When the old text overlaps with an inline comment anchor, the script preserves the annotation mark on surviving characters and warns only if the anchor is deleted entirely (dangling comment risk). Do not replace text that is itself the complete annotation anchor unless you intend to dangle the comment. Before any direct ADF patch, check for annotation marks on the target nodes by scanning for `"type": "annotation"` in the marks array.
+
+**Diagram action items.** Re-render from the local `.mmd` sources: `npx @mermaid-js/mermaid-cli -i <file>.mmd -o <file>.png --theme neutral --width 1600 --scale 2`. Display the rendered image for review, then upload and embed it using the two-step process below.
+
+Step 1. Upload or update the attachment (v1 API, via curl with keychain credentials):
+```bash
+TOKEN=$(security find-generic-password -s "confluence-api-token" -w)
+EMAIL=$(git config user.email)
+AUTH=$(echo -n "$EMAIL:$TOKEN" | base64)
+
+# New attachment:
+curl -s -X POST "https://datadoghq.atlassian.net/wiki/rest/api/content/PAGE_ID/child/attachment" \
+  -H "Authorization: Basic $AUTH" -H "X-Atlassian-Token: no-check" \
+  -F "file=@/path/to/image.png;type=image/png" -F "minorEdit=true"
+
+# Update existing attachment (get ATT_ID from the list endpoint first):
+curl -s -X POST "https://datadoghq.atlassian.net/wiki/rest/api/content/PAGE_ID/child/attachment/ATT_ID/data" \
+  -H "Authorization: Basic $AUTH" -H "X-Atlassian-Token: no-check" \
+  -F "file=@/path/to/image.png;type=image/png" -F "minorEdit=true"
+```
+
+The response includes `extensions.fileId`, a UUID used as the `id` field in the ADF `media` node.
+
+Step 2. Embed in the page body using `confluence-write.py --insert-image-after`:
+```bash
+uv run python3 confluence-write.py PAGE_ID "anchor text in the preceding block" \
+  --insert-image-after FILE_ID_UUID \
+  --collection contentId-PAGE_ID \
+  --alt filename.png
+```
+
+This inserts a `mediaSingle` node immediately after the block containing the anchor text. Use `--dry-run` first to verify the insertion point.
+
+If the inserted image renders too large (Confluence defaults to full natural width), fix the display width:
+```bash
+uv run python3 confluence-write.py PAGE_ID \
+  --update-image-width filename.png \
+  --display-width 760 \
+  --media-width ACTUAL_PX_W \
+  --media-height ACTUAL_PX_H
+```
+
+Target display width is 760px (matches the Confluence content column). Get actual dimensions from the PNG before running.
 
 **Global renames.** For renames that span the whole page, direct the user to use Confluence's built-in Find & Replace in the page editor. It is a native operation that preserves comment anchors.
 
