@@ -22,6 +22,7 @@
 ## Clipboard Rules
 
 - When sharing content for the user to paste somewhere (Confluence, Slack, a terminal, anywhere), ALWAYS use `pbcopy` via the Bash tool to put it on the clipboard. Never ask the user to copy from the terminal output. Copying from the Claude Code terminal introduces unwanted spacing and formatting artifacts.
+- When the content is destined for Slack, ALWAYS use the `slackfmt` skill instead of raw `pbcopy`. The skill pipes content through `npx @slackfmt/cli@latest` which converts markdown to Slack's native rich text format (Quill Delta). This ensures bold, code, links and lists paste with formatting intact. Raw `pbcopy` produces plain text that Slack does not render.
 
 ## Writing Rules
 
