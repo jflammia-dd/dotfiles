@@ -65,6 +65,9 @@
 ## Ghostty
 - [Ghostty Settings Editor](reference_ghostty_settings_editor.md): no config key to set editor for Settings menu; use `ghostty +edit-config` with `$EDITOR` instead
 
+## Internal Resources
+- [Presentation template](reference_presentation_template.md). Official internal Google Slides asset library (backgrounds, graphics, template)
+
 ## Key Files
 - [GoLand Setup](goland-setup.md) — GoLand configuration for dd-source
 - [dd-source Development](dd-source-dev.md) — Repository structure, builds, tools
