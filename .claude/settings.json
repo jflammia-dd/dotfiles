@@ -1,6 +1,20 @@
 {
   "permissions": {
     "allow": [
+      "mcp__datadog-google-workspace__batch_update",
+      "mcp__datadog-google-workspace__get_presentation",
+      "mcp__datadog-google-workspace__get_slide",
+      "mcp__datadog-google-workspace__get_slide_thumbnail",
+      "mcp__datadog-google-workspace__create_presentation",
+      "mcp__datadog-google-workspace__ping",
+      "mcp__datadog-google-workspace__add_slide",
+      "mcp__datadog-google-workspace__delete_slide",
+      "mcp__datadog-google-workspace__insert_text",
+      "mcp__datadog-google-workspace__update_text_style",
+      "mcp__datadog-google-workspace__add_image",
+      "mcp__datadog-google-workspace__create_file",
+      "mcp__datadog-google-workspace__search_files",
+      "mcp__datadog-google-workspace__get_file_metadata",
       "Bash(~/.claude/skills/codex-delegate/scripts/run-codex-subtask.sh:*)",
       "Bash(mktemp:*)",
       "Bash(rm /tmp/codex-task-*:*)",

@@ -54,7 +54,8 @@
 - [Dataview plugin](project_obsidian_dataview.md) — required for dynamic tenure callout on all people notes; uses `dataviewjs` blocks; JS enabled must be on in Dataview settings
 
 ## Obsidian Formatting
-- [Mermaid newlines](feedback_mermaid_newlines.md) — use `<br/>` inside Mermaid node labels, not `\n`
+- [Mermaid newlines](feedback_mermaid_newlines.md): use `<br/>` inside Mermaid node labels, not `\n`
+- [Diagram rendering](feedback_diagram_rendering.md): edit `attachments/*.mmd` source files then run `mmdc -i ... -o ...` to regenerate the PNG
 
 ## Shell & Credentials
 - [1Password shell secrets removed](feedback_op_shell_secrets.md): gh and Figma MCP handle auth independently; no op read calls needed in .zshrc
