@@ -24,7 +24,7 @@ fi
 # Check for writing intent first — writing verbs win even if review/analysis verbs are also present.
 # This ensures "review and rewrite this doc" triggers, not just "write this doc".
 if echo "$prompt" | grep -qiE \
-  '\b(write|draft|edit|revise|compose|rewrite|announce|announcement|update|improve|polish|sharpen|clean)\b|obsidian|confluence page|slack message|engineering doc|adr|changelog|readme|blog post|meeting notes|daily note|landscape doc'; then
+  '\b(write|draft|edit|revise|compose|rewrite|announce|announcement|update|improve|polish|sharpen|clean)\b|obsidian|confluence page|slack message|engineering doc|system design doc|design doc|design proposal|research findings?|architecture doc|adr|changelog|readme|blog post|meeting notes|daily note|landscape doc'; then
   printf '{"hookSpecificOutput":{"hookEventName":"UserPromptSubmit","additionalContext":"Writing task detected. Invoke the justins-voice skill before producing any prose content (notes, messages, Confluence pages, Slack messages, announcements, docs, etc.)."}}'
   exit 0
 fi

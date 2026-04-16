@@ -1,6 +1,21 @@
 ---
 name: justins-voice
-description: "Canonical source of Justin's style and voice rules. Apply when drafting or editing any document, comment or message meant for others: engineering docs, landscape summaries, proposals, meeting summaries, Slack explanations, Confluence comments or any text shared with colleagues or leadership. Also triggers on \"write like me\", \"match my voice\", \"make this sound like me\". Other skills that enforce these rules (edit-doc, confluence-comment-review, etc.) should reference this file rather than duplicating the rules."
+description: >
+  Justin's canonical voice and style reference. Invoke this skill before drafting,
+  editing or rewriting any text meant for people: Slack messages, Confluence
+  comments, PR review replies, system design docs, research findings, engineering
+  proposals, meeting summaries, architecture docs or any content shared with
+  colleagues or leadership. This is a prerequisite for human-facing writing, not
+  an optional add-on. Invoke it first, then write. Always use when Justin needs
+  to reply to a reviewer, explain a technical decision to a co-worker, push back
+  on an approach, write up findings, structure a document or communicate in his
+  own voice. Triggers on: "write this up", "make this sound like me", "help me
+  respond to this", "draft a Slack message", "reply to this comment", "write a
+  design doc", "how should I say this", "write like me", "draft a response",
+  "explain this clearly", "write up my findings", "structure this document",
+  "match my voice". For the systematic multi-comment Confluence review loop, use
+  confluence-comment-review instead. It delegates all style decisions back here.
+  All other human-facing writing belongs here.
 ---
 
 # Justin's Writing Voice
@@ -113,7 +128,33 @@ Every paragraph must earn its place by advancing the reader's model. If a paragr
 
 - **Documents for distribution** (engineering landscapes, proposals, summaries shared with leadership): formal-but-human. First person where appropriate. Confident framing. The tone of this skill.
 - **Technical design specs and data model proposals**: impersonal third-person. No second-person ("you", "your") and no first-person ("I", "we"). Systems, components, services and tracks are the subjects. The document speaks for itself as a specification rather than as a letter to a reader. Use this mode when Justin explicitly asks for it or when the document will circulate as a standalone spec detached from its author. See "Impersonal third-person technical voice" below.
-- **Slack messages and Confluence comments**: casual and direct in tone, but precision still matters. Formality drops; the goal of building the reader's mental model does not. A two-sentence Slack reply can correct a misunderstanding or add a constraint the reader was missing. Don't pad, but don't sacrifice accuracy for brevity. Apply all punctuation and voice rules from this skill. When someone makes a simple request ("can you add a link?", "mind clarifying this?"), acknowledge minimally ("sure", "yes", "done") and act. Don't restate what was asked, don't explain what you're about to do. The action is the response.
+- **Long-form published writing** (system design documents, research findings, engineering investigations, architecture proposals, anything meant for wide distribution or asynchronous reading): formal-but-human, first person where appropriate. All the base rules apply. What's distinctive is that long-form writing has an arc. The reader commits real time. When they finish, they should understand something they didn't and be able to explain it to someone else. Short docs and Slack threads don't require that. Long-form writing does.
+
+  **Open with why it matters.** Don't start with background, history or context. Start with what changed, what's broken, what was discovered or what's now possible. The reader decides whether to keep reading in the first few sentences. Background belongs after the reader has a reason to care about it.
+
+  **Build the argument, don't just present it.** Each section should advance the reader's position. When they finish a section, they should know something that makes the next section make sense. If a section could be moved without affecting understanding, the argument isn't driving the structure. Restructure until the dependency is real.
+
+  **Headings that reveal, not just label.** "Background" and "Overview" name a section without saying what it argues. "Why the existing approach fails at scale" tells the reader what they're about to learn. Write headings that make the argument legible from the table of contents alone.
+
+  **Section coherence under revision.** Long documents accumulate sections written at different times for different readers. Before finalizing, read it as a whole. Each section should assume what the previous sections established and nothing more. If a later section re-explains something from an earlier one, cut the re-explanation. If a section requires knowledge that appears later, reorder or restructure.
+
+  **Synthesize in the conclusion, don't summarize.** A conclusion that summarizes restates what the reader just read. A conclusion that synthesizes says something the individual sections didn't contain individually. What does it all add up to? What should the reader carry forward? Write the conclusion after everything else is finalized and make it earn its place.
+
+  **Don't generalize the Slack and Confluence posture into long-form.** The collegial warmth and interpersonal framing suited to a quick exchange doesn't belong in a published document. Long-form writing is authoritative through its argument, not its warmth. The reader relationship is different: they chose to open the document, not to write to you.
+
+- **Slack messages and Confluence comments**: Formality drops; precision doesn't. Every reply has the same job as every other piece of writing: advance the reader's model, correct a misunderstanding, add the constraint they were missing. Two sentences can do that. But these contexts have an interpersonal dimension that design docs don't. Colleagues read tone as well as content. A technically correct response that reads as curt leaves the person feeling talked-at. The goal is to be a colleague they want to write to.
+
+  Apply all punctuation and voice rules from this skill. When someone makes a simple request ("can you add a link?", "mind clarifying this?"), acknowledge minimally ("sure", "done") and act. Don't restate what was asked, don't explain what you're about to do. For substantive questions, reviews and feedback, the following apply.
+
+  **Collegial warmth without performance.** "Good point" and "Great question" evaluate the person rather than engage with them. That's sycophancy and it comes through. Genuine engagement looks different: open with the shared concern or shared intent before the substance. "Heterogeneous load is real and..." or "The generalization is something we've built in from the start..." puts the reader in the right frame before the answer lands. One clause of context isn't padding. A flat technical opening often reads as dismissive even when technically correct. The warmth comes from engaging with the person's actual concern, not from evaluating them.
+
+  **Authority through evidence.** Don't invoke experience, rank or track record to make a point land. State the constraint and its rationale and let the conclusion follow naturally. "The lock doesn't cover the update path, which means two concurrent writes can overwrite each other" lands harder than "in my experience, this pattern has reliability issues." The evidence makes the claim. The person delivering it doesn't need to add to it.
+
+  **Helpful, not hierarchical.** The posture in these exchanges is: I'm here to make you more effective, not to approve or veto your work. That posture shows most clearly in how critical or blocking feedback lands. When something won't work, show the path to yes. "For this to clear the bar, we'd need X because Y" is the same information as "This won't work because X" but with a different posture. One closes a door; the other shows which door opens next. Even when the news is genuinely blocking, framing it this way signals that the goal is forward motion, not gatekeeping.
+
+  **Acknowledge the substance, not the person.** When a reviewer has put real thought into an approach, name what's right before naming the gap. "The approach handles the common case cleanly; the edge case we need to address is Z" is accurate feedback that shows you read carefully. It also tells the person what to keep versus what to change. Pointing only at the failure doesn't do that.
+
+  **Explain the why.** When blocking or requesting changes, explain the underlying constraint rather than just the verdict. Not "this needs to be different" but "this pattern accumulates one row per write in the state table and the cleanup job can't keep up past N records." The explanation turns the blocker into a lesson and helps the person understand what rule to carry forward, not just what to change in this instance. This is how you elevate rather than gatekeep, and it's how you earn the trust of people at every level of seniority.
 
 ## Impersonal third-person technical voice
 

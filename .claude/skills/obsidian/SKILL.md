@@ -86,6 +86,22 @@ Report findings grouped by category. Offer to fix them.
 5. Remind the user: open the file in editing mode (not Reading mode), then run
    "Marp Slides: Slide Preview" from the command palette.
 
+## Looking Up Contact Data
+
+People notes at `people/[First Last].md` are the primary source for contact and identity data. Read the frontmatter before searching externally:
+
+- `email`: email, invites and whoisthis lookups
+- `slack_id`: bare Slack user ID for @-mentions in Slack drafts via `/slackfmt` (format: `<@UXXX>`)
+- `slack`: deep-link `slack://user?...` to open a DM in the Slack desktop app
+- `atlassian_id`: @-mentions in Confluence and Jira comments
+- `manager`: wiki-link to their manager's profile
+- `doc_link`: link to the recurring 1-on-1 doc
+- `how_to_work_with_me`: link to their personal working style doc
+- `role`, `team`, `org`: job title, team and department
+- `location`, `start_date`: city/remote and Datadog start date
+
+If a field is blank, the profile needs enrichment. Run the workflow below.
+
 ## Person Enrichment
 
 When enriching a new person profile in `people/`:
@@ -107,8 +123,11 @@ already marked `status: inactive`.
 ```
 slack_read_user_profile(user_id: "<slackIdentity.id>")
 ```
-Populate `slack` as `"[Display Name](slack://user?team=T024FSN2Y&id=SLACK_USER_ID)"`.
-Do NOT use the Slack `title` field for `role` — it's user-editable and unreliable.
+Populate:
+- `slack` as `"[Display Name](slack://user?team=T024FSN2Y&id=SLACK_USER_ID)"` (deep-link)
+- `slack_id` as the bare ID string, e.g. `U05QPSQGLL9` (used for @-mentioning in Slack drafts)
+
+Do NOT use the Slack `title` field for `role`. It's user-editable and unreliable.
 
 **Step 3 — Start date via Playwright:**
 Navigate to `https://app.slack.com/client/E023QM6JUS0/D0A9XPWB6AF/rimeto_profile/<SLACK_USER_ID>`,

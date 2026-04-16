@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# prose-style-check: scans Write, Edit, and MultiEdit tool output for common
-# punctuation violations in prose files:
-#   1. Comma before coordinating conjunction (and/or/but) joining independent clauses
-#      or as an Oxford comma — both are banned in Justin's voice.
-# Fires PostToolUse. Injects a warning into context if violations are found.
+# prose-style-check: scans Write, Edit, and MultiEdit tool output for prose style
+# violations in Justin's voice. Checks performed in a single pass:
+#   1. Em dash (U+2014) — banned; restructure the sentence
+#   2. Double-hyphen ( -- ) as dash substitute in prose — banned
+#   3. Oxford comma / comma before coordinating conjunction — banned
+# Fires PostToolUse. Skips code file extensions. Injects a warning into context
+# when violations are found so Claude can correct before the user sees the output.
 
 if ! command -v jq &>/dev/null; then
   exit 0
@@ -17,19 +19,15 @@ case "$TOOL" in
   *) exit 0 ;;
 esac
 
-# Extract file path and skip code files — only scan prose files
-if [ "$TOOL" = "Write" ] || [ "$TOOL" = "Edit" ]; then
-  FILE_PATH=$(echo "$INPUT" | jq -r '.tool_input.file_path // ""')
-elif [ "$TOOL" = "MultiEdit" ]; then
-  FILE_PATH=$(echo "$INPUT" | jq -r '.tool_input.file_path // ""')
-fi
+# Extract file path and skip code files — only scan prose files (.md, .txt, etc.)
+FILE_PATH=$(echo "$INPUT" | jq -r '.tool_input.file_path // ""')
 EXT="${FILE_PATH##*.}"
 case "$EXT" in
   sh|bash|py|go|js|ts|jsx|tsx|java|rb|rs|c|cpp|h|hpp|json|yaml|yml|toml|xml|html|htm|css|scss|sql|swift|kt|scala|r|m|pl|php)
     exit 0 ;;
 esac
 
-# Extract the written/changed content
+# Extract the written/changed content — one pass covers all three tool types
 if [ "$TOOL" = "Write" ]; then
   CONTENT=$(echo "$INPUT" | jq -r '.tool_input.content // ""')
 elif [ "$TOOL" = "Edit" ]; then
@@ -40,10 +38,22 @@ fi
 
 VIOLATIONS=""
 
-# Check for comma before coordinating conjunction (covers Oxford comma and
-# comma-before-and/or/but-joining-clauses — both banned).
-# Pattern: ", and " or ", or " or ", but " in prose lines.
-# Exclude lines that look like code, YAML, or markdown list items.
+# 1. Em dash (—, U+2014)
+if echo "$CONTENT" | grep -q '—'; then
+  LINES=$(echo "$CONTENT" | grep -n '—' | head -5 | sed 's/^/  /')
+  VIOLATIONS="${VIOLATIONS}Em dash (—) detected. Restructure the sentence to remove it. Do not simply swap the em dash for another punctuation mark.\n${LINES}\n"
+fi
+
+# 2. Double-hyphen ( -- ) as dash substitute in prose.
+# Skip lines that look like code comments, YAML keys, or fenced code blocks.
+PROSE=$(echo "$CONTENT" | grep -v '^\s*[#/]' | grep -v '^\s*\w\+:' | grep -v '```')
+if echo "$PROSE" | grep -q ' -- '; then
+  LINES=$(echo "$PROSE" | grep -n ' -- ' | head -5 | sed 's/^/  /')
+  VIOLATIONS="${VIOLATIONS}Double-hyphen ( -- ) used as dash substitute in prose. Restructure the sentence to remove it.\n${LINES}\n"
+fi
+
+# 3. Oxford comma / comma before coordinating conjunction (and/or/but).
+# Skip lines that look like code, YAML, or markdown list items.
 PROSE_LINES=$(echo "$CONTENT" | grep -v '^\s*[-*#>]' | grep -v '^\s*//' | grep -v '^\s*\w\+:')
 if echo "$PROSE_LINES" | grep -qiE ',\s+(and|or|but)\s'; then
   LINES=$(echo "$PROSE_LINES" | grep -inE ',\s+(and|or|but)\s' | head -5 | sed 's/^/  /')

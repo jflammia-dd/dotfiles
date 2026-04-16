@@ -216,12 +216,12 @@ These rules come directly from observed preferences. The reasoning behind each o
 
 Run this scan on every draft before showing it to the user. Do not skip it because the draft "feels right."
 
-1. **Em dashes.** Search the draft for U+2014 (the em dash character). If found, rewrite the clause as two sentences or use parentheses. There are no acceptable em dashes in these responses.
-2. **Oxford commas.** Scan every list of three or more items. If a comma appears before the final "and" or "or", remove it. This applies to lists of nouns, predicates and clauses alike.
-3. **Comma splices.** Scan for independent clauses joined by only a comma with no conjunction. "The pipeline runs, it finds nothing" is a comma splice. Split into two sentences or add a conjunction. High-risk pattern: sentences explaining a consequence or follow-on action ("X happens, Y follows").
-4. **Filler transitions.** Scan for "That said," "Additionally," "Furthermore," "Moreover" and similar openers. Delete them and restructure the sentence that follows so it connects naturally to the prior sentence without a transitional crutch.
+1. **Em dashes.** Scan for U+2014. None are acceptable. Restructure into two sentences or use parentheses. (justins-voice owns the rewrite patterns.)
+2. **Oxford commas.** Scan every list of three or more items. Remove any comma before the final "and" or "or". (justins-voice owns this rule.)
+3. **Comma splices.** Scan for independent clauses joined by only a comma with no conjunction. "The pipeline runs, it finds nothing" is a comma splice. Split into two sentences or add a conjunction. High-risk pattern: consequence or follow-on sentences ("X happens, Y follows").
+4. **Filler transitions.** Scan for "That said," "Additionally," "Furthermore," "Moreover" and similar openers. Delete them and restructure so the sentence connects naturally without a transitional crutch. (justins-voice owns this rule.)
 5. **Unnecessary content.** Read the draft and ask: did the reviewer ask for this? If a sentence adds context, a caveat or a follow-up thought that the reviewer didn't request and that doesn't directly answer their question, delete it. "If the point is made, stop" means stop at the point, not after one more sentence. Also scan for mid-draft affirmations that add no information: "Both alternatives are worth considering," "This is a valid approach," "All of these are reasonable." If the sentence doesn't say anything specific, cut it.
-6. **Sycophantic or acceptance opener.** If the first word or phrase acknowledges the reviewer positively ("Good," "Thanks for," "That's") or accepts their suggestion as a preamble ("Taking this.", "Taking your advice.", "Agreed.", "Happy to."), delete it and start with the answer or action. When accepting a suggestion, lead with what you're doing: "I'll update X to use Y" not "Taking this. I'll update X to use Y." The action is the response.
+6. **Sycophantic or acceptance opener.** If the first word or phrase acknowledges the reviewer positively ("Good," "Thanks for," "That's") or accepts their suggestion as a preamble ("Taking this.", "Taking your advice.", "Agreed.", "Happy to."), delete it and start with the answer or action. When accepting a suggestion, lead with what you're doing: "I'll update X to use Y" not "Taking this. I'll update X to use Y." The action is the response. See justins-voice (Slack/Confluence section) for the engagement-vs-sycophancy distinction and when opening with the shared concern is appropriate.
 7. **"we'll" vs "I'll".** Scan for "we'll" in doc-update commitments. Replace with "I'll."
 8. **Phasing language.** Scan for "Phase 1," "Phase 2" and similar references. If the doc under review does not define these phases, replace with "this design," "this proposal" or an equivalent scope marker. Phase references that mean nothing without an external roadmap confuse readers and weaken the response.
 9. **Dismissive openers.** Scan for openers that close the conversation rather than engage it. "The [X] design covers this," "That's already handled by," and similar framings signal that the reviewer's concern is a distraction. Rewrite to lead with what the design does, not with the fact that the concern is resolved.
@@ -230,13 +230,9 @@ If any of these fail, fix before presenting. Presenting a draft with a known vio
 
 ### Voice and tone
 
-Invoke `justins-voice` before drafting any response. If it cannot be invoked, read the skill file directly at `~/.claude/skills/justins-voice/SKILL.md` for the complete style rules.
+Invoke `justins-voice` before drafting any response. It is the authoritative source for all style decisions: punctuation, active voice, sentence structure, em dashes, Oxford commas, sycophancy vs. genuine engagement and collegial tone. If it cannot be invoked, read it directly at `~/.claude/skills/justins-voice/SKILL.md`.
 
-The baseline tone is casual and direct. These are inline comments on a technical doc, not formal correspondence.
-
-The following rules are specific to Confluence comment replies and are not covered by justins-voice:
-
-**No sycophantic openers.** "Good callout," "Great question," "That's really helpful" and "Interesting point" are performative and add nothing. Start with the answer.
+The following rules apply specifically to Confluence inline comment replies and are not in justins-voice:
 
 **Never restate what the reviewer already knows.** If someone points out a fact, they know the fact. Don't echo it back as confirmation. Go straight to what it means and what you'll do next.
 

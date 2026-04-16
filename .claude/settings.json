@@ -87,11 +87,6 @@
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/em-dash-check.sh",
-            "statusMessage": "Checking for em dashes..."
-          },
-          {
-            "type": "command",
             "command": "/Users/justin.flammia/.claude/hooks/prose-style-check.sh",
             "statusMessage": "Checking prose style..."
           }
@@ -116,6 +111,14 @@
             "command": "/Users/justin.flammia/.claude/hooks/session-start-check.sh"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/work-os-check.sh"
+          }
+        ]
       }
     ],
     "UserPromptSubmit": [
@@ -133,6 +136,14 @@
             "type": "command",
             "command": "/Users/justin.flammia/.claude/hooks/justins-voice-detect.sh",
             "statusMessage": "Checking writing context..."
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/work-os-prompt-check.sh"
           }
         ]
       }
@@ -279,6 +290,8 @@
       }
     }
   },
+  "advisorModel": "opus",
   "fastMode": true,
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "tui": "fullscreen"
 }
