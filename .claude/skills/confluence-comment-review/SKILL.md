@@ -221,6 +221,8 @@ Run this scan on every draft before showing it to the user. Do not skip it becau
 3. **Comma splices.** Scan for independent clauses joined by only a comma with no conjunction. "The pipeline runs, it finds nothing" is a comma splice. Split into two sentences or add a conjunction. High-risk pattern: consequence or follow-on sentences ("X happens, Y follows").
 4. **Filler transitions.** Scan for "That said," "Additionally," "Furthermore," "Moreover" and similar openers. Delete them and restructure so the sentence connects naturally without a transitional crutch. (justins-voice owns this rule.)
 5. **Unnecessary content.** Read the draft and ask: did the reviewer ask for this? If a sentence adds context, a caveat or a follow-up thought that the reviewer didn't request and that doesn't directly answer their question, delete it. "If the point is made, stop" means stop at the point, not after one more sentence. Also scan for mid-draft affirmations that add no information: "Both alternatives are worth considering," "This is a valid approach," "All of these are reasonable." If the sentence doesn't say anything specific, cut it.
+
+   **Draft to the ask, not the underlying concern.** When the author gives direction like "just X" or "simply point to Y," the response should be exactly that and nothing more. The instinct to engage with the reviewer's deeper concern (e.g. "does the data model solve the right problem?") produces sentences the author didn't approve. If the author wanted that framing, they would have said so. When in doubt, do less and wait for feedback.
 6. **Sycophantic or acceptance opener.** If the first word or phrase acknowledges the reviewer positively ("Good," "Thanks for," "That's") or accepts their suggestion as a preamble ("Taking this.", "Taking your advice.", "Agreed.", "Happy to."), delete it and start with the answer or action. When accepting a suggestion, lead with what you're doing: "I'll update X to use Y" not "Taking this. I'll update X to use Y." The action is the response. See justins-voice (Slack/Confluence section) for the engagement-vs-sycophancy distinction and when opening with the shared concern is appropriate.
 7. **"we'll" vs "I'll".** Scan for "we'll" in doc-update commitments. Replace with "I'll."
 8. **Phasing language.** Scan for "Phase 1," "Phase 2" and similar references. If the doc under review does not define these phases, replace with "this design," "this proposal" or an equivalent scope marker. Phase references that mean nothing without an external roadmap confuse readers and weaken the response.
@@ -394,6 +396,18 @@ Always choose match targets that are entirely plain text (no backtick code spans
 **Inline mark limitations.** The script inherits marks (bold, code, annotation) from the first character of the matched selection. If new text needs a code mark on a specific word, the replacement will land as plain text. Fix this with a direct ADF patch: fetch the page ADF via the v2 API, locate the text node, split it into three nodes (before / target word with `{"type": "code"}` mark / after), then PUT the updated ADF back. This handles any sub-span formatting the script cannot express. Do not tell the user to apply formatting manually.
 
 **Annotation preservation.** When the old text overlaps with an inline comment anchor, the script preserves the annotation mark on surviving characters and warns only if the anchor is deleted entirely (dangling comment risk). Do not replace text that is itself the complete annotation anchor unless you intend to dangle the comment. Before any direct ADF patch, check for annotation marks on the target nodes by scanning for `"type": "annotation"` in the marks array.
+
+**Bulk text replacement via ADF (global renames).** When doing a page-wide rename with a Python ADF patch rather than `confluence-write.py`, run an annotation check before applying any replacement:
+
+```python
+annotated = [
+    node for node in all_text_nodes
+    if target in node.get('text', '')
+    and any(m['type'] == 'annotation' for m in node.get('marks', []))
+]
+```
+
+If any annotated nodes are found, do NOT skip them silently. Replacing the text changes the displayed anchor but preserves the annotation mark ID, so the comment stays linked. This is safe because Confluence uses the mark ID for linkage, not the stored `inlineOriginalSelection` text. Proceed with the replacement across all nodes including annotated ones. (The earlier guidance to restore annotated nodes was wrong; it is not necessary.)
 
 **Diagram action items.** Re-render from the local `.mmd` sources: `npx @mermaid-js/mermaid-cli -i <file>.mmd -o <file>.png --theme neutral --width 1600 --scale 2`. Display the rendered image for review, then upload and embed it using the two-step process below.
 

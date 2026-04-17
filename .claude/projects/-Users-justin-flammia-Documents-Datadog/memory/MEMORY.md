@@ -38,6 +38,9 @@
 ## Investigation Methodology
 - [Verify data sources before comparing results](feedback_investigation_methodology.md). When two sources show different results, first check if both are live and receiving the same data before theorizing about application logic.
 
+## Work OS Interaction Style
+- [/now should be interactive](feedback_now_interactive.md): one item at a time with action prompts; never a wall of text
+
 ## Confluence Workflow
 - [Confluence edit approval](feedback_confluence_edit_approval.md). Show verbatim before/after and get explicit approval before applying any page edit. Never apply after a dry-run without pausing.
 - [Review comment workflow](feedback_review_comment_workflow.md). One comment at a time. Pre-load context and draft. Move items to Responded immediately after posting.
