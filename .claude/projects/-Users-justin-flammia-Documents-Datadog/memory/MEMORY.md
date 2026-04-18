@@ -72,6 +72,9 @@
 ## Internal Resources
 - [Presentation template](reference_presentation_template.md). Official internal Google Slides asset library (backgrounds, graphics, template)
 
+## PR and Commit Conventions
+- [No Claude attribution in PRs](feedback_no_claude_attribution.md): never add "Generated with Claude Code" or co-author trailers unless explicitly asked
+
 ## Key Files
 - [GoLand Setup](goland-setup.md) — GoLand configuration for dd-source
 - [dd-source Development](dd-source-dev.md) — Repository structure, builds, tools
