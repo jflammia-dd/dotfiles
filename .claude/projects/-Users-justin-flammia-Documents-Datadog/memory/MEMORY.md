@@ -72,6 +72,13 @@
 ## Internal Resources
 - [Presentation template](reference_presentation_template.md). Official internal Google Slides asset library (backgrounds, graphics, template)
 
+## Writing Rules
+- [No TH abbreviation](feedback_no_TH_abbreviation.md): Always write "Temporal Husky" in full, never "TH". Hard rule, not a suggestion.
+- [Slack intro style](feedback_slack_intro_style.md): Cold Slack messages use "I'm from [team]" and "I want to understand" for personal framing; "we" for team-level concerns.
+
+## Slack Workflow
+- [Never send via Slack MCP](feedback_no_slack_mcp_send.md): MCP appends "Sent using Claude" attribution; always use pbcopy+slackfmt so user pastes manually
+
 ## PR and Commit Conventions
 - [No Claude attribution in PRs](feedback_no_claude_attribution.md): never add "Generated with Claude Code" or co-author trailers unless explicitly asked
 
