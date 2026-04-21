@@ -72,9 +72,20 @@
 ## Internal Resources
 - [Presentation template](reference_presentation_template.md). Official internal Google Slides asset library (backgrounds, graphics, template)
 
+## Dev Environment
+- [bzl python3 shim issue](feedback_bzl_python_shim.md): `bzl build`/`rapid run` always fail inside Claude Code sessions due to modern-python plugin intercepting `python3`. Run Bazel commands in your own terminal.
+
+## ERS PoC
+- [Branching strategy](project_ers_branching.md): single branch `justin.flammia/SEC-30573-entity-resolution-poc` for all PoC work; topic branches off epic only when parallel contributors need isolation
+- [Local dev workflow](project_ers_local_dev.md): `DD_ENV=dev rapid run -s entity-resolution` then `grpcurl -plaintext localhost:8080 grpc.health.v1.Health/Check`; statsd warning is expected
+
+## Work Cadence
+- [ERS PoC work cadence](feedback_work_cadence.md): ticket-by-ticket flow, no push without approval, no Claude attribution, workflow prefs in Obsidian only (not repo docs)
+
 ## Writing Rules
 - [No TH abbreviation](feedback_no_TH_abbreviation.md): Always write "Temporal Husky" in full, never "TH". Hard rule, not a suggestion.
 - [Slack intro style](feedback_slack_intro_style.md): Cold Slack messages use "I'm from [team]" and "I want to understand" for personal framing; "we" for team-level concerns.
+- [Always use clickable links](feedback_clickable_links.md): Every Jira ticket, Confluence page, Slack thread, GitHub PR must be a rendered markdown link in conversation. Never a bare ID.
 
 ## Slack Workflow
 - [Never send via Slack MCP](feedback_no_slack_mcp_send.md): MCP appends "Sent using Claude" attribution; always use pbcopy+slackfmt so user pastes manually

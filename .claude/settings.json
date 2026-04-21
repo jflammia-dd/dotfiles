@@ -68,6 +68,10 @@
           {
             "type": "command",
             "command": "/Users/justin.flammia/.claude/hooks/rtk-rewrite.sh"
+          },
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/bzl-path-fix.sh"
           }
         ]
       },
