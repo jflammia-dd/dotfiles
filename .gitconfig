@@ -17,6 +17,7 @@
 	editor = nvim
 [maintenance]
 	repo = /Users/justin.flammia/go/src/github.com/DataDog/dd-source
+	repo = /private/tmp/dd-source
 [commit]
 	gpgsign = true
 [rebase]

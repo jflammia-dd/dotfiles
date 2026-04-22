@@ -1,21 +1,18 @@
 ---
 name: justins-voice
 description: >
-  Justin's canonical voice and style reference. Invoke this skill before drafting,
-  editing or rewriting any text meant for people: Slack messages, Confluence
-  comments, PR review replies, system design docs, research findings, engineering
-  proposals, meeting summaries, architecture docs or any content shared with
-  colleagues or leadership. This is a prerequisite for human-facing writing, not
-  an optional add-on. Invoke it first, then write. Always use when Justin needs
-  to reply to a reviewer, explain a technical decision to a co-worker, push back
-  on an approach, write up findings, structure a document or communicate in his
-  own voice. Triggers on: "write this up", "make this sound like me", "help me
-  respond to this", "draft a Slack message", "reply to this comment", "write a
-  design doc", "how should I say this", "write like me", "draft a response",
-  "explain this clearly", "write up my findings", "structure this document",
-  "match my voice". For the systematic multi-comment Confluence review loop, use
-  confluence-comment-review instead. It delegates all style decisions back here.
-  All other human-facing writing belongs here.
+  Invoke this before writing ANYTHING a human will read. This skill shapes
+  Justin's canonical writing voice and must run first for all human-facing text:
+  Slack messages (direct or broadcast announcements to a channel), Confluence
+  edits and comments, emails, PR feedback responses, design doc sections,
+  investigation summaries, stakeholder updates, meeting follow-ups, technical
+  explanations for mixed audiences and any other communication meant for
+  colleagues or leadership. If Justin is about to send or publish text to another
+  person, this skill runs first. Also invoke when editing existing text to sound
+  more natural or match Justin's voice. Do NOT use for code, scripts, diagrams
+  or machine-consumed content. For the multi-comment Confluence review loop
+  specifically, use confluence-comment-review instead (it delegates style
+  decisions back here).
 ---
 
 # Justin's Writing Voice
@@ -109,8 +106,10 @@ Every paragraph must earn its place by advancing the reader's model. If a paragr
 - Prefer numbered lists over inline prose enumeration. When three or more substantive items appear in a sentence, break them out into a numbered list rather than running them inline. A short inline pair ("X and Y") is fine when it flows naturally in prose. The threshold is substance: if each item could stand as its own thought or action, it belongs in a list. "The approach covers authentication, session management and audit logging" is borderline but acceptable. "The approach covers five distinct concerns..." followed by inline descriptions is not acceptable. That belongs as a numbered list.
 - When breaking complex topics into parts, use numbered lists with bold standalone headers. Put the narrative text on the line below the header, indented.
 - Don't use em dashes, colons or other inline separators between a header and its description.
-- Light on bold in narrative prose. Bold is for headers in structured lists, not for emphasis within sentences.
+- Light on bold in narrative prose. Bold is for headers in structured lists, not for emphasis within sentences. One exception: in the opening sentence of a broadcast Slack announcement, a single severity term may be bolded (`*blocking*`, `*incident*`, `*breaking change*`). One word, one instance, right at the top.
 - Parenthetical asides are fine for definitions or brief context but shouldn't be overused.
+- In Slack messages, use backticks for technical identifiers: track names, service names, API paths and field names, even in conversational messages. Readers scanning a long Slack update use backtick-formatted names as anchors to find what's relevant to them.
+- Under numbered recommendations, lettered sub-items (1a, 1b) are acceptable when a recommendation has distinct components that can be owned or acted on separately. Two levels of nesting is the maximum.
 
 ## What to avoid
 
@@ -123,6 +122,8 @@ Every paragraph must earn its place by advancing the reader's model. If a paragr
 - Counting preambles that preview a list's length without adding context. "There are three key considerations:" followed by the three considerations adds nothing. If the intro sentence explains what the list represents or why it matters, it earns its place. If it just announces the count, cut it.
 - AI writing patterns from the humanizer skill (significance inflation, copula avoidance, rule of three, etc.)
 - Repeating back the request before responding to it. "You asked me to add a link to this section. I'll go ahead and add that now." Both sentences are wasted. Just add the link. In conversational contexts, the acknowledgment should be one word at most ("sure", "yes") and the action follows immediately.
+- High-risk hedging preambles that throat-clear before stating a fact: "It should be noted that...", "It's important to remember that...", "It's highly encouraged that...". Drop the preamble and state the thing directly. These phrases add no information and signal uncertainty even when used deliberately.
+- "On top of that" as a paragraph opener. It functions identically to "Additionally" and should be cut. Open the paragraph with the point itself.
 
 ## Tone by context
 
@@ -155,6 +156,8 @@ Every paragraph must earn its place by advancing the reader's model. If a paragr
   **Acknowledge the substance, not the person.** When a reviewer has put real thought into an approach, name what's right before naming the gap. "The approach handles the common case cleanly; the edge case we need to address is Z" is accurate feedback that shows you read carefully. It also tells the person what to keep versus what to change. Pointing only at the failure doesn't do that.
 
   **Explain the why.** When blocking or requesting changes, explain the underlying constraint rather than just the verdict. Not "this needs to be different" but "this pattern accumulates one row per write in the state table and the cleanup job can't keep up past N records." The explanation turns the blocker into a lesson and helps the person understand what rule to carry forward, not just what to change in this instance. This is how you elevate rather than gatekeep, and it's how you earn the trust of people at every level of seniority.
+
+- **Broadcast Slack announcements** (status updates, blocking notifications, incident summaries): when writing a structured update to a group rather than replying to someone in a thread, the shape changes from the conversational guidance above. Open with "Hi all," rather than jumping straight into content. The first sentence names the topic and its urgency; when it's a blocker or escalation, a single severity word may be bolded there (`*blocking*`, `*incident*`). Context builds progressively after that. When the audience includes non-technical stakeholders (EMs, PMs, design partners), they need the situation explained before they can evaluate your recommendation. This progressive build is not padding. It's what makes the recommendation land. Numbered recommendations come after the context, with lettered sub-items (1a, 1b) acceptable for multi-part actions where ownership is divided. Close with a direct named ask: who needs to respond, what you need and by when. Tag for passive visibility at the end with "For visibility:" followed by @mentions. That colon is a label, not a narrative colon, and is acceptable.
 
 ## Impersonal third-person technical voice
 

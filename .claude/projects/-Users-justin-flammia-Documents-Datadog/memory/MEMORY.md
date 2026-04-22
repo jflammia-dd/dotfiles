@@ -79,6 +79,9 @@
 - [Branching strategy](project_ers_branching.md): single branch `justin.flammia/SEC-30573-entity-resolution-poc` for all PoC work; topic branches off epic only when parallel contributors need isolation
 - [Local dev workflow](project_ers_local_dev.md): `DD_ENV=dev rapid run -s entity-resolution` then `grpcurl -plaintext localhost:8080 grpc.health.v1.Health/Check`; statsd warning is expected
 
+- [Run commands yourself](feedback_run_commands_yourself.md): always run commands directly; never tell the user to run something themselves
+- [Document research in Jira](feedback_jira_research.md): add a Jira comment with research findings before writing code, so followers understand the reasoning
+
 ## Work Cadence
 - [ERS PoC work cadence](feedback_work_cadence.md): ticket-by-ticket flow, no push without approval, no Claude attribution, workflow prefs in Obsidian only (not repo docs)
 
