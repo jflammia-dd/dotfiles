@@ -296,6 +296,7 @@
   },
   "advisorModel": "opus",
   "fastMode": true,
+  "tui": "fullscreen",
   "skipAutoPermissionPrompt": true,
-  "tui": "fullscreen"
+  "preferredNotifChannel": "ghostty"
 }
