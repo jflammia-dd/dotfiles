@@ -231,7 +231,6 @@
     "typescript-lsp@claude-plugins-official": true,
     "chrome-devtools-mcp@claude-plugins-official": true,
     "atomic-agents@claude-plugins-official": true,
-    "sanity-plugin@claude-plugins-official": true,
     "aaa-internal@datadog-claude-plugins": true,
     "ai-devx@datadog-claude-plugins": true,
     "ai-firstify@claude-plugins-official": true,
@@ -278,7 +277,8 @@
     "saas-integrations@datadog-claude-plugins": true,
     "work-analyzer@datadog-claude-plugins": true,
     "codex@openai-codex": true,
-    "confluence-write@datadog-claude-plugins": true
+    "confluence-write@datadog-claude-plugins": true,
+    "sourcegraph@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "trailofbits": {
@@ -297,6 +297,6 @@
   "advisorModel": "opus",
   "fastMode": true,
   "tui": "fullscreen",
-  "skipAutoPermissionPrompt": true,
-  "preferredNotifChannel": "ghostty"
+  "preferredNotifChannel": "ghostty",
+  "skipAutoPermissionPrompt": true
 }

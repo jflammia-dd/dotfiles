@@ -85,6 +85,10 @@
 ## Work Cadence
 - [ERS PoC work cadence](feedback_work_cadence.md): ticket-by-ticket flow, no push without approval, no Claude attribution, workflow prefs in Obsidian only (not repo docs)
 
+## Obsidian Doc Management
+- [Retire stale docs](feedback_retire_stale_docs.md): Delete superseded docs outright; don't archive or add "superseded" headers. Flag stale docs proactively.
+- [Zoom file handling](feedback_zoom_file_handling.md): Move Zoom summary files to `attachments/` immediately on ingest; don't leave them in ~/Downloads.
+
 ## Writing Rules
 - [No TH abbreviation](feedback_no_TH_abbreviation.md): Always write "Temporal Husky" in full, never "TH". Hard rule, not a suggestion.
 - [Slack intro style](feedback_slack_intro_style.md): Cold Slack messages use "I'm from [team]" and "I want to understand" for personal framing; "we" for team-level concerns.
