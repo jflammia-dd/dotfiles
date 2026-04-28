@@ -31,6 +31,7 @@ This skill defines how Justin writes. The goal is writing that builds the reader
   - **High-risk pattern: the consequence clause.** Explaining or elaborating on a prior statement naturally produces a colon. Split into two sentences instead. "This scope is intentional. The entities most relevant are those analysts investigate." Alternatively, restructure with "because", "since" or a relative clause to avoid the colon entirely.
   - **High-risk pattern: the em dash workaround.** When the em dash rule blocks a construction, the instinct is to reach for a colon as a substitute. "This is not accidental deferral: it is a deliberate strategy" is the same mistake as "This is not accidental deferral -- it is a deliberate strategy." Both violate the rules. The fix is the same in both cases: split into two sentences or restructure with a conjunction. "This is not accidental deferral but a deliberate strategy" or "This is deliberate, not accidental."
 - No comma before a coordinating conjunction ("and," "but," "or") joining two independent clauses. Drop the comma and let the conjunction do the work. "The math is straightforward and the team agrees" not "The math is straightforward, and the team agrees." If the sentence feels too long without the pause, split it into two sentences instead.
+  - **High-risk pattern: compound sentences with a natural pause.** Any sentence where two independent clauses are joined by "and", "but" or "or" tends to attract a comma before the conjunction because the breath feels natural. It isn't. "ERS queries the state store, and compares the result" is wrong. "ERS queries the state store and compares the result" is correct. If removing the comma makes the sentence feel rushed, split it into two sentences. Never insert a comma to manufacture a pause.
 - Minimize commas. If a comma can be dropped without creating ambiguity, drop it. Introductory phrases under five words often don't need a comma after them. Read the sentence without the comma first and only add it if the meaning changes or the rhythm breaks.
 - Straight quotes, not curly.
 
@@ -110,6 +111,7 @@ Every paragraph must earn its place by advancing the reader's model. If a paragr
 - Parenthetical asides are fine for definitions or brief context but shouldn't be overused.
 - In Slack messages, use backticks for technical identifiers: track names, service names, API paths and field names, even in conversational messages. Readers scanning a long Slack update use backtick-formatted names as anchors to find what's relevant to them.
 - Under numbered recommendations, lettered sub-items (1a, 1b) are acceptable when a recommendation has distinct components that can be owned or acted on separately. Two levels of nesting is the maximum.
+- When referencing specific code locations in a document, link to the exact line on GitHub. Format as a markdown link: `[handler.go:36-67](https://github.com/DataDog/dd-source/blob/main/path/to/handler.go#L36-L67)`. Use `main` as the branch. For line ranges use `#L36-L67`. Never leave a bare file path and line number as plain text when a GitHub link is possible.
 
 ## What to avoid
 

@@ -16,9 +16,13 @@
 ## ERS / Temporal Husky
 - **Per-event temporal resolution** (the core ERS problem): For each security signal, resolve the entity's state at that signal's timestamp. If a user's role changed at 3pm, a signal at 2pm should see the old role and a signal at 4pm should see the new role.
 - Research note: `journal/Temporal Husky - Event-Entity Joins.md`
-- `redaplinfra` (GA, production reads) is the only active track for SIEM entity data. `siementity` (INTERNAL) stopped receiving data on Jan 30, 2026 when the crawler's direct EVP send was removed (PR #346014). Do NOT use `siementity` for testing or validation.
-- BeagleSQL table `siem_entity_identity` maps to the dead `siementity` track. `redaplinfra` is only queryable via Trino or gRPC. Always test against `redaplinfra`.
-- Temporal versioning on `redaplinfra` works. The composite version formula `(payload.version << 48) + timestampMilli` produces unique values per write even with version=0. The "Temporal Husky Versioning Gap" executive summary (March 2026) was retracted; its root cause analysis was wrong.
+- **Current production state:** `redaplinfra` is the active track for all SIEM entity data (`siem_entity_identity` resource type). All code today (ERS `EmailExactStrategy`, `secmon-public-api` entity context handlers) reads from `redaplinfra`. This is correct and should not be changed until the migration below completes.
+- **History:** The full track timeline is `siementity` → `redaplinfra` → `siementity`. Originally, SIEM wrote directly to `siementity` using custom dedup in `siem-entity-api`. PR [#346014](https://github.com/DataDog/dd-source/pull/346014) switched writes to flow through REDAPL's Iris dedup pipeline, landing on `redaplinfra`. `siementity` stopped receiving data Jan 30, 2026 but the track was never deleted. The current migration is back to `siementity`, the same physical track, but now powered by the REDAPL pipeline (Iris dedup, Temporal Husky versioning) instead of the old custom direct-write approach.
+- **New decision (made 2026-04-24):** Migrate entity data back to `siementity`. Reason: `redaplinfra` has only 3-day Temporal Husky retention (subject to other producers' scope settings); `siementity` has its own dedicated 90-day retention scope. `siementity` is the correct spelling (all lowercase, one word).
+- **Migration status (as of 2026-04-27, NOT yet complete):** PR [#134486](https://github.com/DataDog/logs-backend/pull/134486) merged 4/27, flipping `siementity` from INTERNAL to GA. 2-intake-deploy waiting period running. The double-write code change (`resource-processor-temporal-husky` writing to `siementity`) is owned by redapl-compute (Aniruddha Atale); firm date by 4/28 EOD, estimated ~1 sprint. Conservative design partner launch: 5/24.
+- **`siementity`-worker** already exists at `dd-source/domains/evp-workers/apps/siementity-worker`. Takes `TemporalResource` protobuf, writes to Temporal Husky scope `"siementity"`. Cloud SIEM owns this worker.
+- **Future target (post-migration):** The REDAPL pipeline and Iris dedup are unchanged. The only difference is that `resource-processor-temporal-husky` writes SIEM data to `siementity` instead of `redaplinfra`. Practical impact on ERS: (1) reads in `EmailExactStrategy` and entity context handlers must point at `siementity`; (2) ERS's RecordWriter (Phase 3) writes to REDAPL via `RedaplAsyncIntakeClient.SendBatch()` the same way `siem-entity-crawler` does, and REDAPL routes that output to `siementity`.
+- Temporal versioning formula `(payload.version << 48) + timestampMilli` is implemented in `siementity-worker/src/worker.ts:128`. The "Temporal Husky Versioning Gap" executive summary (March 2026) was retracted; root cause analysis was wrong.
 
 ## Obsidian Vault Notes
 - [Notes vs docs placement](feedback_notes_vs_docs.md): "open a note" = `notes/YYYY-MM-DD - Description.md`; `docs/` is for durable reference material only
@@ -93,6 +97,7 @@
 - [No TH abbreviation](feedback_no_TH_abbreviation.md): Always write "Temporal Husky" in full, never "TH". Hard rule, not a suggestion.
 - [Slack intro style](feedback_slack_intro_style.md): Cold Slack messages use "I'm from [team]" and "I want to understand" for personal framing; "we" for team-level concerns.
 - [Always use clickable links](feedback_clickable_links.md): Every Jira ticket, Confluence page, Slack thread, GitHub PR must be a rendered markdown link in conversation. Never a bare ID.
+- [Code references must be GitHub deeplinks](feedback_code_deeplinks.md): File path + line number references in docs must link to the exact line on GitHub (`DataDog/dd-source`, `main` branch). Never plain text.
 
 ## Slack Workflow
 - [Never send via Slack MCP](feedback_no_slack_mcp_send.md): MCP appends "Sent using Claude" attribution; always use pbcopy+slackfmt so user pastes manually
