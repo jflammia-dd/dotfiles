@@ -9,6 +9,9 @@
 - When doing PR code reviews, show the comment for approval before posting to the PR
 
 ## Jira/Atlassian Notes
+- [Epic description style](feedback_epic_description_style.md): no ticket numbers in epic prose; describe phases and goals only
+
+
 - MCP `addCommentToJiraIssue` does NOT render `[~accountId:xxx]` mentions — they show as literal text. Avoid inline mentions in Jira comments; let the user add them manually.
 - Jira comment editor accepts **markdown** (not wiki markup). Pasting markdown renders correctly in the UI. No markdown toggle needed; just paste directly.
 - When preparing Jira comments for clipboard, always use markdown format (not Jira wiki markup like `h2.`, `{{code}}`, `[text|url]`).
@@ -104,6 +107,9 @@
 
 ## PR and Commit Conventions
 - [No Claude attribution in PRs](feedback_no_claude_attribution.md): never add "Generated with Claude Code" or co-author trailers unless explicitly asked
+
+## PUP / SQL Queries
+- [Always print and copy PUP queries](feedback_pup_query_display.md): print as code block AND pbcopy every time; clipboard may be overwritten
 
 ## Key Files
 - [GoLand Setup](goland-setup.md) — GoLand configuration for dd-source
