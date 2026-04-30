@@ -51,6 +51,7 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "sonnet[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -313,6 +314,5 @@
   "fastMode": true,
   "tui": "fullscreen",
   "preferredNotifChannel": "ghostty",
-  "skipAutoPermissionPrompt": true,
-  "model": "opus[1m]"
+  "skipAutoPermissionPrompt": true
 }
