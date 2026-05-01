@@ -27,6 +27,8 @@
 - **Future target (post-migration):** The REDAPL pipeline and Iris dedup are unchanged. The only difference is that `resource-processor-temporal-husky` writes SIEM data to `siementity` instead of `redaplinfra`. Practical impact on ERS: (1) reads in `EmailExactStrategy` and entity context handlers must point at `siementity`; (2) ERS's RecordWriter (Phase 3) writes to REDAPL via `RedaplAsyncIntakeClient.SendBatch()` the same way `siem-entity-crawler` does, and REDAPL routes that output to `siementity`.
 - Temporal versioning formula `(payload.version << 48) + timestampMilli` is implemented in `siementity-worker/src/worker.ts:128`. The "Temporal Husky Versioning Gap" executive summary (March 2026) was retracted; root cause analysis was wrong.
 
+- [No profile for manager refs](feedback_no_profile_for_manager_refs.md): Don't create vault profiles for people who only appear as a `manager:` field in someone else's profile
+
 ## Obsidian Vault Notes
 - [Notes vs docs placement](feedback_notes_vs_docs.md): "open a note" = `notes/YYYY-MM-DD - Description.md`; `docs/` is for durable reference material only
 
@@ -104,6 +106,7 @@
 
 ## Slack Workflow
 - [Never send via Slack MCP](feedback_no_slack_mcp_send.md): MCP appends "Sent using Claude" attribution; always use pbcopy+slackfmt so user pastes manually
+- [Slack mention format](feedback_slack_mention_format.md): use `@First Name Last Name` in drafts, never `<@slack_id>` syntax
 
 ## PR and Commit Conventions
 - [No Claude attribution in PRs](feedback_no_claude_attribution.md): never add "Generated with Claude Code" or co-author trailers unless explicitly asked
