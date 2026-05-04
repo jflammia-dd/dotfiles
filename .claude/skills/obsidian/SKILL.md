@@ -33,7 +33,7 @@ When the user shares a source (Confluence page, design doc, Slack thread, articl
    ```
    ## [YYYY-MM-DD] ingest | <source title>
    Source: <URL or filename>
-   Pages updated: <comma-separated list>
+   Pages updated: [[Page Title]], [[Another Page]]
    ```
 
 The user decides depth and emphasis at step 2. Filing something useful is better than filing nothing.
@@ -51,7 +51,7 @@ decision, a how-something-works explanation):
 4. Append to `docs/log.md`:
    ```
    ## [YYYY-MM-DD] query | <topic>
-   Filed to: <page path>
+   Filed to: [[Page Title]]
    ```
 
 ## Vault Health Lint

@@ -39,7 +39,8 @@
       "Bash(git status*:*)",
       "Bash(git log*:*)",
       "Bash(git diff*:*)",
-      "Bash(git fetch*:*)"
+      "Bash(git fetch*:*)",
+      "mcp__datadog-atlassian__update_page"
     ],
     "deny": [
       "Bash(git push --force*:*)",
@@ -293,7 +294,8 @@
     "prompt-engineering@datadog-claude-plugins": true,
     "redapl@datadog-claude-plugins": true,
     "technical-content@datadog-claude-plugins": true,
-    "weekly-wins-journal@datadog-claude-plugins": true
+    "weekly-wins-journal@datadog-claude-plugins": true,
+    "optibot@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "trailofbits": {

@@ -30,6 +30,8 @@
 - [No profile for manager refs](feedback_no_profile_for_manager_refs.md): Don't create vault profiles for people who only appear as a `manager:` field in someone else's profile
 
 ## Obsidian Vault Notes
+- [log.md wiki-link convention](feedback_log_wiki_links.md): use `[[Page Title]]` wiki-links (not bare paths) when referencing vault docs in docs/log.md
+
 - [Notes vs docs placement](feedback_notes_vs_docs.md): "open a note" = `notes/YYYY-MM-DD - Description.md`; `docs/` is for durable reference material only
 
 

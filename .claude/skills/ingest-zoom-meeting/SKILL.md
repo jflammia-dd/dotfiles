@@ -7,6 +7,37 @@ description: Use when ingesting Zoom AI-generated meeting notes (summaries, next
 
 Zoom AI notes have predictable transcription errors. Always verify and correct before filing.
 
+## Known Corrections
+
+Apply these automatically without asking for confirmation. When new corrections are confirmed during an ingestion, add them to this table immediately.
+
+### Codenames and systems
+
+| Zoom AI writes | Correct | Notes |
+|---|---|---|
+| "Red Apple" | REDAPL | The entity ingestion pipeline |
+| "Red Apple Infra" | `redaplinfra` | REDAPL's track in Temporal Husky |
+| "Iris" / "iris system" | IRIS | Deduplication service inside REDAPL |
+| "SIM entity" / "SIM entity track" | `siementity` | Temporal Husky track owned by Cloud SIEM |
+| "Cloud SIM" | Cloud SIEM | Zoom AI consistently mishears "SIEM" as "SIM" |
+| "UABA" | UEBA | User Entity and Behavior Analytics |
+| "NED [X]" | "Entity [X]" | e.g. "NED Resolution" = "Entity Resolution" |
+| "Enter ID" | Entra ID | Microsoft Entra ID identity provider |
+| "Temporaliski" | Temporal Husky | Phonetic mishear of "Temporal Husky" |
+| "Cold Strike" | CrowdStrike | Phonetic mishear of "CrowdStrike" |
+| "Canine Simueba" | `#k9-siem-ueba` | The UEBA Slack channel |
+| "Scooby-Doo" / "k9 Scooby-Doo" | `#k9-scooby-doo` | Cloud SIEM general Slack channel |
+| "bluff" (in summary/comms context) | BLUF | Bottom Line Up Front acronym |
+
+### People
+
+| Zoom AI writes | Correct person | Notes |
+|---|---|---|
+| "Anthura" | [[Antara Hebbar]] | Common mishear of "Antara" |
+| "Andra" / "Andre" | [[Antara Hebbar]] | Common mishear of "Antara" |
+| "Morten" | [[Martin Guyard]] | Common mishear of "Martin" |
+| "Shark" / "Sharik" | [[Shariq Syed]] | Common mishear of "Shariq" |
+
 ## Step 0: Fetch the Summary from Gmail (preferred)
 
 If the user has not pasted the notes, search Gmail first. Zoom sends summaries shortly after each meeting.
@@ -25,15 +56,16 @@ If multiple summaries are returned, confirm which meeting the user wants before 
 
 Before writing anything to the vault:
 
-1. **List every person mentioned** and their role in the meeting
-2. **Flag uncertain names.** Zoom AI commonly:
+1. **Apply known corrections silently.** Scan the summary for every entry in the Known Corrections table above and note what will be substituted. No need to ask the user about these.
+2. **List every remaining person mentioned** and their role in the meeting.
+3. **Flag uncertain names.** Zoom AI commonly:
    - Assigns the same person multiple different names across the summary
-   - Mishears names (e.g. "Shark" = Shariq, "Andra" = Antara, "Andre" = Antara)
+   - Mishears names in ways not yet in the Known Corrections table
    - Uses a recognizable but wrong name for someone (e.g. "Sarah" = Antara)
-3. **Flag internal codenames** Zoom AI doesn't know:
-   - Internal system names (e.g. "Red Apple" = REDAPL, "Iris" = deduplication service in REDAPL)
-   - Project codenames and abbreviations the AI spells out phonetically
-4. **Ask the user to confirm all flagged items before proceeding.** Do not guess.
+4. **Flag unrecognized internal codenames** not already in the Known Corrections table:
+   - Internal system names spelled out phonetically
+   - Project codenames and abbreviations the AI doesn't know
+5. **Ask the user to confirm only the flagged items before proceeding.** Do not guess.
 
 ## Step 2: Meeting Type
 
@@ -80,10 +112,12 @@ Add a `## Context` section to the new profile linking back to where they first a
 
 After the user confirms corrections, use `replace_all: true` to fix every occurrence in the filed content. Never leave uncorrected Zoom AI artifacts in the vault.
 
+If the user confirmed any new name or codename corrections during this ingestion, add them to the Known Corrections table now so future ingestions benefit from them. Attribute each new entry clearly (codename vs. person and a short note on the pattern).
+
 ## Step 6: Update log.md
 
 ```
 ## [YYYY-MM-DD] ingest | 1:1 with [Person] (YYYY-MM-DD)
 Source: Zoom AI email (Gmail message ID: [id]) or pasted
-Pages updated: people/[Person].md, people/[New Person].md, items/[Concept].md
+Pages updated: [[Person]], [[New Person]], [[Concept]]
 ```
