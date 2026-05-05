@@ -56,6 +56,15 @@
   "hooks": {
     "PreToolUse": [
       {
+        "matcher": "mcp__datadog-atlassian__add_comment|mcp__datadog-atlassian__update_issue",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/jira-formatting-guard.sh"
+          }
+        ]
+      },
+      {
         "matcher": "Bash",
         "hooks": [
           {
