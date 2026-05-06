@@ -17,6 +17,14 @@
 - Jira comment editor accepts **markdown** (not wiki markup). Pasting markdown renders correctly in the UI. No markdown toggle needed; just paste directly.
 - When preparing Jira comments for clipboard, always use markdown format (not Jira wiki markup like `h2.`, `{{code}}`, `[text|url]`).
 
+## ERS Project Structure
+- [Three-track structure](project_ers_three_track_structure.md): Entity Context (ingestion + sideplane), ERS (resolution) and Risk Insights Entity Rollup (Shariq's Caniche view). Each track has distinct milestones for the same IdP.
+- [ERS Delivery Plan](../docs/ERS - Delivery Plan.md) and [Project Overview](../docs/Entity Context and ERS - Project Overview.md) are the canonical planning docs as of 2026-05-05.
+
+## Document Conventions
+- [Don't replace existing docs](feedback_dont_replace_existing_docs.md): when asked to write a new document, create a new file; never overwrite the existing one
+- [Documents define their own terminology](feedback_documents_define_own_terminology.md): leadership docs should not borrow phase/wave/cohort labels from external plans; define terms within the doc
+
 ## ERS / Temporal Husky
 - **Per-event temporal resolution** (the core ERS problem): For each security signal, resolve the entity's state at that signal's timestamp. If a user's role changed at 3pm, a signal at 2pm should see the old role and a signal at 4pm should see the new role.
 - Research note: `journal/Temporal Husky - Event-Entity Joins.md`
