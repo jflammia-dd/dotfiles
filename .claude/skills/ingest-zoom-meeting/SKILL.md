@@ -21,19 +21,22 @@ Apply these automatically without asking for confirmation. When new corrections 
 | "SIM entity" / "SIM entity track" | `siementity` | Temporal Husky track owned by Cloud SIEM |
 | "Cloud SIM" | Cloud SIEM | Zoom AI consistently mishears "SIEM" as "SIM" |
 | "UABA" | UEBA | User Entity and Behavior Analytics |
-| "NED [X]" | "Entity [X]" | e.g. "NED Resolution" = "Entity Resolution" |
+| "NED [X]" / "NAD [X]" | "Entity [X]" | e.g. "NAD Resolution" = "Entity Resolution" |
 | "Enter ID" | Entra ID | Microsoft Entra ID identity provider |
 | "Temporaliski" | Temporal Husky | Phonetic mishear of "Temporal Husky" |
 | "Cold Strike" | CrowdStrike | Phonetic mishear of "CrowdStrike" |
 | "Canine Simueba" | `#k9-siem-ueba` | The UEBA Slack channel |
 | "Scooby-Doo" / "k9 Scooby-Doo" | `#k9-scooby-doo` | Cloud SIEM general Slack channel |
 | "bluff" (in summary/comms context) | BLUF | Bottom Line Up Front acronym |
+| "EBB track" / "EBB" | EVP track | Phonetic mishear of "EVP" (Entity Versioning Pipeline) |
+| "Kanish" | [[Caniche]] | Zoom AI mishears the internal tool name "Caniche" |
 
 ### People
 
 | Zoom AI writes | Correct person | Notes |
 |---|---|---|
 | "Anthura" | [[Antara Hebbar]] | Common mishear of "Antara" |
+| "Luis" / "Louis" | [[Loïc Fontolliet]] | Zoom AI mishears the French name "Loïc" as a more familiar name |
 | "Andra" / "Andre" | [[Antara Hebbar]] | Common mishear of "Antara" |
 | "Morten" | [[Martin Guyard]] | Common mishear of "Martin" |
 | "Shark" / "Sharik" | [[Shariq Syed]] | Common mishear of "Shariq" |
