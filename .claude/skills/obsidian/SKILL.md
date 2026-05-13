@@ -135,7 +135,4 @@ wait 3 seconds, extract the "Start Date" field. Set as `start_date: YYYY-MM-DD`.
 
 ## Office Attendance Tracking
 
-Office tracking lives in `docs/office tracking/YYYY - In-Office Tracking.md`. Use the `/office`,
-`/wfh` and `/pto` slash commands — they handle entry creation and compliance recalculation
-automatically. Weeks are full Mon-Fri units owned by the month containing the Monday. Only record
-WFH for notable deviations (bad weather, transit issues, illness); routine WFH is not recorded.
+Office tracking lives in `docs/2026 - In-Office Tracking.md`. Use the `/office`, `/wfh` and `/pto` slash commands to log entries. Each month has a `Target: N | In-office: N` status line; the YTD badge at the top is auto-computed by a Dataview JS block and requires no manual updates. Weeks are full Mon-Fri units owned by the month containing the Monday. Only record WFH for notable deviations (bad weather, transit issues, illness); routine WFH is not recorded.
