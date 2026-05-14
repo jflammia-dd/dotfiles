@@ -46,6 +46,21 @@ CALLOUT_MAP = {
 }
 
 # ---------------------------------------------------------------------------
+# Smart-link embed URLs
+# ---------------------------------------------------------------------------
+#
+# When a single URL from one of these providers appears alone on its own line,
+# the converter emits an ADF embedCard node instead of a plain paragraph.
+# Confluence renders embedCards as interactive iframes (live FigJam boards,
+# YouTube players, etc.) rather than as text links.
+#
+# Add providers conservatively. The auto-embed behavior is opinionated and may
+# surprise readers if a passing URL becomes a full-width interactive embed.
+EMBED_URL_PATTERN = re.compile(
+    r"^https?://(?:www\.)?(?:figma\.com)/\S+$"
+)
+
+# ---------------------------------------------------------------------------
 # ADF node constructors
 # ---------------------------------------------------------------------------
 
@@ -103,6 +118,35 @@ def _panel(panel_type, content):
 def _blockquote(content):
     return {"type": "blockquote", "content": content}
 
+def _embed_card(url):
+    """ADF embedCard node for smart-link providers (Figma, etc.).
+
+    When a single URL from a known smart-link provider appears alone on a line
+    in markdown, the converter emits this node instead of a paragraph. Confluence
+    renders it as an interactive iframe embed rather than a plain text link.
+    """
+    return {
+        "type": "embedCard",
+        "attrs": {"url": url, "layout": "center", "width": 100},
+    }
+
+
+def _iso_date_to_timestamp_ms(date_str):
+    """Convert an ISO date YYYY-MM-DD to a Unix millisecond timestamp at noon
+    UTC. Noon UTC keeps the rendered calendar date stable across viewer
+    timezones; midnight UTC would render as the previous day for viewers in
+    the Americas.
+    """
+    import datetime as _dt
+    y, m, d = (int(x) for x in date_str.split("-"))
+    return str(int(_dt.datetime(y, m, d, 12, 0, 0, tzinfo=_dt.timezone.utc).timestamp() * 1000))
+
+
+def _date(date_str):
+    """ADF date node. Confluence renders this as a styled date pill."""
+    return {"type": "date", "attrs": {"timestamp": _iso_date_to_timestamp_ms(date_str)}}
+
+
 def _media_single(file_id, collection):
     return {
         "type": "mediaSingle",
@@ -151,6 +195,8 @@ _INLINE_PATTERNS = [
     ("italic_under",     re.compile(r"(?<!_)_(?!_)(.+?)(?<!_)_(?!_)", re.DOTALL)),
     ("strike",           re.compile(r"~~(.+?)~~", re.DOTALL)),
     ("highlight",        re.compile(r"==(.+?)==", re.DOTALL)),
+    # Explicit date marker: :date:YYYY-MM-DD: -> ADF date pill
+    ("date",             re.compile(r":date:(\d{4}-\d{2}-\d{2}):")),
     # Wikilinks: most specific first
     ("wikilink_disp",    re.compile(r"\[\[([^\]|#][^\]|]*)\|([^\]]+)\]\]")),
     ("wikilink_anc_disp",re.compile(r"\[\[#([^\]|]+)\|([^\]]+)\]\]")),
@@ -158,6 +204,11 @@ _INLINE_PATTERNS = [
     ("wikilink",         re.compile(r"\[\[([^\]#][^\]]*)\]\]")),
     ("link",             re.compile(r"\[([^\]]+)\]\(([^)]+)\)")),
 ]
+
+# Bare ISO date that fills an entire table cell. Used to auto-convert
+# metadata-table dates (Author / Published / Date columns) without requiring
+# explicit :date:...: markup in the source.
+_BARE_ISO_DATE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
 def _heading_slug(text):
@@ -235,6 +286,10 @@ def parse_inline(text_content, comment_collector=None, mention_map=None):
             # Obsidian highlights -> bold (Confluence has no highlight mark in ADF)
             inner = parse_inline(earliest_match.group(1), comment_collector, mention_map)
             nodes.extend(_apply_mark(inner, {"type": "strong"}))
+
+        elif earliest_type == "date":
+            # :date:YYYY-MM-DD: -> ADF date node (Confluence date pill)
+            nodes.append(_date(earliest_match.group(1)))
 
         elif earliest_type == "wikilink_disp":
             # [[Page Name|Display Text]] -> mention if person known, else display text
@@ -619,7 +674,12 @@ def convert(content, image_map=None, mention_map=None):
             return
         joined = " ".join(l.strip() for l in pending_para if l.strip())
         if joined:
-            nodes.append(_paragraph(parse_inline(joined, comment_collector, mention_map)))
+            # Smart-link embed: a single URL from a known provider on its own
+            # line becomes an embedCard so Confluence renders it interactively.
+            if EMBED_URL_PATTERN.match(joined):
+                nodes.append(_embed_card(joined))
+            else:
+                nodes.append(_paragraph(parse_inline(joined, comment_collector, mention_map)))
         pending_para.clear()
 
     while i < len(lines):
@@ -723,11 +783,44 @@ def convert(content, image_map=None, mention_map=None):
 
     flush_para()
 
+    _convert_bare_dates_in_table_cells(nodes)
+
     return {
         "adf": _doc(nodes),
         "images": images_needed,
         "comments": comment_collector,
     }
+
+
+def _convert_bare_dates_in_table_cells(nodes):
+    """Walk every tableCell / tableHeader and replace any paragraph whose sole
+    inline content is a single bare ISO date (YYYY-MM-DD) with a paragraph
+    containing an ADF date node. Metadata tables (Author / Published / Date)
+    get rendered as styled date pills without requiring explicit :date:...:
+    markup in the source markdown.
+    """
+    for node in nodes:
+        if not isinstance(node, dict):
+            continue
+        ntype = node.get("type")
+        if ntype in ("tableCell", "tableHeader"):
+            for child in node.get("content") or []:
+                if child.get("type") != "paragraph":
+                    continue
+                inline = child.get("content") or []
+                if len(inline) != 1:
+                    continue
+                only = inline[0]
+                if only.get("type") != "text":
+                    continue
+                if only.get("marks"):
+                    continue
+                text = only.get("text", "").strip()
+                if _BARE_ISO_DATE.match(text):
+                    child["content"] = [_date(text)]
+        # Recurse into any container that holds further block content.
+        if node.get("content"):
+            _convert_bare_dates_in_table_cells(node["content"])
 
 
 # ---------------------------------------------------------------------------

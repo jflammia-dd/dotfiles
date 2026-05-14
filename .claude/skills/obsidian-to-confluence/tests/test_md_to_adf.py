@@ -1025,6 +1025,101 @@ Final paragraph.
         # Should not raise
         json.dumps(result["adf"])
 
+    def test_figma_url_becomes_embed_card(self):
+        """A Figma URL alone on its own line emits an embedCard for interactive
+        rendering in Confluence rather than a plain paragraph with a link."""
+        md = (
+            "## Resolution pipeline\n\n"
+            "https://www.figma.com/board/K760CzZkSkJSgykE2nCW4j\n"
+        )
+        result = convert(md)
+        embed_cards = [n for n in result["adf"]["content"] if n.get("type") == "embedCard"]
+        assert len(embed_cards) == 1
+        assert embed_cards[0]["attrs"]["url"] == "https://www.figma.com/board/K760CzZkSkJSgykE2nCW4j"
+
+    def test_figma_file_url_becomes_embed_card(self):
+        """Pattern matches other Figma URL shapes besides board/."""
+        md = "https://www.figma.com/design/abc123/My-File\n"
+        result = convert(md)
+        embed_cards = [n for n in result["adf"]["content"] if n.get("type") == "embedCard"]
+        assert len(embed_cards) == 1
+
+    def test_non_figma_url_stays_paragraph(self):
+        """A URL outside the smart-link allow list remains a normal linked paragraph."""
+        md = "https://example.com/some-page\n"
+        result = convert(md)
+        embed_cards = [n for n in result["adf"]["content"] if n.get("type") == "embedCard"]
+        paragraphs = [n for n in result["adf"]["content"] if n.get("type") == "paragraph"]
+        assert len(embed_cards) == 0
+        assert len(paragraphs) == 1
+
+    def test_figma_url_with_surrounding_text_stays_paragraph(self):
+        """A Figma URL embedded in a sentence is just a link, not an embed."""
+        md = "See https://www.figma.com/board/abc for the diagram.\n"
+        result = convert(md)
+        embed_cards = [n for n in result["adf"]["content"] if n.get("type") == "embedCard"]
+        assert len(embed_cards) == 0
+
+    def test_inline_date_marker_becomes_date_node(self):
+        """`:date:YYYY-MM-DD:` inline syntax produces an ADF date node so
+        Confluence renders the value as a styled date pill."""
+        md = "Published :date:2026-05-13: by the team.\n"
+        result = convert(md)
+        para = result["adf"]["content"][0]
+        assert para["type"] == "paragraph"
+        date_nodes = [n for n in para["content"] if n.get("type") == "date"]
+        assert len(date_nodes) == 1
+        # Noon UTC keeps the rendered calendar date stable for all viewers.
+        assert date_nodes[0]["attrs"]["timestamp"] == "1778673600000"
+
+    def test_bare_iso_date_in_table_cell_becomes_date_node(self):
+        """A bare YYYY-MM-DD that is the sole content of a table cell is
+        auto-promoted to a date node. Metadata tables (Author / Published /
+        Date) get rich date rendering without explicit markup."""
+        md = (
+            "| Field | Value |\n"
+            "|---|---|\n"
+            "| Published | 2026-05-13 |\n"
+        )
+        result = convert(md)
+        table = result["adf"]["content"][0]
+        assert table["type"] == "table"
+        # Locate the data row's second cell.
+        data_row = table["content"][1]
+        published_cell = data_row["content"][1]
+        para = published_cell["content"][0]
+        assert para["type"] == "paragraph"
+        assert len(para["content"]) == 1
+        assert para["content"][0]["type"] == "date"
+        assert para["content"][0]["attrs"]["timestamp"] == "1778673600000"
+
+    def test_bare_iso_date_in_prose_stays_text(self):
+        """A bare ISO date that appears in normal paragraph prose is left as
+        text. Auto-conversion is scoped to table cells where the date is the
+        only content; converting in prose would surprise readers."""
+        md = "The release shipped on 2026-05-13 after the freeze.\n"
+        result = convert(md)
+        para = result["adf"]["content"][0]
+        date_nodes = [n for n in para["content"] if n.get("type") == "date"]
+        assert len(date_nodes) == 0
+        text = "".join(n.get("text", "") for n in para["content"] if n.get("type") == "text")
+        assert "2026-05-13" in text
+
+    def test_table_cell_with_non_date_text_stays_text(self):
+        """Non-date table cells are unaffected by the post-processing pass."""
+        md = (
+            "| Field | Value |\n"
+            "|---|---|\n"
+            "| Author | Justin Flammia |\n"
+        )
+        result = convert(md)
+        table = result["adf"]["content"][0]
+        data_row = table["content"][1]
+        author_cell = data_row["content"][1]
+        para = author_cell["content"][0]
+        date_nodes = [n for n in para["content"] if n.get("type") == "date"]
+        assert len(date_nodes) == 0
+
 
 # ---------------------------------------------------------------------------
 # Edge cases caught during integration testing

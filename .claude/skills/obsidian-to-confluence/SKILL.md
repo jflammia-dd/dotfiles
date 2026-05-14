@@ -50,6 +50,9 @@ The converter handles the following Obsidian markdown elements:
 | `> [!QUESTION]` / `> [!EXAMPLE]` | ADF `panel` (note type) |
 | `![[image.png]]` embedded images | ADF `mediaSingle` + `media` (after upload) |
 | `![alt](path)` standard images | ADF `mediaSingle` + `media` (after upload) |
+| Bare Figma URL on its own line | ADF `embedCard` (Confluence renders an interactive iframe of the FigJam board, Figma file, etc.) |
+| `:date:YYYY-MM-DD:` inline | ADF `date` node (Confluence renders a styled date pill) |
+| Bare `YYYY-MM-DD` as the sole content of a table cell | ADF `date` node (auto-detection so metadata tables get rich date rendering without explicit markup) |
 | `%%comment%%` inline | Stripped from body; posted as Confluence inline comments |
 | `%%\nblock comment\n%%` | Stripped from body; posted as Confluence inline comments |
 
@@ -470,6 +473,12 @@ These are non-obvious decisions that burned time to discover.
 **Review table sentinel is the first `rule` node.** `extract_review_table_adf` finds the first `rule` (horizontal divider) node and treats everything before it as the review section. The convention is: always end the review section with a `rule` node. `build_review_table_adf` already does this.
 
 **Wikilinks become plain text or mentions.** `[[Page Name]]` becomes the literal text "Page Name" by default. If `mention_map` is provided and contains `Page Name` as a key, it becomes an ADF `mention` node (Confluence user tag) instead. `[[Page Name|Display]]` follows the same logic but falls back to "Display" for plain text. Note that `mention` nodes are peer nodes in a paragraph, not text nodes with marks, so `_apply_mark` does not affect them.
+
+**Smart-link embeds from bare URLs.** Confluence does not auto-detect URLs posted as paragraph text via the ADF v2 API. To get an interactive embed (live FigJam, Figma file, etc.), the ADF must contain an `embedCard` node. The converter checks each flushed paragraph against `EMBED_URL_PATTERN`. If the entire paragraph is a single URL matching that pattern, the converter emits an `embedCard` node instead of a `paragraph`. Today the pattern matches Figma URLs only. Adding providers (YouTube, Loom, etc.) is a one-line change to the regex. A URL that does not match the pattern still becomes a regular linked paragraph.
+
+**Date pills from ISO dates.** Confluence renders `date` ADF nodes as styled date pills that respect the viewer's locale. Plain text dates do not. The converter has two entry points. Explicit `:date:YYYY-MM-DD:` inline markup always becomes a date node. Bare `YYYY-MM-DD` strings are auto-promoted to date nodes only when they fill an entire table cell (a post-processing pass walks every `tableCell` and `tableHeader` after conversion). Auto-promotion is intentionally scoped to table cells. Metadata tables at the top of design docs (`Author`, `Published`, `Date`) get rich rendering without needing source-side markup, while ISO dates in narrative prose stay as text where converting them would be surprising.
+
+**Noon UTC for date node timestamps.** ADF date timestamps are UNIX milliseconds. The converter uses noon UTC for the chosen calendar date rather than midnight. Confluence renders the timestamp in the viewer's local time zone. Midnight UTC of 2026-05-13 renders as 2026-05-12 for any viewer in the Americas, which is the wrong calendar date. Noon UTC keeps the rendered day stable for every viewer between roughly UTC-11 and UTC+11.
 
 **Obsidian callout type mapping** (all lowercase matching):
 - `note`, `info`, `todo` -> `info` panel
