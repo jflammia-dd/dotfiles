@@ -11,9 +11,12 @@
 
 ## Jira/Atlassian Notes
 - [Epic description style](feedback_epic_description_style.md): no ticket numbers in epic prose; describe phases and goals only
+- [PoC done gate](feedback_poc_done_gate.md): for tickets on a PoC branch, Done = commit lands on the PoC branch (not PR-to-main). Acceptance criteria still verified before transition.
 
 
 - MCP `addCommentToJiraIssue` does NOT render `[~accountId:xxx]` mentions. They show as literal text. Avoid inline mentions in Jira comments; let the user add them manually.
+- [SEC project requires component](feedback_jira_sec_component_required.md): every `createJiraIssue` against SEC must pass `additional_fields: {"components": [{"id": "10488"}]}` for Cloud SIEM tickets. Schema does not advertise this; first attempt without it returns HTTP 400.
+- [Referencing Jira issues in dev work](reference_jira_dev_work.md): canonical Atlassian doc + Datadog conventions for putting the issue key in branches, commits and PR titles. Keys are case-sensitive, uppercase.
 - [Rich formatting in Jira comments](feedback_jira_rich_formatting.md): use `addCommentToJiraIssue` with `contentFormat: "markdown"` for any comment with bold, code blocks or lists; `add_comment` does not render markdown
 - Jira comment editor accepts **markdown** (not wiki markup). Pasting markdown renders correctly in the UI. No markdown toggle needed; just paste directly.
 - When preparing Jira comments for clipboard, always use markdown format (not Jira wiki markup like `h2.`, `{{code}}`, `[text|url]`).

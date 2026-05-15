@@ -1120,6 +1120,45 @@ Final paragraph.
         date_nodes = [n for n in para["content"] if n.get("type") == "date"]
         assert len(date_nodes) == 0
 
+    def test_status_marker_becomes_status_node(self):
+        """`:status:LABEL:` produces an ADF status node so Confluence renders
+        the value as the colored pill produced by the / Status macro. Default
+        color is green, which is the standard for the NEW convention used on
+        index pages."""
+        md = "Federation Strategy :status:NEW: was published today.\n"
+        result = convert(md)
+        para = result["adf"]["content"][0]
+        status_nodes = [n for n in para["content"] if n.get("type") == "status"]
+        assert len(status_nodes) == 1
+        assert status_nodes[0]["attrs"]["text"] == "NEW"
+        assert status_nodes[0]["attrs"]["color"] == "green"
+        # localId is required by Confluence even though it auto-generates one
+        # in the UI. The converter assigns a UUID so the node is stable.
+        assert "localId" in status_nodes[0]["attrs"]
+
+    def test_status_marker_with_explicit_color(self):
+        """`:status:LABEL:COLOR:` lets the author pick a non-default pill color
+        (e.g., red for BLOCKED, yellow for DRAFT)."""
+        md = "Status :status:BLOCKED:red: needs attention.\n"
+        result = convert(md)
+        para = result["adf"]["content"][0]
+        status_nodes = [n for n in para["content"] if n.get("type") == "status"]
+        assert len(status_nodes) == 1
+        assert status_nodes[0]["attrs"]["text"] == "BLOCKED"
+        assert status_nodes[0]["attrs"]["color"] == "red"
+
+    def test_status_marker_invalid_color_falls_back_to_text_match(self):
+        """A trailing token that is not a recognized color is treated as part
+        of normal text rather than a status node, so `:status:LABEL:invalid:`
+        stays as text. The single-arg form is matched only when no color
+        suffix exists."""
+        md = "Plain :status:NEW: pill.\n"
+        result = convert(md)
+        para = result["adf"]["content"][0]
+        status_nodes = [n for n in para["content"] if n.get("type") == "status"]
+        assert len(status_nodes) == 1
+        assert status_nodes[0]["attrs"]["color"] == "green"
+
 
 # ---------------------------------------------------------------------------
 # Edge cases caught during integration testing

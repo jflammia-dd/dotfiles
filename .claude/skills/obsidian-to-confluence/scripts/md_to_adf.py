@@ -28,6 +28,7 @@ Inline comments come from Obsidian %%...%% syntax. Post each one after publish:
 import re
 import sys
 import json
+import uuid
 
 # ---------------------------------------------------------------------------
 # Callout type -> Confluence panel type
@@ -147,6 +148,27 @@ def _date(date_str):
     return {"type": "date", "attrs": {"timestamp": _iso_date_to_timestamp_ms(date_str)}}
 
 
+_STATUS_COLORS = {"neutral", "purple", "blue", "red", "yellow", "green"}
+
+
+def _status(text, color="green"):
+    """ADF status node. Confluence renders this as the colored pill produced
+    by the / Status macro in the editor. Valid colors: neutral, purple, blue,
+    red, yellow, green. Defaults to green, which is the standard color for the
+    NEW convention used on index pages.
+    """
+    if color not in _STATUS_COLORS:
+        color = "green"
+    return {
+        "type": "status",
+        "attrs": {
+            "text": text.strip(),
+            "color": color,
+            "localId": str(uuid.uuid4()),
+        },
+    }
+
+
 def _media_single(file_id, collection):
     return {
         "type": "mediaSingle",
@@ -197,6 +219,9 @@ _INLINE_PATTERNS = [
     ("highlight",        re.compile(r"==(.+?)==", re.DOTALL)),
     # Explicit date marker: :date:YYYY-MM-DD: -> ADF date pill
     ("date",             re.compile(r":date:(\d{4}-\d{2}-\d{2}):")),
+    # Status pill: :status:LABEL: (green) or :status:LABEL:COLOR:
+    ("status_color",     re.compile(r":status:([^:]+):(neutral|purple|blue|red|yellow|green):")),
+    ("status",           re.compile(r":status:([^:]+):")),
     # Wikilinks: most specific first
     ("wikilink_disp",    re.compile(r"\[\[([^\]|#][^\]|]*)\|([^\]]+)\]\]")),
     ("wikilink_anc_disp",re.compile(r"\[\[#([^\]|]+)\|([^\]]+)\]\]")),
@@ -290,6 +315,14 @@ def parse_inline(text_content, comment_collector=None, mention_map=None):
         elif earliest_type == "date":
             # :date:YYYY-MM-DD: -> ADF date node (Confluence date pill)
             nodes.append(_date(earliest_match.group(1)))
+
+        elif earliest_type == "status_color":
+            # :status:LABEL:COLOR: -> ADF status node with explicit color
+            nodes.append(_status(earliest_match.group(1), earliest_match.group(2)))
+
+        elif earliest_type == "status":
+            # :status:LABEL: -> ADF status node (defaults to green)
+            nodes.append(_status(earliest_match.group(1)))
 
         elif earliest_type == "wikilink_disp":
             # [[Page Name|Display Text]] -> mention if person known, else display text

@@ -9,6 +9,7 @@
 - PRs are hook-enforced as drafts. `pr-draft-enforce.sh` auto-injects `--draft` into every `gh pr create` command before RTK runs.
 - Do not push, merge, or release anything without specific user approval.
 - Whenever updating a PR, rebase against the parent branch first. Most work happens in a large monorepo where drift accumulates quickly during long review cycles, so keeping the branch current prevents painful late-stage conflicts.
+- ALWAYS include the Jira issue key in commit subjects and PR titles so the Development panel auto-links. Do NOT include the issue key in branch names; Datadog engineering follows its own branch-naming convention. Canonical reference for what Jira looks for: Atlassian's [Reference issues in your development work](https://support.atlassian.com/jira-software-cloud/docs/reference-issues-in-your-development-work/). Commit format: `[SEC-XXXXX] <type>(<scope>): <subject>`. PR title format: `[SEC-XXXXX] <subject>`. Keys are case-sensitive, always uppercase.
 
 ## Testing Rules
 
@@ -32,6 +33,12 @@
 - NEVER use a colon to join two independent clauses.
 - Prioritize simplicity. When two phrasings are both accurate, always choose the simpler one. Complexity in explanation signals unclear thinking, not a complex subject. Find the simpler sentence before reaching for qualifications.
 - ALWAYS invoke the `justins-voice` skill before drafting or editing documents, announcements or distributed written content. A UserPromptSubmit hook (`justins-voice-detect.sh`) detects writing tasks and prompts invocation. Treat its trigger as a strong signal to invoke the skill. This rule does not apply to machine-consumed content: skill files, hook scripts, memory files, CLAUDE.md, settings and any output written for Claude to read rather than a human.
+- NEVER include local-process language in published artifacts (Jira comments, Confluence pages, GitHub PR descriptions, Slack messages). Local-process language explains personal workflow concepts (done gates, integration gates, lifecycle mechanics, internal slash commands, references to memory files or vault paths, AI tooling). Published copy describes the work and the outcome, not the workflow. A PreToolUse hook (`local-process-language-check.sh`) scans Atlassian publish operations and blocks violators. Canonical rule: `agents/policies/published-artifacts.md`.
+
+## Jira Rules
+
+- ALWAYS use the plugin Atlassian tools (`mcp__plugin_atlassian_atlassian__*`) when posting comments, editing issues or creating content. Pass `contentFormat: "markdown"` (or `"adf"` for full programmatic fidelity) on every publish call. A PreToolUse hook (`jira-formatting-guard.sh`) blocks calls that omit this. Without it, bold, code blocks, lists and links render as literal characters in the Atlassian UI.
+- Do not use inline `[~accountId:xxx]` mentions in any comment posted via MCP. They render as literal text. Leave mentions for manual addition in the UI.
 
 ## Confluence Rules
 

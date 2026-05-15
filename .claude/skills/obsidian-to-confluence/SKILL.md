@@ -53,6 +53,8 @@ The converter handles the following Obsidian markdown elements:
 | Bare Figma URL on its own line | ADF `embedCard` (Confluence renders an interactive iframe of the FigJam board, Figma file, etc.) |
 | `:date:YYYY-MM-DD:` inline | ADF `date` node (Confluence renders a styled date pill) |
 | Bare `YYYY-MM-DD` as the sole content of a table cell | ADF `date` node (auto-detection so metadata tables get rich date rendering without explicit markup) |
+| `:status:LABEL:` inline | ADF `status` node, green (the standard pill used for `NEW` badges on index pages) |
+| `:status:LABEL:COLOR:` inline | ADF `status` node with explicit color. Valid colors: `neutral`, `purple`, `blue`, `red`, `yellow`, `green` |
 | `%%comment%%` inline | Stripped from body; posted as Confluence inline comments |
 | `%%\nblock comment\n%%` | Stripped from body; posted as Confluence inline comments |
 
@@ -479,6 +481,10 @@ These are non-obvious decisions that burned time to discover.
 **Date pills from ISO dates.** Confluence renders `date` ADF nodes as styled date pills that respect the viewer's locale. Plain text dates do not. The converter has two entry points. Explicit `:date:YYYY-MM-DD:` inline markup always becomes a date node. Bare `YYYY-MM-DD` strings are auto-promoted to date nodes only when they fill an entire table cell (a post-processing pass walks every `tableCell` and `tableHeader` after conversion). Auto-promotion is intentionally scoped to table cells. Metadata tables at the top of design docs (`Author`, `Published`, `Date`) get rich rendering without needing source-side markup, while ISO dates in narrative prose stay as text where converting them would be surprising.
 
 **Noon UTC for date node timestamps.** ADF date timestamps are UNIX milliseconds. The converter uses noon UTC for the chosen calendar date rather than midnight. Confluence renders the timestamp in the viewer's local time zone. Midnight UTC of 2026-05-13 renders as 2026-05-12 for any viewer in the Americas, which is the wrong calendar date. Noon UTC keeps the rendered day stable for every viewer between roughly UTC-11 and UTC+11.
+
+**Status pills via `:status:` markup.** Confluence's `Status` macro produces a small colored pill. In ADF, this is the inline `status` node with `text`, `color` and `localId` attributes. The converter exposes two markdown forms: `:status:LABEL:` defaults to green, and `:status:LABEL:COLOR:` lets the author pick from `neutral`, `purple`, `blue`, `red`, `yellow` or `green`. Each emitted node gets a fresh UUID `localId` so Confluence treats it as a stable element. Use these pills on index pages, status tables, and anywhere the bare label text would lose meaning without visual differentiation.
+
+**The NEW pill convention on index pages.** Engineering index pages (UEBA, Entity Resolution) mark recently published documents with a green `NEW` status pill so readers can find what changed at a glance. The convention is: NEW pills are 2-week badges. When an index page is updated, audit existing NEW pills and remove any whose linked document was created more than 14 days ago. The page's `createdAt` timestamp from `GET /wiki/api/v2/pages/{id}` is the authoritative source. Stripping a pill is a surgical ADF edit: remove the `status` node from its parent paragraph (and the surrounding whitespace text if it was emitted alongside the pill). This rule is index-page maintenance, not part of the converter, since the converter has no cross-page context.
 
 **Obsidian callout type mapping** (all lowercase matching):
 - `note`, `info`, `todo` -> `info` panel
