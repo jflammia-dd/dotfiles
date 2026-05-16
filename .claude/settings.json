@@ -333,5 +333,6 @@
   "fastMode": true,
   "tui": "fullscreen",
   "preferredNotifChannel": "ghostty",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "model": "sonnet[1m]"
 }
