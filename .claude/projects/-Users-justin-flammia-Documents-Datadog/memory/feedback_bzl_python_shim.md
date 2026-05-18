@@ -1,15 +1,14 @@
 ---
 name: bzl python3 shim issue in Claude Code sessions
-description: bzl and rapid run fail inside Claude Code sessions due to modern-python plugin shim intercepting python3
+description: bzl run works in Claude Code sessions; bzl build and rapid run may still fail due to the modern-python shim
 type: feedback
 originSessionId: 7da81963-1801-4858-a15d-eb928abdeb37
 ---
-`bzl build`, `rapid run` and any Bazel command fails inside Claude Code sessions with "ERROR: Use `uv run python3 tools/bazel` instead of `python3 tools/bazel`".
+`bzl run` (e.g. `bzl run //domains/language_tools/apps/whoisthis:whoisthis`) works fine in Claude Code sessions. The user confirmed this directly on 2026-05-18.
 
-**Why:** The `trailofbits/modern-python` Claude plugin installs a `python3` shim at the front of PATH. The shim intercepts every direct `python3` call and redirects it to `uv run`. `bzl` calls `python3 tools/bazel` internally and hits the shim instead of real Python.
-
-**How to apply:** For Gazelle (`bzl run //:gazelle`), strip the shim from PATH first and it works inside Claude Code:
+`bzl build` and `rapid run` (full Bazel builds) may still fail due to the `trailofbits/modern-python` shim intercepting `python3`. For those, stripping the shim from PATH first may help:
 ```bash
 CLEAN_PATH=$(echo $PATH | tr ':' '\n' | grep -v "modern-python\|\.claude/plugins" | tr '\n' ':' | sed 's/:$//') && PATH="/opt/homebrew/bin:$CLEAN_PATH" bzl run //:gazelle
 ```
-For full Bazel builds (`bzl build`, `rapid td update -t`), this workaround is insufficient and the build still fails. Those must be run in the user's own terminal. Use the clean-PATH trick for Gazelle-only operations.
+
+**How to apply:** Always attempt `bzl run` directly first. Only fall back to the PATH-stripping workaround or asking the user to run it manually if the command actually fails.
