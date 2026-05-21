@@ -101,7 +101,8 @@
 
 ## ERS PoC
 - [Branching strategy](project_ers_branching.md): single branch `justin.flammia/SEC-30573-entity-resolution-poc` for all PoC work; topic branches off epic only when parallel contributors need isolation
-- [Local dev workflow](project_ers_local_dev.md): `DD_ENV=dev rapid run -s entity-resolution` then `grpcurl -plaintext localhost:8080 grpc.health.v1.Health/Check`; statsd warning is expected
+- [Local dev workflow](project_ers_local_dev.md): `DD_ENV=dev rapid run -s siem-entity-resolution-api` then `grpcurl -plaintext localhost:8080 grpc.health.v1.Health/Check`; statsd warning is expected
+- [Staging test drive](project_ers_staging_td.md): active TD is `suzuki-x-90`; endpoint `rapid-td-suzuki-x-90.us1.staging.dog:443`; service renamed from `entity-resolution` to `siem-entity-resolution-api` on 2026-05-20
 
 - [Run commands yourself](feedback_run_commands_yourself.md): always run commands directly; never tell the user to run something themselves
 - [Document research in Jira](feedback_jira_research.md): add a Jira comment with research findings before writing code, so followers understand the reasoning

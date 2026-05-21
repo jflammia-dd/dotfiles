@@ -24,6 +24,7 @@
       "Bash(gh pr status*:*)",
       "Bash(gh pr diff*:*)",
       "Bash(gh pr checks*:*)",
+      "Bash(gh pr edit*:*)",
       "Bash(gh issue view*:*)",
       "Bash(gh issue list*:*)",
       "Bash(gh run view*:*)",

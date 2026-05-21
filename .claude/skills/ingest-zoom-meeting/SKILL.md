@@ -40,6 +40,7 @@ Apply these automatically without asking for confirmation. When new corrections 
 | "Andra" / "Andre" | [[Antara Hebbar]] | Common mishear of "Antara" |
 | "Morten" | [[Martin Guyard]] | Common mishear of "Martin" |
 | "Shark" / "Sharik" | [[Shariq Syed]] | Common mishear of "Shariq" |
+| "Quinton" | [[Quentin Fabre]] | Phonetic mishear of the French name "Quentin" |
 
 ## Step 0: Fetch the Summary from Gmail (preferred)
 

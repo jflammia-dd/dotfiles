@@ -7,7 +7,7 @@ originSessionId: 7da81963-1801-4858-a15d-eb928abdeb37
 Run the service locally from the dd-source root. Do not run through Claude Code; rapid run uses bzl which hits the python3 shim.
 
 ```bash
-DD_ENV=dev rapid run -s entity-resolution
+DD_ENV=dev rapid run -s siem-entity-resolution-api
 ```
 
 Verify it's healthy in a second terminal:
