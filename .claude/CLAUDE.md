@@ -1,5 +1,11 @@
 @RTK.md
 
+## Verification & Guessing
+
+- Never guess URLs, endpoint paths, or API surfaces. If unknown, say so and ask or search.
+- Never post comments or reviews to GitHub, Confluence or Slack without explicit user confirmation.
+- When the user specifies a method or API (e.g., ResolveAsync vs ResolveSync), use exactly that. Do not substitute.
+
 ## Git Rules
 
 - ALWAYS use `gh` on the command line when interacting with GitHub.
@@ -34,6 +40,22 @@
 - Prioritize simplicity. When two phrasings are both accurate, always choose the simpler one. Complexity in explanation signals unclear thinking, not a complex subject. Find the simpler sentence before reaching for qualifications.
 - ALWAYS invoke the `justins-voice` skill before drafting or editing documents, announcements or distributed written content. A UserPromptSubmit hook (`justins-voice-detect.sh`) detects writing tasks and prompts invocation. Treat its trigger as a strong signal to invoke the skill. This rule does not apply to machine-consumed content: skill files, hook scripts, memory files, CLAUDE.md, settings and any output written for Claude to read rather than a human.
 - NEVER include local-process language in published artifacts (Jira comments, Confluence pages, GitHub PR descriptions, Slack messages). Local-process language explains personal workflow concepts (done gates, integration gates, lifecycle mechanics, internal slash commands, references to memory files or vault paths, AI tooling). Published copy describes the work and the outcome, not the workflow. A PreToolUse hook (`local-process-language-check.sh`) scans Atlassian publish operations and blocks violators. Canonical rule: `agents/policies/published-artifacts.md`.
+
+## Communication Drafts
+
+Before posting or sending any content to Slack, GitHub, Confluence or Jira:
+
+1. Show the complete draft in the conversation first.
+2. Wait for an explicit "post", "send" or "publish" from the user before calling any tool.
+3. Use the target platform's native link format:
+   - Slack: `<url|text>` (NOT `[text](url)` markdown, which Slack renders as plain text)
+   - GitHub, Confluence, Jira: standard markdown `[text](url)`
+
+## Slack & Communication Style
+
+- Slack drafts do NOT render markdown link syntax `[text](url)`. Always use raw URLs or Slack's `<url|text>` deeplink format.
+- Keep replies concise and direct. Avoid performative or verbose phrasing.
+- No em dashes in any Slack or communication draft.
 
 ## Jira Rules
 

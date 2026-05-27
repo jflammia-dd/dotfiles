@@ -1,6 +1,10 @@
 {
   "permissions": {
     "allow": [
+      "Read(/Users/justin.flammia/.claude/**)",
+      "Edit(/Users/justin.flammia/.claude/**)",
+      "Write(/Users/justin.flammia/.claude/**)",
+      "Bash(rm /Users/justin.flammia/.claude/**:*)",
       "mcp__datadog-google-workspace__batch_update",
       "mcp__datadog-google-workspace__get_presentation",
       "mcp__datadog-google-workspace__get_slide",
@@ -20,6 +24,7 @@
       "Bash(rm /tmp/codex-task-*:*)",
       "Bash(date:*)",
       "Bash(gh pr view*:*)",
+      "Bash(gh pr create*:*)",
       "Bash(gh pr list*:*)",
       "Bash(gh pr status*:*)",
       "Bash(gh pr diff*:*)",
@@ -49,7 +54,14 @@
       "Bash(dd-git push --force*:*)",
       "Bash(dd-git push *--force*:*)",
       "Bash(git commit*--no-verify*:*)",
-      "Bash(dd-git commit*--no-verify*:*)"
+      "Bash(dd-git commit*--no-verify*:*)",
+      "Bash(gh pr comment*:*)",
+      "Bash(gh issue comment*:*)",
+      "Bash(gh pr review*:*)",
+      "Bash(dd-git pr comment*:*)",
+      "Bash(dd-git issue comment*:*)",
+      "mcp__plugin_slack_slack__slack_send_message",
+      "mcp__plugin_slack_slack__slack_schedule_message"
     ],
     "defaultMode": "auto"
   },
