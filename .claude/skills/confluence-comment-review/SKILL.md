@@ -117,7 +117,7 @@ Before drafting anything, categorize each new item:
 - **Quick answer.** The answer is clear from context and no external lookup is needed.
 - **Needs research.** A code link, external doc or data lookup is required. Do the research before drafting.
 - **Needs author input.** The comment raises a design question or trade-off only the doc author can resolve (e.g. "would it be cleaner to use X instead of Y?"). Summarize the trade-off for the user, present the options, get their decision, then draft the response. Do not draft a response before the author has weighed in.
-- **Acknowledgment only.** The reviewer is confirming understanding or reacting (e.g. "ok that makes more sense", "👍", "🔥"). Surface it to the user and confirm no response is needed before logging and moving on.
+- **Acknowledgment only.** The reviewer is confirming understanding, reacting or making an observation with no explicit question or ask (e.g. "ok that makes more sense", "👍", "🔥", "this introduces some interesting UX decisions"). Surface it to the user and explicitly ask whether to reply before drafting anything. Do not assume a reply is warranted and do not draft speculatively. Any reply to a pure observation risks implying commitment or forward motion the author may not want.
 - **Defer.** The item is out of scope for this doc or belongs to a later phase. Say so directly.
 - **Blocking.** The item requires external input (a PR link, a reviewer reply) before action is possible.
 
