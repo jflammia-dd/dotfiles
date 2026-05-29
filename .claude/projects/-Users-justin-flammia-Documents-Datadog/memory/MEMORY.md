@@ -98,6 +98,8 @@
 
 ## Dev Environment
 - [bzl python3 shim issue](feedback_bzl_python_shim.md): `bzl build`/`rapid run` always fail inside Claude Code sessions due to modern-python plugin intercepting `python3`. Run Bazel commands in your own terminal.
+- [Proto regen must use Bazel](feedback_proto_regen_bazel.md): never use local `protoc` to regenerate `.pb.go` files; use `bzl run //path:file.pb.go_snapshot_test_update` targets instead
+- [DDCI MCP auth at session start](feedback_ddci_mcp_auth.md): authenticate mcp__ddci-mcp-prod before any CI debugging; Datadog MCP queries hit staging and return nothing
 
 ## ERS PoC
 - [Branching strategy](project_ers_branching.md): single branch `justin.flammia/SEC-30573-entity-resolution-poc` for all PoC work; topic branches off epic only when parallel contributors need isolation
@@ -130,9 +132,11 @@
 
 ## PUP / SQL Queries
 - [Always print and copy PUP queries](feedback_pup_query_display.md): print as code block AND pbcopy every time; clipboard may be overwritten
+- [Use retriever-cli for queries](feedback_retriever_cli_queries.md): run/test all Trino and DDSQL queries with retriever-cli; share via `retriever-cli link --execution-engine <engine> --query "..."` to generate a PUP URL
 
 ## Key Files
 - [GoLand Setup](goland-setup.md) — GoLand configuration for dd-source
 - [dd-source Development](dd-source-dev.md) — Repository structure, builds, tools
 - [siem-entity-api](siem-entity-api.md) — Project-specific notes
-- EVP query stack reference: `docs/EVP Storage and Query Patterns.md` — covers Beagle, DDSQL, Malamute, DataFusion, Trino, Caniche, Substrait and Husky with two execution paths
+- EVP query stack reference: `docs/EVP Storage and Query Patterns.md` (covers Beagle, DDSQL, Malamute, DataFusion, Trino, Caniche, Substrait and Husky with two execution paths)
+- Query stack mental model + PUP guide: `docs/Datadog Query Stack Reference.md` (name decoder, layer diagram, when to use each PUP engine)

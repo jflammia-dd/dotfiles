@@ -16,6 +16,7 @@
 - Do not push, merge, or release anything without specific user approval.
 - Whenever updating a PR, rebase against the parent branch first. Most work happens in a large monorepo where drift accumulates quickly during long review cycles, so keeping the branch current prevents painful late-stage conflicts.
 - ALWAYS include the Jira issue key in commit subjects and PR titles so the Development panel auto-links. Do NOT include the issue key in branch names; Datadog engineering follows its own branch-naming convention. Canonical reference for what Jira looks for: Atlassian's [Reference issues in your development work](https://support.atlassian.com/jira-software-cloud/docs/reference-issues-in-your-development-work/). Commit format: `[SEC-XXXXX] <type>(<scope>): <subject>`. PR title format: `[SEC-XXXXX] <subject>`. Keys are case-sensitive, always uppercase.
+- Before every `git commit` and every `gh pr create`, run `git branch --show-current` and state the branch name in the conversation. If it is not the intended branch, stop and fix the branch situation before proceeding. This prevents commits and PRs landing on the wrong branch.
 
 ## Testing Rules
 
