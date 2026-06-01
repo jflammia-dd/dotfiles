@@ -1,6 +1,6 @@
 ---
 name: ingest-zoom-meeting
-description: Use when ingesting Zoom AI-generated meeting notes (summaries, next steps, transcripts) into the Obsidian vault. Zoom AI systematically mistranscribes internal codenames, abbreviations and people's names.
+description: Use when ingesting Zoom AI-generated meeting notes (hub.zoom.us/doc/ links or Gmail email summaries) into the Obsidian vault. Zoom AI systematically mistranscribes internal codenames, abbreviations and people's names.
 ---
 
 # Ingest Zoom AI Meeting Notes
@@ -30,6 +30,7 @@ Apply these automatically without asking for confirmation. When new corrections 
 | "bluff" (in summary/comms context) | BLUF | Bottom Line Up Front acronym |
 | "EBB track" / "EBB" | EVP track | Phonetic mishear of "EVP" (Entity Versioning Pipeline) |
 | "Kanish" | [[Caniche]] | Zoom AI mishears the internal tool name "Caniche" |
+| "N80" / "N80 resolution" | "entity" / "entity resolution" | Phonetic mishear of "entity" |
 
 ### People
 
@@ -41,10 +42,31 @@ Apply these automatically without asking for confirmation. When new corrections 
 | "Morten" | [[Martin Guyard]] | Common mishear of "Martin" |
 | "Shark" / "Sharik" | [[Shariq Syed]] | Common mishear of "Shariq" |
 | "Quinton" | [[Quentin Fabre]] | Phonetic mishear of the French name "Quentin" |
+| "Roxanne" | [[Roxane Brenier]] | Mishear of the French name "Roxane" |
 
-## Step 0: Fetch the Summary from Gmail (preferred)
+## Step 0: Fetch the Summary
 
-If the user has not pasted the notes, search Gmail first. Zoom sends summaries shortly after each meeting.
+Three ways to get the content, in priority order:
+
+### Option A: Zoom Hub link (hub.zoom.us/doc/...)
+
+When the user provides a `hub.zoom.us/doc/...` URL, fetch it via Playwright:
+
+```
+browser_navigate(url: "https://hub.zoom.us/doc/<id>...")
+browser_wait_for(time: 3)
+browser_snapshot()
+```
+
+If the page redirects to `zoom.us/signin`, the browser session is not logged in. Tell the user to log into Zoom in the browser, then retry navigation.
+
+Once loaded, the page title shows the doc name and the snapshot contains the full structured content. Zoom Hub AI summaries use these sections: **Key Outcomes**, **Decisions Made**, **Pending Confirmation**, **Engineering Context for [Name]** and **Action Items**. Extract all text from those sections. The `browser_snapshot()` YAML includes all visible text. Read it carefully since the content is nested under heading and paragraph nodes.
+
+Note: Zoom Hub docs don't always show the meeting date. Ask the user for the date and time if it's not visible in the snapshot.
+
+### Option B: Gmail (for email-format summaries)
+
+Zoom sends summaries by email shortly after each meeting.
 
 ```
 search_messages(query: "from:zoom summary after:YYYY/MM/DD", max_results: 10)
@@ -54,7 +76,11 @@ Subject pattern: `Meeting assets for [Name] / [Name] - [Meeting Title] are ready
 
 Fetch the matching message with `get_message(message_id)`. The full summary (quick recap, next steps and detailed sections) is in the HTML body. Strip HTML tags mentally; the text content is clean and complete.
 
-If multiple summaries are returned, confirm which meeting the user wants before fetching. If none are found, ask the user to paste the content.
+If multiple summaries are returned, confirm which meeting the user wants before fetching.
+
+### Option C: Pasted content
+
+If neither option above works, ask the user to paste the content directly.
 
 ## Step 1: Pre-Filing Verification (never skip)
 

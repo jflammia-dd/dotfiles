@@ -96,6 +96,9 @@
 ## Internal Resources
 - [Presentation template](reference_presentation_template.md). Official internal Google Slides asset library (backgrounds, graphics, template)
 
+## Skills
+- [skill-creator symlink gap](feedback_skill_creator_symlink.md): skills created by `skill-creator` land in `~/.agents/skills/` but are not auto-symlinked into `~/.claude/skills/`; create the symlink manually if a skill is missing
+
 ## Dev Environment
 - [bzl python3 shim issue](feedback_bzl_python_shim.md): `bzl build`/`rapid run` always fail inside Claude Code sessions due to modern-python plugin intercepting `python3`. Run Bazel commands in your own terminal.
 - [Proto regen must use Bazel](feedback_proto_regen_bazel.md): never use local `protoc` to regenerate `.pb.go` files; use `bzl run //path:file.pb.go_snapshot_test_update` targets instead

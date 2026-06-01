@@ -7,7 +7,10 @@ argument-hint: "[URL or source description]"
 
 The user invoked: `/ingest $ARGUMENTS`
 
-Use the obsidian skill's ingest workflow.
+## Routing
 
-If `$ARGUMENTS` contains a URL: fetch it first, then proceed with the ingest workflow.
-If `$ARGUMENTS` is empty or a description: ask the user to paste the source content, then proceed.
+If `$ARGUMENTS` contains a `hub.zoom.us/doc/` URL: invoke the `ingest-zoom-meeting` skill. That skill's Step 0 Option A covers how to fetch the doc via Playwright and continue with the full ingest workflow.
+
+If `$ARGUMENTS` contains any other URL: fetch it first using WebFetch or the appropriate MCP tool, then proceed with the obsidian skill's ingest workflow.
+
+If `$ARGUMENTS` is empty or a description: ask the user to paste the source content, then proceed with the obsidian skill's ingest workflow.
