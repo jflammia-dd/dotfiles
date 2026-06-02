@@ -55,6 +55,9 @@
 - **Null whoisthis results** may mean the person departed Datadog, not just a wrong email. Check with the user.
 - **Zhong Ren**: whoisthis returns null even with correct email. Likely departed Datadog (Slack deactivated per user).
 
+## Observability as Code
+- [Cloud SIEM dashboards live in logs-ops](reference_cloud_siem_dashboards_logs_ops.md) — not terraform-config/k9-app; 28 dashboards + 120 monitors in logs-ops cloud-siem domain, deployed via Bazel monitoring_module across gov/prod/staging. Guide: `docs/Dashboards as Code at Datadog.md`
+
 ## Active Documents
 - [UEBA doc intent](ueba-doc-intent.md) — UEBA Engineering Landscape doc frames ambiguous work into actionable tracks; open questions become next steps, not blockers
 - [Entity Resolution RFC](project_er_proposal.md) — Complete draft RFC at `docs/Entity Resolution - Design Proposal.md`; not yet published to Confluence; Phase 1 (GW→AWS) is the dependency for the User Entity Roll-up project

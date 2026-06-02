@@ -1,0 +1,28 @@
+{
+  "state": "failed",
+  "detail": "source session /Users/justin.flammia/.claude/projects/-Users-justin-flammia-Documents-Datadog/2dc87765-7fd3-40b3-ae30-b83c1fd7cd1d.jsonl not found",
+  "tempo": "idle",
+  "output": null,
+  "children": null,
+  "linkScanOffset": 0,
+  "template": "bg",
+  "respawnFlags": [
+    "--effort",
+    "xhigh",
+    "--permission-mode",
+    "auto"
+  ],
+  "bgIsolation": "none",
+  "providerEnv": {},
+  "intent": "this is the status of the ERS run from the api function\n\n```\n\n  \"counts\": {\n    \"ambiguous\": \"0\",\n    \"entity_count\": \"0\",\n    \"partial\": \"0\",\n    \"resolved\": \"0\",\n    \"unresolved\": \"0\"\n  },\n  \"error_",
+  "name": "Close out issue 32318",
+  "nameSource": "auto",
+  "sessionId": "ce5190d5-d2e9-4d9c-bac8-533bb54f8e41",
+  "resumeSessionId": "ce5190d5-d2e9-4d9c-bac8-533bb54f8e41",
+  "daemonShort": "ce5190d5",
+  "cwd": "/Users/justin.flammia/Documents/Datadog",
+  "createdAt": "2026-06-01T19:33:05.512Z",
+  "updatedAt": "2026-06-01T19:33:18.185Z",
+  "firstTerminalAt": "2026-06-01T19:33:18.185Z",
+  "backend": "daemon"
+}

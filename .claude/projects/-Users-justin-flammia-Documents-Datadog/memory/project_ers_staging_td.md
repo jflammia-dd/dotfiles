@@ -7,22 +7,15 @@ metadata:
   originSessionId: 8b39854a-a55d-43de-a980-73227a502649
 ---
 
-The active staging test drive for the ERS PoC is `suzuki-x-90`. Service: `siem-entity-resolution-api`, namespace: `rapid-cloud-security-platform`.
+No active staging test drive as of 2026-06-01. `suzuki-x-90` was torn down on that date.
 
-Endpoint: `rapid-td-suzuki-x-90.us1.staging.dog:443`
+Service: `siem-entity-resolution-api`, namespace: `rapid-cloud-security-platform`.
 
-Health check:
+To spin up a new TD:
 ```bash
-grpcurl rapid-td-suzuki-x-90.us1.staging.dog:443 grpc.health.v1.Health/Check
+rapid td create -s siem-entity-resolution-api
 ```
 
-Log filter (staging Datadog org `dd.datad0g.com`): `service:rapid-td-suzuki-x-90`
+**Why:** `suzuki-x-90` was the active TD from 2026-05-20 until teardown on 2026-06-01. Prior TD `peugeot-db9-gt` was retired when the service was renamed from `entity-resolution` to `siem-entity-resolution-api`.
 
-Update the TD after pushing a commit:
-```bash
-rapid td update -t -n suzuki-x-90
-```
-
-**Why:** `peugeot-db9-gt` was the prior TD, created when the service was named `entity-resolution`. The service was renamed to `siem-entity-resolution-api` and the TD was rotated to `suzuki-x-90` on 2026-05-20. Turbo updates on `peugeot-db9-gt` would fail because Rapid looks for `entity-resolution/rapid.json` which no longer exists.
-
-**How to apply:** Use `suzuki-x-90` as the TD name in all staging validation steps, grpcurl commands and log searches.
+**How to apply:** When staging validation is needed again, create a new TD and update this memory with the new name and endpoint.
