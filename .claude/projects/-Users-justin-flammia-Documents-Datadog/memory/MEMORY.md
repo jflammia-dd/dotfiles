@@ -103,9 +103,10 @@
 - [skill-creator symlink gap](feedback_skill_creator_symlink.md): skills created by `skill-creator` land in `~/.agents/skills/` but are not auto-symlinked into `~/.claude/skills/`; create the symlink manually if a skill is missing
 
 ## Dev Environment
-- [bzl python3 shim issue](feedback_bzl_python_shim.md): `bzl build`/`rapid run` always fail inside Claude Code sessions due to modern-python plugin intercepting `python3`. Run Bazel commands in your own terminal.
+- [bzl works in Claude Code](feedback_bzl_python_shim.md): `bzl build`, `bzl run` and `bzl test` all work normally in-session; the python3 shim assumption was wrong.
 - [Proto regen must use Bazel](feedback_proto_regen_bazel.md): never use local `protoc` to regenerate `.pb.go` files; use `bzl run //path:file.pb.go_snapshot_test_update` targets instead
 - [DDCI MCP auth at session start](feedback_ddci_mcp_auth.md): authenticate mcp__ddci-mcp-prod before any CI debugging; Datadog MCP queries hit staging and return nothing
+- [Datadog MCP env switching](feedback_datadog_mcp_env_switch.md): when a query needs a different org (cross-org 404 naming a target org, or a prod resource while bound to staging), ask Justin to re-auth the Datadog MCP for that env and keep going; don't give up
 
 ## ERS PoC
 - [Branching strategy](project_ers_branching.md): single branch `justin.flammia/SEC-30573-entity-resolution-poc` for all PoC work; topic branches off epic only when parallel contributors need isolation
@@ -135,10 +136,15 @@
 ## PR and Commit Conventions
 - [No Claude attribution in PRs](feedback_no_claude_attribution.md): never add "Generated with Claude Code" or co-author trailers unless explicitly asked
 - [PR approval required before publishing](feedback_pr_approval_required.md): always show draft title+body in conversation and get explicit approval before `gh pr create` or any PR description update, even for draft PRs
+- [No hard-wrapping in PR body prose](feedback_pr_body_no_hard_wrap.md): keep prose paragraphs as single unwrapped lines in `gh pr create`/`gh pr edit`; hard newlines render as line breaks in GitHub
 
 ## PUP / SQL Queries
 - [Always print and copy PUP queries](feedback_pup_query_display.md): print as code block AND pbcopy every time; clipboard may be overwritten
 - [Use retriever-cli for queries](feedback_retriever_cli_queries.md): run/test all Trino and DDSQL queries with retriever-cli; share via `retriever-cli link --execution-engine <engine> --query "..."` to generate a PUP URL
+
+## Rapid / Mosaic
+- [Mosaic URL patterns](reference_mosaic_urls.md): allDeployments tab tracks rollout per DC; change-request URL only tracks the CI bundle generation job
+- [rapid.json deployment gap](feedback_rapid_json_deployment_gap.md): rapid.json-only changes don't trigger Conductor redeployment; must run `rapid release` manually to force CNAB regeneration
 
 ## Key Files
 - [GoLand Setup](goland-setup.md) — GoLand configuration for dd-source

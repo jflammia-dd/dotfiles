@@ -13,6 +13,8 @@ Cloud SIEM operational dashboards and monitors are managed as code in `logs-ops`
 
 Deploy: Bazel `monitoring_module` macro (`logs-ops/rules/monitoring/monitoring.bzl`) fans out `plan`/`apply` jobs across `ENVS` (`rules/monitoring/constants.bzl`) = gov, prod, staging, all sites. NOT the `terraform-config` GitLab scheduled-apply flow. `env/` subdirs only hold per-site overrides; the base dashboard definition is shared across all envs.
 
+Apply timing: after merge to master a Conductor applies on the schedule in the module's `service.datadog.yaml`, in order staging -> prod -> gov (blocking train; a failed env stops the rest). For cloud-siem the schedule is `* 9-20 * * MON-THU` (staging+prod) and gov is `0 14 * * TUE`, so a merge outside that window waits. To apply immediately, run from the `logs-ops` repo root (NOT dd-source, which 404s on the package): `bzl run //domains/cloud-security-platform/config/monitoring/cloud-siem:cloud-siem-<env>-apply` where `<env>` is staging, prod or gov. Watch runs in SDP filtered to `logs-ops` + service `cloud-siem`.
+
 Team convention: typed `datadog_dashboard` HCL with `locals` for service names and filters, opposite the org-wide "JSON for complex" default. Live `[K9][SIEM]` dashboards carry a "Provisioned by terraform, modify here or your changes will be discarded" footer.
 
 Full guide: [[Dashboards as Code at Datadog]] (docs/). Related: [[Dashboards as Code at Datadog]] covers the org-wide route via [[terraform-config]] too.
