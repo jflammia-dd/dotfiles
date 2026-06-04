@@ -31,6 +31,7 @@ Apply these automatically without asking for confirmation. When new corrections 
 | "EBB track" / "EBB" | EVP track | Phonetic mishear of "EVP" (Entity Versioning Pipeline) |
 | "Kanish" | [[Caniche]] | Zoom AI mishears the internal tool name "Caniche" |
 | "N80" / "N80 resolution" | "entity" / "entity resolution" | Phonetic mishear of "entity" |
+| "ORC2" | org 2 | Datadog internal staging organization (dd.datad0g.com), used as a test environment |
 
 ### People
 
