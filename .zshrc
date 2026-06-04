@@ -152,34 +152,10 @@ export CPATH="$(brew --prefix)/include:$CPATH"
 export LIBRARY_PATH="$(brew --prefix)/lib:$LIBRARY_PATH"
 
 
-# Claude Code: capture session UUID on exit, resume with Alt+R
-# Uses TTY-based file so each terminal tracks its own session
-claude() {
-  local logfile=$(mktemp /tmp/claude-session.XXXXXX)
-  local tty_id=$(tty | tr '/' '_')
-  command script -q "$logfile" "$(command -v claude)" "$@"
-  local rc=$?
-  local sid=$(tail -c 2048 "$logfile" 2>/dev/null \
-    | LC_ALL=C sed 's/\x1b\[[0-9;]*[a-zA-Z]//g' \
-    | command grep -oE '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}' \
-    | tail -1)
-  [[ -n "$sid" ]] && echo "$sid" > "/tmp/claude_session${tty_id}"
-  rm -f "$logfile"
-  return $rc
-}
-
-_resume_claude() {
-  local tty_id=$(tty | tr '/' '_')
-  local idfile="/tmp/claude_session${tty_id}"
-  if [[ -f "$idfile" ]]; then
-    BUFFER="claude --resume $(cat "$idfile")"
-  else
-    BUFFER="claude --continue"
-  fi
-  zle accept-line
-}
-zle -N _resume_claude
-bindkey '\er' _resume_claude
+# Claude Code runs directly (no `script` wrapper). The wrapper was removed
+# 2026-06-04 because macOS `script` does not forward SIGWINCH, which froze the
+# TUI at its launch size and corrupted rendering on every resize. See
+# docs/Ghostty Rendering Corruption.md in the Datadog vault.
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
