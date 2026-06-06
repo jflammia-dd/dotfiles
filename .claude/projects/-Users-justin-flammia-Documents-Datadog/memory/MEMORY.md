@@ -124,6 +124,7 @@
 - [Zoom file handling](feedback_zoom_file_handling.md): Move Zoom summary files to `attachments/` immediately on ingest; don't leave them in ~/Downloads.
 
 ## Writing Rules
+- [No iterative thinking in output](feedback_no_iterative_thinking_in_output.md): State intent only. No before/after comparisons, "instead of X", "now Y" or improvement framing in code, docs, config or any artifact.
 - [No TH abbreviation](feedback_no_TH_abbreviation.md): Always write "Temporal Husky" in full, never "TH". Hard rule, not a suggestion.
 - [Slack intro style](feedback_slack_intro_style.md): Cold Slack messages use "I'm from [team]" and "I want to understand" for personal framing; "we" for team-level concerns.
 - [Always use clickable links](feedback_clickable_links.md): Every Jira ticket, Confluence page, Slack thread, GitHub PR must be a rendered markdown link in conversation. Never a bare ID.
