@@ -21,6 +21,9 @@
 - Jira comment editor accepts **markdown** (not wiki markup). Pasting markdown renders correctly in the UI. No markdown toggle needed; just paste directly.
 - When preparing Jira comments for clipboard, always use markdown format (not Jira wiki markup like `h2.`, `{{code}}`, `[text|url]`).
 
+## ERS Commitments
+- [Q2 delivery commitment](project_ers_q2_commitment.md): federation + role chain resolution in production behind feature flag for org 2 by June 30, PoC state; confirmed with Corey Finley 2026-06-08
+
 ## ERS Project Structure
 - [Three-track structure](project_ers_three_track_structure.md): Entity Context (ingestion + sideplane), ERS (resolution) and Risk Insights Entity Rollup (Shariq's Caniche view). Each track has distinct milestones for the same IdP.
 - [ERS Delivery Plan](../docs/ERS - Delivery Plan.md) and [Project Overview](../docs/Entity Context and ERS - Project Overview.md) are the canonical planning docs as of 2026-05-05.
@@ -124,7 +127,6 @@
 - [Zoom file handling](feedback_zoom_file_handling.md): Move Zoom summary files to `attachments/` immediately on ingest; don't leave them in ~/Downloads.
 
 ## Writing Rules
-- [No iterative thinking in output](feedback_no_iterative_thinking_in_output.md): State intent only. No before/after comparisons, "instead of X", "now Y" or improvement framing in code, docs, config or any artifact.
 - [No TH abbreviation](feedback_no_TH_abbreviation.md): Always write "Temporal Husky" in full, never "TH". Hard rule, not a suggestion.
 - [Slack intro style](feedback_slack_intro_style.md): Cold Slack messages use "I'm from [team]" and "I want to understand" for personal framing; "we" for team-level concerns.
 - [Always use clickable links](feedback_clickable_links.md): Every Jira ticket, Confluence page, Slack thread, GitHub PR must be a rendered markdown link in conversation. Never a bare ID.

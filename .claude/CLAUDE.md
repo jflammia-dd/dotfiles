@@ -42,6 +42,43 @@
 - ALWAYS invoke the `justins-voice` skill before drafting or editing documents, announcements or distributed written content. A UserPromptSubmit hook (`justins-voice-detect.sh`) detects writing tasks and prompts invocation. Treat its trigger as a strong signal to invoke the skill. This rule does not apply to machine-consumed content: skill files, hook scripts, memory files, CLAUDE.md, settings and any output written for Claude to read rather than a human.
 - NEVER include local-process language in published artifacts (Jira comments, Confluence pages, GitHub PR descriptions, Slack messages). Local-process language explains personal workflow concepts (done gates, integration gates, lifecycle mechanics, internal slash commands, references to memory files or vault paths, AI tooling). Published copy describes the work and the outcome, not the workflow. A PreToolUse hook (`local-process-language-check.sh`) scans Atlassian publish operations and blocks violators. Canonical rule: `agents/policies/published-artifacts.md`.
 
+## Anti-pattern: Iterative Thinking in Output
+
+Every artifact (code comments, commit messages, PR descriptions, Jira comments, Confluence pages, Slack messages and config files) must describe final state and intent. Conversation within a session is where iteration happens; artifacts capture the result of that iteration, not the path to it.
+
+**The test:** does "before" refer to a prior runtime state of the running system, or the old version of the code? The first is describing behavior and belongs in artifacts. The second is development history and does not.
+
+**Valid (runtime state transitions):**
+
+- `"transitions the run from pending to running"`
+- `"converts the ARN to an IAM user format for the next strategy pass"`
+- `"the fallback path emits an Unresolved result when ctx is canceled"`
+
+**Invalid (development-time comparisons):**
+
+- "instead of X" (references old code behavior)
+- "now Y" / "now skips" (implies a before state in the code)
+- "reduces N to 1" / "reduces N calls to one" (improvement framing)
+- "falls back to" (old code path reference)
+- "no longer does X" (explicit negation of old behavior)
+- "was previously" / "used to" (explicit before state in the code)
+- "avoiding a 60s drain wait" (symptom from investigation, not intent)
+- "before this change" / "after this PR" (explicit change framing)
+
+**Examples:**
+
+❌ `// The old sequential path checked ctx.Err() after Resolve and returned before writing, so concurrent workers must do the same.`
+
+✅ `// Skip writes when ctx is already canceled so that a failed run does not overwrite prior resolved records with stale results.`
+
+❌ `// close(done) must run before pool.Shutdown to avoid a 60s drain wait caused by the blocking worker not receiving the cancellation signal.`
+
+✅ `// t.Cleanup runs LIFO; register Shutdown first so close(done) runs first, releasing the blocked worker before Shutdown waits for it to exit.`
+
+❌ `The JWT is injected so every CloudTrail query uses it instead of minting independently per query.`
+
+✅ `The JWT is available to all CloudTrail queries on the run context via authctx.JwtFromContext.`
+
 ## Communication Drafts
 
 Before posting or sending any content to Slack, GitHub, Confluence or Jira:
