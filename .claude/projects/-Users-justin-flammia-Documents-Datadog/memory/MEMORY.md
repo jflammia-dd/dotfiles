@@ -58,8 +58,15 @@
 - **Null whoisthis results** may mean the person departed Datadog, not just a wrong email. Check with the user.
 - **Zhong Ren**: whoisthis returns null even with correct email. Likely departed Datadog (Slack deactivated per user).
 
+## Balto Runtime Config
+- [CINDY trigger pattern](feedback_balto_cindy_trigger.md): `balto migrate` creates proposals without a reviewer; must call `UpdateConfiguration` with `ReviewConfig` via a `bzl run` tool to trigger CINDY Slack approval notifications
+- [#k9-siem-ueba channel](reference_k9_siem_ueba_channel.md): `C0B0QRZLCKX` is the UEBA engineering channel used for Balto CINDY notifications for ERS services
+
+## PR Review
+- [Codex comments invisible to get-pr-comments.sh](feedback_pr_comments_codex_blind_spot.md): Codex posts as plain PR comments not GraphQL review threads; always also run `gh api "repos/DataDog/dd-source/pulls/<N>/comments"` after any PR review
+
 ## Observability as Code
-- [Cloud SIEM dashboards live in logs-ops](reference_cloud_siem_dashboards_logs_ops.md) — not terraform-config/k9-app; 28 dashboards + 120 monitors in logs-ops cloud-siem domain, deployed via Bazel monitoring_module across gov/prod/staging. Guide: `docs/Dashboards as Code at Datadog.md`
+- [Cloud SIEM dashboards live in logs-ops](reference_cloud_siem_dashboards_logs_ops.md): 28 dashboards + 120 monitors in logs-ops cloud-siem domain (not terraform-config/k9-app), deployed via Bazel monitoring_module across gov/prod/staging. Guide: `docs/Dashboards as Code at Datadog.md`
 
 ## Active Documents
 - [UEBA doc intent](ueba-doc-intent.md) — UEBA Engineering Landscape doc frames ambiguous work into actionable tracks; open questions become next steps, not blockers
@@ -75,6 +82,7 @@
 - [Confluence edit approval](feedback_confluence_edit_approval.md). Show verbatim before/after and get explicit approval before applying any page edit. Never apply after a dry-run without pausing.
 - [Review comment workflow](feedback_review_comment_workflow.md). One comment at a time. Pre-load context and draft. Move items to Responded immediately after posting.
 - [Tool limitations](feedback_tool_limitations.md). Before claiming a tool can't do something, check whether a Python/ADF API approach can. confluence-write.py can't inject link marks but Python ADF scripts can.
+- [Don't suggest resolving comments](feedback_confluence_comment_resolution.md): threads stay open after replying so others can follow the discussion
 
 ## Office Tracking
 - [Week boundary rule](feedback_office_week_boundaries.md) — weeks are full Mon-Fri units owned by the month containing the Monday; no partial weeks at month boundaries
