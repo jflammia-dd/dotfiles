@@ -15,10 +15,21 @@ If the page has no review section (first node is not a table), extract returns
 empty review_nodes and all existing nodes as content_nodes.
 """
 
+import datetime as _dt
 import uuid
 
 AUTHOR_ACCOUNT_ID = "712020:12e11061-cd2b-4940-acd0-af1b111dd526"
 AUTHOR_DISPLAY_NAME = "@Justin Flammia"
+
+
+def _date(date_str):
+    """ADF date node from an ISO YYYY-MM-DD string. Confluence renders this as
+    a styled date pill. The timestamp uses noon UTC so the rendered calendar
+    date stays stable across viewer time zones.
+    """
+    y, m, d = (int(x) for x in date_str.split("-"))
+    ts = int(_dt.datetime(y, m, d, 12, 0, 0, tzinfo=_dt.timezone.utc).timestamp() * 1000)
+    return {"type": "date", "attrs": {"timestamp": str(ts)}}
 
 
 def _mention(account_id, display_name):
@@ -93,7 +104,7 @@ def build_review_table_adf(date_str):
         ]),
         _table_row([
             _table_header([_text("Published", marks=[{"type": "strong"}])]),
-            _table_cell([_text(date_str)]),
+            _table_cell([_date(date_str)]),
         ]),
     ])
 

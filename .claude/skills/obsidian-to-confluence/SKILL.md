@@ -35,6 +35,7 @@ The converter handles the following Obsidian markdown elements:
 | `[text](url)` links | ADF `link` mark |
 | `[[WikiLink]]` | Plain text (page name), unless it matches a key in `mention_map`, in which case it becomes an ADF mention (Confluence user tag) |
 | `[[WikiLink\|Display]]` | Plain text (display text), or mention if the page name matches `mention_map` |
+| Plain `First Last` in prose | ADF mention when the full name matches a `people/` profile in `people_roster`; skipped inside code, inline code and links |
 | `[[#Heading]]` anchor links | ADF `link` mark pointing to `#heading-slug` |
 | `- item` / `* item` bullet lists | ADF `bulletList` with `listItem` |
 | `1. item` ordered lists | ADF `orderedList` with `listItem` |
@@ -80,7 +81,7 @@ import re, os
 VAULT_DIR = "/Users/justin.flammia/Documents/Datadog"
 wikilink_pattern = re.compile(r'\[\[([^\]|#][^\]|]*)(?:\|[^\]]*)?\]\]')
 
-mention_map = {}       # name → {account_id, display_name}
+mention_map = {}       # name -> {account_id, display_name}
 dynamic_resolved = []  # names resolved via live API call (not stored in vault)
 failed = []            # names where resolution failed entirely
 
@@ -140,7 +141,25 @@ For dynamic resolutions, suggest storing the ID permanently:
 
 For failures, the wikilink becomes plain text. The document still publishes; the failed names just won't be clickable Confluence mentions. No human gate is needed unless you want to verify.
 
-Pass the map to the converter in Step 6: `convert(content, image_map=image_map, mention_map=mention_map)`.
+### Full-name text mentions
+
+`mention_map` tags only `[[wikilink]]` references. To also tag people who appear as plain "First Last" text in prose, build a `people_roster` from every `people/` profile that has an `atlassian_id` and pass it to the converter. The converter replaces exact whole-name matches with mention nodes, leaving code blocks, inline code and link text alone.
+
+```python
+people_roster = {}  # "First Last" -> {"account_id", "display_name"}
+for fname in os.listdir(os.path.join(VAULT_DIR, "people")):
+    if not fname.endswith(".md"):
+        continue
+    name = fname[:-3]
+    fm = read_frontmatter(os.path.join(VAULT_DIR, "people", fname))
+    aid = fm.get("atlassian_id")
+    if aid:
+        people_roster[name] = {"account_id": aid, "display_name": name}
+```
+
+Only profiles with a stored `atlassian_id` are included, so plain-text matches resolve with no API call. Names without an ID stay plain text. Every occurrence of a matched name is tagged.
+
+Pass both to the converter in Step 6: `convert(content, image_map=image_map, mention_map=mention_map, people_roster=people_roster)`.
 
 ## Step 1b: Review Status table
 
@@ -168,6 +187,8 @@ if not review_nodes:
 ```
 
 The review section is separated from the document body by a `rule` node. `extract_review_table_adf` finds the first `rule` node (the sentinel) and returns everything before it.
+
+`build_review_table_adf` already renders the metadata table natively: the Author cell is a Confluence user mention and the Published cell is a date pill (date node). Use its output as-is. Do not overwrite either cell with plain text when assembling the page, doing so is what strips the native rendering.
 
 ## Step 2: Scan for images
 
@@ -307,7 +328,7 @@ from md_to_adf import convert
 from review_table_adf import build_review_table_adf, extract_review_table_adf
 
 # Pass 2: full conversion with images resolved
-result = convert(content, image_map=image_map)
+result = convert(content, image_map=image_map, mention_map=mention_map, people_roster=people_roster)
 doc_nodes = result["adf"]["content"]
 
 # Prepend review table if requested
@@ -374,7 +395,7 @@ if not review_nodes:
     review_nodes = build_review_table_adf(today)   # fresh table if none exists
 
 # 4. Convert updated Obsidian content to ADF.
-result = convert(content, image_map=image_map)
+result = convert(content, image_map=image_map, mention_map=mention_map, people_roster=people_roster)
 doc_nodes = result["adf"]["content"]
 
 # 5. Assemble: review table + document body.
@@ -383,7 +404,7 @@ new_adf = {"type": "doc", "version": 1, "content": all_nodes}
 
 # 6. Re-inject annotation marks into the new ADF.
 #    inject_annotations walks the new ADF and places each annotation mark
-#    at the best matching text position (exact match → LCS → word overlap →
+#    at the best matching text position (exact match -> LCS -> word overlap ->
 #    first substantial paragraph as last resort for visibility).
 annotated_adf, unanchored = inject_annotations(new_adf, annotations)
 

@@ -146,9 +146,13 @@ class TestBuildReviewTable:
         assert "Published" in full
 
     def test_published_date_present(self):
+        # The Published value is a native ADF date node (Confluence date pill),
+        # so it renders as a styled date rather than literal text.
         author_table = self.nodes[0]
-        full = all_text(author_table)
-        assert "2026-04-09" in full
+        published_cell = author_table["content"][1]["content"][1]
+        date_node = published_cell["content"][0]["content"][0]
+        assert date_node["type"] == "date"
+        assert date_node["attrs"]["timestamp"].isdigit()
 
     def test_author_mention_in_author_table(self):
         author_table = self.nodes[0]
@@ -320,3 +324,28 @@ class TestExtractReviewTable:
         # Tables and heading types match
         for e, o in zip(extracted, original):
             assert e["type"] == o["type"]
+
+
+class TestPublishedDatePill:
+    """The Published cell must be a native ADF date node so Confluence renders
+    a date pill, and the Author cell must be a native user mention."""
+
+    def _meta_rows(self):
+        from review_table_adf import build_review_table_adf
+        nodes = build_review_table_adf("2026-06-10")
+        table = nodes[0]
+        return table["content"]
+
+    def test_published_cell_is_date_node(self):
+        rows = self._meta_rows()
+        # row 1 = Published label + value
+        value_cell = rows[1]["content"][1]
+        inline = value_cell["content"][0]["content"]
+        assert inline[0]["type"] == "date"
+        assert inline[0]["attrs"]["timestamp"].isdigit()
+
+    def test_author_cell_is_mention(self):
+        rows = self._meta_rows()
+        value_cell = rows[0]["content"][1]
+        inline = value_cell["content"][0]["content"]
+        assert inline[0]["type"] == "mention"

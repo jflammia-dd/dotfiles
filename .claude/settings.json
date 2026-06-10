@@ -68,7 +68,6 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "sonnet[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -268,7 +267,6 @@
     "atomic-agents@claude-plugins-official": true,
     "aaa-internal@datadog-claude-plugins": true,
     "ai-devx@datadog-claude-plugins": true,
-    "ai-firstify@claude-plugins-official": true,
     "ask-questions-if-underspecified@trailofbits": true,
     "audit-context-building@trailofbits": true,
     "claude-in-chrome-troubleshooting@trailofbits": true,
@@ -313,12 +311,9 @@
     "work-analyzer@datadog-claude-plugins": true,
     "codex@openai-codex": true,
     "confluence-write@datadog-claude-plugins": true,
-    "sourcegraph@claude-plugins-official": true,
     "data-engineering@claude-plugins-official": true,
-    "product-tracking-skills@claude-plugins-official": true,
     "mongodb@claude-plugins-official": true,
     "session-report@claude-plugins-official": true,
-    "zoom-plugin@claude-plugins-official": true,
     "ai-devx-flow@datadog-claude-plugins": true,
     "applied-ai-streaming-engineering@datadog-claude-plugins": true,
     "atlas@datadog-claude-plugins": true,
@@ -328,8 +323,7 @@
     "prompt-engineering@datadog-claude-plugins": true,
     "redapl@datadog-claude-plugins": true,
     "technical-content@datadog-claude-plugins": true,
-    "weekly-wins-journal@datadog-claude-plugins": true,
-    "optibot@claude-plugins-official": true
+    "weekly-wins-journal@datadog-claude-plugins": true
   },
   "extraKnownMarketplaces": {
     "trailofbits": {

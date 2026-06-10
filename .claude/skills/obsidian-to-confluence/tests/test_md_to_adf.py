@@ -1228,3 +1228,70 @@ class TestEdgeCases:
         # Should produce at least 1 item; continuation should be merged
         assert node is not None
         assert len(node["content"]) >= 1
+
+
+# ---------------------------------------------------------------------------
+# Full-name text mentions (people_roster)
+# ---------------------------------------------------------------------------
+
+class TestTextMentions:
+    """convert(..., people_roster=...) tags exact 'First Last' matches in prose
+    with ADF mention nodes, using the people directory's Atlassian IDs."""
+
+    ROSTER = {
+        "Justin Flammia": {"account_id": "712020:abc", "display_name": "Justin Flammia"},
+        "Shariq Syed": {"account_id": "712020:def", "display_name": "Shariq Syed"},
+    }
+
+    def _para_nodes(self, adf):
+        return [n for n in adf["content"] if n["type"] == "paragraph"]
+
+    def test_full_name_in_prose_becomes_mention(self):
+        adf = convert("Reviewed by Justin Flammia today.", people_roster=self.ROSTER)["adf"]
+        para = self._para_nodes(adf)[0]
+        mentions = [n for n in para["content"] if n.get("type") == "mention"]
+        assert len(mentions) == 1
+        assert mentions[0]["attrs"]["id"] == "712020:abc"
+        # surrounding text is preserved on both sides
+        texts = "".join(n.get("text", "") for n in para["content"])
+        assert texts.startswith("Reviewed by ")
+        assert texts.endswith(" today.")
+
+    def test_two_distinct_people_both_tagged(self):
+        adf = convert("Justin Flammia and Shariq Syed met.", people_roster=self.ROSTER)["adf"]
+        para = self._para_nodes(adf)[0]
+        ids = [n["attrs"]["id"] for n in para["content"] if n.get("type") == "mention"]
+        assert ids == ["712020:abc", "712020:def"]
+
+    def test_name_not_in_roster_stays_text(self):
+        adf = convert("Spoke with Pat Unknown.", people_roster=self.ROSTER)["adf"]
+        para = self._para_nodes(adf)[0]
+        assert all(n.get("type") != "mention" for n in para["content"])
+
+    def test_partial_first_name_not_matched(self):
+        # A bare first name must not match the full-name roster entry.
+        adf = convert("Justin reviewed it.", people_roster=self.ROSTER)["adf"]
+        para = self._para_nodes(adf)[0]
+        assert all(n.get("type") != "mention" for n in para["content"])
+
+    def test_name_in_code_block_not_tagged(self):
+        md = "```\nJustin Flammia\n```\n"
+        adf = convert(md, people_roster=self.ROSTER)["adf"]
+        cb = [n for n in adf["content"] if n["type"] == "codeBlock"][0]
+        assert "Justin Flammia" in cb["content"][0]["text"]
+        assert all(n.get("type") != "mention" for n in cb["content"])
+
+    def test_name_in_inline_code_not_tagged(self):
+        adf = convert("Use `Justin Flammia` literally.", people_roster=self.ROSTER)["adf"]
+        para = self._para_nodes(adf)[0]
+        assert all(n.get("type") != "mention" for n in para["content"])
+
+    def test_name_in_link_text_not_tagged(self):
+        adf = convert("[Justin Flammia](https://example.com)", people_roster=self.ROSTER)["adf"]
+        para = self._para_nodes(adf)[0]
+        assert all(n.get("type") != "mention" for n in para["content"])
+
+    def test_no_roster_leaves_text_unchanged(self):
+        adf = convert("Justin Flammia wrote this.")["adf"]
+        para = self._para_nodes(adf)[0]
+        assert all(n.get("type") != "mention" for n in para["content"])

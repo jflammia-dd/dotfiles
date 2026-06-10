@@ -655,18 +655,21 @@ def _parse_blockquote(lines, start_i, comment_collector=None, mention_map=None):
 # Main converter
 # ---------------------------------------------------------------------------
 
-def convert(content, image_map=None, mention_map=None):
+def convert(content, image_map=None, mention_map=None, people_roster=None):
     """
     Convert Obsidian markdown to ADF.
 
     Args:
-        content:     Raw markdown string from the .md file.
-        image_map:   Optional dict mapping filename -> {"file_id": str, "collection": str}.
-                     Pass None on a first pass to discover which images need uploading.
-                     Pass the populated map on a second pass once images are uploaded.
-        mention_map: Optional dict mapping person name -> {"account_id": str, "display_name": str}.
-                     When provided, [[Person Name]] wikilinks that match a key are converted to
-                     ADF mention nodes (Confluence user tags) instead of plain text.
+        content:       Raw markdown string from the .md file.
+        image_map:     Optional dict mapping filename -> {"file_id": str, "collection": str}.
+                       Pass None on a first pass to discover which images need uploading.
+                       Pass the populated map on a second pass once images are uploaded.
+        mention_map:   Optional dict mapping person name -> {"account_id": str, "display_name": str}.
+                       When provided, [[Person Name]] wikilinks that match a key are converted to
+                       ADF mention nodes (Confluence user tags) instead of plain text.
+        people_roster: Optional dict mapping "First Last" -> {"account_id": str, "display_name": str}.
+                       When provided, exact full-name matches in body prose are converted to ADF
+                       mention nodes. Text inside code blocks, inline code and links is left alone.
 
     Returns:
         {
@@ -817,6 +820,8 @@ def convert(content, image_map=None, mention_map=None):
     flush_para()
 
     _convert_bare_dates_in_table_cells(nodes)
+    if people_roster:
+        _inject_text_mentions(nodes, people_roster)
 
     return {
         "adf": _doc(nodes),
@@ -854,6 +859,73 @@ def _convert_bare_dates_in_table_cells(nodes):
         # Recurse into any container that holds further block content.
         if node.get("content"):
             _convert_bare_dates_in_table_cells(node["content"])
+
+
+def _split_text_node_on_names(node, pattern, roster):
+    """Split one text node on exact full-name matches, returning a list of
+    text and mention nodes. Returns [node] unchanged when there is no match.
+    Existing marks are preserved on the surrounding text segments.
+    """
+    text = node.get("text", "")
+    marks = node.get("marks")
+    out = []
+    last = 0
+    for m in pattern.finditer(text):
+        start, end = m.span()
+        if start > last:
+            seg = {"type": "text", "text": text[last:start]}
+            if marks:
+                seg["marks"] = marks
+            out.append(seg)
+        info = roster[m.group(0)]
+        out.append(_mention(info["account_id"], info["display_name"]))
+        last = end
+    if last == 0:
+        return [node]
+    if last < len(text):
+        seg = {"type": "text", "text": text[last:]}
+        if marks:
+            seg["marks"] = marks
+        out.append(seg)
+    return out
+
+
+def _inject_text_mentions(nodes, roster):
+    """Walk block content and replace exact 'First Last' matches in plain body
+    text with ADF mention nodes. roster maps the full name to
+    {"account_id": str, "display_name": str}.
+
+    Text is left untouched inside code blocks, inline code (text carrying a
+    `code` mark) and links (text carrying a `link` mark), so identifiers and
+    link labels are never rewritten. Names are matched whole-word and
+    longest-first so a full name wins over any shorter overlapping entry.
+    """
+    if not roster:
+        return
+    names = sorted(roster.keys(), key=len, reverse=True)
+    pattern = re.compile(r"\b(?:" + "|".join(re.escape(n) for n in names) + r")\b")
+
+    def process(content):
+        rebuilt = []
+        for node in content:
+            if not isinstance(node, dict):
+                rebuilt.append(node)
+                continue
+            if node.get("type") == "codeBlock":
+                rebuilt.append(node)
+                continue
+            if node.get("type") == "text":
+                if any(mk.get("type") in ("code", "link") for mk in node.get("marks", [])):
+                    rebuilt.append(node)
+                else:
+                    rebuilt.extend(_split_text_node_on_names(node, pattern, roster))
+                continue
+            if node.get("content"):
+                node["content"] = process(node["content"])
+            rebuilt.append(node)
+        return rebuilt
+
+    nodes[:] = process(nodes)
 
 
 # ---------------------------------------------------------------------------
