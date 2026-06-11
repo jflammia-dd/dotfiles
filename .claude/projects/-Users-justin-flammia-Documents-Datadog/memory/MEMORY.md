@@ -109,6 +109,7 @@
 
 ## Internal Resources
 - [Presentation template](reference_presentation_template.md). Official internal Google Slides asset library (backgrounds, graphics, template)
+- [Datadog MCP multi-org setup](reference_datadog_mcp_multi_org.md): `mcp.datad0g.com` for staging org 2; `mcp.datadoghq.com` for prod/dogfood; separate OAuth sessions; use `claude mcp add` not plugin files
 
 ## Skills
 - [skill-creator symlink gap](feedback_skill_creator_symlink.md): skills created by `skill-creator` land in `~/.agents/skills/` but are not auto-symlinked into `~/.claude/skills/`; create the symlink manually if a skill is missing
