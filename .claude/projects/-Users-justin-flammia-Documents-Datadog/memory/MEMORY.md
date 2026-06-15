@@ -21,12 +21,17 @@
 - Jira comment editor accepts **markdown** (not wiki markup). Pasting markdown renders correctly in the UI. No markdown toggle needed; just paste directly.
 - When preparing Jira comments for clipboard, always use markdown format (not Jira wiki markup like `h2.`, `{{code}}`, `[text|url]`).
 
+## ERS Architecture Principles
+- [No outbound API calls](feedback_ers_no_outbound_api.md): ERS must read only from data already ingested into Datadog. No calls to AWS, PAM tools, IdPs or any external service. Missing datasets mean ingestion work is needed, not a design workaround.
+- [Best-effort resolution](feedback_ers_best_effort.md): ERS resolves as far as available data allows and stops cleanly. INDETERMINATE (data gap, useful intermediate actor) vs UNRESOLVED (no progress or guardrail exit). unsupported_gap always maps to UNRESOLVED. actor_class uses UNKNOWN not INDETERMINATE.
+
 ## ERS Commitments
 - [Q2 delivery commitment](project_ers_q2_commitment.md): federation + role chain resolution in production behind feature flag for org 2 by June 30, PoC state; confirmed with Corey Finley 2026-06-08
 
 ## ERS Project Structure
 - [Three-track structure](project_ers_three_track_structure.md): Entity Context (ingestion + sideplane), ERS (resolution) and Risk Insights Entity Rollup (Shariq's Caniche view). Each track has distinct milestones for the same IdP.
 - [ERS Delivery Plan](../docs/ERS - Delivery Plan.md) and [Project Overview](../docs/Entity Context and ERS - Project Overview.md) are the canonical planning docs as of 2026-05-05.
+- [Risk Insights Caniche join vs siementity/ERS](project_risk_insights_caniche_vs_siementity.md): goal is to replace the email-match resolution CTE in risk_insights_risk_scores with ERS entity_resolution records, keeping cloud-inventory decoration/findings as-is. risk_insights_* is the LIVE serving set (API GetViewNames), *_v3 is legacy. Grilled design + prod-org-2 runtime evidence captured in the note.
 
 ## Document Conventions
 - [Don't replace existing docs](feedback_dont_replace_existing_docs.md): when asked to write a new document, create a new file; never overwrite the existing one
@@ -80,6 +85,7 @@
 
 ## Confluence Workflow
 - [Confluence edit approval](feedback_confluence_edit_approval.md). Show verbatim before/after and get explicit approval before applying any page edit. Never apply after a dry-run without pausing.
+- [Confluence edit safety](feedback_confluence_edit_safety.md): Fetch live ADF before ANY edit. Surgical changes to fetched content only. Never regenerate from Obsidian for an existing page. Verify node count after PUT.
 - [Review comment workflow](feedback_review_comment_workflow.md). One comment at a time. Pre-load context and draft. Move items to Responded immediately after posting.
 - [Tool limitations](feedback_tool_limitations.md). Before claiming a tool can't do something, check whether a Python/ADF API approach can. confluence-write.py can't inject link marks but Python ADF scripts can.
 - [Don't suggest resolving comments](feedback_confluence_comment_resolution.md): threads stay open after replying so others can follow the discussion
@@ -106,6 +112,9 @@
 
 ## Ghostty
 - [Ghostty Settings Editor](reference_ghostty_settings_editor.md): no config key to set editor for Settings menu; use `ghostty +edit-config` with `$EDITOR` instead
+
+## EVP / Data Tools
+- [EVP Explorer = Events UI](reference_evp_explorer_events_ui.md): when user asks for "EVP Explorer" or a GUI to browse track data, they mean Events UI at `dd.datad0g.com/internal/events-ui/`; siementity link: `?track=siementity&query_type=list`
 
 ## Internal Resources
 - [Presentation template](reference_presentation_template.md). Official internal Google Slides asset library (backgrounds, graphics, template)
@@ -157,6 +166,7 @@
 ## Rapid / Mosaic
 - [Mosaic URL patterns](reference_mosaic_urls.md): allDeployments tab tracks rollout per DC; change-request URL only tracks the CI bundle generation job
 - [rapid.json deployment gap](feedback_rapid_json_deployment_gap.md): rapid.json-only changes don't trigger Conductor redeployment; must run `rapid release` manually to force CNAB regeneration
+- [Rapid prod deployment](feedback_rapid_prod_deployment.md): wrapper script injects RAPID_INVOKER=claude_code and blocks prod; user must run `rapid release --env prod --branch main` directly in a clean terminal
 
 ## Key Files
 - [GoLand Setup](goland-setup.md) — GoLand configuration for dd-source
