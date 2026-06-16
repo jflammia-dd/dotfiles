@@ -1,13 +1,14 @@
 ---
-name: ERS PoC git branching strategy
-description: Decided branching approach for ERS PoC development in dd-source
-type: project
-originSessionId: 7da81963-1801-4858-a15d-eb928abdeb37
+name: ers-poc-git-branching-strategy
+description: ERS PoC branch is dead; all work is now directly off main
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: fdfa1da7-e87f-454c-8d43-688f1128761d
 ---
-Single long-running branch for all PoC work: `justin.flammia/SEC-30573-entity-resolution-poc`.
 
-**Why:** PoC work doesn't merge to main during development. You deploy the branch directly to staging with `rapid release` or `rapid td create`. Per-ticket branches would require rebasing between tickets to keep the staging deployment current, which is friction for no benefit. Jira tickets track what got built; commit messages track what changed. Branch topology doesn't need to do that job during a solo PoC.
+The PoC branch `justin.flammia/SEC-30573-entity-resolution-poc` is dead. All ERS work now happens directly off `main` in dd-source. Feature branches are short-lived, cut from `main` and targeting `main` via PR.
 
-**When contributors join:** Short-lived topic branches off the epic branch for any parallel ticket work. They merge back to the epic branch when done. No structural change needed until two people are working different tickets simultaneously.
+**Why:** The PoC graduated to production. The PoC branch served its purpose during exploratory development; it no longer exists as an active development surface.
 
-**How to apply:** All PoC commits go on `justin.flammia/SEC-30573-entity-resolution-poc`. Always use `git-dd`, not vanilla git. No push without explicit approval. When the PoC graduates to production PRs, cut them from the epic branch using the PR sequencing strategy in [[Running a PoC at Datadog]].
+**How to apply:** Never reference or suggest the PoC branch. When working on ERS tickets, cut a new branch from `main` named `justin.flammia/<TICKET>-<description>`. All PRs target `main`. Deploy to staging via Rapid test drive or `rapid release` as normal.

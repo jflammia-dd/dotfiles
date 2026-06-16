@@ -163,6 +163,9 @@
 - [Always print and copy PUP queries](feedback_pup_query_display.md): print as code block AND pbcopy every time; clipboard may be overwritten
 - [Use retriever-cli for queries](feedback_retriever_cli_queries.md): run/test all Trino and DDSQL queries with retriever-cli; share via `retriever-cli link --execution-engine <engine> --query "..."` to generate a PUP URL
 
+## ERS Prod Deployment
+- [siem-entity-resolution-api prod deploy command](project_siem_era_prod_deploy_cmd.md): exact `rapid release` command for us1-only prod deploy, expected ~35-45 min total
+
 ## Rapid / Mosaic
 - [Mosaic URL patterns](reference_mosaic_urls.md): allDeployments tab tracks rollout per DC; change-request URL only tracks the CI bundle generation job
 - [rapid.json deployment gap](feedback_rapid_json_deployment_gap.md): rapid.json-only changes don't trigger Conductor redeployment; must run `rapid release` manually to force CNAB regeneration

@@ -574,3 +574,1710 @@
 [2026-06-15 14:56:59.612] Processing: hook_event=PostToolUse, tool=Bash
 [2026-06-15 14:56:59.616] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
 [2026-06-15 14:56:59.617] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:05:48.727] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:05:48.727] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:05:48.727] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:05:48.727] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:05:48.727] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:05:48.727] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:05:48.727] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:05:48.727] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:05:48.728] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:05:48.855] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:10:57.750] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:10:57.750] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:10:57.750] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:10:57.750] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:10:57.751] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:10:57.751] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:10:57.751] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:10:57.751] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:10:57.753] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:10:57.753] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:12:03.732] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:12:03.732] Processing: hook_event=PostToolUse, tool=Write
+[2026-06-15 15:14:47.370] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:14:47.370] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:14:47.370] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:14:47.370] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:14:47.370] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:14:47.371] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:14:47.371] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:14:47.371] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:14:47.371] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:14:47.371] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:15:18.866] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:15:18.867] Processing: hook_event=Stop, tool=
+[2026-06-15 15:15:18.879] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:15:18.880] Stop hook: empty review set
+[2026-06-15 15:15:53.319] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:15:53.319] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:15:53.350] No commits in repo, skipping baseline capture
+[2026-06-15 15:15:53.356] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:15:53.364] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:18:44.535] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:18:44.535] Processing: hook_event=Stop, tool=
+[2026-06-15 15:18:44.548] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:18:44.548] Stop hook: empty review set
+[2026-06-15 15:19:45.509] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:19:45.509] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:19:45.526] No commits in repo, skipping baseline capture
+[2026-06-15 15:19:45.532] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:19:45.540] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:22:17.229] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:22:17.230] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:22:17.247] No commits in repo, skipping baseline capture
+[2026-06-15 15:22:17.255] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:22:17.263] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:22:41.186] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:22:41.186] Processing: hook_event=Stop, tool=
+[2026-06-15 15:22:41.197] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:22:41.197] Stop hook: empty review set
+[2026-06-15 15:22:43.230] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:22:43.230] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:22:43.245] No commits in repo, skipping baseline capture
+[2026-06-15 15:22:43.250] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:22:43.257] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:22:52.626] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:22:52.627] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:22:52.627] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:22:52.628] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:22:52.629] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:22:52.630] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:22:52.630] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:22:52.638] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:22:52.638] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:22:52.734] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:24:20.482] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:24:20.482] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:24:20.482] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:24:20.482] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:24:20.482] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:24:20.482] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:24:20.482] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:24:20.482] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:24:20.482] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:24:20.482] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:24:24.358] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:24:24.359] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:24:24.375] No commits in repo, skipping baseline capture
+[2026-06-15 15:24:24.382] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:24:24.390] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:24:56.918] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:24:56.918] Processing: hook_event=Stop, tool=
+[2026-06-15 15:24:56.931] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:24:56.932] Stop hook: empty review set
+[2026-06-15 15:25:00.371] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:25:00.371] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:25:00.373] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:25:00.373] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:25:00.375] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:25:00.375] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:25:00.375] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:25:00.375] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:25:00.376] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:25:00.376] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:25:30.245] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:25:30.249] Processing: hook_event=Stop, tool=
+[2026-06-15 15:25:30.261] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:25:30.262] Stop hook: empty review set
+[2026-06-15 15:25:34.243] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:25:34.244] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 15:25:49.581] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:25:49.581] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 15:25:59.934] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:25:59.934] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 15:26:25.401] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:26:25.401] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:26:25.417] No commits in repo, skipping baseline capture
+[2026-06-15 15:26:25.425] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:26:25.432] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:26:30.787] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:26:30.787] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:26:30.788] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:26:30.788] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:26:30.791] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:26:30.791] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:26:30.792] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:26:30.794] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:26:30.794] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:26:30.804] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:26:50.894] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:26:50.894] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 15:27:38.440] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:27:38.440] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:27:38.440] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:27:38.440] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:27:38.440] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:27:38.440] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:27:38.440] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:27:38.440] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:27:38.440] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:27:38.617] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:28:30.499] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:28:30.499] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:28:30.499] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:28:30.500] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:28:30.500] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:28:30.500] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:28:30.502] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:28:30.502] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:28:30.503] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:28:30.503] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:28:54.761] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:28:54.761] Processing: hook_event=Stop, tool=
+[2026-06-15 15:28:54.773] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:28:54.773] Stop hook: empty review set
+[2026-06-15 15:30:40.064] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:30:40.065] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:30:40.169] No commits in repo, skipping baseline capture
+[2026-06-15 15:30:40.175] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:30:40.182] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:30:41.464] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:30:41.464] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:30:41.464] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:30:41.464] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:30:41.467] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:30:41.467] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:30:41.468] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:30:41.472] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:30:41.472] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:30:41.474] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:30:44.743] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:30:44.743] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:30:44.755] No commits in repo, skipping baseline capture
+[2026-06-15 15:30:44.762] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:30:44.770] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:30:52.931] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:30:52.931] Processing: hook_event=Stop, tool=
+[2026-06-15 15:30:52.943] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:30:52.943] Stop hook: empty review set
+[2026-06-15 15:31:05.620] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:31:05.620] Processing: hook_event=Stop, tool=
+[2026-06-15 15:31:05.639] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:31:05.640] Stop hook: empty review set
+[2026-06-15 15:31:07.797] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:31:07.798] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:31:07.810] No commits in repo, skipping baseline capture
+[2026-06-15 15:31:07.818] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:31:07.825] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:31:58.602] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:31:58.602] Processing: hook_event=Stop, tool=
+[2026-06-15 15:31:58.616] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:31:58.616] Stop hook: empty review set
+[2026-06-15 15:33:03.871] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:03.871] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:03.871] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:03.871] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:03.871] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:33:03.871] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:33:03.871] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:33:03.871] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:33:03.871] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:03.872] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:33:07.924] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:07.938] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:33:07.957] No commits in repo, skipping baseline capture
+[2026-06-15 15:33:07.962] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:33:07.969] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:33:09.113] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:09.113] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:33:09.126] No commits in repo, skipping baseline capture
+[2026-06-15 15:33:09.134] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:33:09.142] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:33:22.725] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:22.725] Processing: hook_event=Stop, tool=
+[2026-06-15 15:33:22.736] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:33:22.736] Stop hook: empty review set
+[2026-06-15 15:33:27.968] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:27.968] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:33:27.971] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:27.971] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:33:27.972] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:27.972] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:33:27.978] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:27.980] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:27.980] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:33:28.155] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:33:45.545] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:33:45.546] Processing: hook_event=Stop, tool=
+[2026-06-15 15:33:45.558] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:33:45.558] Stop hook: empty review set
+[2026-06-15 15:34:20.851] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:34:20.851] Processing: hook_event=Stop, tool=
+[2026-06-15 15:34:20.864] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:34:20.864] Stop hook: empty review set
+[2026-06-15 15:35:30.494] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:35:30.494] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:35:30.509] No commits in repo, skipping baseline capture
+[2026-06-15 15:35:30.516] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:35:30.523] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:36:33.934] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:36:33.934] Processing: hook_event=Stop, tool=
+[2026-06-15 15:36:33.947] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:36:33.947] Stop hook: empty review set
+[2026-06-15 15:39:06.842] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:39:06.843] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:39:06.926] No commits in repo, skipping baseline capture
+[2026-06-15 15:39:06.931] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:39:06.938] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:42:08.843] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:42:08.843] Processing: hook_event=Stop, tool=
+[2026-06-15 15:42:08.856] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:42:08.856] Stop hook: empty review set
+[2026-06-15 15:42:53.464] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:42:53.464] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:42:53.476] No commits in repo, skipping baseline capture
+[2026-06-15 15:42:53.482] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:42:53.489] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:44:42.185] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:44:42.186] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:44:42.198] No commits in repo, skipping baseline capture
+[2026-06-15 15:44:42.206] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:44:42.214] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:45:02.489] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:45:02.489] Processing: hook_event=Stop, tool=
+[2026-06-15 15:45:02.501] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:45:02.501] Stop hook: empty review set
+[2026-06-15 15:45:05.950] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:45:05.950] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:45:05.969] No commits in repo, skipping baseline capture
+[2026-06-15 15:45:05.975] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:45:05.983] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:46:00.731] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:46:00.731] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:46:19.064] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:46:19.064] Processing: hook_event=PostToolUse, tool=Write
+[2026-06-15 15:46:49.414] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:46:49.506] Processing: hook_event=Stop, tool=
+[2026-06-15 15:46:49.518] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:46:49.518] Stop hook: empty review set
+[2026-06-15 15:47:50.548] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:47:50.548] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:47:50.564] No commits in repo, skipping baseline capture
+[2026-06-15 15:47:50.569] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:47:50.575] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:49:15.037] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:49:15.037] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:49:15.037] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:49:15.038] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:49:15.038] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:49:15.038] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:49:15.038] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:49:15.038] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:49:15.039] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:49:15.039] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-15 15:50:36.377] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:50:36.377] Processing: hook_event=Stop, tool=
+[2026-06-15 15:50:36.389] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:50:36.389] Stop hook: empty review set
+[2026-06-15 15:52:28.662] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:52:28.662] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:52:28.678] No commits in repo, skipping baseline capture
+[2026-06-15 15:52:28.683] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:52:28.690] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:54:28.618] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:54:28.619] Processing: hook_event=Stop, tool=
+[2026-06-15 15:54:28.630] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:54:28.630] Stop hook: empty review set
+[2026-06-15 15:54:32.770] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:54:32.771] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:54:32.783] No commits in repo, skipping baseline capture
+[2026-06-15 15:54:32.790] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:54:32.797] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:55:31.367] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:55:31.368] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:55:31.380] No commits in repo, skipping baseline capture
+[2026-06-15 15:55:31.387] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:55:31.396] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:55:47.613] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:55:47.614] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:55:47.627] No commits in repo, skipping baseline capture
+[2026-06-15 15:55:47.632] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:55:47.639] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:55:54.225] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:55:54.226] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 15:56:03.274] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:56:03.274] Processing: hook_event=Stop, tool=
+[2026-06-15 15:56:03.292] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:56:03.293] Stop hook: empty review set
+[2026-06-15 15:56:08.446] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:56:08.446] Processing: hook_event=Stop, tool=
+[2026-06-15 15:56:08.460] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:56:08.460] Stop hook: empty review set
+[2026-06-15 15:57:15.253] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:57:15.253] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:57:15.266] No commits in repo, skipping baseline capture
+[2026-06-15 15:57:15.273] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:57:15.280] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:58:27.798] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:58:27.798] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 15:58:27.811] No commits in repo, skipping baseline capture
+[2026-06-15 15:58:27.816] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:58:27.824] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 15:58:51.038] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:58:51.038] Processing: hook_event=Stop, tool=
+[2026-06-15 15:58:51.052] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:58:51.052] Stop hook: empty review set
+[2026-06-15 15:59:22.469] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:59:22.470] Processing: hook_event=PostToolUse, tool=Write
+[2026-06-15 15:59:24.034] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:59:24.034] Processing: hook_event=Stop, tool=
+[2026-06-15 15:59:24.045] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 15:59:24.046] Stop hook: empty review set
+[2026-06-15 15:59:41.670] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:59:41.670] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 15:59:49.358] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:59:49.358] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 15:59:57.310] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 15:59:57.310] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 16:00:20.864] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:00:20.865] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 16:00:35.892] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:00:35.905] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 16:00:35.917] No commits in repo, skipping baseline capture
+[2026-06-15 16:00:35.923] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:00:35.930] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 16:00:46.571] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:00:46.571] Processing: hook_event=Stop, tool=
+[2026-06-15 16:00:46.583] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:00:46.583] Stop hook: empty review set
+[2026-06-15 16:00:51.675] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:00:51.675] Processing: hook_event=Stop, tool=
+[2026-06-15 16:00:51.687] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:00:51.687] Stop hook: empty review set
+[2026-06-15 16:01:08.215] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:01:08.219] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 16:01:08.232] No commits in repo, skipping baseline capture
+[2026-06-15 16:01:08.238] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:01:08.244] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 16:02:09.730] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:02:09.730] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 16:02:09.743] No commits in repo, skipping baseline capture
+[2026-06-15 16:02:09.750] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:02:09.756] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 16:02:24.904] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:02:24.904] Processing: hook_event=Stop, tool=
+[2026-06-15 16:02:24.918] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:02:24.919] Stop hook: empty review set
+[2026-06-15 16:02:47.310] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:02:47.315] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 16:02:47.329] No commits in repo, skipping baseline capture
+[2026-06-15 16:02:47.336] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:02:47.342] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 16:03:04.478] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:03:04.478] Processing: hook_event=Stop, tool=
+[2026-06-15 16:03:04.494] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:03:04.494] Stop hook: empty review set
+[2026-06-15 16:03:14.099] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:03:14.099] Processing: hook_event=Stop, tool=
+[2026-06-15 16:03:14.111] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:03:14.111] Stop hook: empty review set
+[2026-06-15 16:03:43.721] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:03:43.722] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 16:03:43.808] No commits in repo, skipping baseline capture
+[2026-06-15 16:03:43.813] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:03:43.819] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 16:03:52.160] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:03:52.160] Processing: hook_event=Stop, tool=
+[2026-06-15 16:03:52.172] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:03:52.172] Stop hook: empty review set
+[2026-06-15 16:04:59.293] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:04:59.293] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 16:04:59.310] No commits in repo, skipping baseline capture
+[2026-06-15 16:04:59.321] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:04:59.328] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 16:05:06.891] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:05:06.891] Processing: hook_event=Stop, tool=
+[2026-06-15 16:05:06.904] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:05:06.904] Stop hook: empty review set
+[2026-06-15 16:05:26.321] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:05:26.321] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 16:05:26.334] No commits in repo, skipping baseline capture
+[2026-06-15 16:05:26.340] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:05:26.347] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 16:05:35.495] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:05:35.496] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 16:05:35.507] No commits in repo, skipping baseline capture
+[2026-06-15 16:05:35.515] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:05:35.521] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 16:05:35.779] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:05:35.779] Processing: hook_event=Stop, tool=
+[2026-06-15 16:05:35.794] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:05:35.794] Stop hook: empty review set
+[2026-06-15 16:06:04.694] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:06:04.694] Processing: hook_event=Stop, tool=
+[2026-06-15 16:06:04.707] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:06:04.707] Stop hook: empty review set
+[2026-06-15 16:06:47.217] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:06:47.217] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 16:06:47.233] No commits in repo, skipping baseline capture
+[2026-06-15 16:06:47.240] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:06:47.247] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 16:07:24.860] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:07:24.860] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 16:07:24.883] No commits in repo, skipping baseline capture
+[2026-06-15 16:07:24.890] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:07:24.898] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 16:08:34.763] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:08:34.764] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 16:08:42.598] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:08:42.598] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 16:08:48.923] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:08:49.082] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 16:08:59.415] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:08:59.415] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-15 16:08:59.427] No commits in repo, skipping baseline capture
+[2026-06-15 16:08:59.434] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:08:59.441] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-15 16:08:59.811] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:08:59.811] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 16:09:10.740] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:09:10.740] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 16:09:17.690] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:09:17.690] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 16:09:21.062] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:09:21.062] Processing: hook_event=PostToolUse, tool=Write
+[2026-06-15 16:09:26.020] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:09:26.020] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 16:09:26.061] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:09:26.061] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-15 16:09:31.180] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:09:31.180] Processing: hook_event=Stop, tool=
+[2026-06-15 16:09:31.192] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:09:31.192] Stop hook: empty review set
+[2026-06-15 16:09:53.117] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-15 16:09:53.121] Processing: hook_event=Stop, tool=
+[2026-06-15 16:09:53.134] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-15 16:09:53.135] Stop hook: empty review set
+[2026-06-16 09:34:43.718] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:34:43.718] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 09:34:43.816] No commits in repo, skipping baseline capture
+[2026-06-16 09:34:43.820] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 09:34:43.828] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 09:40:03.339] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:40:03.339] Processing: hook_event=Stop, tool=
+[2026-06-16 09:40:03.351] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 09:40:03.351] Stop hook: empty review set
+[2026-06-16 09:48:19.038] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:48:19.185] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 09:48:19.243] No commits in repo, skipping baseline capture
+[2026-06-16 09:48:19.264] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 09:48:19.277] Failed to capture git baseline (cwd='/private/var/folders/0r/1c_x5w2j7_39w7ghxvcp8rm40000gp/T') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 09:48:19.560] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:48:19.561] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 09:48:19.652] No commits in repo, skipping baseline capture
+[2026-06-16 09:48:19.674] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 09:48:19.690] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 09:48:25.388] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:48:25.389] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 09:48:25.402] No commits in repo, skipping baseline capture
+[2026-06-16 09:48:25.412] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 09:48:25.420] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 09:48:34.776] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:48:34.776] Processing: hook_event=Stop, tool=
+[2026-06-16 09:48:34.788] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 09:48:34.788] Stop hook: empty review set
+[2026-06-16 09:48:37.787] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:48:37.787] Processing: hook_event=Stop, tool=
+[2026-06-16 09:48:37.800] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 09:48:37.800] Stop hook: empty review set
+[2026-06-16 09:48:41.550] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:48:41.550] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 09:48:41.564] No commits in repo, skipping baseline capture
+[2026-06-16 09:48:41.570] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 09:48:41.577] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 09:49:09.998] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:49:09.998] Processing: hook_event=Stop, tool=
+[2026-06-16 09:49:10.010] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 09:49:10.010] Stop hook: empty review set
+[2026-06-16 09:50:17.994] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:50:17.994] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 09:50:18.008] No commits in repo, skipping baseline capture
+[2026-06-16 09:50:18.013] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 09:50:18.019] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 09:50:43.248] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:50:43.248] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:50:43.249] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:50:43.249] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:50:43.249] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:50:43.249] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:50:43.249] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:50:43.249] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:50:43.250] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:50:43.250] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:35.321] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:35.321] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:35.321] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:35.321] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:35.321] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:35.321] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:35.322] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:35.322] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:35.324] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:35.324] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:42.210] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:42.210] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:42.210] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:42.210] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:42.210] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:42.211] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:42.213] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:42.213] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:42.213] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:42.213] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:56.425] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:56.426] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:56.426] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:56.426] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:56.426] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:56.426] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:56.426] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:56.426] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:51:56.429] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:51:56.429] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:13.946] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:13.946] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:13.948] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:13.948] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:13.948] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:13.948] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:13.949] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:13.949] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:13.950] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:13.950] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:20.293] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:20.294] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:20.294] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:20.294] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:20.295] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:20.295] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:20.296] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:20.296] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:20.297] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:20.298] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:46.882] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:46.882] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:46.884] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:46.884] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:46.885] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:46.885] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:46.885] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:46.885] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:52:46.885] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:52:46.885] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 09:53:32.631] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 09:53:32.631] Processing: hook_event=Stop, tool=
+[2026-06-16 09:53:32.642] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 09:53:32.642] Stop hook: empty review set
+[2026-06-16 10:01:16.707] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:01:16.707] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:01:16.796] No commits in repo, skipping baseline capture
+[2026-06-16 10:01:16.801] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:01:16.808] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:01:32.159] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:01:32.159] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:01:32.159] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:01:32.159] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:01:32.160] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:01:32.160] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:01:32.161] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:01:32.161] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:01:32.161] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:01:32.161] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:04:27.639] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:04:27.650] Processing: hook_event=Stop, tool=
+[2026-06-16 10:04:27.662] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:04:27.663] Stop hook: empty review set
+[2026-06-16 10:07:04.831] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:07:04.831] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:07:04.843] No commits in repo, skipping baseline capture
+[2026-06-16 10:07:04.852] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:07:04.858] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:07:16.976] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:07:16.976] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:07:16.988] No commits in repo, skipping baseline capture
+[2026-06-16 10:07:16.996] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:07:17.003] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:07:19.702] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:07:19.702] Processing: hook_event=Stop, tool=
+[2026-06-16 10:07:19.715] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:07:19.715] Stop hook: empty review set
+[2026-06-16 10:07:42.929] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:07:42.929] Processing: hook_event=Stop, tool=
+[2026-06-16 10:07:42.940] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:07:42.941] Stop hook: empty review set
+[2026-06-16 10:10:04.798] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:10:04.802] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:10:04.814] No commits in repo, skipping baseline capture
+[2026-06-16 10:10:04.823] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:10:04.830] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:11:31.085] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:11:31.090] Processing: hook_event=Stop, tool=
+[2026-06-16 10:11:31.101] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:11:31.101] Stop hook: empty review set
+[2026-06-16 10:14:32.433] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:14:32.433] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:14:32.445] No commits in repo, skipping baseline capture
+[2026-06-16 10:14:32.451] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:14:32.459] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:14:37.925] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:14:37.925] Processing: hook_event=Stop, tool=
+[2026-06-16 10:14:37.937] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:14:37.937] Stop hook: empty review set
+[2026-06-16 10:16:38.629] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:16:38.629] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:16:38.641] No commits in repo, skipping baseline capture
+[2026-06-16 10:16:38.647] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:16:38.654] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:16:53.106] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:16:53.119] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:16:53.132] No commits in repo, skipping baseline capture
+[2026-06-16 10:16:53.139] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:16:53.146] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:17:25.240] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:17:25.240] Processing: hook_event=Stop, tool=
+[2026-06-16 10:17:25.251] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:17:25.251] Stop hook: empty review set
+[2026-06-16 10:17:29.962] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:17:29.962] Processing: hook_event=Stop, tool=
+[2026-06-16 10:17:29.973] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:17:29.973] Stop hook: empty review set
+[2026-06-16 10:20:00.504] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:20:00.504] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:20:00.517] No commits in repo, skipping baseline capture
+[2026-06-16 10:20:00.524] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:20:00.531] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:20:30.257] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:20:30.257] Processing: hook_event=Stop, tool=
+[2026-06-16 10:20:30.269] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:20:30.269] Stop hook: empty review set
+[2026-06-16 10:23:00.202] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:23:00.207] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:23:00.224] No commits in repo, skipping baseline capture
+[2026-06-16 10:23:00.230] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:23:00.237] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:23:33.240] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:23:33.240] Processing: hook_event=Stop, tool=
+[2026-06-16 10:23:33.252] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:23:33.252] Stop hook: empty review set
+[2026-06-16 10:27:00.317] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:27:00.317] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:27:00.335] No commits in repo, skipping baseline capture
+[2026-06-16 10:27:00.342] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:27:00.348] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:27:22.429] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:27:22.429] Processing: hook_event=Stop, tool=
+[2026-06-16 10:27:22.441] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:27:22.441] Stop hook: empty review set
+[2026-06-16 10:29:20.007] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:29:20.024] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:29:20.037] No commits in repo, skipping baseline capture
+[2026-06-16 10:29:20.045] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:29:20.051] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:29:45.735] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:29:45.735] Processing: hook_event=Stop, tool=
+[2026-06-16 10:29:45.748] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:29:45.748] Stop hook: empty review set
+[2026-06-16 10:32:00.751] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:32:00.751] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:32:00.770] No commits in repo, skipping baseline capture
+[2026-06-16 10:32:00.775] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:32:00.781] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:34:28.205] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:34:28.210] Processing: hook_event=Stop, tool=
+[2026-06-16 10:34:28.222] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:34:28.222] Stop hook: empty review set
+[2026-06-16 10:37:00.801] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:37:00.801] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:37:00.813] No commits in repo, skipping baseline capture
+[2026-06-16 10:37:00.820] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:37:00.827] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:37:16.993] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:37:16.993] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:37:16.993] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:37:16.993] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:37:16.993] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:37:16.993] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:37:16.994] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:37:16.995] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:37:16.995] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:37:16.995] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:37:42.272] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:37:42.274] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:37:42.274] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:37:42.277] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:37:42.289] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:37:42.289] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:37:42.289] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:37:42.289] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:37:42.289] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:37:42.289] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 10:37:56.201] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:37:56.201] Processing: hook_event=Stop, tool=
+[2026-06-16 10:37:56.228] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:37:56.228] Stop hook: empty review set
+[2026-06-16 10:40:48.285] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:40:48.285] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:40:48.299] No commits in repo, skipping baseline capture
+[2026-06-16 10:40:48.305] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:40:48.312] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:41:58.244] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:41:58.244] Processing: hook_event=PostToolUse, tool=Write
+[2026-06-16 10:42:05.405] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:42:05.405] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 10:42:45.273] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:42:45.273] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 10:42:52.486] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:42:52.486] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 10:43:20.780] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:43:20.780] Processing: hook_event=Stop, tool=
+[2026-06-16 10:43:20.792] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:43:20.792] Stop hook: empty review set
+[2026-06-16 10:45:21.387] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:45:21.387] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:45:21.399] No commits in repo, skipping baseline capture
+[2026-06-16 10:45:21.406] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:45:21.413] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:46:29.885] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:46:29.885] Processing: hook_event=Stop, tool=
+[2026-06-16 10:46:29.900] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:46:29.900] Stop hook: empty review set
+[2026-06-16 10:50:51.145] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:50:51.145] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:50:51.157] No commits in repo, skipping baseline capture
+[2026-06-16 10:50:51.163] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:50:51.170] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:51:18.472] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:51:18.473] Processing: hook_event=Stop, tool=
+[2026-06-16 10:51:18.485] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:51:18.485] Stop hook: empty review set
+[2026-06-16 10:53:01.857] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:53:01.857] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:53:01.870] No commits in repo, skipping baseline capture
+[2026-06-16 10:53:01.877] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:53:01.884] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:53:10.910] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:53:10.910] Processing: hook_event=Stop, tool=
+[2026-06-16 10:53:10.922] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:53:10.922] Stop hook: empty review set
+[2026-06-16 10:53:28.586] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:53:28.586] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:53:28.598] No commits in repo, skipping baseline capture
+[2026-06-16 10:53:28.604] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:53:28.611] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:53:33.978] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:53:33.978] Processing: hook_event=Stop, tool=
+[2026-06-16 10:53:33.991] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:53:33.991] Stop hook: empty review set
+[2026-06-16 10:55:23.993] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:55:23.993] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:55:24.007] No commits in repo, skipping baseline capture
+[2026-06-16 10:55:24.012] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:55:24.019] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:55:35.214] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:55:35.214] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:55:35.226] No commits in repo, skipping baseline capture
+[2026-06-16 10:55:35.234] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:55:35.241] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:55:55.277] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:55:55.282] Processing: hook_event=Stop, tool=
+[2026-06-16 10:55:55.294] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:55:55.294] Stop hook: empty review set
+[2026-06-16 10:55:59.380] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:55:59.384] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:55:59.396] No commits in repo, skipping baseline capture
+[2026-06-16 10:55:59.403] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:55:59.410] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:56:11.958] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:56:11.958] Processing: hook_event=Stop, tool=
+[2026-06-16 10:56:11.970] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:56:11.970] Stop hook: empty review set
+[2026-06-16 10:56:29.151] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:56:29.152] Processing: hook_event=Stop, tool=
+[2026-06-16 10:56:29.164] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:56:29.164] Stop hook: empty review set
+[2026-06-16 10:58:17.756] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:58:17.756] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:58:17.770] No commits in repo, skipping baseline capture
+[2026-06-16 10:58:17.778] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:58:17.784] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 10:59:05.940] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:59:05.940] Processing: hook_event=Stop, tool=
+[2026-06-16 10:59:05.951] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:59:05.952] Stop hook: empty review set
+[2026-06-16 10:59:30.600] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 10:59:30.600] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 10:59:30.612] No commits in repo, skipping baseline capture
+[2026-06-16 10:59:30.618] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 10:59:30.624] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:00:03.134] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:00:03.135] Processing: hook_event=Stop, tool=
+[2026-06-16 11:00:03.149] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:00:03.149] Stop hook: empty review set
+[2026-06-16 11:07:10.582] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:07:10.582] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:07:10.666] No commits in repo, skipping baseline capture
+[2026-06-16 11:07:10.672] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:07:10.678] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:07:30.128] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:07:30.128] Processing: hook_event=Stop, tool=
+[2026-06-16 11:07:30.141] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:07:30.141] Stop hook: empty review set
+[2026-06-16 11:08:11.665] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:08:11.665] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:08:11.678] No commits in repo, skipping baseline capture
+[2026-06-16 11:08:11.685] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:08:11.693] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:08:51.036] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:08:51.037] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:08:51.055] No commits in repo, skipping baseline capture
+[2026-06-16 11:08:51.061] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:08:51.070] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:09:11.683] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:09:11.683] Processing: hook_event=Stop, tool=
+[2026-06-16 11:09:11.696] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:09:11.696] Stop hook: empty review set
+[2026-06-16 11:11:10.744] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:11:10.744] Processing: hook_event=Stop, tool=
+[2026-06-16 11:11:10.757] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:11:10.757] Stop hook: empty review set
+[2026-06-16 11:11:52.271] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:11:52.271] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:11:52.288] No commits in repo, skipping baseline capture
+[2026-06-16 11:11:52.293] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:11:52.301] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:18:00.878] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:18:00.878] Processing: hook_event=Stop, tool=
+[2026-06-16 11:18:00.890] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:18:00.890] Stop hook: empty review set
+[2026-06-16 11:23:11.687] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:23:11.688] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:23:11.785] No commits in repo, skipping baseline capture
+[2026-06-16 11:23:11.791] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:23:11.797] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:24:08.223] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:24:08.224] Processing: hook_event=Stop, tool=
+[2026-06-16 11:24:08.235] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:24:08.236] Stop hook: empty review set
+[2026-06-16 11:30:08.448] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:30:08.448] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:30:08.468] No commits in repo, skipping baseline capture
+[2026-06-16 11:30:08.474] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:30:08.481] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:30:38.076] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:30:38.076] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:30:38.090] No commits in repo, skipping baseline capture
+[2026-06-16 11:30:38.100] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:30:38.109] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:30:52.181] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:30:52.182] Processing: hook_event=Stop, tool=
+[2026-06-16 11:30:52.195] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:30:52.195] Stop hook: empty review set
+[2026-06-16 11:32:59.087] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:32:59.087] Processing: hook_event=PostToolUse, tool=Write
+[2026-06-16 11:33:13.582] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:33:13.697] Processing: hook_event=PostToolUse, tool=Write
+[2026-06-16 11:33:40.698] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:33:40.698] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:33:40.770] No commits in repo, skipping baseline capture
+[2026-06-16 11:33:40.776] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:33:40.783] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:34:27.476] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:34:27.476] Processing: hook_event=Stop, tool=
+[2026-06-16 11:34:27.489] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:34:27.489] Stop hook: empty review set
+[2026-06-16 11:34:58.525] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:34:58.671] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:35:12.164] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:35:12.165] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:35:21.339] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:35:21.339] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:36:05.164] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:36:05.164] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:36:05.164] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:36:05.164] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:36:05.164] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:36:05.164] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:36:05.164] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:36:05.164] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:36:05.164] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:36:05.164] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:36:26.985] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:36:26.986] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:36:27.011] No commits in repo, skipping baseline capture
+[2026-06-16 11:36:27.026] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:36:27.045] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:36:35.733] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:36:35.737] Processing: hook_event=Stop, tool=
+[2026-06-16 11:36:35.751] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:36:35.751] Stop hook: empty review set
+[2026-06-16 11:36:48.331] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:36:48.331] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:36:48.331] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:36:48.331] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:36:48.337] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:36:48.337] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:36:48.340] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:36:48.340] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:36:48.343] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:36:48.343] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:37:36.144] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:37:36.144] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:37:51.708] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:37:51.708] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:38:04.838] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:04.838] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:04.840] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:04.840] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:04.840] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:04.841] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:04.842] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:04.842] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:04.844] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:04.844] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:21.496] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:21.644] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:38:29.085] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:29.085] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:29.087] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:29.087] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:29.089] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:29.089] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:29.091] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:29.091] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:29.093] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:29.093] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:55.138] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:55.138] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:55.138] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:55.138] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:55.141] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:55.142] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:55.142] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:55.142] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:38:55.142] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:38:55.142] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:39:12.399] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:39:12.399] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:39:26.139] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:39:26.139] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:39:43.854] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:39:43.854] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:39:57.199] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:39:57.199] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:40:13.037] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:40:13.037] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:40:26.998] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:40:26.998] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:40:56.504] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:40:56.504] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:41:06.184] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:41:06.184] Processing: hook_event=PostToolUse, tool=Write
+[2026-06-16 11:41:16.819] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:41:16.819] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:41:33.657] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:41:33.657] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:41:33.658] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:41:33.658] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:41:33.658] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:41:33.658] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:41:33.658] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:41:33.658] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:41:33.658] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:41:33.659] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:41:54.571] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:41:54.571] Processing: hook_event=Stop, tool=
+[2026-06-16 11:41:54.653] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:41:54.653] Stop hook: empty review set
+[2026-06-16 11:41:59.896] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:41:59.914] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:41:59.934] No commits in repo, skipping baseline capture
+[2026-06-16 11:41:59.947] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:41:59.954] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:44:45.848] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:44:45.848] Processing: hook_event=Stop, tool=
+[2026-06-16 11:44:45.862] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:44:45.862] Stop hook: empty review set
+[2026-06-16 11:45:40.336] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:45:40.336] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:45:40.350] No commits in repo, skipping baseline capture
+[2026-06-16 11:45:40.357] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:45:40.363] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:45:51.873] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:45:51.873] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:45:57.512] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:45:57.512] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:46:08.808] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:46:08.808] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 11:46:28.381] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:46:28.381] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:46:28.381] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:46:28.383] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:46:28.383] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:46:28.384] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:46:28.384] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:46:28.384] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:46:28.384] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:46:28.551] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:46:39.451] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:46:39.452] Processing: hook_event=Stop, tool=
+[2026-06-16 11:46:39.464] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:46:39.464] Stop hook: empty review set
+[2026-06-16 11:47:12.159] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:47:12.164] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:47:12.186] No commits in repo, skipping baseline capture
+[2026-06-16 11:47:12.192] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:47:12.201] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:47:47.556] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:47:47.556] Processing: hook_event=Stop, tool=
+[2026-06-16 11:47:47.568] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:47:47.568] Stop hook: empty review set
+[2026-06-16 11:53:09.522] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:53:09.525] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:53:09.587] No commits in repo, skipping baseline capture
+[2026-06-16 11:53:09.594] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:53:09.600] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:53:29.125] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:53:29.125] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:53:29.138] No commits in repo, skipping baseline capture
+[2026-06-16 11:53:29.144] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:53:29.152] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:53:41.347] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:53:41.462] Processing: hook_event=Stop, tool=
+[2026-06-16 11:53:41.475] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:53:41.475] Stop hook: empty review set
+[2026-06-16 11:54:06.972] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:54:06.972] Processing: hook_event=Stop, tool=
+[2026-06-16 11:54:06.985] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:54:06.985] Stop hook: empty review set
+[2026-06-16 11:54:29.162] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:54:29.162] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:54:29.175] No commits in repo, skipping baseline capture
+[2026-06-16 11:54:29.180] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:54:29.187] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:55:15.430] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:55:15.430] Processing: hook_event=Stop, tool=
+[2026-06-16 11:55:15.444] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:55:15.444] Stop hook: empty review set
+[2026-06-16 11:56:29.522] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:56:29.522] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:56:29.540] No commits in repo, skipping baseline capture
+[2026-06-16 11:56:29.545] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:56:29.551] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:56:37.058] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:56:37.058] Processing: hook_event=Stop, tool=
+[2026-06-16 11:56:37.071] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:56:37.071] Stop hook: empty review set
+[2026-06-16 11:56:50.048] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:56:50.048] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:56:50.062] No commits in repo, skipping baseline capture
+[2026-06-16 11:56:50.071] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:56:50.077] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:57:08.663] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:57:08.663] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:57:08.678] No commits in repo, skipping baseline capture
+[2026-06-16 11:57:08.683] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:57:08.694] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:57:19.641] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:57:19.642] Processing: hook_event=Stop, tool=
+[2026-06-16 11:57:19.654] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:57:19.654] Stop hook: empty review set
+[2026-06-16 11:57:23.727] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:57:23.732] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 11:57:23.749] No commits in repo, skipping baseline capture
+[2026-06-16 11:57:23.754] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:57:23.762] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 11:57:28.615] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:57:28.619] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 11:57:28.636] Commit review: detected git commit in command
+[2026-06-16 11:57:28.642] Commit review: not in a git repo
+[2026-06-16 11:57:32.822] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:57:32.823] Processing: hook_event=Stop, tool=
+[2026-06-16 11:57:32.837] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:57:32.837] Stop hook: empty review set
+[2026-06-16 11:58:05.271] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 11:58:05.271] Processing: hook_event=Stop, tool=
+[2026-06-16 11:58:05.284] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 11:58:05.284] Stop hook: empty review set
+[2026-06-16 12:03:57.723] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:03:57.723] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 12:03:57.807] No commits in repo, skipping baseline capture
+[2026-06-16 12:03:57.812] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:03:57.818] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 12:04:18.061] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:04:18.065] Processing: hook_event=Stop, tool=
+[2026-06-16 12:04:18.077] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:04:18.077] Stop hook: empty review set
+[2026-06-16 12:09:01.021] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:09:01.022] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 12:09:01.033] No commits in repo, skipping baseline capture
+[2026-06-16 12:09:01.040] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:09:01.048] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 12:10:14.825] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:10:14.825] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 12:10:14.840] No commits in repo, skipping baseline capture
+[2026-06-16 12:10:14.847] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:10:14.854] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 12:10:46.510] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:10:46.510] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 12:10:46.522] No commits in repo, skipping baseline capture
+[2026-06-16 12:10:46.528] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:10:46.534] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 12:10:57.109] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:10:57.109] Processing: hook_event=Stop, tool=
+[2026-06-16 12:10:57.121] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:10:57.121] Stop hook: empty review set
+[2026-06-16 12:11:31.495] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:11:31.495] Processing: hook_event=Stop, tool=
+[2026-06-16 12:11:31.508] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:11:31.508] Stop hook: empty review set
+[2026-06-16 12:14:14.641] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:14:14.641] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 12:14:14.658] No commits in repo, skipping baseline capture
+[2026-06-16 12:14:14.664] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:14:14.670] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 12:14:33.921] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:14:33.921] Processing: hook_event=Stop, tool=
+[2026-06-16 12:14:33.933] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:14:33.933] Stop hook: empty review set
+[2026-06-16 12:14:54.940] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:14:54.940] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 12:14:54.953] No commits in repo, skipping baseline capture
+[2026-06-16 12:14:54.960] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:14:54.966] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 12:15:13.806] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:15:13.806] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:15:13.806] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:15:13.806] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:15:13.821] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:15:13.821] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:15:13.822] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:15:13.822] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:15:13.824] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:15:13.824] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:17:01.483] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:17:01.483] Processing: hook_event=Stop, tool=
+[2026-06-16 12:17:01.496] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:17:01.497] Stop hook: empty review set
+[2026-06-16 12:17:36.385] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:17:36.385] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 12:17:36.402] No commits in repo, skipping baseline capture
+[2026-06-16 12:17:36.408] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:17:36.414] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 12:17:48.852] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:17:48.853] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 12:17:48.867] No commits in repo, skipping baseline capture
+[2026-06-16 12:17:48.884] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:17:48.894] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 12:17:54.976] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:17:54.976] Processing: hook_event=Stop, tool=
+[2026-06-16 12:17:54.991] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:17:54.991] Stop hook: empty review set
+[2026-06-16 12:18:16.426] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:18:16.426] Processing: hook_event=Stop, tool=
+[2026-06-16 12:18:16.438] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:18:16.438] Stop hook: empty review set
+[2026-06-16 12:19:30.665] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:19:30.666] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 12:19:30.746] No commits in repo, skipping baseline capture
+[2026-06-16 12:19:30.751] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:19:30.757] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 12:19:43.759] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:19:43.759] Processing: hook_event=Stop, tool=
+[2026-06-16 12:19:43.772] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:19:43.772] Stop hook: empty review set
+[2026-06-16 12:20:25.600] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:20:25.600] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 12:20:25.612] No commits in repo, skipping baseline capture
+[2026-06-16 12:20:25.619] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:20:25.625] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 12:21:12.229] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:21:12.240] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 12:23:18.085] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:23:18.085] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:23:18.085] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:23:18.085] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:23:18.085] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:23:18.086] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:23:18.086] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:23:18.086] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:23:18.086] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:23:18.086] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:24:33.660] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:24:33.661] Processing: hook_event=Stop, tool=
+[2026-06-16 12:24:33.674] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:24:33.674] Stop hook: empty review set
+[2026-06-16 12:30:36.845] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:30:36.845] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 12:30:36.979] No commits in repo, skipping baseline capture
+[2026-06-16 12:30:36.984] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:30:36.991] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 12:30:57.471] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:30:57.472] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 12:30:57.483] No commits in repo, skipping baseline capture
+[2026-06-16 12:30:57.490] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:30:57.498] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 12:31:13.701] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:31:13.701] Processing: hook_event=Stop, tool=
+[2026-06-16 12:31:13.716] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:31:13.716] Stop hook: empty review set
+[2026-06-16 12:31:44.396] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:31:44.396] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:31:44.397] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:31:44.398] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:31:44.398] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:31:44.398] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:31:44.400] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:31:44.400] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:31:44.402] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:31:44.402] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:32:40.969] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:32:40.969] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:32:40.969] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:32:40.969] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:32:40.969] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:32:40.969] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:32:40.971] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:32:40.971] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:32:40.973] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:32:40.973] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:34:08.539] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:34:08.539] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:34:08.539] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:34:08.540] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:34:08.552] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:34:08.553] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:34:08.553] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:34:08.553] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:34:08.556] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:34:08.556] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:34:21.925] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:34:21.926] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:34:21.927] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:34:21.927] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:34:21.930] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:34:21.930] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:34:21.940] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:34:21.940] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:34:21.940] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:34:21.940] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 12:34:56.009] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:34:56.009] Processing: hook_event=Stop, tool=
+[2026-06-16 12:34:56.020] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:34:56.020] Stop hook: empty review set
+[2026-06-16 12:43:58.951] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:43:59.111] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 12:43:59.126] No commits in repo, skipping baseline capture
+[2026-06-16 12:43:59.130] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:43:59.136] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 12:46:21.702] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 12:46:21.703] Processing: hook_event=Stop, tool=
+[2026-06-16 12:46:21.713] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 12:46:21.713] Stop hook: empty review set
+[2026-06-16 14:00:10.677] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:00:10.677] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 14:00:10.772] No commits in repo, skipping baseline capture
+[2026-06-16 14:00:10.776] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:00:10.782] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 14:02:55.309] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:02:55.309] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:02:55.310] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:02:55.310] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:02:55.310] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:02:55.310] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:02:55.310] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:02:55.310] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:02:55.310] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:02:55.310] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:16.542] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:16.542] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:16.542] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:16.543] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:16.543] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:16.543] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:16.543] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:16.543] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:16.543] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:16.543] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:33.005] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:33.006] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:33.006] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:33.006] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:33.009] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:33.009] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:33.011] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:33.011] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:33.013] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:33.013] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:58.307] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:58.307] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:58.308] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:58.308] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:58.308] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:58.308] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:58.310] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:58.310] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:04:58.311] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:04:58.311] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:05:14.167] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:05:14.167] Processing: hook_event=Stop, tool=
+[2026-06-16 14:05:14.181] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:05:14.181] Stop hook: empty review set
+[2026-06-16 14:06:34.910] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:06:35.086] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 14:06:35.101] No commits in repo, skipping baseline capture
+[2026-06-16 14:06:35.107] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:06:35.113] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 14:07:17.940] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:07:17.940] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 14:07:17.962] No commits in repo, skipping baseline capture
+[2026-06-16 14:07:17.966] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:07:17.974] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 14:07:34.500] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:07:34.501] Processing: hook_event=Stop, tool=
+[2026-06-16 14:07:34.515] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:07:34.516] Stop hook: empty review set
+[2026-06-16 14:07:37.945] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:07:37.946] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 14:07:38.349] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:07:38.349] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 14:07:38.364] No commits in repo, skipping baseline capture
+[2026-06-16 14:07:38.377] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:07:38.386] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 14:07:46.463] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:07:46.464] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 14:07:55.009] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:07:55.009] Processing: hook_event=PostToolUse, tool=Edit
+[2026-06-16 14:08:18.628] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:08:18.629] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:08:18.629] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:08:18.629] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:08:18.629] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:08:18.629] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:08:18.629] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:08:18.629] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:08:18.629] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:08:18.629] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:08:22.715] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:08:22.716] Processing: hook_event=Stop, tool=
+[2026-06-16 14:08:22.730] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:08:22.730] Stop hook: empty review set
+[2026-06-16 14:10:46.782] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:10:46.782] Processing: hook_event=Stop, tool=
+[2026-06-16 14:10:46.793] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:10:46.793] Stop hook: empty review set
+[2026-06-16 14:10:47.209] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:10:47.209] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 14:10:47.228] No commits in repo, skipping baseline capture
+[2026-06-16 14:10:47.233] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:10:47.241] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 14:11:32.434] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:11:32.447] Processing: hook_event=Stop, tool=
+[2026-06-16 14:11:32.461] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:11:32.461] Stop hook: empty review set
+[2026-06-16 14:12:01.468] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:12:01.468] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 14:12:01.481] No commits in repo, skipping baseline capture
+[2026-06-16 14:12:01.486] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:12:01.493] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 14:12:05.781] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:12:05.781] Processing: hook_event=Stop, tool=
+[2026-06-16 14:12:05.794] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:12:05.795] Stop hook: empty review set
+[2026-06-16 14:12:59.406] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:12:59.407] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 14:12:59.420] No commits in repo, skipping baseline capture
+[2026-06-16 14:12:59.428] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:12:59.435] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 14:13:25.542] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:13:25.542] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:13:25.542] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:13:25.542] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:13:25.542] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:13:25.543] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:13:25.543] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:13:25.543] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:13:25.543] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:13:25.543] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:14:06.473] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:14:06.473] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:14:06.473] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:14:06.473] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:14:06.474] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:14:06.474] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:14:06.478] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:14:06.478] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:14:06.481] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:14:06.482] Processing: hook_event=PostToolUse, tool=Bash
+[2026-06-16 14:15:06.564] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:15:06.564] Processing: hook_event=Stop, tool=
+[2026-06-16 14:15:06.577] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:15:06.577] Stop hook: empty review set
+[2026-06-16 14:15:55.431] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:15:55.431] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 14:15:55.458] No commits in repo, skipping baseline capture
+[2026-06-16 14:15:55.465] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:15:55.472] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 14:16:07.505] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:16:07.506] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 14:16:07.518] No commits in repo, skipping baseline capture
+[2026-06-16 14:16:07.525] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:16:07.532] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 14:16:31.988] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:16:31.988] Processing: hook_event=Stop, tool=
+[2026-06-16 14:16:32.001] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:16:32.001] Stop hook: empty review set
+[2026-06-16 14:21:52.481] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:21:52.579] Processing: hook_event=Stop, tool=
+[2026-06-16 14:21:52.591] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:21:52.591] Stop hook: empty review set
+[2026-06-16 14:22:51.088] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:22:51.088] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 14:22:51.101] No commits in repo, skipping baseline capture
+[2026-06-16 14:22:51.109] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:22:51.115] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 14:24:01.925] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:24:01.925] Processing: hook_event=Stop, tool=
+[2026-06-16 14:24:01.938] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:24:01.938] Stop hook: empty review set
+[2026-06-16 14:24:26.575] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:24:26.575] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 14:24:26.587] No commits in repo, skipping baseline capture
+[2026-06-16 14:24:26.592] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:24:26.598] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 14:24:36.781] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:24:36.781] Processing: hook_event=Stop, tool=
+[2026-06-16 14:24:36.794] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:24:36.794] Stop hook: empty review set
+[2026-06-16 14:25:03.562] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:25:03.562] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 14:25:03.575] No commits in repo, skipping baseline capture
+[2026-06-16 14:25:03.580] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:25:03.588] Failed to capture git baseline (cwd='/Users/justin.flammia/Documents/Datadog') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 14:25:15.190] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:25:15.190] Processing: hook_event=UserPromptSubmit, tool=
+[2026-06-16 14:25:15.205] No commits in repo, skipping baseline capture
+[2026-06-16 14:25:15.212] _list_untracked rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:25:15.218] Failed to capture git baseline (cwd='/private/tmp') — not a git repo, or git invocation failed (check log entries above)
+[2026-06-16 14:25:15.749] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:25:15.749] Processing: hook_event=Stop, tool=
+[2026-06-16 14:25:15.766] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:25:15.766] Stop hook: empty review set
+[2026-06-16 14:25:49.424] Hook called with args: ['/Users/justin.flammia/.claude/plugins/cache/claude-plugins-official/security-guidance/2.0.6/hooks/security_reminder_hook.py']
+[2026-06-16 14:25:49.425] Processing: hook_event=Stop, tool=
+[2026-06-16 14:25:49.438] _git_status_porcelain rc=128: fatal: not a git repository (or any of the parent directories): .git
+
+[2026-06-16 14:25:49.438] Stop hook: empty review set
