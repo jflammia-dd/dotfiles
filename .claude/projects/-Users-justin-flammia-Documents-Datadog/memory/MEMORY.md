@@ -76,6 +76,7 @@
 ## Active Documents
 - [UEBA doc intent](ueba-doc-intent.md) — UEBA Engineering Landscape doc frames ambiguous work into actionable tracks; open questions become next steps, not blockers
 - [Entity Resolution RFC](project_er_proposal.md) — Complete draft RFC at `docs/Entity Resolution - Design Proposal.md`; not yet published to Confluence; Phase 1 (GW→AWS) is the dependency for the User Entity Roll-up project
+- [UEBA Q3 integration framing](project_ueba_q3_integration_framing.md) — seven Q3 sources, end-to-end-over-depth tenet, partner-delivery prioritization, ownership; docs `UEBA Q3 Integration Briefs.md` + `UEBA Q3 Deliverables and Ownership.md`
 
 ## Investigation Methodology
 - [Verify data sources before comparing results](feedback_investigation_methodology.md). When two sources show different results, first check if both are live and receiving the same data before theorizing about application logic.
@@ -129,6 +130,11 @@
 - [DDCI MCP auth at session start](feedback_ddci_mcp_auth.md): authenticate mcp__ddci-mcp-prod before any CI debugging; Datadog MCP queries hit staging and return nothing
 - [Datadog MCP env switching](feedback_datadog_mcp_env_switch.md): when a query needs a different org (cross-org 404 naming a target org, or a prod resource while bound to staging), ask Justin to re-auth the Datadog MCP for that env and keep going; don't give up
 
+## GitHub Resolution
+- [GitHub actor resolution finding](project_github_actor_resolution.md): email-bearing GitHub activity resolves (~96%); audit-log logins don't (absent from IdP data); login resolution needs GitHub-to-IdP linkage, gated on customer SSO/SCIM. Full doc: `docs/GitHub Actor Resolution in UEBA.md`
+- [retriever-cli cloud_siem queries](reference_retriever_cli_cloud_siem.md): qualify views as `cloud_siem.*`, quote case-sensitive columns, `--customer-auth=skip` for employee reads, staging env org 2 on `us1.staging.dog`; Risk Insights not materialized in dogfood/prod-org-2
+- [Deep-dive reproduction block](feedback_deep_dive_reproduction_block.md): always include the exact queries/commands in deep-dive and research docs (keep in published Confluence version); reproducibility + credibility; scrub only AI-tooling references
+
 ## ERS PoC
 - [Branching strategy](project_ers_branching.md): single branch `justin.flammia/SEC-30573-entity-resolution-poc` for all PoC work; topic branches off epic only when parallel contributors need isolation
 - [Local dev workflow](project_ers_local_dev.md): `DD_ENV=dev rapid run -s siem-entity-resolution-api` then `grpcurl -plaintext localhost:8080 grpc.health.v1.Health/Check`; statsd warning is expected
@@ -149,6 +155,7 @@
 - [Slack intro style](feedback_slack_intro_style.md): Cold Slack messages use "I'm from [team]" and "I want to understand" for personal framing; "we" for team-level concerns.
 - [Always use clickable links](feedback_clickable_links.md): Every Jira ticket, Confluence page, Slack thread, GitHub PR must be a rendered markdown link in conversation. Never a bare ID.
 - [Code references must be GitHub deeplinks](feedback_code_deeplinks.md): File path + line number references in docs must link to the exact line on GitHub (`DataDog/dd-source`, `main` branch). Never plain text.
+- [Include customer demand data](feedback_include_customer_demand_data.md): pull grounded named customer/design-partner demand into planning/positioning docs to strengthen the case; never fabricate where a source has none
 
 ## Slack Workflow
 - [Never send via Slack MCP](feedback_no_slack_mcp_send.md): MCP appends "Sent using Claude" attribution; always use pbcopy+slackfmt so user pastes manually

@@ -1,4 +1,3 @@
-@RTK.md
 
 ## Verification & Guessing
 

@@ -32,6 +32,9 @@ Apply these automatically without asking for confirmation. When new corrections 
 | "Kanish" | [[Caniche]] | Zoom AI mishears the internal tool name "Caniche" |
 | "N80" / "N80 resolution" | "entity" / "entity resolution" | Phonetic mishear of "entity" |
 | "ORC2" | org 2 | Datadog internal staging organization (dd.datad0g.com), used as a test environment |
+| "Cloud Strike" / "CloudStrike" | CrowdStrike | Variant of "Cold Strike" with different mishear pattern |
+| "SimLeads" | `#k9-siem-leads` | The Cloud SIEM leads Slack channel |
+| "INR" | I&R | Investigation & Response, Corey Finley's team |
 
 ### People
 
@@ -44,6 +47,7 @@ Apply these automatically without asking for confirmation. When new corrections 
 | "Shark" / "Sharik" | [[Shariq Syed]] | Common mishear of "Shariq" |
 | "Quinton" | [[Quentin Fabre]] | Phonetic mishear of the French name "Quentin" |
 | "Roxanne" | [[Roxane Brenier]] | Mishear of the French name "Roxane" |
+| "Bhutan" | [[Quentin Fabre]] | Phonetic mishear of "Quentin" (or his team name); confirmed 2026-06-16 |
 
 ## Step 0: Fetch the Summary
 

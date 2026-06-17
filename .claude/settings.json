@@ -68,7 +68,6 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "sonnet[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -77,27 +76,6 @@
           {
             "type": "command",
             "command": "/Users/justin.flammia/.claude/hooks/jira-formatting-guard.sh"
-          }
-        ]
-      },
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/dd-git-normalize.sh"
-          },
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/pr-draft-enforce.sh"
-          },
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/rtk-rewrite.sh"
-          },
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/bzl-path-fix.sh"
           }
         ]
       },
@@ -345,5 +323,6 @@
   "fastMode": true,
   "tui": "fullscreen",
   "preferredNotifChannel": "ghostty",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "model": "opus[1m]"
 }
