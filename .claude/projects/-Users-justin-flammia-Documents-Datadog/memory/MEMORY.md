@@ -1,5 +1,8 @@
 # Memory Index
 
+## Learning
+- [Reference Tables teach workspace](reference_tables_teach_workspace.md): `/teach` workspace at `~/teach/reference-tables/`. Product-feature fluency. Lesson 1 done.
+
 ## User Profile
 - Justin Flammia, Cloud SIEM team, K9 security org at Datadog
 - Based in NYC (America/New_York timezone)
@@ -22,6 +25,7 @@
 - When preparing Jira comments for clipboard, always use markdown format (not Jira wiki markup like `h2.`, `{{code}}`, `[text|url]`).
 
 ## ERS Architecture Principles
+- [AWS within-trust not shipped](feedback_aws_within_trust_not_shipped.md): CloudTrail assume-role walk is in-flight Q3 work, not GA; email matching via EmailExactStrategy is the only out-of-the-box resolution path across all four CSPs
 - [No outbound API calls](feedback_ers_no_outbound_api.md): ERS must read only from data already ingested into Datadog. No calls to AWS, PAM tools, IdPs or any external service. Missing datasets mean ingestion work is needed, not a design workaround.
 - [Best-effort resolution](feedback_ers_best_effort.md): ERS resolves as far as available data allows and stops cleanly. INDETERMINATE (data gap, useful intermediate actor) vs UNRESOLVED (no progress or guardrail exit). unsupported_gap always maps to UNRESOLVED. actor_class uses UNKNOWN not INDETERMINATE.
 
@@ -76,7 +80,7 @@
 ## Active Documents
 - [UEBA doc intent](ueba-doc-intent.md) — UEBA Engineering Landscape doc frames ambiguous work into actionable tracks; open questions become next steps, not blockers
 - [Entity Resolution RFC](project_er_proposal.md) — Complete draft RFC at `docs/Entity Resolution - Design Proposal.md`; not yet published to Confluence; Phase 1 (GW→AWS) is the dependency for the User Entity Roll-up project
-- [UEBA Q3 integration framing](project_ueba_q3_integration_framing.md) — seven Q3 sources, end-to-end-over-depth tenet, partner-delivery prioritization, ownership; docs `UEBA Q3 Integration Briefs.md` + `UEBA Q3 Deliverables and Ownership.md`
+- [UEBA Q3 integration framing](project_ueba_q3_integration_framing.md) — seven Q3 sources, end-to-end-over-depth tenet, partner-delivery prioritization, ownership; docs `UEBA Q3 Goal Framing.md` + `UEBA Q3 Deliverables and Ownership.md`
 
 ## Investigation Methodology
 - [Verify data sources before comparing results](feedback_investigation_methodology.md). When two sources show different results, first check if both are live and receiving the same data before theorizing about application logic.

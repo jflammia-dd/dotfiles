@@ -555,10 +555,16 @@ def _parse_list(lines, start_i, comment_collector=None, mention_map=None):
                     item_content.append(nested)
                 continue
 
-            # Continuation text (indented prose under a list item)
+            # Continuation text (indented prose under a list item). Separate it
+            # from the preceding line with a hard break so a standalone bold
+            # header and its description render on their own lines rather than
+            # running together.
             if item_content and item_content[0]["type"] == "paragraph":
                 extra = parse_inline(ns, comment_collector, mention_map)
-                item_content[0]["content"].extend(extra)
+                para = item_content[0]["content"]
+                if para and extra:
+                    para.append({"type": "hardBreak"})
+                para.extend(extra)
             j += 1
 
         items.append(_list_item(item_content))
@@ -708,15 +714,24 @@ def convert(content, image_map=None, mention_map=None, people_roster=None):
     def flush_para():
         if not pending_para:
             return
-        joined = " ".join(l.strip() for l in pending_para if l.strip())
-        if joined:
-            # Smart-link embed: a single URL from a known provider on its own
-            # line becomes an embedCard so Confluence renders it interactively.
-            if EMBED_URL_PATTERN.match(joined):
-                nodes.append(_embed_card(joined))
-            else:
-                nodes.append(_paragraph(parse_inline(joined, comment_collector, mention_map)))
+        para_lines = [l.strip() for l in pending_para if l.strip()]
         pending_para.clear()
+        if not para_lines:
+            return
+        # Smart-link embed: a single URL from a known provider on its own line
+        # becomes an embedCard so Confluence renders it interactively.
+        if len(para_lines) == 1 and EMBED_URL_PATTERN.match(para_lines[0]):
+            nodes.append(_embed_card(para_lines[0]))
+            return
+        # Multiple source lines in one paragraph block are intentional breaks,
+        # a standalone bold header with its description below. Separate each
+        # line with a hard break rather than collapsing them onto one line.
+        inline = []
+        for idx, pl in enumerate(para_lines):
+            if idx:
+                inline.append({"type": "hardBreak"})
+            inline.extend(parse_inline(pl, comment_collector, mention_map))
+        nodes.append(_paragraph(inline))
 
     while i < len(lines):
         line = lines[i]
