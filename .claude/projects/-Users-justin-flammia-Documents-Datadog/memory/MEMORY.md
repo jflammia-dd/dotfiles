@@ -152,7 +152,8 @@
 
 ## Obsidian Doc Management
 - [Retire stale docs](feedback_retire_stale_docs.md): Delete superseded docs outright; don't archive or add "superseded" headers. Flag stale docs proactively.
-- [Zoom file handling](feedback_zoom_file_handling.md): Move Zoom summary files to `attachments/` immediately on ingest; don't leave them in ~/Downloads.
+- [Zoom file handling](feedback_zoom_file_handling.md): Do NOT move Zoom source files to attachments when notes are filed from them. The vault notes are the artifact; the source file is ephemeral.
+- [Check vault before asking user](feedback_check_vault_before_asking.md): Never ask the user whether a vault profile or file exists; always check with obsidian tools first.
 
 ## Writing Rules
 - [No TH abbreviation](feedback_no_TH_abbreviation.md): Always write "Temporal Husky" in full, never "TH". Hard rule, not a suggestion.

@@ -9,7 +9,7 @@ Zoom AI notes have predictable transcription errors. Always verify and correct b
 
 ## Known Corrections
 
-Apply these automatically without asking for confirmation. When new corrections are confirmed during an ingestion, add them to this table immediately.
+Apply these automatically without asking for confirmation. When new corrections are confirmed during an ingestion, add them to this table immediately. When an existing entry produces a false positive during verification (the user says the correction is wrong), remove it from the table.
 
 ### Codenames and systems
 
@@ -95,6 +95,10 @@ If multiple summaries are returned, confirm which meeting the user wants before 
 
 If none of the above apply, ask the user to paste the content directly.
 
+## Step 0.5: Validate the Content
+
+Before proceeding, confirm the fetched content is a Zoom AI summary. It should contain structured sections: Key Outcomes, Decisions Made, Pending Confirmation, Action Items, or similar. If the content instead looks like timestamped speaker turns with no summary structure, stop immediately. Tell the user what was found, explain that raw transcripts are out of scope for this skill and direct them to the transcript ingestion skill instead. If the content is empty or missing, stop and tell the user the summary could not be retrieved.
+
 ## Step 1: Pre-Filing Verification (never skip)
 
 Before writing anything to the vault:
@@ -119,7 +123,7 @@ Before writing anything to the vault:
 
 ## Step 3: File the Notes
 
-For 1:1s, insert a new date section above the previous most-recent entry:
+Use this format regardless of meeting type:
 
 ```markdown
 ## YYYY-MM-DD
@@ -135,6 +139,10 @@ For 1:1s, insert a new date section above the previous most-recent entry:
 ```
 
 Use `[[wiki-link]]` syntax for every person, system or concept. Link to `items/` pages for systems, `people/` pages for individuals.
+
+**1:1s:** Insert the date section above the previous most-recent entry in `people/[Person].md`. If there are no prior entries, append it after the frontmatter (or after any existing `## Notes` header).
+
+**Group meetings:** Create a new file `notes/YYYY-MM-DD - [Description].md`. Set the attendees frontmatter using wiki-links: `attendees: ["[[First Last|Display]]", ...]`. The date section content follows the same format above.
 
 ## Step 4: New People
 

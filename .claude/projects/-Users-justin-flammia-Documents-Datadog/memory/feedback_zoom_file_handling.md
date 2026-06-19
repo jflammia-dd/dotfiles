@@ -1,11 +1,14 @@
 ---
-name: Move Zoom files to attachments on ingest
-description: When ingesting a Zoom summary from a file path, move it to the Obsidian attachments folder before referencing it
-type: feedback
-originSessionId: d523b44c-d75a-4f0e-ad7a-44536e367a4e
+name: zoom-file-handling-on-ingest
+description: Do NOT move Zoom source files to attachments when notes are filed to the vault from them
+metadata: 
+  node_type: memory
+  type: feedback
+  originSessionId: a91eda59-08d2-4a88-9355-2dbc0dd04702
 ---
-When the user provides a Zoom meeting notes file for ingestion, move it to `attachments/` in the Obsidian vault immediately. Don't leave it in ~/Downloads or wherever it came from.
 
-**Why:** Files in ~/Downloads are transient and will be cleaned up. The attachments folder is the vault's permanent storage.
+When a Zoom meeting file (transcript or AI summary export) is provided as input for ingestion and notes are successfully filed to the vault, do NOT move or copy the source file to `attachments/`. The filed vault notes are the artifact. The source file is ephemeral input and can stay wherever it is or be discarded.
 
-**How to apply:** After reading the file for ingestion, run `mv "<source path>" "/Users/justin.flammia/Documents/Datadog/attachments/<filename>"` before filing notes. Update any log entries to reference the new path (`attachments/<filename>`).
+**Why:** Moving it to attachments was flagged as unnecessary overhead. The vault notes capture what matters. Saving the raw source alongside them creates redundancy without value.
+
+**How to apply:** After filing notes from a file path, skip the `mv` step entirely. Do not reference the source file path in log entries.
