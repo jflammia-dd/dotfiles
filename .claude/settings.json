@@ -1,10 +1,347 @@
 {
-  "permissions": {
-    "allow": [
-      "Read(/Users/justin.flammia/.claude/**)",
-      "Edit(/Users/justin.flammia/.claude/**)",
-      "Write(/Users/justin.flammia/.claude/**)",
-      "Bash(rm /Users/justin.flammia/.claude/**:*)",
+  "advisorModel" : "opus",
+  "effortLevel" : "xhigh",
+  "enabledPlugins" : {
+    "aaa-internal@datadog-claude-plugins" : true,
+    "aaa@datadog-claude-plugins" : true,
+    "advanced-query@datadog-claude-plugins" : true,
+    "ai-developer-workflows@datadog-claude-plugins" : true,
+    "ai-devx-flow@datadog-claude-plugins" : true,
+    "ai-devx@datadog-claude-plugins" : true,
+    "ai-platform-agentic-workflows@datadog-claude-plugins" : true,
+    "apm@datadog-claude-plugins" : true,
+    "appgate@datadog-claude-plugins" : true,
+    "applied-ai-streaming-engineering@datadog-claude-plugins" : true,
+    "ask-questions-if-underspecified@trailofbits" : true,
+    "atlas@datadog-claude-plugins" : true,
+    "atlassian@claude-plugins-official" : true,
+    "atomic-agents@claude-plugins-official" : true,
+    "audit-context-building@trailofbits" : true,
+    "autotest@datadog-claude-plugins" : true,
+    "bits-dev@datadog-claude-plugins" : true,
+    "caniche@datadog-claude-plugins" : true,
+    "change-orchestration@datadog-claude-plugins" : true,
+    "chrome-devtools-mcp@claude-plugins-official" : true,
+    "ci-app@datadog-claude-plugins" : true,
+    "claude-code-setup@claude-plugins-official" : true,
+    "claude-in-chrome-troubleshooting@trailofbits" : true,
+    "claude-md-management@claude-plugins-official" : true,
+    "cloud-security@datadog-claude-plugins" : true,
+    "cmdbuf@datadog-claude-plugins" : true,
+    "coach@datadog-claude-plugins" : true,
+    "code-modernization@claude-plugins-official" : true,
+    "code-reliability@datadog-claude-plugins" : true,
+    "code-review@claude-plugins-official" : true,
+    "code-simplifier@claude-plugins-official" : true,
+    "codex@openai-codex" : true,
+    "commit-commands@claude-plugins-official" : true,
+    "confluence-api@datadog-claude-plugins" : true,
+    "confluence-write@datadog-claude-plugins" : true,
+    "context7@claude-plugins-official" : true,
+    "core-observability@datadog-claude-plugins" : true,
+    "corpweb@datadog-claude-plugins" : true,
+    "data-engineering@claude-plugins-official" : true,
+    "dd@datadog-claude-plugins" : true,
+    "ddsql@datadog-claude-plugins" : true,
+    "dependency-management@datadog-claude-plugins" : true,
+    "devcontainer-setup@trailofbits" : true,
+    "deveng@datadog-claude-plugins" : true,
+    "devex-ci@datadog-claude-plugins" : true,
+    "diagrams@datadog-claude-plugins" : true,
+    "differential-review@trailofbits" : true,
+    "dimensional-analysis@trailofbits" : true,
+    "documentation@datadog-claude-plugins" : true,
+    "dual-agents-review@datadog-claude-plugins" : true,
+    "error-tracking@datadog-claude-plugins" : true,
+    "event-management@datadog-claude-plugins" : true,
+    "explanatory-output-style@claude-plugins-official" : false,
+    "feature-dev@claude-plugins-official" : true,
+    "feature@datadog-claude-plugins" : true,
+    "frontend-design@claude-plugins-official" : true,
+    "gh-cli@trailofbits" : true,
+    "git-cleanup@trailofbits" : true,
+    "go-code-reviewer@datadog-claude-plugins" : true,
+    "gopls-lsp@claude-plugins-official" : true,
+    "hard-mode@datadog-claude-plugins" : true,
+    "historical-metrics@datadog-claude-plugins" : true,
+    "hookify@claude-plugins-official" : true,
+    "husky@datadog-claude-plugins" : true,
+    "incident-follow-up@datadog-claude-plugins" : true,
+    "inner-dev-loop-guild@datadog-claude-plugins" : false,
+    "interviewer@datadog-claude-plugins" : true,
+    "investigation-memories@datadog-claude-plugins" : true,
+    "jdtls-lsp@claude-plugins-official" : true,
+    "k9-ecosystems@datadog-claude-plugins" : true,
+    "k9@datadog-claude-plugins" : true,
+    "kv-platform@datadog-claude-plugins" : true,
+    "language-tools@datadog-dd-source-claude-plugins" : true,
+    "learn@datadog-claude-plugins" : true,
+    "learning-output-style@claude-plugins-official" : true,
+    "lua-lsp@claude-plugins-official" : true,
+    "marketplace-auto-update@datadog-claude-plugins" : true,
+    "mcp-server-dev@claude-plugins-official" : true,
+    "md-to-confluence@datadog-claude-plugins" : true,
+    "mermaid@datadog-claude-plugins" : true,
+    "metrics-automation-lifecycle@datadog-claude-plugins" : true,
+    "modern-python@trailofbits" : true,
+    "mongodb@claude-plugins-official" : true,
+    "ocsf@datadog-claude-plugins" : true,
+    "on-call@datadog-claude-plugins" : true,
+    "orgstore@datadog-claude-plugins" : true,
+    "osx-notifications@datadog-claude-plugins" : true,
+    "otel@datadog-claude-plugins" : true,
+    "perf-feedback@datadog-claude-plugins" : true,
+    "playground@claude-plugins-official" : true,
+    "playwright@claude-plugins-official" : true,
+    "plugin-dev@claude-plugins-official" : true,
+    "ponytail@ponytail" : true,
+    "pr-review-toolkit@claude-plugins-official" : true,
+    "product-analytics@datadog-claude-plugins" : true,
+    "production-operations@datadog-claude-plugins" : true,
+    "prompt-engineering@datadog-claude-plugins" : true,
+    "pup" : true,
+    "pyright-lsp@claude-plugins-official" : true,
+    "python-code-reviewer@datadog-claude-plugins" : true,
+    "qodo-skills@claude-plugins-official" : true,
+    "ralph-loop@claude-plugins-official" : true,
+    "redapl@datadog-claude-plugins" : true,
+    "reference-tables@datadog-claude-plugins" : true,
+    "remember@claude-plugins-official" : true,
+    "rewrite@datadog-claude-plugins" : true,
+    "saas-integrations@datadog-claude-plugins" : true,
+    "sdlc-security@datadog-claude-plugins" : true,
+    "second-opinion@trailofbits" : true,
+    "security-guidance@claude-plugins-official" : true,
+    "session-report@claude-plugins-official" : true,
+    "skill-creator@claude-plugins-official" : true,
+    "skill-finder@datadog-claude-plugins" : true,
+    "skill-improver@trailofbits" : true,
+    "skills@datadog-claude-plugins" : true,
+    "slack@claude-plugins-official" : true,
+    "squire@datadog-claude-plugins" : false,
+    "suggest-commands@datadog-claude-plugins" : true,
+    "suggest-extensions@datadog-claude-plugins" : true,
+    "summarize@datadog-claude-plugins" : true,
+    "superpowers@claude-plugins-official" : true,
+    "supply-chain-risk-auditor@trailofbits" : true,
+    "technical-content@datadog-claude-plugins" : true,
+    "terraform@claude-plugins-official" : false,
+    "typescript-lsp@claude-plugins-official" : true,
+    "user-config@datadog-claude-plugins" : true,
+    "user-context@datadog-claude-plugins" : true,
+    "user-support@datadog-claude-plugins" : true,
+    "weekly-wins-journal@datadog-claude-plugins" : true,
+    "work-analyzer@datadog-claude-plugins" : true,
+    "workflow-skill-design@trailofbits" : true,
+    "writing@datadog-claude-plugins" : true
+  },
+  "extraKnownMarketplaces" : {
+    "openai-codex" : {
+      "source" : {
+        "repo" : "openai\/codex-plugin-cc",
+        "source" : "github"
+      }
+    },
+    "ponytail" : {
+      "source" : {
+        "repo" : "DietrichGebert\/ponytail",
+        "source" : "github"
+      }
+    },
+    "trailofbits" : {
+      "source" : {
+        "repo" : "trailofbits\/skills",
+        "source" : "github"
+      }
+    }
+  },
+  "fastMode" : true,
+  "hooks" : {
+    "Notification" : [
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SURFACE_ID:-}\" ] && { __tty=$(ps -o tty= -p \"$PPID\" 2>\/dev\/null | tr -d '[:space:]'); case \"$__tty\" in *[0-9]*) __tty=\"\/dev\/${__tty#\/dev\/}\";; *) __tty=\"\/dev\/tty\";; esac; __sp=\"\"; [ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && __sp=\";pid=$PPID\"; printf '\\033]3008;start=claude;event=awaiting_input%s\\033\\\\' \"$__sp\" > \"$__tty\"; __in=$(cat); __t=$(printf '%s' \"$__in\" | LC_ALL=C awk -v keys=\"title\" -v budget=160 'function ws(c){return c==\" \"||c==\"\\t\"||c==\"\\n\"||c==\"\\r\"}function fv(s,key,  p,i,n,c,o,e){p=\"\\\"\"key\"\\\"\";i=index(s,p);if(i==0)return \"\";i+=length(p);n=length(s);while(i<=n){if(ws(substr(s,i,1)))i++;else break}if(substr(s,i,1)!=\":\")return \"\";i++;while(i<=n){if(ws(substr(s,i,1)))i++;else break}if(substr(s,i,1)!=\"\\\"\")return \"\";i++;o=\"\";e=0;while(i<=n){c=substr(s,i,1);if(e){o=o c;e=0;i++;continue}if(c==\"\\\\\"){o=o c;e=1;i++;continue}if(c==\"\\\"\")break;o=o c;i++}return o}{d=d $0}END{n=split(keys,ks,\",\");v=\"\";for(j=1;j<=n;j++){v=fv(d,ks[j]);if(v!=\"\")break}if(length(v)>budget+0)v=substr(v,1,budget+0);printf \"%s\",v}' | base64 | tr -d '\\n'); __b=$(printf '%s' \"$__in\" | LC_ALL=C awk -v keys=\"message,last_assistant_message,assistant_response\" -v budget=1000 'function ws(c){return c==\" \"||c==\"\\t\"||c==\"\\n\"||c==\"\\r\"}function fv(s,key,  p,i,n,c,o,e){p=\"\\\"\"key\"\\\"\";i=index(s,p);if(i==0)return \"\";i+=length(p);n=length(s);while(i<=n){if(ws(substr(s,i,1)))i++;else break}if(substr(s,i,1)!=\":\")return \"\";i++;while(i<=n){if(ws(substr(s,i,1)))i++;else break}if(substr(s,i,1)!=\"\\\"\")return \"\";i++;o=\"\";e=0;while(i<=n){c=substr(s,i,1);if(e){o=o c;e=0;i++;continue}if(c==\"\\\\\"){o=o c;e=1;i++;continue}if(c==\"\\\"\")break;o=o c;i++}return o}{d=d $0}END{n=split(keys,ks,\",\");v=\"\";for(j=1;j<=n;j++){v=fv(d,ks[j]);if(v!=\"\")break}if(length(v)>budget+0)v=substr(v,1,budget+0);printf \"%s\",v}' | base64 | tr -d '\\n'); printf '\\033]3008;start=claude;kind=notify;title=%s;body=%s\\033\\\\' \"$__t\" \"$__b\" > \"$__tty\"; } >\/dev\/null 2>&1 || true # supacode-managed-hook",
+            "timeout" : 10,
+            "type" : "command"
+          }
+        ],
+        "matcher" : ""
+      }
+    ],
+    "PostToolUse" : [
+      {
+        "hooks" : [
+          {
+            "command" : "\/Users\/justin.flammia\/.claude\/hooks\/prose-style-check.sh",
+            "statusMessage" : "Checking prose style...",
+            "type" : "command"
+          }
+        ],
+        "matcher" : "Write|Edit|MultiEdit"
+      },
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SURFACE_ID:-}\" ] && { __tty=$(ps -o tty= -p \"$PPID\" 2>\/dev\/null | tr -d '[:space:]'); case \"$__tty\" in *[0-9]*) __tty=\"\/dev\/${__tty#\/dev\/}\";; *) __tty=\"\/dev\/tty\";; esac; __sp=\"\"; [ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && __sp=\";pid=$PPID\"; printf '\\033]3008;start=claude;event=idle%s\\033\\\\' \"$__sp\" > \"$__tty\"; } >\/dev\/null 2>&1 || true # supacode-managed-hook",
+            "timeout" : 5,
+            "type" : "command"
+          }
+        ],
+        "matcher" : ""
+      }
+    ],
+    "PreToolUse" : [
+      {
+        "hooks" : [
+          {
+            "command" : "\/Users\/justin.flammia\/.claude\/hooks\/jira-formatting-guard.sh",
+            "type" : "command"
+          }
+        ],
+        "matcher" : "mcp__datadog-atlassian__add_comment|mcp__datadog-atlassian__update_issue|mcp__datadog-atlassian__update_page|mcp__plugin_atlassian_atlassian__addCommentToJiraIssue|mcp__plugin_atlassian_atlassian__editJiraIssue|mcp__plugin_atlassian_atlassian__createJiraIssue|mcp__plugin_atlassian_atlassian__createConfluencePage|mcp__plugin_atlassian_atlassian__updateConfluencePage|mcp__plugin_atlassian_atlassian__createConfluenceFooterComment|mcp__plugin_atlassian_atlassian__createConfluenceInlineComment"
+      },
+      {
+        "hooks" : [
+          {
+            "command" : "\/Users\/justin.flammia\/.claude\/hooks\/ccstatusline-cached.sh --hook",
+            "type" : "command"
+          }
+        ],
+        "matcher" : "Skill"
+      },
+      {
+        "hooks" : [
+          {
+            "command" : "\/Users\/justin.flammia\/.claude\/hooks\/local-process-language-check.sh",
+            "type" : "command"
+          }
+        ],
+        "matcher" : "mcp__plugin_atlassian_atlassian__addCommentToJiraIssue|mcp__plugin_atlassian_atlassian__editJiraIssue|mcp__plugin_atlassian_atlassian__createJiraIssue|mcp__plugin_atlassian_atlassian__createConfluencePage|mcp__plugin_atlassian_atlassian__updateConfluencePage|mcp__plugin_atlassian_atlassian__createConfluenceFooterComment|mcp__plugin_atlassian_atlassian__createConfluenceInlineComment"
+      },
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SURFACE_ID:-}\" ] && { __tty=$(ps -o tty= -p \"$PPID\" 2>\/dev\/null | tr -d '[:space:]'); case \"$__tty\" in *[0-9]*) __tty=\"\/dev\/${__tty#\/dev\/}\";; *) __tty=\"\/dev\/tty\";; esac; __sp=\"\"; [ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && __sp=\";pid=$PPID\"; printf '\\033]3008;start=claude;event=busy%s\\033\\\\' \"$__sp\" > \"$__tty\"; } >\/dev\/null 2>&1 || true # supacode-managed-hook",
+            "timeout" : 5,
+            "type" : "command"
+          }
+        ],
+        "matcher" : ""
+      },
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SURFACE_ID:-}\" ] && { __tty=$(ps -o tty= -p \"$PPID\" 2>\/dev\/null | tr -d '[:space:]'); case \"$__tty\" in *[0-9]*) __tty=\"\/dev\/${__tty#\/dev\/}\";; *) __tty=\"\/dev\/tty\";; esac; __sp=\"\"; [ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && __sp=\";pid=$PPID\"; printf '\\033]3008;start=claude;event=awaiting_input%s\\033\\\\' \"$__sp\" > \"$__tty\"; } >\/dev\/null 2>&1 || true # supacode-managed-hook",
+            "timeout" : 5,
+            "type" : "command"
+          }
+        ],
+        "matcher" : "AskUserQuestion|ExitPlanMode"
+      }
+    ],
+    "SessionEnd" : [
+      {
+        "hooks" : [
+          {
+            "command" : "\/Users\/justin.flammia\/.claude\/hooks\/session-end-remind.sh",
+            "type" : "command"
+          }
+        ]
+      },
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SURFACE_ID:-}\" ] && { __tty=$(ps -o tty= -p \"$PPID\" 2>\/dev\/null | tr -d '[:space:]'); case \"$__tty\" in *[0-9]*) __tty=\"\/dev\/${__tty#\/dev\/}\";; *) __tty=\"\/dev\/tty\";; esac; __sp=\"\"; [ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && __sp=\";pid=$PPID\"; printf '\\033]3008;end=claude;event=session_end%s\\033\\\\' \"$__sp\" > \"$__tty\"; __sp=\"\"; [ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && __sp=\";pid=$PPID\"; printf '\\033]3008;start=claude;event=idle%s\\033\\\\' \"$__sp\" > \"$__tty\"; } >\/dev\/null 2>&1 || true # supacode-managed-hook",
+            "timeout" : 5,
+            "type" : "command"
+          }
+        ],
+        "matcher" : ""
+      }
+    ],
+    "SessionStart" : [
+      {
+        "hooks" : [
+          {
+            "command" : "\/Users\/justin.flammia\/.claude\/hooks\/session-start-check.sh",
+            "type" : "command"
+          }
+        ]
+      },
+      {
+        "hooks" : [
+          {
+            "command" : "\/Users\/justin.flammia\/.claude\/hooks\/work-os-check.sh",
+            "type" : "command"
+          }
+        ]
+      },
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SURFACE_ID:-}\" ] && { __tty=$(ps -o tty= -p \"$PPID\" 2>\/dev\/null | tr -d '[:space:]'); case \"$__tty\" in *[0-9]*) __tty=\"\/dev\/${__tty#\/dev\/}\";; *) __tty=\"\/dev\/tty\";; esac; __sp=\"\"; [ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && __sp=\";pid=$PPID\"; printf '\\033]3008;start=claude;event=session_start%s\\033\\\\' \"$__sp\" > \"$__tty\"; } >\/dev\/null 2>&1 || true # supacode-managed-hook",
+            "timeout" : 5,
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "Stop" : [
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SURFACE_ID:-}\" ] && { __tty=$(ps -o tty= -p \"$PPID\" 2>\/dev\/null | tr -d '[:space:]'); case \"$__tty\" in *[0-9]*) __tty=\"\/dev\/${__tty#\/dev\/}\";; *) __tty=\"\/dev\/tty\";; esac; __sp=\"\"; [ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && __sp=\";pid=$PPID\"; printf '\\033]3008;start=claude;event=idle%s\\033\\\\' \"$__sp\" > \"$__tty\"; __in=$(cat); __t=$(printf '%s' \"$__in\" | LC_ALL=C awk -v keys=\"title\" -v budget=160 'function ws(c){return c==\" \"||c==\"\\t\"||c==\"\\n\"||c==\"\\r\"}function fv(s,key,  p,i,n,c,o,e){p=\"\\\"\"key\"\\\"\";i=index(s,p);if(i==0)return \"\";i+=length(p);n=length(s);while(i<=n){if(ws(substr(s,i,1)))i++;else break}if(substr(s,i,1)!=\":\")return \"\";i++;while(i<=n){if(ws(substr(s,i,1)))i++;else break}if(substr(s,i,1)!=\"\\\"\")return \"\";i++;o=\"\";e=0;while(i<=n){c=substr(s,i,1);if(e){o=o c;e=0;i++;continue}if(c==\"\\\\\"){o=o c;e=1;i++;continue}if(c==\"\\\"\")break;o=o c;i++}return o}{d=d $0}END{n=split(keys,ks,\",\");v=\"\";for(j=1;j<=n;j++){v=fv(d,ks[j]);if(v!=\"\")break}if(length(v)>budget+0)v=substr(v,1,budget+0);printf \"%s\",v}' | base64 | tr -d '\\n'); __b=$(printf '%s' \"$__in\" | LC_ALL=C awk -v keys=\"message,last_assistant_message,assistant_response\" -v budget=1000 'function ws(c){return c==\" \"||c==\"\\t\"||c==\"\\n\"||c==\"\\r\"}function fv(s,key,  p,i,n,c,o,e){p=\"\\\"\"key\"\\\"\";i=index(s,p);if(i==0)return \"\";i+=length(p);n=length(s);while(i<=n){if(ws(substr(s,i,1)))i++;else break}if(substr(s,i,1)!=\":\")return \"\";i++;while(i<=n){if(ws(substr(s,i,1)))i++;else break}if(substr(s,i,1)!=\"\\\"\")return \"\";i++;o=\"\";e=0;while(i<=n){c=substr(s,i,1);if(e){o=o c;e=0;i++;continue}if(c==\"\\\\\"){o=o c;e=1;i++;continue}if(c==\"\\\"\")break;o=o c;i++}return o}{d=d $0}END{n=split(keys,ks,\",\");v=\"\";for(j=1;j<=n;j++){v=fv(d,ks[j]);if(v!=\"\")break}if(length(v)>budget+0)v=substr(v,1,budget+0);printf \"%s\",v}' | base64 | tr -d '\\n'); printf '\\033]3008;start=claude;kind=notify;title=%s;body=%s\\033\\\\' \"$__t\" \"$__b\" > \"$__tty\"; } >\/dev\/null 2>&1 || true # supacode-managed-hook",
+            "timeout" : 10,
+            "type" : "command"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit" : [
+      {
+        "hooks" : [
+          {
+            "command" : "\/Users\/justin.flammia\/.claude\/hooks\/ccstatusline-cached.sh --hook",
+            "type" : "command"
+          }
+        ]
+      },
+      {
+        "hooks" : [
+          {
+            "command" : "\/Users\/justin.flammia\/.claude\/hooks\/justins-voice-detect.sh",
+            "statusMessage" : "Checking writing context...",
+            "type" : "command"
+          }
+        ]
+      },
+      {
+        "hooks" : [
+          {
+            "command" : "\/Users\/justin.flammia\/.claude\/hooks\/work-os-prompt-check.sh",
+            "type" : "command"
+          }
+        ]
+      },
+      {
+        "hooks" : [
+          {
+            "command" : "[ -n \"${SUPACODE_SURFACE_ID:-}\" ] && { __tty=$(ps -o tty= -p \"$PPID\" 2>\/dev\/null | tr -d '[:space:]'); case \"$__tty\" in *[0-9]*) __tty=\"\/dev\/${__tty#\/dev\/}\";; *) __tty=\"\/dev\/tty\";; esac; __sp=\"\"; [ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && __sp=\";pid=$PPID\"; printf '\\033]3008;start=claude;event=busy%s\\033\\\\' \"$__sp\" > \"$__tty\"; } >\/dev\/null 2>&1 || true # supacode-managed-hook",
+            "timeout" : 10,
+            "type" : "command"
+          }
+        ]
+      }
+    ]
+  },
+  "model" : "opus[1m]",
+  "permissions" : {
+    "allow" : [
+      "Read(\/Users\/justin.flammia\/.claude\/**)",
+      "Edit(\/Users\/justin.flammia\/.claude\/**)",
+      "Write(\/Users\/justin.flammia\/.claude\/**)",
+      "Bash(rm \/Users\/justin.flammia\/.claude\/**:*)",
       "mcp__datadog-google-workspace__batch_update",
       "mcp__datadog-google-workspace__get_presentation",
       "mcp__datadog-google-workspace__get_slide",
@@ -19,9 +356,9 @@
       "mcp__datadog-google-workspace__create_file",
       "mcp__datadog-google-workspace__search_files",
       "mcp__datadog-google-workspace__get_file_metadata",
-      "Bash(~/.claude/skills/codex-delegate/scripts/run-codex-subtask.sh:*)",
+      "Bash(~\/.claude\/skills\/codex-delegate\/scripts\/run-codex-subtask.sh:*)",
       "Bash(mktemp:*)",
-      "Bash(rm /tmp/codex-task-*:*)",
+      "Bash(rm \/tmp\/codex-task-*:*)",
       "Bash(date:*)",
       "Bash(gh pr view*:*)",
       "Bash(gh pr create*:*)",
@@ -42,14 +379,15 @@
       "Bash(grep:*)",
       "Bash(wc:*)",
       "Bash(base64:*)",
-      "Bash(~/.claude/plugins/marketplaces/datadog-claude-plugins/confluence-api/scripts/**:*)",
+      "Bash(~\/.claude\/plugins\/marketplaces\/datadog-claude-plugins\/confluence-api\/scripts\/**:*)",
       "Bash(git status*:*)",
       "Bash(git log*:*)",
       "Bash(git diff*:*)",
       "Bash(git fetch*:*)",
       "mcp__datadog-atlassian__update_page"
     ],
-    "deny": [
+    "defaultMode" : "auto",
+    "deny" : [
       "Bash(git push --force :*)",
       "Bash(git push * --force:*)",
       "Bash(git push * --force *:*)",
@@ -65,264 +403,14 @@
       "Bash(dd-git issue comment*:*)",
       "mcp__plugin_slack_slack__slack_send_message",
       "mcp__plugin_slack_slack__slack_schedule_message"
-    ],
-    "defaultMode": "auto"
-  },
-  "model": "opus[1m]",
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "mcp__datadog-atlassian__add_comment|mcp__datadog-atlassian__update_issue|mcp__datadog-atlassian__update_page|mcp__plugin_atlassian_atlassian__addCommentToJiraIssue|mcp__plugin_atlassian_atlassian__editJiraIssue|mcp__plugin_atlassian_atlassian__createJiraIssue|mcp__plugin_atlassian_atlassian__createConfluencePage|mcp__plugin_atlassian_atlassian__updateConfluencePage|mcp__plugin_atlassian_atlassian__createConfluenceFooterComment|mcp__plugin_atlassian_atlassian__createConfluenceInlineComment",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/jira-formatting-guard.sh"
-          }
-        ]
-      },
-      {
-        "matcher": "Skill",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/ccstatusline-cached.sh --hook"
-          }
-        ]
-      },
-      {
-        "matcher": "mcp__plugin_atlassian_atlassian__addCommentToJiraIssue|mcp__plugin_atlassian_atlassian__editJiraIssue|mcp__plugin_atlassian_atlassian__createJiraIssue|mcp__plugin_atlassian_atlassian__createConfluencePage|mcp__plugin_atlassian_atlassian__updateConfluencePage|mcp__plugin_atlassian_atlassian__createConfluenceFooterComment|mcp__plugin_atlassian_atlassian__createConfluenceInlineComment",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/local-process-language-check.sh"
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit|MultiEdit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/prose-style-check.sh",
-            "statusMessage": "Checking prose style..."
-          }
-        ]
-      }
-    ],
-    "SessionEnd": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/session-end-remind.sh"
-          }
-        ]
-      }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/session-start-check.sh"
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/work-os-check.sh"
-          }
-        ]
-      }
-    ],
-    "UserPromptSubmit": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/ccstatusline-cached.sh --hook"
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/justins-voice-detect.sh",
-            "statusMessage": "Checking writing context..."
-          }
-        ]
-      },
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/Users/justin.flammia/.claude/hooks/work-os-prompt-check.sh"
-          }
-        ]
-      }
     ]
   },
-  "statusLine": {
-    "type": "command",
-    "command": "/Users/justin.flammia/.claude/hooks/ccstatusline-cached.sh",
-    "padding": 0
+  "preferredNotifChannel" : "ghostty",
+  "skipAutoPermissionPrompt" : true,
+  "statusLine" : {
+    "command" : "\/Users\/justin.flammia\/.claude\/hooks\/ccstatusline-cached.sh",
+    "padding" : 0,
+    "type" : "command"
   },
-  "enabledPlugins": {
-    "dd@datadog-claude-plugins": true,
-    "marketplace-auto-update@datadog-claude-plugins": true,
-    "dual-agents-review@datadog-claude-plugins": true,
-    "go-code-reviewer@datadog-claude-plugins": true,
-    "feature@datadog-claude-plugins": true,
-    "husky@datadog-claude-plugins": true,
-    "md-to-confluence@datadog-claude-plugins": true,
-    "skills@datadog-claude-plugins": true,
-    "suggest-commands@datadog-claude-plugins": true,
-    "suggest-extensions@datadog-claude-plugins": true,
-    "ai-platform-agentic-workflows@datadog-claude-plugins": true,
-    "superpowers@claude-plugins-official": true,
-    "code-review@claude-plugins-official": true,
-    "feature-dev@claude-plugins-official": true,
-    "code-simplifier@claude-plugins-official": true,
-    "commit-commands@claude-plugins-official": true,
-    "security-guidance@claude-plugins-official": true,
-    "claude-md-management@claude-plugins-official": true,
-    "pr-review-toolkit@claude-plugins-official": true,
-    "atlassian@claude-plugins-official": true,
-    "claude-code-setup@claude-plugins-official": true,
-    "explanatory-output-style@claude-plugins-official": false,
-    "plugin-dev@claude-plugins-official": true,
-    "hookify@claude-plugins-official": true,
-    "learning-output-style@claude-plugins-official": true,
-    "slack@claude-plugins-official": true,
-    "playground@claude-plugins-official": true,
-    "gopls-lsp@claude-plugins-official": true,
-    "skill-creator@claude-plugins-official": true,
-    "caniche@datadog-claude-plugins": true,
-    "change-orchestration@datadog-claude-plugins": true,
-    "cmdbuf@datadog-claude-plugins": true,
-    "coach@datadog-claude-plugins": true,
-    "code-reliability@datadog-claude-plugins": true,
-    "diagrams@datadog-claude-plugins": true,
-    "inner-dev-loop-guild@datadog-claude-plugins": false,
-    "interviewer@datadog-claude-plugins": true,
-    "k9@datadog-claude-plugins": true,
-    "writing@datadog-claude-plugins": true,
-    "ralph-loop@claude-plugins-official": true,
-    "jdtls-lsp@claude-plugins-official": true,
-    "qodo-skills@claude-plugins-official": true,
-    "aaa@datadog-claude-plugins": true,
-    "advanced-query@datadog-claude-plugins": true,
-    "apm@datadog-claude-plugins": true,
-    "cloud-security@datadog-claude-plugins": true,
-    "core-observability@datadog-claude-plugins": true,
-    "error-tracking@datadog-claude-plugins": true,
-    "event-management@datadog-claude-plugins": true,
-    "hard-mode@datadog-claude-plugins": true,
-    "kv-platform@datadog-claude-plugins": true,
-    "orgstore@datadog-claude-plugins": true,
-    "perf-feedback@datadog-claude-plugins": true,
-    "product-analytics@datadog-claude-plugins": true,
-    "python-code-reviewer@datadog-claude-plugins": true,
-    "rewrite@datadog-claude-plugins": true,
-    "sdlc-security@datadog-claude-plugins": true,
-    "squire@datadog-claude-plugins": false,
-    "user-config@datadog-claude-plugins": true,
-    "user-context@datadog-claude-plugins": true,
-    "user-support@datadog-claude-plugins": true,
-    "pup": true,
-    "mermaid@datadog-claude-plugins": true,
-    "context7@claude-plugins-official": true,
-    "playwright@claude-plugins-official": true,
-    "pyright-lsp@claude-plugins-official": true,
-    "second-opinion@trailofbits": true,
-    "documentation@datadog-claude-plugins": true,
-    "confluence-api@datadog-claude-plugins": true,
-    "typescript-lsp@claude-plugins-official": true,
-    "chrome-devtools-mcp@claude-plugins-official": true,
-    "atomic-agents@claude-plugins-official": true,
-    "aaa-internal@datadog-claude-plugins": true,
-    "ai-devx@datadog-claude-plugins": true,
-    "ask-questions-if-underspecified@trailofbits": true,
-    "audit-context-building@trailofbits": true,
-    "claude-in-chrome-troubleshooting@trailofbits": true,
-    "corpweb@datadog-claude-plugins": true,
-    "ddsql@datadog-claude-plugins": true,
-    "git-cleanup@trailofbits": true,
-    "language-tools@datadog-dd-source-claude-plugins": true,
-    "ocsf@datadog-claude-plugins": true,
-    "remember@claude-plugins-official": true,
-    "skill-improver@trailofbits": true,
-    "summarize@datadog-claude-plugins": true,
-    "supply-chain-risk-auditor@trailofbits": true,
-    "workflow-skill-design@trailofbits": true,
-    "skill-finder@datadog-claude-plugins": true,
-    "frontend-design@claude-plugins-official": true,
-    "lua-lsp@claude-plugins-official": true,
-    "mcp-server-dev@claude-plugins-official": true,
-    "terraform@claude-plugins-official": false,
-    "ai-developer-workflows@datadog-claude-plugins": true,
-    "appgate@datadog-claude-plugins": true,
-    "autotest@datadog-claude-plugins": true,
-    "bits-dev@datadog-claude-plugins": true,
-    "ci-app@datadog-claude-plugins": true,
-    "dependency-management@datadog-claude-plugins": true,
-    "devcontainer-setup@trailofbits": true,
-    "deveng@datadog-claude-plugins": true,
-    "devex-ci@datadog-claude-plugins": true,
-    "differential-review@trailofbits": true,
-    "dimensional-analysis@trailofbits": true,
-    "gh-cli@trailofbits": true,
-    "historical-metrics@datadog-claude-plugins": true,
-    "incident-follow-up@datadog-claude-plugins": true,
-    "investigation-memories@datadog-claude-plugins": true,
-    "learn@datadog-claude-plugins": true,
-    "metrics-automation-lifecycle@datadog-claude-plugins": true,
-    "modern-python@trailofbits": true,
-    "osx-notifications@datadog-claude-plugins": true,
-    "otel@datadog-claude-plugins": true,
-    "production-operations@datadog-claude-plugins": true,
-    "reference-tables@datadog-claude-plugins": true,
-    "saas-integrations@datadog-claude-plugins": true,
-    "work-analyzer@datadog-claude-plugins": true,
-    "codex@openai-codex": true,
-    "confluence-write@datadog-claude-plugins": true,
-    "data-engineering@claude-plugins-official": true,
-    "mongodb@claude-plugins-official": true,
-    "session-report@claude-plugins-official": true,
-    "ai-devx-flow@datadog-claude-plugins": true,
-    "applied-ai-streaming-engineering@datadog-claude-plugins": true,
-    "atlas@datadog-claude-plugins": true,
-    "code-modernization@claude-plugins-official": true,
-    "k9-ecosystems@datadog-claude-plugins": true,
-    "on-call@datadog-claude-plugins": true,
-    "prompt-engineering@datadog-claude-plugins": true,
-    "redapl@datadog-claude-plugins": true,
-    "technical-content@datadog-claude-plugins": true,
-    "weekly-wins-journal@datadog-claude-plugins": true
-  },
-  "extraKnownMarketplaces": {
-    "trailofbits": {
-      "source": {
-        "source": "github",
-        "repo": "trailofbits/skills"
-      }
-    },
-    "openai-codex": {
-      "source": {
-        "source": "github",
-        "repo": "openai/codex-plugin-cc"
-      }
-    }
-  },
-  "effortLevel": "xhigh",
-  "advisorModel": "opus",
-  "fastMode": true,
-  "tui": "fullscreen",
-  "preferredNotifChannel": "ghostty",
-  "skipAutoPermissionPrompt": true
+  "tui" : "fullscreen"
 }

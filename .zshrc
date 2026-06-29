@@ -184,7 +184,6 @@ compdef _gt_yargs_completions gt
 ###-end-gt-completions-###
 
 
-eval "$(dd-gitsign load-key)"
 
 # dd-curl: wraps dd-auth + curl for easy Datadog API calls
 # See: https://datadoghq.atlassian.net/wiki/spaces/~630fbeeb8d88ec800fbe6546/pages/5271783161

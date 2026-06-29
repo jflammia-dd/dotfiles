@@ -3,7 +3,7 @@
 [url "git@github.com:"]
     insteadOf = https://github.com/
 [include]
-	path = /Users/justin.flammia/.config/gitsign/gitconfig
+	path = /Users/justin.flammia/.config/datadog/git/config
 [pull]
 	rebase = true
 [fetch]
