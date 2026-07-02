@@ -206,3 +206,6 @@ dd-curl() {
       "$@"
   ' _ "$@"
 }
+
+# Trajectory - AI coding agent observability
+export PATH="/Users/justin.flammia/.trajectory/bin:$PATH"

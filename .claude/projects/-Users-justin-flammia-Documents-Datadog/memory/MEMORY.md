@@ -118,6 +118,9 @@
 ## Ghostty
 - [Ghostty Settings Editor](reference_ghostty_settings_editor.md): no config key to set editor for Settings menu; use `ghostty +edit-config` with `$EDITOR` instead
 
+## tmux / NeoVim
+- [tmux extended-keys for Ctrl-Space](feedback_tmux_extended_keys_ctrl_space.md): `set -g extended-keys on` required for Ctrl-modified keys with no standard xterm representation to reach nvim distinguishably; default off collapses Ctrl-Space to NUL
+
 ## EVP / Data Tools
 - [EVP Explorer = Events UI](reference_evp_explorer_events_ui.md): when user asks for "EVP Explorer" or a GUI to browse track data, they mean Events UI at `dd.datad0g.com/internal/events-ui/`; siementity link: `?track=siementity&query_type=list`
 
