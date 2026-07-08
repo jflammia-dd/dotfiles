@@ -105,6 +105,7 @@
 
 ## Internal Resources
 - [Presentation template](reference_presentation_template.md): official internal Google Slides asset library.
+- [Internal Excalidraw](reference_excalidraw_internal.md): use `https://excalidraw.static-app.us1.prod.dog/` for drawing tool requests, not excalidraw.com.
 - [Datadog MCP multi-org setup](reference_datadog_mcp_multi_org.md): `mcp.datad0g.com` staging org 2, `mcp.datadoghq.com` prod/dogfood; separate OAuth; use `claude mcp add`.
 
 ## Skills
