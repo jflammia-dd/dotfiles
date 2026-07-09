@@ -8,8 +8,13 @@
 - Comfortable in Go within the Datadog monorepo.
 - Git branch convention: `justin.flammia/<ticket>-<description>`
 - [code-review skill auto-posts without approval](feedback_code_review_skill_no_autopost.md): do NOT use the `code-review:code-review` skill; review manually, present findings for approval first.
+- [NYC conference room booking preference](user_nyc_conference_room_preference.md): order is 29th floor, then 30th, then rest of Bank A, then Bank B.
+
+## NYC Office
+- [Elevator bank floor groupings](reference_nyc_office_elevator_banks.md): Bank A = 28-43 (Justin's floor 29 included); Bank B = 17-18, 44-51. Confirmed from the panel photo.
 
 ## Jira/Atlassian Notes
+- [Cloud SIEM Jira conventions](reference_cloud_siem_jira_conventions.md): Goal→Initiative(SECPRODK9)→Epic(SEC)→Story/Task; epics immutable + outcome-oriented; relationships in native fields only (parent + is-blocked-by DAG); sprints+priority; sparse labels; no sizing. Note: [[Cloud SIEM - Jira Conventions and Patterns]].
 - [Epic description style](feedback_epic_description_style.md): no ticket numbers in epic prose, describe phases and goals only.
 - [PoC done gate](feedback_poc_done_gate.md): on a PoC branch, Done = commit lands on the branch (not PR-to-main); acceptance criteria still verified.
 - [SEC project requires component](feedback_jira_sec_component_required.md): `createJiraIssue` against SEC needs `additional_fields: {"components": [{"id": "10488"}]}` or returns HTTP 400.
@@ -26,6 +31,7 @@
 
 ## ERS Project Structure
 - [Three-track structure](project_ers_three_track_structure.md): Entity Context (ingestion + sideplane), ERS (resolution), Risk Insights Entity Rollup (Shariq's Caniche view); distinct milestones per IdP.
+- [ERS Jira structure](reference_ers_jira_structure.md): ERS build under KR2 SECPRODK9-1302; strategy epics SEC-33707/8/9/13 + new "Resolve Email Address Actors to the Human" epic (replaces PoC SEC-30573, which is being closed); SEC-33721 is the KR1 consumer roll-up. Logical ticket list + DAG in [[ERS - Jira Structure and Backlog Mapping]].
 - [ERS Delivery Plan](../docs/ERS - Delivery Plan.md) and [Project Overview](../docs/Entity Context and ERS - Project Overview.md): canonical planning docs (2026-05-05).
 - [Risk Insights Caniche join vs siementity/ERS](project_risk_insights_caniche_vs_siementity.md): replace the email-match resolution CTE in risk_insights_risk_scores with ERS entity_resolution records, keep cloud-inventory decoration/findings. risk_insights_* is LIVE serving set, *_v3 legacy.
 
@@ -41,6 +47,7 @@
 
 ## Obsidian Vault Notes
 - [log.md wiki-link convention](feedback_log_wiki_links.md): use `[[Page Title]]` wiki-links, not bare paths, in docs/log.md.
+- [Review comment convention](feedback_review_comment_convention.md): `==highlight==` + `<!-- REVIEW: ... -->` to flag inline feedback on generated notes; grep/resolve/strip when addressing.
 - [Notes vs docs placement](feedback_notes_vs_docs.md): "open a note" = `notes/YYYY-MM-DD - Description.md`; `docs/` is durable reference only.
 - [Inactive/departed people](feedback_person_inactive_status.md): whoisthis null = likely departed; set `status: inactive` + `tags: [departed]`, flag to user.
 - [Slack title is unreliable](feedback_slack_title_unreliable.md): never use Slack title for `role`, it's user-editable.
