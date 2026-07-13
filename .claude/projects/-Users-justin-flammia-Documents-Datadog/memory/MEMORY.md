@@ -33,6 +33,8 @@
 - [Three-track structure](project_ers_three_track_structure.md): Entity Context (ingestion + sideplane), ERS (resolution), Risk Insights Entity Rollup (Shariq's Caniche view); distinct milestones per IdP.
 - [ERS Jira structure](reference_ers_jira_structure.md): ERS build under KR2 SECPRODK9-1302; strategy epics SEC-33707/8/9/13 + new "Resolve Email Address Actors to the Human" epic (replaces PoC SEC-30573, which is being closed); SEC-33721 is the KR1 consumer roll-up. Logical ticket list + DAG in [[ERS - Jira Structure and Backlog Mapping]].
 - [ERS Delivery Plan](../docs/ERS - Delivery Plan.md) and [Project Overview](../docs/Entity Context and ERS - Project Overview.md): canonical planning docs (2026-05-05).
+- [ERS epic fact-check + ticket-shaping process](reference_ers_epic_process.md): repeatable per-epic process (fact-check → report → apply), refined on Azure + AWS; apply to GCP/foundation/IdP cohorts before touching Jira.
+- [ERS foundation skeleton-first](project_ers_foundation_skeleton.md): freeze seams + file locations in a stubbed skeleton (quick-follow after the scaffolds + protos) before the provider lanes start; lanes block on the stub, real impl matures in parallel.
 - [Risk Insights Caniche join vs siementity/ERS](project_risk_insights_caniche_vs_siementity.md): replace the email-match resolution CTE in risk_insights_risk_scores with ERS entity_resolution records, keep cloud-inventory decoration/findings. risk_insights_* is LIVE serving set, *_v3 legacy.
 
 ## Document Conventions

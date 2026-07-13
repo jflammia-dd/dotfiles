@@ -48,6 +48,7 @@ Apply these automatically without asking for confirmation. When new corrections 
 | "Quinton" | [[Quentin Fabre]] | Phonetic mishear of the French name "Quentin" |
 | "Roxanne" | [[Roxane Brenier]] | Mishear of the French name "Roxane" |
 | "Bhutan" | [[Quentin Fabre]] | Phonetic mishear of "Quentin" (or his team name); confirmed 2026-06-16 |
+| "Roman" | [[Romain Kirszbaum]] | Phonetic mishear of "Romain"; confirmed 2026-07-13 |
 
 ## Step 0: Fetch the Summary
 
