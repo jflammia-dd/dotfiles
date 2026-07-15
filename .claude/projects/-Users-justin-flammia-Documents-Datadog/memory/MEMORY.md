@@ -54,6 +54,7 @@
 - [Inactive/departed people](feedback_person_inactive_status.md): whoisthis null = likely departed; set `status: inactive` + `tags: [departed]`, flag to user.
 - [Slack title is unreliable](feedback_slack_title_unreliable.md): never use Slack title for `role`, it's user-editable.
 - **Zhong Ren**: whoisthis returns null even with correct email; likely departed (Slack deactivated).
+- [Transcript ingest skill gap](project_transcript_ingest_skill_gap.md): no vault skill handles raw Zoom transcripts; `ingest-zoom-meeting` excludes them and points to a nonexistent skill.
 
 ## Balto Runtime Config
 - [CINDY trigger pattern](feedback_balto_cindy_trigger.md): `balto migrate` creates proposals without a reviewer; call `UpdateConfiguration` with `ReviewConfig` via `bzl run` to trigger CINDY Slack notifications.
@@ -161,6 +162,7 @@
 - [No Claude attribution in PRs](feedback_no_claude_attribution.md): never add "Generated with Claude Code" or co-author trailers unless asked.
 - [PR approval required before publishing](feedback_pr_approval_required.md): show draft title+body and get explicit approval before `gh pr create` or description update, even drafts.
 - [No hard-wrapping in PR body prose](feedback_pr_body_no_hard_wrap.md): keep prose paragraphs as single unwrapped lines in `gh pr create`/`edit`.
+- [PR publish needs its own approval](feedback_pr_publish_requires_separate_approval.md): creating a draft PR is not approval to publish it; always pass `--draft` explicitly and verify with `gh pr view`; hook-wiring gap (settings.json vs settings.local.json) caused a real incident.
 
 ## PUP / SQL Queries
 - [Always print and copy PUP queries](feedback_pup_query_display.md): print as a code block AND pbcopy every time.

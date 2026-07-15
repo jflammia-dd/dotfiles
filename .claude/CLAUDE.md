@@ -10,12 +10,18 @@
 - ALWAYS use `gh` on the command line when interacting with GitHub.
 - In Datadog repo contexts, `dd-git` and `git` are interchangeable. A normalization hook rewrites `dd-git` → `git` before execution so RTK's rewrite registry handles both identically. Use either.
 - ALWAYS get explicit approval before running any commit command or creating a PR. Never auto-submit. Approval is conversational: ask before calling the Bash tool. Note: RTK auto-allows git and gh commands at the hook layer, but that is downstream of this gate.
+- ALWAYS show the exact, literal commit message text in the conversation before running `git commit`. A description of what files changed is not a substitute. Approval to commit is approval of that specific text, not a blank check to write whatever message seems fitting at execution time.
 - NEVER add Co-Authored-By trailers to commits unless explicitly asked. Do not add them by default.
-- PRs are hook-enforced as drafts. `pr-draft-enforce.sh` auto-injects `--draft` into every `gh pr create` command before RTK runs.
+- Every PR is created as a draft, no exceptions. `pr-draft-enforce.sh` is registered as a `PreToolUse` hook on the `Bash` matcher in `settings.json` and auto-injects `--draft` into every `gh pr create` command, but treat that as a backstop, not the control. Always pass `--draft` explicitly yourself and never rely on the hook alone.
+- NEVER mark a PR ready for review or otherwise publish it (`gh pr ready`, `gh pr edit --ready`, etc.) without the user's explicit, in-the-moment instruction to publish that specific PR. Approval to create the PR is not approval to publish it; these are two separate gates. After every `gh pr create`, run `gh pr view <number> --json isDraft,state` and confirm draft status in the conversation rather than assuming the hook worked.
 - Do not push, merge, or release anything without specific user approval.
 - Whenever updating a PR, rebase against the parent branch first. Most work happens in a large monorepo where drift accumulates quickly during long review cycles, so keeping the branch current prevents painful late-stage conflicts.
 - ALWAYS include the Jira issue key in commit subjects and PR titles so the Development panel auto-links. Do NOT include the issue key in branch names; Datadog engineering follows its own branch-naming convention. Canonical reference for what Jira looks for: Atlassian's [Reference issues in your development work](https://support.atlassian.com/jira-software-cloud/docs/reference-issues-in-your-development-work/). Commit format: `[SEC-XXXXX] <type>(<scope>): <subject>`. PR title format: `[SEC-XXXXX] <subject>`. Keys are case-sensitive, always uppercase.
 - Before every `git commit` and every `gh pr create`, run `git branch --show-current` and state the branch name in the conversation. If it is not the intended branch, stop and fix the branch situation before proceeding. This prevents commits and PRs landing on the wrong branch.
+
+## Logging Rules
+
+- When writing Go, Java or TypeScript code, follow `docs/Logging Standards - Go, Java, TypeScript.md` in the Datadog vault for log statement conventions (structured JSON, static messages with values in fields, snake_case field keys, level semantics, correlation, error handling, per-language exceptions like EVP workers).
 
 ## Testing Rules
 

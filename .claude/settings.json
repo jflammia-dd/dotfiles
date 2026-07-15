@@ -144,6 +144,15 @@
         ]
       },
       {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/pr-draft-enforce.sh"
+          }
+        ]
+      },
+      {
         "matcher": "mcp__plugin_atlassian_atlassian__addCommentToJiraIssue|mcp__plugin_atlassian_atlassian__editJiraIssue|mcp__plugin_atlassian_atlassian__createJiraIssue|mcp__plugin_atlassian_atlassian__createConfluencePage|mcp__plugin_atlassian_atlassian__updateConfluencePage|mcp__plugin_atlassian_atlassian__createConfluenceFooterComment|mcp__plugin_atlassian_atlassian__createConfluenceInlineComment",
         "hooks": [
           {
