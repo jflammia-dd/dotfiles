@@ -18,6 +18,7 @@
 - [Epic description style](feedback_epic_description_style.md): no ticket numbers in epic prose, describe phases and goals only.
 - [PoC done gate](feedback_poc_done_gate.md): on a PoC branch, Done = commit lands on the branch (not PR-to-main); acceptance criteria still verified.
 - [SEC project requires component](feedback_jira_sec_component_required.md): `createJiraIssue` against SEC needs `additional_fields: {"components": [{"id": "10488"}]}` or returns HTTP 400.
+- [Transition Jira to In Review on PR open](feedback_transition_jira_on_pr_open.md): do this automatically after every `gh pr create`, never wait to be asked.
 - [Referencing Jira issues in dev work](reference_jira_dev_work.md): issue key in branches, commits, PR titles; keys case-sensitive uppercase.
 - [Rich formatting in Jira comments](feedback_jira_rich_formatting.md): use `addCommentToJiraIssue` with `contentFormat: "markdown"`; `add_comment` does not render markdown.
 
@@ -170,6 +171,9 @@
 
 ## ERS Prod Deployment
 - [siem-entity-resolution-api prod deploy command](project_siem_era_prod_deploy_cmd.md): exact `rapid release` command for us1-only prod deploy, ~35-45 min.
+
+## git-dd
+- [git-dd adoption](project_git_dd_adoption.md): all Datadog repos, `justin.flammia` prefix only, devflow refspecs kept, hard-block hook (fetch/pull/rebase-onto-main only) via `~/.claude/settings.json` not hookify.
 
 ## Rapid / Mosaic
 - [Mosaic URL patterns](reference_mosaic_urls.md): allDeployments tab tracks per-DC rollout; change-request URL tracks only the CI bundle job.
