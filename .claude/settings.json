@@ -17,7 +17,6 @@
     "allow": [
       "Read(/Users/justin.flammia/.claude/**)",
       "Edit(/Users/justin.flammia/.claude/**)",
-      "Write(/Users/justin.flammia/.claude/**)",
       "Bash(rm /Users/justin.flammia/.claude/**:*)",
       "mcp__datadog-google-workspace__batch_update",
       "mcp__datadog-google-workspace__get_presentation",
@@ -60,8 +59,7 @@
       "Bash(git status*:*)",
       "Bash(git log*:*)",
       "Bash(git diff*:*)",
-      "Bash(git fetch*:*)",
-      "mcp__datadog-atlassian__update_page"
+      "Bash(git fetch*:*)"
     ],
     "deny": [
       "Bash(git push --force :*)",
@@ -120,7 +118,7 @@
     ],
     "PreToolUse": [
       {
-        "matcher": "mcp__datadog-atlassian__add_comment|mcp__datadog-atlassian__update_issue|mcp__datadog-atlassian__update_page|mcp__plugin_atlassian_atlassian__addCommentToJiraIssue|mcp__plugin_atlassian_atlassian__editJiraIssue|mcp__plugin_atlassian_atlassian__createJiraIssue|mcp__plugin_atlassian_atlassian__createConfluencePage|mcp__plugin_atlassian_atlassian__updateConfluencePage|mcp__plugin_atlassian_atlassian__createConfluenceFooterComment|mcp__plugin_atlassian_atlassian__createConfluenceInlineComment",
+        "matcher": "mcp__plugin_atlassian_atlassian__addCommentToJiraIssue|mcp__plugin_atlassian_atlassian__editJiraIssue|mcp__plugin_atlassian_atlassian__createJiraIssue|mcp__plugin_atlassian_atlassian__createConfluencePage|mcp__plugin_atlassian_atlassian__updateConfluencePage|mcp__plugin_atlassian_atlassian__createConfluenceFooterComment|mcp__plugin_atlassian_atlassian__createConfluenceInlineComment",
         "hooks": [
           {
             "type": "command",
@@ -147,6 +145,10 @@
           {
             "type": "command",
             "command": "/Users/justin.flammia/.claude/hooks/git-dd-enforce.sh"
+          },
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/bg-output-cap.sh"
           }
         ]
       },
@@ -281,171 +283,73 @@
     "padding": 0
   },
   "enabledPlugins": {
-    "aaa-internal@datadog-claude-plugins": false,
-    "aaa@datadog-claude-plugins": false,
     "advanced-query@datadog-claude-plugins": true,
-    "ai-developer-workflows@datadog-claude-plugins": false,
-    "ai-devx-flow@datadog-claude-plugins": false,
-    "ai-devx@datadog-claude-plugins": false,
-    "ai-platform-agentic-workflows@datadog-claude-plugins": false,
-    "apm@datadog-claude-plugins": false,
-    "appgate@datadog-claude-plugins": false,
-    "applied-ai-streaming-engineering@datadog-claude-plugins": false,
-    "ask-questions-if-underspecified@trailofbits": false,
-    "atlas@datadog-claude-plugins": false,
     "atlassian@claude-plugins-official": true,
-    "atomic-agents@claude-plugins-official": false,
-    "audit-context-building@trailofbits": false,
-    "autotest@datadog-claude-plugins": false,
-    "bits-dev@datadog-claude-plugins": false,
     "caniche@datadog-claude-plugins": true,
-    "change-orchestration@datadog-claude-plugins": false,
     "chrome-devtools-mcp@claude-plugins-official": true,
-    "ci-app@datadog-claude-plugins": false,
-    "claude-code-setup@claude-plugins-official": false,
-    "claude-in-chrome-troubleshooting@trailofbits": false,
     "claude-md-management@claude-plugins-official": true,
     "cloud-security@datadog-claude-plugins": true,
-    "cmdbuf@datadog-claude-plugins": false,
-    "coach@datadog-claude-plugins": false,
-    "code-modernization@claude-plugins-official": false,
-    "code-reliability@datadog-claude-plugins": false,
-    "code-review@claude-plugins-official": false,
-    "code-simplifier@claude-plugins-official": false,
     "codex@openai-codex": true,
     "commit-commands@claude-plugins-official": true,
-    "confluence-api@datadog-claude-plugins": false,
     "confluence-write@datadog-claude-plugins": true,
-    "context7@claude-plugins-official": false,
     "core-observability@datadog-claude-plugins": true,
-    "corpweb@datadog-claude-plugins": false,
-    "data-engineering@claude-plugins-official": false,
     "dd@datadog-claude-plugins": true,
     "ddsql@datadog-claude-plugins": true,
-    "dependency-management@datadog-claude-plugins": false,
-    "devcontainer-setup@trailofbits": false,
-    "deveng@datadog-claude-plugins": false,
-    "devex-ci@datadog-claude-plugins": false,
-    "diagrams@datadog-claude-plugins": false,
-    "differential-review@trailofbits": false,
-    "dimensional-analysis@trailofbits": false,
-    "documentation@datadog-claude-plugins": false,
-    "dual-agents-review@datadog-claude-plugins": false,
-    "error-tracking@datadog-claude-plugins": false,
-    "event-management@datadog-claude-plugins": false,
-    "explanatory-output-style@claude-plugins-official": false,
-    "feature-dev@claude-plugins-official": false,
-    "feature@datadog-claude-plugins": false,
     "frontend-design@claude-plugins-official": true,
-    "gh-cli@trailofbits": false,
-    "git-cleanup@trailofbits": false,
     "go-code-reviewer@datadog-claude-plugins": true,
     "gopls-lsp@claude-plugins-official": true,
-    "hard-mode@datadog-claude-plugins": false,
-    "historical-metrics@datadog-claude-plugins": false,
     "hookify@claude-plugins-official": true,
-    "husky@datadog-claude-plugins": false,
-    "incident-follow-up@datadog-claude-plugins": false,
-    "inner-dev-loop-guild@datadog-claude-plugins": false,
-    "interviewer@datadog-claude-plugins": false,
-    "investigation-memories@datadog-claude-plugins": false,
-    "jdtls-lsp@claude-plugins-official": false,
-    "k9-ecosystems@datadog-claude-plugins": false,
     "k9@datadog-claude-plugins": true,
-    "kv-platform@datadog-claude-plugins": false,
-    "language-tools@datadog-dd-source-claude-plugins": false,
-    "learn@datadog-claude-plugins": false,
-    "learning-output-style@claude-plugins-official": false,
-    "lua-lsp@claude-plugins-official": false,
-    "marketplace-auto-update@datadog-claude-plugins": true,
-    "mcp-server-dev@claude-plugins-official": false,
-    "md-to-confluence@datadog-claude-plugins": false,
-    "mermaid@datadog-claude-plugins": false,
-    "metrics-automation-lifecycle@datadog-claude-plugins": false,
-    "modern-python@trailofbits": false,
-    "mongodb@claude-plugins-official": false,
-    "ocsf@datadog-claude-plugins": false,
-    "on-call@datadog-claude-plugins": false,
     "orgstore@datadog-claude-plugins": true,
-    "osx-notifications@datadog-claude-plugins": false,
-    "otel@datadog-claude-plugins": false,
-    "perf-feedback@datadog-claude-plugins": false,
-    "playground@claude-plugins-official": false,
     "playwright@claude-plugins-official": true,
-    "plugin-dev@claude-plugins-official": false,
     "ponytail@ponytail": true,
     "pr-review-toolkit@claude-plugins-official": true,
-    "product-analytics@datadog-claude-plugins": false,
-    "production-operations@datadog-claude-plugins": false,
-    "prompt-engineering@datadog-claude-plugins": false,
-    "pup": false,
-    "pyright-lsp@claude-plugins-official": false,
-    "python-code-reviewer@datadog-claude-plugins": false,
-    "qodo-skills@claude-plugins-official": false,
-    "ralph-loop@claude-plugins-official": false,
     "redapl@datadog-claude-plugins": true,
     "reference-tables@datadog-claude-plugins": true,
     "remember@claude-plugins-official": true,
-    "rewrite@datadog-claude-plugins": false,
-    "saas-integrations@datadog-claude-plugins": false,
     "sdlc-security@datadog-claude-plugins": true,
     "second-opinion@trailofbits": true,
-    "security-guidance@claude-plugins-official": false,
-    "session-report@claude-plugins-official": false,
-    "skill-creator@claude-plugins-official": false,
-    "skill-finder@datadog-claude-plugins": false,
-    "skill-improver@trailofbits": false,
     "skills@datadog-claude-plugins": true,
     "slack@claude-plugins-official": true,
-    "squire@datadog-claude-plugins": false,
-    "suggest-commands@datadog-claude-plugins": false,
     "suggest-extensions@datadog-claude-plugins": true,
-    "summarize@datadog-claude-plugins": false,
     "superpowers@claude-plugins-official": true,
-    "supply-chain-risk-auditor@trailofbits": false,
-    "technical-content@datadog-claude-plugins": false,
-    "terraform@claude-plugins-official": false,
-    "trajectory@trajectory": false,
-    "typescript-lsp@claude-plugins-official": false,
-    "user-config@datadog-claude-plugins": false,
-    "user-context@datadog-claude-plugins": false,
-    "user-support@datadog-claude-plugins": false,
-    "weekly-wins-journal@datadog-claude-plugins": false,
-    "work-analyzer@datadog-claude-plugins": false,
-    "workflow-skill-design@trailofbits": false,
-    "writing@datadog-claude-plugins": true,
-    "lapdog@lapdog": false
+    "writing@datadog-claude-plugins": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
       "source": {
         "source": "github",
         "repo": "openai/codex-plugin-cc"
-      }
+      },
+      "autoUpdate": true
     },
     "ponytail": {
       "source": {
         "source": "github",
         "repo": "DietrichGebert/ponytail"
-      }
+      },
+      "autoUpdate": true
     },
     "trailofbits": {
       "source": {
         "source": "github",
         "repo": "trailofbits/skills"
-      }
+      },
+      "autoUpdate": true
     },
     "trajectory": {
       "source": {
         "source": "directory",
         "path": "/Users/justin.flammia/.trajectory/claude-marketplace"
-      }
+      },
+      "autoUpdate": true
     },
     "lapdog": {
       "source": {
         "source": "github",
         "repo": "DataDog/dd-apm-test-agent"
-      }
+      },
+      "autoUpdate": true
     }
   },
   "effortLevel": "xhigh",

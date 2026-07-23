@@ -3,6 +3,10 @@
 ## Learning
 - [Reference Tables teach workspace](reference_tables_teach_workspace.md): `/teach` workspace at `~/teach/reference-tables/`, product-feature fluency. Lesson 1 done.
 
+## Claude Code Environment
+- [Datadog SaaS MCP config](reference_datadog_saas_mcp_config.md): atlassian/gmail/calendar/workspace must be native `type: http`, never `npx mcp-remote`; canonical EITAI page; prefer official atlassian plugin.
+- [Startup hooks / slow startup](reference_claude_startup_hooks.md): marketplace-auto-update plugin caused ~75s block; replaced with throttled background hook; don't re-add the plugin.
+
 ## User Profile
 - Justin Flammia, Cloud SIEM team, K9 security org at Datadog. NYC (America/New_York). Email justin.flammia@datadoghq.com.
 - Comfortable in Go within the Datadog monorepo.
@@ -41,6 +45,7 @@
 ## Document Conventions
 - [Don't replace existing docs](feedback_dont_replace_existing_docs.md): new document = new file, never overwrite.
 - [Documents define their own terminology](feedback_documents_define_own_terminology.md): don't borrow phase/wave/cohort labels from external plans; define terms in the doc.
+- [Code comments: final state only](feedback_code_comments_final_state_only.md): never write "X instead of Y" in code comments; apply the iterative-thinking-in-output rule to inline comments too, not just PRs/docs.
 
 ## ERS / Temporal Husky
 - **Per-event temporal resolution** (core ERS problem): resolve each signal's entity state at that signal's timestamp (2pm signal sees old role, 4pm sees new).
@@ -153,6 +158,7 @@
 - [Slack intro style](feedback_slack_intro_style.md): cold Slack uses "I'm from [team]" / "I want to understand"; "we" for team-level concerns.
 - [Always use clickable links](feedback_clickable_links.md): every Jira/Confluence/Slack/PR reference is a rendered markdown link, never a bare ID.
 - [Code references must be GitHub deeplinks](feedback_code_deeplinks.md): file+line references in docs link to the exact line on GitHub (`DataDog/dd-source`, `main`).
+- [Code comment references need deeplinks](feedback_code_comment_references.md): bare Jira/Confluence IDs inside source code comments must be full URLs, not bare numbers.
 - [Include customer demand data](feedback_include_customer_demand_data.md): pull grounded named customer/design-partner demand into planning docs; never fabricate.
 
 ## Slack Workflow
@@ -161,9 +167,11 @@
 
 ## PR and Commit Conventions
 - [No Claude attribution in PRs](feedback_no_claude_attribution.md): never add "Generated with Claude Code" or co-author trailers unless asked.
+- [Standard AI disclaimer for published docs](feedback_ai_disclaimer_template.md): opt-in 🤖 disclaimer template, offer during `obsidian-to-confluence` publish, default no.
 - [PR approval required before publishing](feedback_pr_approval_required.md): show draft title+body and get explicit approval before `gh pr create` or description update, even drafts.
 - [No hard-wrapping in PR body prose](feedback_pr_body_no_hard_wrap.md): keep prose paragraphs as single unwrapped lines in `gh pr create`/`edit`.
 - [PR publish needs its own approval](feedback_pr_publish_requires_separate_approval.md): creating a draft PR is not approval to publish it; always pass `--draft` explicitly and verify with `gh pr view`; hook-wiring gap (settings.json vs settings.local.json) caused a real incident.
+- [PR creation SOP](feedback_pr_single_commit_sop.md): before review, squash draft-phase commits to one and run the PR description through justins-voice, simplified, in GitHub markdown.
 
 ## PUP / SQL Queries
 - [Always print and copy PUP queries](feedback_pup_query_display.md): print as a code block AND pbcopy every time.
@@ -178,6 +186,7 @@
 ## Rapid / Mosaic
 - [Mosaic URL patterns](reference_mosaic_urls.md): allDeployments tab tracks per-DC rollout; change-request URL tracks only the CI bundle job.
 - [rapid.json deployment gap](feedback_rapid_json_deployment_gap.md): rapid.json-only changes don't trigger Conductor; run `rapid release` to force CNAB regeneration.
+- [Confirm Rapid staging deploy](reference_confirm_rapid_staging_deploy.md): find the squash-merged commit on main (not the branch SHA), compare against Conductor's `lastDeployedSha`/`currentHeadSha` via the read-only status script.
 - [Rapid prod deployment](feedback_rapid_prod_deployment.md): wrapper injects RAPID_INVOKER=claude_code and blocks prod; user runs `rapid release --env prod --branch main` in a clean terminal.
 
 ## Key Files

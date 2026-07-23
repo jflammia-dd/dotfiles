@@ -190,6 +190,18 @@ The review section is separated from the document body by a `rule` node. `extrac
 
 `build_review_table_adf` already renders the metadata table natively: the Author cell is a Confluence user mention and the Published cell is a date pill (date node). Use its output as-is. Do not overwrite either cell with plain text when assembling the page, doing so is what strips the native rendering.
 
+## Step 1c: Ask about the AI disclaimer
+
+Ask: "Would you like the standard AI disclaimer added at the top of this page?" Default to no; only add it if Justin confirms.
+
+If yes, insert this as the first line of the document body, immediately after the H1 heading (before any Review Status table):
+
+```
+🤖 *AI Disclaimer: This document was drafted with Claude based on [source material]. I have reviewed it for accuracy before publishing.*
+```
+
+Fill in `[source material]` from the document's actual origin (for example, "PoC code and notes kept locally", "meeting transcripts and Slack threads"). Keep the rest of the wording fixed. See `agents/policies/published-artifacts.md` for why this is exempt from the local-process-language ban on saying "Claude" in published content: it is a deliberate, opt-in disclosure, not a workflow-mechanics leak.
+
 ## Step 2: Scan for images
 
 Run a dry pass to discover which images need uploading:
@@ -476,6 +488,15 @@ After a successful publish, add this block to the Obsidian document immediately 
 > This document was published to Confluence on YYYY-MM-DD. All future edits should happen in Confluence, not here.
 > **Confluence page:** [Page Title](https://datadoghq.atlassian.net/wiki/spaces/.../pages/PAGE_ID/Title)
 ```
+
+## Step 10: Add discovery links (new pages only)
+
+A net-new page has no inbound links yet, so nobody browsing from the parent or an index page will find it. Before finishing, check:
+
+1. **The parent page's Related/related-references section**, if it has one. Fetch its current ADF, find the relevant list and offer to insert a new list item linking to the new page, matching the existing items' format exactly (same link style, same trailing description pattern).
+2. **A series index page**, if the parent page links up to one (for example, an "Engineering Documents" or "Related" list on a top-level project page). Same treatment: match the existing entries' format, including any status-pill conventions like `NEW` badges.
+
+Always show the exact before/after text for each proposed insertion and get explicit approval before applying, per the standard Confluence edit process (`confluence-write` skill, surgical ADF edits, never a full-page rewrite). Skip this step for republishes of an existing page since inbound links already exist.
 
 ---
 
