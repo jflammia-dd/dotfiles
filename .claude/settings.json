@@ -80,7 +80,7 @@
     ],
     "defaultMode": "auto"
   },
-  "model": "sonnet[1m]",
+  "model": "opus[1m]",
   "hooks": {
     "Notification": [
       {
@@ -313,7 +313,8 @@
     "slack@claude-plugins-official": true,
     "suggest-extensions@datadog-claude-plugins": true,
     "superpowers@claude-plugins-official": true,
-    "writing@datadog-claude-plugins": true
+    "writing@datadog-claude-plugins": true,
+    "pyright-lsp@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {

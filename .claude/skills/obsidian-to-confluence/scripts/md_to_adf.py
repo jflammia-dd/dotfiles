@@ -363,12 +363,21 @@ def parse_inline(text_content, comment_collector=None, mention_map=None):
         elif earliest_type == "link":
             label = earliest_match.group(1)
             href = earliest_match.group(2)
+            # A label wrapped entirely in backticks (e.g. [`file.go:12`](url))
+            # is inline code, not literal backtick characters. Strip them and
+            # apply a code mark alongside the link mark, or the backticks
+            # render as literal text in Confluence instead of a link.
+            code_label = re.fullmatch(r"`([^`]+)`", label)
+            marks = [{"type": "code"}] if code_label else []
+            if code_label:
+                label = code_label.group(1)
             # Only create link marks for real URLs and anchor links.
             # Local .md file paths would produce broken links in Confluence.
             if href.startswith(("#", "http://", "https://", "ftp://")):
-                nodes.append(_text(label, marks=[{"type": "link", "attrs": {"href": href}}]))
+                marks.append({"type": "link", "attrs": {"href": href}})
+                nodes.append(_text(label, marks=marks))
             else:
-                nodes.append(_text(label))
+                nodes.append(_text(label, marks=marks or None))
 
     return nodes or [_text("")]
 

@@ -164,6 +164,8 @@
 ## Slack Workflow
 - [Never send via Slack MCP](feedback_no_slack_mcp_send.md): MCP appends "Sent using Claude"; use pbcopy+slackfmt for manual paste.
 - [Slack mention format](feedback_slack_mention_format.md): `@First Name Last Name` in drafts, never `<@slack_id>`.
+- [Plain narrative style](feedback_slack_plain_narrative_style.md): Slack messages are flowing prose, no bold "Where we stand"/"open tension" section labels.
+- [Link rendering on manual paste](feedback_slack_link_rendering.md): markdown links can paste as literal brackets; use bare full URLs for hand-pasted Slack messages.
 
 ## PR and Commit Conventions
 - [No Claude attribution in PRs](feedback_no_claude_attribution.md): never add "Generated with Claude Code" or co-author trailers unless asked.
