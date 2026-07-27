@@ -703,6 +703,29 @@ class TestParseCallout:
         node, next_i = _parse_callout(lines, 0)
         assert next_i == 2
 
+    def test_published_to_confluence_marker_is_skipped(self):
+        # This is the Step 9 post-publish lock marker added to the Obsidian note.
+        # It must never round-trip into the Confluence page body.
+        lines = [
+            "> [!WARNING] Published to Confluence (edit there)",
+            "> This document was published to Confluence on 2026-07-24. All future edits should happen in Confluence, not here.",
+            "> **Confluence page:** [Some Page](https://datadoghq.atlassian.net/wiki/spaces/CSiem/pages/123)",
+        ]
+        node, next_i = _parse_callout(lines, 0)
+        assert node is None
+        assert next_i == len(lines)
+
+    def test_published_to_confluence_marker_is_case_insensitive(self):
+        lines = ["> [!WARNING] PUBLISHED TO CONFLUENCE (edit there)", "> body"]
+        node, _ = _parse_callout(lines, 0)
+        assert node is None
+
+    def test_unrelated_warning_callout_still_renders(self):
+        lines = ["> [!WARNING] Something else entirely", "> body"]
+        node, _ = _parse_callout(lines, 0)
+        assert node is not None
+        assert node["attrs"]["panelType"] == "warning"
+
     def test_collapsible_marker_ignored(self):
         # Obsidian collapsible syntax: [!NOTE]- (dash AFTER closing bracket)
         lines = ["> [!NOTE]-", "> body"]

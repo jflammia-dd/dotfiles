@@ -6,6 +6,7 @@
 ## Claude Code Environment
 - [Datadog SaaS MCP config](reference_datadog_saas_mcp_config.md): atlassian/gmail/calendar/workspace must be native `type: http`, never `npx mcp-remote`; canonical EITAI page; prefer official atlassian plugin.
 - [Startup hooks / slow startup](reference_claude_startup_hooks.md): marketplace-auto-update plugin caused ~75s block; replaced with throttled background hook; don't re-add the plugin.
+- [Atlassian MCP comment timeout](reference_atlassian_mcp_comment_timeout.md): getJiraIssue hangs ~60s on media-heavy comments, known unfixed upstream bug (#145), not a broken MCP; retry.
 
 ## User Profile
 - Justin Flammia, Cloud SIEM team, K9 security org at Datadog. NYC (America/New_York). Email justin.flammia@datadoghq.com.
@@ -41,6 +42,7 @@
 - [ERS epic fact-check + ticket-shaping process](reference_ers_epic_process.md): repeatable per-epic process (fact-check → report → apply), refined on Azure + AWS; apply to GCP/foundation/IdP cohorts before touching Jira.
 - [ERS foundation skeleton-first](project_ers_foundation_skeleton.md): freeze seams + file locations in a stubbed skeleton (quick-follow after the scaffolds + protos) before the provider lanes start; lanes block on the stub, real impl matures in parallel.
 - [Risk Insights Caniche join vs siementity/ERS](project_risk_insights_caniche_vs_siementity.md): replace the email-match resolution CTE in risk_insights_risk_scores with ERS entity_resolution records, keep cloud-inventory decoration/findings. risk_insights_* is LIVE serving set, *_v3 legacy.
+- [request-ers PR reviewer suggestion](feedback_request_ers_pr_suggestion.md): suggest `gh request-ers` at draft-PR creation for tickets confirmed (via Jira parent chain) under SECPRODK9-1302; never auto-run; once per PR only.
 
 ## Document Conventions
 - [Don't replace existing docs](feedback_dont_replace_existing_docs.md): new document = new file, never overwrite.

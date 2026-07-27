@@ -614,6 +614,13 @@ def _parse_callout(lines, start_i, comment_collector=None, mention_map=None):
         body_lines.append(re.sub(r"^>\s?", "", lines[i]))
         i += 1
 
+    # The "Published to Confluence (edit there)" callout is a vault-only lock marker
+    # (Step 9 of the obsidian-to-confluence skill): it is added to the Obsidian note
+    # after publish to redirect future editors to Confluence, and must never itself
+    # appear in the published Confluence body. Skip emitting a panel for it.
+    if re.match(r"(?i)^published to confluence", title):
+        return None, i
+
     # Build panel content: group non-blank lines into paragraphs
     panel_content = []
     para_lines = []

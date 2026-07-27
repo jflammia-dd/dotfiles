@@ -133,6 +133,8 @@ Flag blocking items with ⚠️ BLOCKING in both the action item list and the no
 
 The threshold for asking the user is genuine inability to determine the answer after using these tools, not uncertainty alone.
 
+**Live production data requests need a vetted access path, not a guess.** Some comments ask for a real number that only exists in live customer data (e.g. "check max open revisions per resource across our design partners"). This is different from the research above: the vault, code and doc can't answer it, only a query against production data can. Before running that query, confirm there's a vetted tool and a real target (org IDs, table/track name) documented somewhere. If the vault only has a vague reference (e.g. "six design-partner orgs" with no ID list, or a superseded access mechanism from an unrelated task), do not substitute a different org list or guess at a query tool to fill the gap. Ask the user how to proceed and offer two options: they supply the tool and target so the query runs now, or the response commits to running the check before the relevant milestone (rollout, launch) and it becomes a tracked action item instead of live data in the reply. Never query customer production data on a guessed access path.
+
 ---
 
 ## Phase 4: Work Through Comments One at a Time
@@ -392,6 +394,8 @@ Always choose match targets that are entirely plain text (no backtick code spans
 3. Verify no annotation marks are on the block (`"marks"` with `"type": "annotation"`)
 4. Replace the text node content: `block['content'] = [{"type": "text", "text": NEW_CODE}]`
 5. PUT the updated ADF back with version+1
+
+**Structural insertions (new paragraph, new list item) also need a direct ADF patch.** The script only replaces text within an existing node; it cannot add a sibling paragraph after one, add a second paragraph to a list item, or append a new list item. Anything that adds a new block rather than changing existing text needs the same direct-ADF-patch flow as code blocks: fetch the ADF, locate the target node by `localId`, splice in the new node (e.g. `content.insert(idx + 1, new_paragraph)` for a sibling paragraph, or `list_item['content'].append(new_paragraph)` for a second paragraph inside a list item, or `ordered_list['content'].append(new_list_item)` for a new item), then PUT the whole modified document back via `updateConfluencePage` (or the v2 API directly) with `contentFormat: "adf"`. Do this with a script that loads and re-serializes the JSON, not by hand-editing a string, since the document is large and manual reconstruction risks silently corrupting or dropping annotation marks elsewhere. Existing annotation marks are unaffected as long as the edit only inserts new nodes or touches text nodes that carry no `annotation` mark; verify this by re-fetching `getConfluencePageInlineComments` after the PUT and confirming every comment is still `open` with its original `inlineOriginalSelection` text.
 
 **Inline mark limitations.** The script inherits marks (bold, code, annotation) from the first character of the matched selection. If new text needs a code mark on a specific word, the replacement will land as plain text. Fix this with a direct ADF patch: fetch the page ADF via the v2 API, locate the text node, split it into three nodes (before / target word with `{"type": "code"}` mark / after), then PUT the updated ADF back. This handles any sub-span formatting the script cannot express. Do not tell the user to apply formatting manually.
 

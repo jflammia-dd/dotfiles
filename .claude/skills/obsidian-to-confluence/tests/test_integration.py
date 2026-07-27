@@ -128,9 +128,11 @@ class TestERSDocConversion:
         langs_present = [cb for cb in code_blocks if cb["attrs"].get("language")]
         assert len(langs_present) >= 3
 
-    def test_panels_present(self):
-        # ERS doc has [!WARNING] callout
-        assert self.counts["panel"] >= 1
+    def test_published_to_confluence_marker_produces_no_panel(self):
+        # The ERS doc's only callouts are "Published to Confluence" post-publish lock
+        # markers (Step 9 of the skill). These are vault-only and must never round-trip
+        # into the Confluence body, so this doc correctly produces zero panels.
+        assert self.counts.get("panel", 0) == 0
 
     def test_blockquotes_present(self):
         assert self.counts["blockquote"] >= 1
