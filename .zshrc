@@ -210,5 +210,5 @@ dd-curl() {
 # Trajectory - AI coding agent observability
 export PATH="/Users/justin.flammia/.trajectory/bin:$PATH"
 
-# Multi-org gt/gh wrappers (DataDog + ddoghq), see ~/bin/gt and ~/bin/gh
-export PATH="/Users/justin.flammia/bin:$PATH"
+# Per-repo GitHub account selection via direnv (see ~/.config/direnv/lib/).
+eval "$(direnv hook zsh)"

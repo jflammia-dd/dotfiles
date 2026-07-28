@@ -2,6 +2,7 @@
 
 ## Learning
 - [Reference Tables teach workspace](reference_tables_teach_workspace.md): `/teach` workspace at `~/teach/reference-tables/`, product-feature fluency. Lesson 1 done.
+- [EVP temporal queries teach workspace](reference_evp_temporal_queries_teach_workspace.md): `~/teach/evp-temporal-queries/`, Temporal Husky AS-OF fluency from SEC-34246. Lesson 1 done.
 
 ## Claude Code Environment
 - [Datadog SaaS MCP config](reference_datadog_saas_mcp_config.md): atlassian/gmail/calendar/workspace must be native `type: http`, never `npx mcp-remote`; canonical EITAI page; prefer official atlassian plugin.
