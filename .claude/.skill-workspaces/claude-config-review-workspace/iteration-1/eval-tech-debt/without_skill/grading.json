@@ -1,0 +1,32 @@
+{
+  "eval_id": 0,
+  "eval_name": "tech-debt-review",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Output is a numbered list (not unstructured bullets or prose paragraphs)",
+      "passed": true,
+      "evidence": "Output uses 12 numbered items with priority labels"
+    },
+    {
+      "text": "Output references specific rules from the actual CLAUDE.md content (e.g. dd-git, RTK, testing rules, writing rules) rather than giving generic advice",
+      "passed": true,
+      "evidence": "References justins-voice-detect.sh, RTK.md, dd-git, codex-delegate by name"
+    },
+    {
+      "text": "Output categorizes findings using terms like stale, redundant, wrong layer, or well-placed",
+      "passed": false,
+      "evidence": "Uses High/Medium/Lower-priority groupings but not the structured stale/redundant/wrong-layer/well-placed taxonomy from the skill"
+    },
+    {
+      "text": "Output does not auto-apply changes — asks for approval before modifying any files",
+      "passed": true,
+      "evidence": "Saved file and summarized; did not apply any changes"
+    },
+    {
+      "text": "Output references hooks or settings.json as a better enforcement layer for at least one rule",
+      "passed": true,
+      "evidence": "Identifies that redundant prose exists for hook-enforced rules and flags the justins-voice stdin bug"
+    }
+  ]
+}

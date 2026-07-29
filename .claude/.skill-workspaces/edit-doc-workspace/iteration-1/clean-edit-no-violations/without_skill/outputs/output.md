@@ -1,0 +1,1 @@
+We ship changes to the entity resolution pipeline on a rolling basis. The team runs a full integration test before each deployment. Failures in staging block the release until the issue is resolved. Feature flags control the rollout of new changes, allowing the team to enable functionality incrementally across environments.

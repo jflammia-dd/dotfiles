@@ -1,0 +1,8 @@
+{
+  "violations_found": 9,
+  "passes_needed": 2,
+  "has_summary_block": true,
+  "has_em_dash_in_output": false,
+  "has_oxford_comma_in_output": false,
+  "has_passive_voice_in_output": false
+}

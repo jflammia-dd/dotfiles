@@ -1,0 +1,32 @@
+{
+  "eval_id": 2,
+  "eval_name": "up-to-date-check",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Output is a numbered list",
+      "passed": true,
+      "evidence": "Output uses 10 numbered items"
+    },
+    {
+      "text": "Output references specific rules from the actual CLAUDE.md content rather than giving generic advice",
+      "passed": true,
+      "evidence": "References RTK.md, justins-voice-detect.sh, model alias, pup plugin entry by name"
+    },
+    {
+      "text": "Output explicitly addresses staleness — not just general optimization",
+      "passed": true,
+      "evidence": "Leads with model alias staleness, RTK.md dead reference, version placeholder — all framed as staleness"
+    },
+    {
+      "text": "Output does not auto-apply changes — asks for approval before modifying any files",
+      "passed": true,
+      "evidence": "No files modified; assessment only"
+    },
+    {
+      "text": "Output researches or references current Claude Code best practices rather than relying only on what is already written in CLAUDE.md",
+      "passed": false,
+      "evidence": "Flags issues based on reading files but does not research current best practices or verify live state (e.g. did not run 'which dd-git')"
+    }
+  ]
+}

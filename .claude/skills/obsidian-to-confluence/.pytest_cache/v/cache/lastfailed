@@ -1,0 +1,3 @@
+{
+  "tests/test_integration.py::TestERSDocConversion::test_panels_present": true
+}

@@ -8,16 +8,24 @@
 ## Git Rules
 
 - ALWAYS use `gh` on the command line when interacting with GitHub.
-- In Datadog git repos (dd-source, etc.), use `git dd` for the operations it replaces: `git dd sync` to update the main branch (never `git fetch`/`git pull` directly), `git dd sync-and-rebase` to rebase a feature branch onto a freshly-synced main, and `git dd new-branch <prefix>/<name>` to branch off a fresh main. `git dd switch <branch>` is only for checking out a remote branch outside your tracked prefix (`justin.flammia`). It is not a replacement for `git switch`/`git checkout` on local branches. A hook (`git-dd-enforce.sh`) hard-blocks raw `git fetch`/`git pull` and bare `git rebase` onto the main branch in Datadog repos; branch creation and rebases onto non-default branches (stacked PRs) are intentionally left unblocked.
-- In Datadog repo contexts, `dd-git` and `git` are interchangeable. A normalization hook rewrites `dd-git` → `git` before execution so RTK's rewrite registry handles both identically. Use either.
-- ALWAYS get explicit approval before running any commit command or creating a PR. Never auto-submit. Approval is conversational: ask before calling the Bash tool. Note: RTK auto-allows git and gh commands at the hook layer, but that is downstream of this gate.
+- In Datadog git repos, never run `git fetch` or `git pull` directly. `git-dd-enforce.sh` blocks those and bare `git rebase` onto the main branch, and its message names the `git dd` replacement to run. Full command set and the `git dd switch` scope limit: `project_git_dd_adoption.md` in auto memory.
+- In Datadog repo contexts, always write `git`, never `dd-git`. `dd-git` is an interactive shell alias, so it does not resolve in the non-interactive shell the Bash tool runs.
+- ALWAYS get explicit approval before running any commit command or creating a PR. Never auto-submit. Approval is conversational: ask before calling the Bash tool. A permission allow-rule on a git or gh command is not approval, since it only decides whether the tool prompts.
 - ALWAYS show the exact, literal commit message text in the conversation before running `git commit`. A description of what files changed is not a substitute. Approval to commit is approval of that specific text, not a blank check to write whatever message seems fitting at execution time.
-- NEVER add Co-Authored-By trailers to commits unless explicitly asked. Do not add them by default.
-- Every PR is created as a draft, no exceptions. `pr-draft-enforce.sh` is registered as a `PreToolUse` hook on the `Bash` matcher in `settings.json` and auto-injects `--draft` into every `gh pr create` command, but treat that as a backstop, not the control. Always pass `--draft` explicitly yourself and never rely on the hook alone.
+- NEVER add Claude attribution unless explicitly asked. That covers Co-Authored-By trailers on commits and "Generated with Claude Code" lines in PR bodies. Do not add either by default.
+- Every PR is created as a draft, no exceptions. `pr-draft-enforce.sh` auto-injects `--draft`, but treat that as a backstop rather than the control. Always pass `--draft` explicitly yourself.
 - NEVER mark a PR ready for review or otherwise publish it (`gh pr ready`, `gh pr edit --ready`, etc.) without the user's explicit, in-the-moment instruction to publish that specific PR. Approval to create the PR is not approval to publish it; these are two separate gates. After every `gh pr create`, run `gh pr view <number> --json isDraft,state` and confirm draft status in the conversation rather than assuming the hook worked.
-- Do not push, merge, or release anything without specific user approval.
-- Whenever updating a PR, rebase against the parent branch first. Run `git dd sync-and-rebase` when the parent is the repo's main branch. For a PR stacked on another feature branch, rebase manually onto that branch instead, since `git dd sync-and-rebase` only targets main. Most work happens in a large monorepo where drift accumulates quickly during long review cycles, so keeping the branch current prevents painful late-stage conflicts.
-- ALWAYS include the Jira issue key in commit subjects and PR titles so the Development panel auto-links. Do NOT include the issue key in branch names; Datadog engineering follows its own branch-naming convention. Canonical reference for what Jira looks for: Atlassian's [Reference issues in your development work](https://support.atlassian.com/jira-software-cloud/docs/reference-issues-in-your-development-work/). Keys are case-sensitive, always uppercase.
+
+<!--
+Provenance for the two rules above. A PR was published without approval because
+pr-draft-enforce.sh was registered in settings.json while the session was reading
+settings.local.json, so the hook never fired and the prose rule was the only control.
+That is why the verification step exists and why the hook is described as a backstop
+rather than the control. Do not collapse these two rules back into one.
+-->
+
+- Whenever updating a PR, rebase against the parent branch first. Run `git dd sync-and-rebase` when the parent is the repo's main branch. For a PR stacked on another feature branch, rebase manually onto that branch instead, since `git dd sync-and-rebase` only targets main.
+- ALWAYS include the Jira issue key in commit subjects and PR titles, uppercase. Do NOT put it in branch names, since Datadog engineering follows its own branch-naming convention. Reference: Atlassian's [Reference issues in your development work](https://support.atlassian.com/jira-software-cloud/docs/reference-issues-in-your-development-work/).
 - For commit subject/body format, atomicity, fixup handling, and revert conventions, follow `docs/Git Commit Message Standards.md` in the Datadog vault.
 - Before every `git commit` and every `gh pr create`, run `git branch --show-current` and state the branch name in the conversation. If it is not the intended branch, stop and fix the branch situation before proceeding. This prevents commits and PRs landing on the wrong branch.
 
@@ -36,83 +44,49 @@
 
 ## Clipboard Rules
 
-- When sharing content for the user to paste somewhere (Confluence, Slack, a terminal, anywhere), ALWAYS use `pbcopy` via the Bash tool to put it on the clipboard. Never ask the user to copy from the terminal output. Copying from the Claude Code terminal introduces unwanted spacing and formatting artifacts.
-- When the content is destined for Slack, ALWAYS use the `slackfmt` skill instead of raw `pbcopy`. The skill pipes content through `npx @slackfmt/cli@latest` which converts markdown to Slack's native rich text format (Quill Delta). This ensures bold, code, links and lists paste with formatting intact. Raw `pbcopy` produces plain text that Slack does not render.
+- When sharing content for the user to paste anywhere, ALWAYS `pbcopy` it. Never ask the user to copy from terminal output, which introduces spacing and formatting artifacts.
+- For Slack specifically, use the `slackfmt` skill rather than raw `pbcopy`, since Slack does not render markdown source.
+- Never send Slack messages through the Slack MCP tools. They append "Sent using Claude", and both send tools are denied in `settings.json`. Hand the text over for manual paste.
 
 ## Writing Rules
 
-- NEVER use em dashes (U+2014) or double-hyphen (`--`) substitutes in any written output, including comments, docs, messages, or prose. When a violation is flagged, restructure the sentence to remove it. Do not mechanically substitute one punctuation mark for another. A PostToolUse hook (`em-dash-check.sh`) scans Write, Edit and MultiEdit output and flags violations automatically.
+- NEVER use em dashes (U+2014) or double-hyphen (`--`) substitutes in any written output, including comments, docs, messages, or prose. When a violation is flagged, restructure the sentence to remove it. Do not mechanically substitute one punctuation mark for another. A PostToolUse hook (`prose-style-check.sh`) scans Write, Edit and MultiEdit output for three things: em dashes, double-hyphen dash substitutes in prose and commas before coordinating conjunctions. The semicolon and colon rules below are not hook-enforced. Note the hook cannot tell naming a pattern from using one, so quoting a banned character to describe it will flag.
 - NEVER use Oxford commas (serial commas before "and" or "or" in a list). Wrong: "apples, oranges, and pears". Right: "apples, oranges and pears".
 - NEVER use semicolons to join independent clauses in prose. Use a period, comma or conjunction instead.
 - NEVER use a colon to join two independent clauses.
 - Prioritize simplicity. When two phrasings are both accurate, always choose the simpler one. Complexity in explanation signals unclear thinking, not a complex subject. Find the simpler sentence before reaching for qualifications.
 - ALWAYS invoke the `justins-voice` skill before drafting or editing documents, announcements or distributed written content. A UserPromptSubmit hook (`justins-voice-detect.sh`) detects writing tasks and prompts invocation. Treat its trigger as a strong signal to invoke the skill. This rule does not apply to machine-consumed content: skill files, hook scripts, memory files, CLAUDE.md, settings and any output written for Claude to read rather than a human.
-- NEVER include local-process language in published artifacts (Jira comments, Confluence pages, GitHub PR descriptions, Slack messages). Local-process language explains personal workflow concepts (done gates, integration gates, lifecycle mechanics, internal slash commands, references to memory files or vault paths, AI tooling). Published copy describes the work and the outcome, not the workflow. A PreToolUse hook (`local-process-language-check.sh`) scans Atlassian publish operations and blocks violators. Canonical rule: `agents/policies/published-artifacts.md`.
+- NEVER include local-process language in published artifacts. Published copy describes the work and the outcome, never your workflow, tooling or internal commands. `local-process-language-check.sh` blocks Atlassian publishes that violate this. What counts as local-process language: `agents/policies/published-artifacts.md`.
 
 ## Anti-pattern: Iterative Thinking in Output
 
-Every artifact (code comments, commit messages, PR descriptions, Jira comments, Confluence pages, Slack messages and config files) must describe final state and intent. Conversation within a session is where iteration happens; artifacts capture the result of that iteration, not the path to it.
+Every artifact (code comments, commit messages, PR descriptions, Jira comments, Confluence pages, Slack messages and config files) must describe final state and intent. Conversation within a session is where iteration happens. Artifacts capture the result of that iteration, not the path to it.
 
 **The test:** does "before" refer to a prior runtime state of the running system, or the old version of the code? The first is describing behavior and belongs in artifacts. The second is development history and does not.
 
-**Valid (runtime state transitions):**
-
-- `"transitions the run from pending to running"`
-- `"converts the ARN to an IAM user format for the next strategy pass"`
-- `"the fallback path emits an Unresolved result when ctx is canceled"`
-
-**Invalid (development-time comparisons):**
-
-- "instead of X" (references old code behavior)
-- "now Y" / "now skips" (implies a before state in the code)
-- "reduces N to 1" / "reduces N calls to one" (improvement framing)
-- "falls back to" (old code path reference)
-- "no longer does X" (explicit negation of old behavior)
-- "was previously" / "used to" (explicit before state in the code)
-- "avoiding a 60s drain wait" (symptom from investigation, not intent)
-- "before this change" / "after this PR" (explicit change framing)
-
-**Examples:**
-
-❌ `// The old sequential path checked ctx.Err() after Resolve and returned before writing, so concurrent workers must do the same.`
-
-✅ `// Skip writes when ctx is already canceled so that a failed run does not overwrite prior resolved records with stale results.`
-
-❌ `// close(done) must run before pool.Shutdown to avoid a 60s drain wait caused by the blocking worker not receiving the cancellation signal.`
-
-✅ `// t.Cleanup runs LIFO; register Shutdown first so close(done) runs first, releasing the blocked worker before Shutdown waits for it to exit.`
-
-❌ `The JWT is injected so every CloudTrail query uses it instead of minting independently per query.`
-
-✅ `The JWT is available to all CloudTrail queries on the run context via authctx.JwtFromContext.`
+Banned phrasings and worked examples: `agents/policies/final-state-artifacts.md`.
 
 ## Communication Drafts
 
 Before posting or sending any content to Slack, GitHub, Confluence or Jira:
 
-1. Show the complete draft in the conversation first.
+1. Show the complete draft in the conversation first. For a PR that means the title and body, drafts included.
 2. Wait for an explicit "post", "send" or "publish" from the user before calling any tool.
-3. Use the target platform's native link format:
-   - Slack: `<url|text>` (NOT `[text](url)` markdown, which Slack renders as plain text)
-   - GitHub, Confluence, Jira: standard markdown `[text](url)`
+3. Use the target platform's native link format. GitHub, Confluence and Jira take standard markdown `[text](url)`. Slack never renders that markdown, so it needs one of two forms depending on delivery. Use `<url|text>` when the message goes through a tool or the `slackfmt` skill. Use a bare full URL when handing text over for Justin to paste by hand, since the angle-bracket form can arrive as literal characters.
 
 ## Slack & Communication Style
 
-- Slack drafts do NOT render markdown link syntax `[text](url)`. Always use raw URLs or Slack's `<url|text>` deeplink format.
 - Keep replies concise and direct. Avoid performative or verbose phrasing.
-- No em dashes in any Slack or communication draft.
 
 ## Jira Rules
 
-- ALWAYS use the plugin Atlassian tools (`mcp__plugin_atlassian_atlassian__*`) when posting comments, editing issues or creating content. Pass `contentFormat: "markdown"` (or `"adf"` for full programmatic fidelity) on every publish call. A PreToolUse hook (`jira-formatting-guard.sh`) blocks calls that omit this. Without it, bold, code blocks, lists and links render as literal characters in the Atlassian UI.
+- ALWAYS use the plugin Atlassian tools (`mcp__plugin_atlassian_atlassian__*`) when posting comments, editing issues or creating content. Pass `contentFormat: "markdown"` (or `"adf"` for full programmatic fidelity) on every publish call. The older `add_comment` tool does not render markdown at all, so use `addCommentToJiraIssue`. A PreToolUse hook (`jira-formatting-guard.sh`) blocks calls that omit this. Without it, bold, code blocks, lists and links render as literal characters in the Atlassian UI.
 - Do not use inline `[~accountId:xxx]` mentions in any comment posted via MCP. They render as literal text. Leave mentions for manual addition in the UI.
 
 ## Confluence Rules
 
-- NEVER do a full-page replacement when editing a Confluence page. Always use surgical, targeted edits that preserve inline comments and existing formatting.
+- NEVER do a full-page replacement when editing a Confluence page. Surgical edits only, so inline comments survive. Edit mechanics and comment-reply rules: `agents/policies/confluence-writes.md`.
 - Obsidian is the source of truth. Sync is one-way: Obsidian → Confluence. Never suggest two-way sync.
-- When responding to inline Confluence comments, address the commenter directly in second person ("you", "your"). Never refer to them in third person.
-- Do not draft or post replies to comments that are already resolved.
 - Do not use the `obsidian-to-confluence` publishing skill unless the user explicitly asks to publish to Confluence.
 
 ## Workflow Rules

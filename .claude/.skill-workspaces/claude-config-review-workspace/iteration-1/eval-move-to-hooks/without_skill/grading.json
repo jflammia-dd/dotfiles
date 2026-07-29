@@ -1,0 +1,32 @@
+{
+  "eval_id": 1,
+  "eval_name": "move-to-hooks",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "Output is a numbered list",
+      "passed": true,
+      "evidence": "Output uses numbered items with two sections"
+    },
+    {
+      "text": "Output references specific rules from the actual CLAUDE.md content rather than giving generic advice",
+      "passed": true,
+      "evidence": "References dd-git, justins-voice-detect.sh, pr-draft-enforce.sh by name"
+    },
+    {
+      "text": "Output explicitly distinguishes between hook-enforceable rules and advisory text — the advisory vs guarantee distinction",
+      "passed": false,
+      "evidence": "Lists rules that 'should move to hooks' but does not articulate the advisory vs guarantee distinction; treats all moves as equivalent"
+    },
+    {
+      "text": "Output does not auto-apply changes — asks for approval before modifying any files",
+      "passed": true,
+      "evidence": "No files modified"
+    },
+    {
+      "text": "Output reads hook scripts (not just settings.json) to understand what is already enforced",
+      "passed": false,
+      "evidence": "12 tool uses; summary does not indicate reading hook script contents, only settings.json hook references"
+    }
+  ]
+}

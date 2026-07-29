@@ -1,0 +1,22 @@
+{
+  "eval_id": 3,
+  "eval_name": "passive-voice-ambiguous",
+  "prompt": "Revise this paragraph to be more direct and clear:\n\nThe entity model was designed to support temporal queries. The decision was made to use composite versioning because it eliminates write conflicts. The service was first deployed in 2021 and has been running in production since then.",
+  "assertions": [
+    {
+      "text": "Output includes a summary block with edit and style gate information",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "All passive voice constructions from the original are removed in the output",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "Violation count reported is 3 or more",
+      "passed": null,
+      "evidence": null
+    }
+  ]
+}

@@ -38,7 +38,6 @@
       "Bash(date:*)",
       "Bash(gh pr view*:*)",
       "Bash(gh pr create*:*)",
-      "Bash(rtk gh pr create*:*)",
       "Bash(gh pr list*:*)",
       "Bash(gh pr status*:*)",
       "Bash(gh pr diff*:*)",
@@ -58,29 +57,62 @@
       "Bash(~/.claude/plugins/marketplaces/datadog-claude-plugins/confluence-api/scripts/**:*)",
       "Bash(git status*:*)",
       "Bash(git log*:*)",
-      "Bash(git diff*:*)",
-      "Bash(git fetch*:*)"
+      "Bash(git diff*:*)"
     ],
     "deny": [
       "Bash(git push --force :*)",
       "Bash(git push * --force:*)",
       "Bash(git push * --force *:*)",
+      "Bash(git push*--force-with-lease*:*)",
       "Bash(dd-git push --force :*)",
       "Bash(dd-git push * --force:*)",
       "Bash(dd-git push * --force *:*)",
       "Bash(git commit*--no-verify*:*)",
       "Bash(dd-git commit*--no-verify*:*)",
+      "Bash(gh pr ready*:*)",
+      "Bash(gh pr edit*--ready*:*)",
+      "Bash(gh pr merge*:*)",
+      "Bash(gh pr close*:*)",
+      "Bash(gh pr reopen*:*)",
+      "Bash(gh release create*:*)",
+      "Bash(dd-git pr ready*:*)",
+      "Bash(dd-git pr merge*:*)",
       "Bash(gh pr comment*:*)",
       "Bash(gh issue comment*:*)",
       "Bash(gh pr review*:*)",
       "Bash(dd-git pr comment*:*)",
       "Bash(dd-git issue comment*:*)",
+      "Edit(//Users/justin.flammia/Documents/Datadog/docs/log.md)",
+      "mcp__datadog-gmail__send_draft",
       "mcp__plugin_slack_slack__slack_send_message",
       "mcp__plugin_slack_slack__slack_schedule_message"
     ],
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(git push *:*)",
+      "Bash(dd-git push:*)",
+      "Bash(dd-git push *:*)",
+      "Bash(gh issue create*:*)",
+      "Bash(gh issue edit*:*)",
+      "Bash(gh issue close*:*)",
+      "Bash(git reset --hard*:*)",
+      "Bash(dd-git reset --hard*:*)",
+      "Bash(git branch -D*:*)",
+      "Bash(dd-git branch -D*:*)",
+      "Bash(git tag -d*:*)",
+      "Bash(git clean -fd*:*)",
+      "mcp__plugin_atlassian_atlassian__createJiraIssue",
+      "mcp__plugin_atlassian_atlassian__editJiraIssue",
+      "mcp__plugin_atlassian_atlassian__addCommentToJiraIssue",
+      "mcp__plugin_atlassian_atlassian__createConfluencePage",
+      "mcp__plugin_atlassian_atlassian__updateConfluencePage",
+      "mcp__plugin_atlassian_atlassian__createConfluenceFooterComment",
+      "mcp__plugin_atlassian_atlassian__createConfluenceInlineComment",
+      "mcp__datadog-google-calendar__delete_event"
+    ],
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "sonnet[1m]",
   "hooks": {
     "Notification": [
       {
@@ -145,6 +177,14 @@
           {
             "type": "command",
             "command": "/Users/justin.flammia/.claude/hooks/git-dd-enforce.sh"
+          },
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/git-commit-message-guard.sh"
+          },
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/vault-log-guard.sh"
           },
           {
             "type": "command",

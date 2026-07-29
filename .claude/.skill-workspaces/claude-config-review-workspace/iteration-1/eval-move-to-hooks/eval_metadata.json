@@ -1,0 +1,32 @@
+{
+  "eval_id": 1,
+  "eval_name": "move-to-hooks",
+  "prompt": "Should anything in my Claude config be moved to hooks or other tools?",
+  "assertions": [
+    {
+      "text": "Output is a numbered list",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "Output references specific rules from the actual CLAUDE.md content rather than giving generic advice",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "Output explicitly distinguishes between hook-enforceable rules and advisory text — the advisory vs guarantee distinction",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "Output does not auto-apply changes — asks for approval before modifying any files",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "Output reads hook scripts (not just settings.json) to understand what is already enforced",
+      "passed": null,
+      "evidence": null
+    }
+  ]
+}
