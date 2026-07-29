@@ -11,6 +11,7 @@ set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 DRY_RUN=false
+source "$DOTFILES/lib/owned-agent-skills.sh"
 
 if [[ "${1:-}" == "--dry-run" ]]; then
   DRY_RUN=true
@@ -24,6 +25,7 @@ while IFS= read -r df; do
   tracked+=("$df")
 done < <(find "$DOTFILES" \
            \( -name ".git" -prune \) -o \
+           \( -path "$DOTFILES/.agents" -prune \) -o \
            \( -type f \
               -path "$DOTFILES/.*" \
               ! -name ".gitignore" \
@@ -86,6 +88,9 @@ if [ ${#to_create[@]} -gt 0 ]; then
 fi
 
 if $DRY_RUN; then
+  echo "Owned cross-harness agent skills:"
+  restore_owned_agent_skills true
+  echo ""
   echo "Dry run complete. Run without --dry-run to apply."
   exit 0
 fi
@@ -112,6 +117,10 @@ for df in "${tracked[@]}"; do
   ln -sf "$df" "$link"
   echo "  $link -> $df"
 done
+
+echo ""
+echo "Restoring owned cross-harness agent skills ..."
+restore_owned_agent_skills false
 
 echo ""
 echo "Done."

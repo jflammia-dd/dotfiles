@@ -20,6 +20,11 @@ This is a personal dotfiles repository. It tracks shell configuration, Claude Co
 - `commands/` contains slash command definitions
 - `projects/*/memory/` contains memory files from each project context
 
+**Owned cross-harness skills** under `.agents/`:
+- `owned-skills.txt` is the explicit allowlist of personal skills this repo backs up
+- `skills/` contains backup copies; the editable runtime source remains `~/.agents/skills/`
+- Marketplace and plugin-managed skills are reinstallable dependencies and are not copied here
+
 **Scripts:**
 - `backup.sh` syncs local changes and pushes to GitHub (run any time or let launchd trigger it)
 - `install.sh` sets up a fresh machine by symlinking all tracked dotfiles and installing the launchd backup agent
@@ -37,6 +42,7 @@ These items are either ephemeral, machine-specific or reinstallable and do not b
 - `.claude/projects/**/*.jsonl` (per-session JSONL files)
 - `.claude/plugins/` (superpowers plugins, reinstall with `claude plugins install`)
 - `.claude/skills/find-skills`, `first-principles-decomposer` and `slackfmt` (plugin-managed symlinks)
+- Personal skills under `~/.agents/skills/` that are not listed in `.agents/owned-skills.txt`
 - All runtime/cache dirs: `backups/`, `cache/`, `debug/`, `downloads/`, `file-history/`, `ide/`, `image-cache/`, `paste-cache/`, `sessions/`, `shell-snapshots/`, `skill-workspaces/`, `statsig/`, `tasks/`, `telemetry/`, `todos/`, `usage-data/`
 - `.claude/plans/` (session-scoped planning files)
 - `*.bak`, `*.orig` and generated state files
@@ -152,6 +158,8 @@ cd ~/dotfiles
 
 `backup.sh` copies home dotfiles (`.zshrc`, `.zshenv`, `.zprofile`, `.gitconfig`) and syncs `~/.claude/` into the repo, then commits and pushes if anything changed.
 
+It also copies each skill listed in `.agents/owned-skills.txt` from `~/.agents/skills/` into the repo. A missing allowlisted source aborts the backup without deleting the previous copy. Credential files, nested repositories, caches and symlinks are excluded.
+
 ```bash
 ~/dotfiles/backup.sh
 ```
@@ -180,6 +188,12 @@ After the next `migrate.sh` or `install.sh` run, the file will be replaced with 
 Custom skills go under `.claude/skills/<skill-name>/SKILL.md` plus any supporting files. Skills installed via the superpowers plugin marketplace are managed externally and belong in `.gitignore` as symlinks, not tracked here.
 
 When a skill has supporting scripts, tests or eval data, those go in subdirectories of the skill directory and get backed up alongside the SKILL.md.
+
+## Adding owned cross-harness skills
+
+Personal skills shared by Codex and Claude Code use `~/.agents/skills/<name>` as the editable source. Add the skill name to `.agents/owned-skills.txt` when this repo should back it up. Do not add marketplace or plugin-managed skills.
+
+`install.sh` and `migrate.sh` copy a missing allowlisted skill back to `~/.agents/skills/` and create the Claude adapter at `~/.claude/skills/<name>`. They preserve an existing local skill when it differs from the backup.
 
 ## Machine-specific items to update after restore
 

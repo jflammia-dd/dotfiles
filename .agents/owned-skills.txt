@@ -1,0 +1,3 @@
+# Personal cross-harness skills owned and maintained locally.
+# The runtime source remains ~/.agents/skills/<name>; this repo is the backup.
+mcp-repair

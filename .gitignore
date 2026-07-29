@@ -40,6 +40,19 @@
 .claude/skills/slackfmt
 .claude/skills/*-workspace/
 
+# ── Owned cross-harness skills: credentials and generated content ─────────────
+.agents/skills/**/.env
+.agents/skills/**/.env.*
+.agents/skills/**/.credentials.json
+.agents/skills/**/credentials.json
+.agents/skills/**/*.token
+.agents/skills/**/*.pem
+.agents/skills/**/*.key
+.agents/skills/**/.git/
+.agents/skills/**/cache/
+.agents/skills/**/node_modules/
+.agents/skills/**/.venv/
+
 # ── gitsign: private key and generated files (public key files are tracked) ───
 .config/gitsign/signing-key
 .config/gitsign/signing-key.pub

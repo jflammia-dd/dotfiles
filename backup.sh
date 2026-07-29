@@ -5,6 +5,7 @@ set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 CLAUDE="$HOME/.claude"
+source "$DOTFILES/lib/owned-agent-skills.sh"
 
 # Copy a single file from HOME to DOTFILES, skipping it if it is already
 # a symlink pointing at the destination (which happens after migrate.sh).
@@ -36,6 +37,9 @@ if [ -d "$HOME/.config/gitsign" ]; then
     --exclude='.install_id' \
     "$HOME/.config/gitsign/" "$DOTFILES/.config/gitsign/"
 fi
+
+echo "Syncing owned cross-harness agent skills ..."
+sync_owned_agent_skills
 
 echo "Syncing ~/.claude/ ..."
 
@@ -100,6 +104,7 @@ SECRET_HITS=$(grep -rn \
   -e "sk-[A-Za-z0-9]\{20,\}" \
   --include="*.sh" --include="*.zsh" --include="*.zshrc" --include="*.zshenv" \
   --include="*.zprofile" --include="*.json" --include="*.py" \
+  --include="*.md" --include="*.yaml" --include="*.yml" \
   --exclude-dir="tests" \
   . 2>/dev/null | grep -v "Binary" || true)
 if [ -n "$SECRET_HITS" ]; then

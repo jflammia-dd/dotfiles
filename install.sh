@@ -4,10 +4,12 @@
 set -euo pipefail
 
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
+source "$DOTFILES/lib/owned-agent-skills.sh"
 
 echo "Symlinking dotfiles from $DOTFILES ..."
 find "$DOTFILES" \
     \( -name ".git" -prune \) -o \
+    \( -path "$DOTFILES/.agents" -prune \) -o \
     \( -type f \
        -path "$DOTFILES/.*" \
        ! -name ".gitignore" \
@@ -18,6 +20,9 @@ find "$DOTFILES" \
   ln -sf "$df" "$link"
   echo "  $link"
 done
+
+echo "Restoring owned cross-harness agent skills ..."
+restore_owned_agent_skills false
 
 # Install Oh My Zsh if not already installed
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
