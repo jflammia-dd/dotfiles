@@ -5,10 +5,25 @@ a delivery mechanic or a pointer to something loaded on demand. When adding a ru
 which of those it is. If it is a multi-step procedure or only matters for one kind of task,
 it belongs in a policy file or a skill, not here.
 
-## Hard gates
+## Approval gates
 
-Conversational gates. No hook can enforce these, because they depend on the state of the
-conversation rather than on tool arguments.
+Almost nothing is hard-blocked. The permission layer prompts instead. `deny` is reserved for
+bypassing pre-commit hooks. Everything else mutating is an `ask`. A prompt Justin answers
+**is** the explicit confirmation the rules below require, so treat the prompt as the gate
+rather than looking for a separate one.
+
+Two consequences.
+
+Never route around a prompt. Do not look for an unprompted equivalent of a gated command, and
+do not batch a gated action into a larger command to avoid the prompt firing.
+
+Never leave a mistake standing because cleaning it up looked blocked. Remediating something
+done in this session gets the same gate as the original action, never a stricter one. If a
+rollback path really is blocked, say so plainly, name the exact command needed and ask. A
+half-corrected mistake is worse than the original.
+
+The gates themselves are conversational. No hook can enforce them, because they depend on the
+state of the conversation rather than on tool arguments.
 
 - ALWAYS get explicit approval before running any commit command or creating a PR. Never auto-submit. Approval is conversational: ask before calling the Bash tool. A permission allow-rule on a git or gh command is not approval, since it only decides whether the tool prompts.
 - ALWAYS show the exact, literal commit message text in the conversation before running `git commit`. A description of what files changed is not a substitute. Approval to commit is approval of that specific text, not a blank check to write whatever message seems fitting at execution time.

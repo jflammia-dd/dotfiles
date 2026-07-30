@@ -6,6 +6,9 @@
 
 ## Claude Code Environment
 - [Corporate AI gateway model defaults](project_corporate_ai_gateway_model_defaults.md): default Sonnet 5 @ 256k via Datadog gateway, cost-conscious; size always-on context for 256k, avoid Opus-only mechanisms.
+- [Measure the whole context surface first](feedback_measure_whole_context_surface_first.md): skill listing usually dwarfs CLAUDE.md (14.4k vs 3.2k tokens); rank every contributor before trimming any.
+- [deny costs tokens, ask does not](feedback_deny_vs_ask_token_asymmetry.md): deny forces model round-trips, ask is a UI prompt; reserve deny for what would never be approved.
+- [dotfiles cron rsyncs ~/.claude](reference_dotfiles_cron_rsync_backup.md): "dotfiles backup" commits understate their contents; check git status before assuming work is uncommitted.
 - [Datadog SaaS MCP config](reference_datadog_saas_mcp_config.md): atlassian/gmail/calendar/workspace must be native `type: http`, never `npx mcp-remote`; canonical EITAI page; prefer official atlassian plugin.
 - [Startup hooks / slow startup](reference_claude_startup_hooks.md): marketplace-auto-update plugin caused ~75s block; replaced with throttled background hook; don't re-add the plugin.
 - [Atlassian MCP comment timeout](reference_atlassian_mcp_comment_timeout.md): getJiraIssue hangs ~60s on media-heavy comments, known unfixed upstream bug (#145), not a broken MCP; retry.

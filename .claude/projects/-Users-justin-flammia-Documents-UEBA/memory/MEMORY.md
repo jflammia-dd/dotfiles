@@ -1,0 +1,4 @@
+- [UEBA domain model location](ueba_domain_model_location.md): where the CONTEXT-MAP.md/CONTEXT.md/ADR files live
+- [UEBA source authority](ueba_source_authority.md): Confluence/Jira/code locations and why newer docs aren't always right
+- [Don't rename established code terms](feedback_dont_rename_established_code_terms.md): scope same-name collisions per context instead
+- [Team ownership vs bounded context](feedback_team_ownership_vs_bounded_context.md): justify context splits on the domain model, not org chart

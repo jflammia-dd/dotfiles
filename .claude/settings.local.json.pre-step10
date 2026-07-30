@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(vim:*)",
+      "Bash(brew install:*)",
+      "Bash(nvim:*)",
+      "Bash(echo:*)",
+      "Bash(source ~/.zshrc)",
+      "Bash(zsh -i -c 'which vim')",
+      "Bash(git config:*)",
+      "Bash(rtk --version)",
+      "Bash(dd-git --version)",
+      "Bash(rtk:*)",
+      "Bash(chmod +x:*)",
+      "Bash(bash /Users/justin.flammia/.claude/hooks/pr-draft-enforce.sh)",
+      "Bash(python -m scripts.aggregate_benchmark /Users/justin.flammia/.claude/skills/claude-config-review-workspace/iteration-1 --skill-name claude-config-review)",
+      "Bash(uv run:*)",
+      "Bash(npm view:*)",
+      "Bash(node \"/Users/justin.flammia/.claude/plugins/cache/openai-codex/codex/1.0.2/scripts/codex-companion.mjs\" --help)",
+      "Bash(node:*)",
+      "Skill(second-opinion:second-opinion)",
+      "WebSearch",
+      "Bash(bash /Users/justin.flammia/.claude/hooks/session-end-remind.sh)",
+      "Bash(bash /Users/justin.flammia/.claude/hooks/work-os-check.sh)",
+      "Bash(bash /Users/justin.flammia/.claude/hooks/work-os-prompt-check.sh)",
+      "Bash(git commit --amend*)"
+    ]
+  }
+}
