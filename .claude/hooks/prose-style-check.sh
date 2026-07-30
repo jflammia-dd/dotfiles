@@ -53,8 +53,10 @@ if echo "$PROSE" | grep -q ' -- '; then
 fi
 
 # 3. Oxford comma / comma before coordinating conjunction (and/or/but).
-# Skip lines that look like code, YAML, or markdown list items.
-PROSE_LINES=$(echo "$CONTENT" | grep -v '^\s*[-*#>]' | grep -v '^\s*//' | grep -v '^\s*\w\+:')
+# Skip code comments, YAML keys, fenced code and blockquotes. Markdown list items are
+# deliberately NOT skipped: bullets are where most prose actually lives, and excluding
+# them let nine violations sit in CLAUDE.md unnoticed for months.
+PROSE_LINES=$(echo "$CONTENT" | grep -v '^\s*>' | grep -v '^\s*//' | grep -v '^\s*\w\+:' | grep -v '```')
 if echo "$PROSE_LINES" | grep -qiE ',\s+(and|or|but)\s'; then
   LINES=$(echo "$PROSE_LINES" | grep -inE ',\s+(and|or|but)\s' | head -5 | sed 's/^/  /')
   VIOLATIONS="${VIOLATIONS}Comma before coordinating conjunction (and/or/but) detected. This violates both the Oxford comma rule and the no-comma-before-conjunction rule. Remove the comma.\n${LINES}\n"
