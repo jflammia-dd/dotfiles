@@ -23,6 +23,7 @@
 .claude/sessions/
 .claude/shell-snapshots/
 .claude/skill-workspaces/
+.claude/.skill-workspaces/
 .claude/statsig/
 .claude/tasks/
 .claude/telemetry/
@@ -57,6 +58,13 @@
 .config/gitsign/signing-key
 .config/gitsign/signing-key.pub
 .config/gitsign/.install_id
+
+# ── Dated backup dirs written by config-migration sessions ────────────────────
+# The cron backup rsyncs ~/.claude into this repo, so scratch dirs land here
+# unless excluded. Pattern is dot-prefixed and date-suffixed.
+.claude/.memory-backup-*/
+.claude/.skills-drift-backup-*/
+.claude/.hooks-deleted-*/
 
 # ── Generated/temporary files ─────────────────────────────────────────────────
 .claude/security_warnings_state_*.json
