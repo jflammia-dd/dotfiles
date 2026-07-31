@@ -359,7 +359,8 @@
     "suggest-extensions@datadog-claude-plugins": true,
     "superpowers@claude-plugins-official": true,
     "writing@datadog-claude-plugins": true,
-    "pyright-lsp@claude-plugins-official": true
+    "pyright-lsp@claude-plugins-official": true,
+    "trajectory@trajectory": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
