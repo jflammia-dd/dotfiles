@@ -180,6 +180,11 @@
           },
           {
             "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/voice-git-gate.sh",
+            "statusMessage": "Style-checking commit and PR text"
+          },
+          {
+            "type": "command",
             "command": "/Users/justin.flammia/.claude/hooks/vault-log-guard.sh"
           },
           {
@@ -194,6 +199,16 @@
           {
             "type": "command",
             "command": "/Users/justin.flammia/.claude/hooks/local-process-language-check.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__plugin_atlassian_atlassian__addCommentToJiraIssue|mcp__plugin_atlassian_atlassian__editJiraIssue|mcp__plugin_atlassian_atlassian__createJiraIssue|mcp__plugin_atlassian_atlassian__createConfluencePage|mcp__plugin_atlassian_atlassian__updateConfluencePage|mcp__plugin_atlassian_atlassian__createConfluenceFooterComment|mcp__plugin_atlassian_atlassian__createConfluenceInlineComment",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/voice-publish-gate.sh",
+            "statusMessage": "Style-checking publish body"
           }
         ]
       },
@@ -399,7 +414,7 @@
       "autoUpdate": true
     }
   },
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
   "advisorModel": "opus",
   "fastMode": true,
   "tui": "fullscreen",

@@ -76,6 +76,9 @@
 ## Work OS Interaction Style
 - [/now should be interactive](feedback_now_interactive.md): one item at a time with action prompts, never a wall of text.
 
+## Jira/Confluence Comment Content
+- [No local vault links in Jira](feedback_no_local_vault_links_jira.md): summarize vault-sourced facts inline instead, since local file paths are dead links for other devs.
+
 ## Confluence Workflow
 - Edits: [approval first](feedback_confluence_edit_approval.md) (verbatim before/after, never straight after a dry-run), [edit safety](feedback_confluence_edit_safety.md) (fetch live ADF, surgical only, never regenerate from Obsidian, verify node count after PUT), [tool limitations](feedback_tool_limitations.md) (check a Python/ADF approach before claiming a tool can't do it).
 - Comments: [one at a time](feedback_review_comment_workflow.md) (pre-load context, move to Responded after posting), [don't suggest resolving](feedback_confluence_comment_resolution.md) (threads stay open so others can follow).
