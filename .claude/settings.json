@@ -185,6 +185,11 @@
           },
           {
             "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/commit-format-guard.sh",
+            "statusMessage": "Checking commit subject format"
+          },
+          {
+            "type": "command",
             "command": "/Users/justin.flammia/.claude/hooks/vault-log-guard.sh"
           },
           {
@@ -229,6 +234,15 @@
             "type": "command",
             "command": "[ -n \"${SUPACODE_SURFACE_ID:-}\" ] && { __tty=$(ps -o tty= -p \"$PPID\" 2>/dev/null | tr -d '[:space:]'); case \"$__tty\" in *[0-9]*) __tty=\"/dev/${__tty#/dev/}\";; *) __tty=\"/dev/tty\";; esac; __sp=\"\"; [ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && __sp=\";pid=$PPID\"; printf '\\033]3008;start=claude;event=awaiting_input%s\\033\\\\' \"$__sp\" > \"$__tty\"; } >/dev/null 2>&1 || true # supacode-managed-hook",
             "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/repo-checkout-guard.sh"
           }
         ]
       }
@@ -276,6 +290,24 @@
             "type": "command",
             "command": "[ -n \"${SUPACODE_SURFACE_ID:-}\" ] && { __tty=$(ps -o tty= -p \"$PPID\" 2>/dev/null | tr -d '[:space:]'); case \"$__tty\" in *[0-9]*) __tty=\"/dev/${__tty#/dev/}\";; *) __tty=\"/dev/tty\";; esac; __sp=\"\"; [ -n \"${SUPACODE_SOCKET_PATH:-}\" ] && __sp=\";pid=$PPID\"; printf '\\033]3008;start=claude;event=session_start%s\\033\\\\' \"$__sp\" > \"$__tty\"; } >/dev/null 2>&1 || true # supacode-managed-hook",
             "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/Users/justin.flammia/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/worktree-sweep.sh"
           }
         ]
       }
@@ -332,6 +364,26 @@
             "type": "command",
             "command": "/Users/justin.flammia/.claude/hooks/obsidian-link-resolve.py",
             "statusMessage": "Resolving Obsidian link..."
+          }
+        ]
+      }
+    ],
+    "WorktreeCreate": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/worktree-create.sh"
+          }
+        ]
+      }
+    ],
+    "WorktreeRemove": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/worktree-remove.sh"
           }
         ]
       }

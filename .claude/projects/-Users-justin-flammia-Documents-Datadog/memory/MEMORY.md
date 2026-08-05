@@ -12,10 +12,14 @@
 - [Datadog SaaS MCP config](reference_datadog_saas_mcp_config.md): atlassian/gmail/calendar/workspace must be native `type: http`, never `npx mcp-remote`; canonical EITAI page; prefer official atlassian plugin.
 - [Startup hooks / slow startup](reference_claude_startup_hooks.md): marketplace-auto-update plugin caused ~75s block; replaced with throttled background hook; don't re-add the plugin.
 - [Atlassian MCP comment timeout](reference_atlassian_mcp_comment_timeout.md): getJiraIssue hangs ~60s on media-heavy comments, known unfixed upstream bug (#145), not a broken MCP; retry.
+- [DataDog repo layout](reference_datadog_repo_layout.md): real repo checkouts live under `~/go/src/github.com/DataDog/`, not near the vault; stray nested `logs-backend` clone found and removed.
+- [isolation:worktree cross-repo limitation](reference_isolation_worktree_limitation.md): Agent tool's isolation:worktree can't target a repo outside the parent session's directory or set the worktree name; use WorktreeCreate/WorktreeRemove hooks instead.
+- [Commit hook pipeline](reference_commit_hook_pipeline.md): three PreToolUse Bash hooks gate every commit, message-exists, prose-style, subject-format, in that order.
 
 ## User Profile
 - Justin Flammia, Cloud SIEM team, K9 security org at Datadog. NYC (America/New_York). Email justin.flammia@datadoghq.com.
 - Comfortable in Go within the Datadog monorepo.
+- [Staff engineer standard-setting authority](user_staff_engineer_standard_setting.md): one of two staff engineers on Cloud SIEM backend, can set team conventions directly.
 - Git branch convention: `justin.flammia/<ticket>-<description>`
 - [code-review skill auto-posts without approval](feedback_code_review_skill_no_autopost.md): do NOT use the `code-review:code-review` skill; review manually, present findings for approval first.
 - [NYC conference room booking preference](user_nyc_conference_room_preference.md): order is 29th floor, then 30th, then rest of Bank A, then Bank B.
@@ -36,6 +40,9 @@
 - Canonical plans: [ERS Delivery Plan](../docs/ERS - Delivery Plan.md), [Project Overview](../docs/Entity Context and ERS - Project Overview.md) (2026-05-05). Ticket DAG in [[ERS - Jira Structure and Backlog Mapping]].
 - Commitments: [Q2 delivery](project_ers_q2_commitment.md) (federation + role chain in prod behind FF for org 2 by June 30, PoC state; confirmed with Corey Finley 2026-06-08).
 - PR workflow: [request-ers reviewer suggestion](feedback_request_ers_pr_suggestion.md) (suggest `gh request-ers` at draft-PR creation under SECPRODK9-1302, never auto-run, once per PR).
+- [SEC-32487 is PoC-scoped](project_sec_32487_poc_scoped.md): manual-CD gate on siem-entity-resolution-api doesn't carry over to the productionized service; drain-timeout question still open on its own merits.
+- [ERS reviewer group dual-org identities](reference_ers_reviewer_group_dual_org.md): `gh request-ers` only works in `ddoghq` org; use `gh request-ers-dd` for `DataDog`-org repos (e.g. logs-ops); always verify via `requested_reviewers` API since mismatched handles fail silently.
+- [DDSQL unknown-provider precedent](reference_ddsql_unknown_provider_precedent.md): `cloud_siem_risk_insights_risk_scores_signals.ddsql` CASE mapping is the existing convention for missing/unknown enum-like values; check it before inventing a new fallback.
 
 ## Document Conventions
 - [Don't replace existing docs](feedback_dont_replace_existing_docs.md): new document = new file, never overwrite.
@@ -60,6 +67,7 @@
 
 ## PR Review
 - [Codex comments invisible to get-pr-comments.sh](feedback_pr_comments_codex_blind_spot.md): Codex posts plain PR comments, not review threads; also run `gh api "repos/DataDog/dd-source/pulls/<N>/comments"`.
+- [Inline + simplified when posting](feedback_pr_review_inline_simplified.md): post drafted review comments as line-anchored inline review comments, using the short approved version not the full draft. Recurring correction, not a one-off.
 
 ## Observability as Code
 - [Cloud SIEM dashboards live in logs-ops](reference_cloud_siem_dashboards_logs_ops.md): 28 dashboards + 120 monitors in logs-ops cloud-siem domain, Bazel monitoring_module across gov/prod/staging. Guide: `docs/Dashboards as Code at Datadog.md`.
@@ -115,6 +123,8 @@
 - [Proto regen must use Bazel](feedback_proto_regen_bazel.md): never local `protoc` for `.pb.go`; use `bzl run //path:file.pb.go_snapshot_test_update`.
 - [DDCI MCP auth at session start](feedback_ddci_mcp_auth.md): auth mcp__ddci-mcp-prod before CI debugging, or Datadog MCP hits staging and returns nothing.
 - [Datadog MCP env switching](feedback_datadog_mcp_env_switch.md): on a cross-org 404 or a prod resource while bound to staging, ask Justin to re-auth the Datadog MCP for that env and continue.
+- [Ground connectivity diagnosis empirically](feedback_ground_connectivity_diagnosis_empirically.md): never repeat a tool's self-reported error (e.g. "not connected to appgate") as fact; verify via ifconfig/netstat/nc first.
+- [1Password SSH signing needs biometric approval](reference_1password_ssh_signing_biometric.md): git commit signing fails with "agent" errors when Justin isn't at the keyboard to approve Touch ID; not a network/AppGate issue, just retry once he confirms.
 
 ## GitHub Resolution
 - [GitHub actor resolution finding](project_github_actor_resolution.md): email-bearing GitHub activity resolves ~96%; audit-log logins don't (absent from IdP), gated on customer SSO/SCIM. Doc: `docs/GitHub Actor Resolution in UEBA.md`.
@@ -150,6 +160,8 @@
 
 ## git-dd
 - [git-dd adoption](project_git_dd_adoption.md): all Datadog repos, `justin.flammia` prefix only, devflow refspecs kept, hard-block hook (fetch/pull/rebase-onto-main only) via `~/.claude/settings.json` not hookify.
+- [gh-shim for dual-org auth](reference_gh_shim_dual_org.md): auto-swaps `GH_CONFIG_DIR` for `ddoghq` vs `DataDog` orgs; beta tool, replaces manual `gh auth switch` chaining once installed.
+- [logs-ops missing branch-prefix refspec](reference_logs_ops_missing_branch_prefix.md): `gh pr create` needs explicit `--head`/`--base` there since it lacks the `git-dd add-branch-prefix` setup other repos have.
 
 ## Rapid / Mosaic
 - [Mosaic URL patterns](reference_mosaic_urls.md): allDeployments tab tracks per-DC rollout; change-request URL tracks only the CI bundle job.

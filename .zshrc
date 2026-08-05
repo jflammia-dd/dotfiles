@@ -137,6 +137,7 @@ compinit
 autoload -Uz _git_dd
 
 export DATADOG_ROOT="$HOME/dd"
+export PATH="$DATADOG_ROOT/devtools/bin:$PATH"
 
 # gh authenticates via its own keyring (run `gh auth login` to set up).
 # The Figma MCP uses OAuth via https://mcp.figma.com/mcp.
