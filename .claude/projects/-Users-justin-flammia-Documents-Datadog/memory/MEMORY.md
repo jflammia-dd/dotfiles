@@ -150,6 +150,8 @@
 - [Plain narrative style](feedback_slack_plain_narrative_style.md): Slack messages are flowing prose, no bold "Where we stand"/"open tension" section labels.
 
 ## PR and Commit Conventions
+- [Dotfiles repo exempt from JIRA tag](feedback_dotfiles_repo_no_jira_tag.md): `~/dotfiles` commits skip `[SEC-XXXXX]`/`[NOJIRA]`, it's personal config not Datadog work; other style rules still apply.
+- [Dotfiles backup runs unsigned](project_dotfiles_backup_unsigned_commits.md): `commit.gpgSign=false` local override in `~/dotfiles/.git/config` so the 3pm launchd job can commit headless past 1Password Touch ID.
 - [Standard AI disclaimer for published docs](feedback_ai_disclaimer_template.md): opt-in 🤖 disclaimer template, offer during `obsidian-to-confluence` publish, default no.
 - [No hard-wrapping in PR body prose](feedback_pr_body_no_hard_wrap.md): keep prose paragraphs as single unwrapped lines in `gh pr create`/`edit`.
 - [PR creation SOP](feedback_pr_single_commit_sop.md): before review, squash draft-phase commits to one and run the PR description through justins-voice, simplified, in GitHub markdown.
