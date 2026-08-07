@@ -427,7 +427,8 @@
     "superpowers@claude-plugins-official": true,
     "writing@datadog-claude-plugins": true,
     "pyright-lsp@claude-plugins-official": true,
-    "trajectory@trajectory": true
+    "trajectory@trajectory": true,
+    "mattpocock-skills@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
@@ -466,7 +467,7 @@
       "autoUpdate": true
     }
   },
-  "effortLevel": "high",
+  "effortLevel": "medium",
   "advisorModel": "opus",
   "fastMode": true,
   "tui": "fullscreen",

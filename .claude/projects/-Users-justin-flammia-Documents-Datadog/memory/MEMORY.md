@@ -11,6 +11,8 @@
 - [dotfiles cron rsyncs ~/.claude](reference_dotfiles_cron_rsync_backup.md): "dotfiles backup" commits understate their contents; check git status before assuming work is uncommitted.
 - [Datadog SaaS MCP config](reference_datadog_saas_mcp_config.md): atlassian/gmail/calendar/workspace must be native `type: http`, never `npx mcp-remote`; canonical EITAI page; prefer official atlassian plugin.
 - [Startup hooks / slow startup](reference_claude_startup_hooks.md): marketplace-auto-update plugin caused ~75s block; replaced with throttled background hook; don't re-add the plugin.
+- [ccstatusline npx hook timeout](reference_ccstatusline_npx_hook_timeout.md): npx-based ccstatusline hook stalled on VPN flakiness, causing 30s UserPromptSubmit timeouts; fixed by installing the binary globally and dropping npx.
+- [Matt Pocock skills migration](project_mattpocock_skills_migration.md): consolidated onto the official claude-plugins-official marketplace plugin, globally scoped; retired legacy manual installs and three vault forks (grill-me, grill-with-docs, handoff); wrap-up stays custom.
 - [Atlassian MCP comment timeout](reference_atlassian_mcp_comment_timeout.md): getJiraIssue hangs ~60s on media-heavy comments, known unfixed upstream bug (#145), not a broken MCP; retry.
 - [DataDog repo layout](reference_datadog_repo_layout.md): real repo checkouts live under `~/go/src/github.com/DataDog/`, not near the vault; stray nested `logs-backend` clone found and removed.
 - [isolation:worktree cross-repo limitation](reference_isolation_worktree_limitation.md): Agent tool's isolation:worktree can't target a repo outside the parent session's directory or set the worktree name; use WorktreeCreate/WorktreeRemove hooks instead.
