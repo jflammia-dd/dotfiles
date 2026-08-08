@@ -113,6 +113,7 @@
 - [EVP Explorer = Events UI](reference_evp_explorer_events_ui.md): "EVP Explorer" means Events UI at `dd.datad0g.com/internal/events-ui/`; siementity `?track=siementity&query_type=list`.
 
 ## Internal Resources
+- [Talkforge](reference_talkforge.md): `datadog.talkforge.app`, AI content-planning tool (talks/demos/videos) from Datadog's advocacy team; has MCP support.
 - [Presentation template](reference_presentation_template.md): official internal Google Slides asset library.
 - [Internal Excalidraw](reference_excalidraw_internal.md): use `https://excalidraw.static-app.us1.prod.dog/` for drawing tool requests, not excalidraw.com.
 - [Datadog MCP multi-org setup](reference_datadog_mcp_multi_org.md): `mcp.datad0g.com` staging org 2, `mcp.datadoghq.com` prod/dogfood; separate OAuth; use `claude mcp add`.
