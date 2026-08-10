@@ -467,7 +467,7 @@
       "autoUpdate": true
     }
   },
-  "effortLevel": "medium",
+  "effortLevel": "low",
   "advisorModel": "opus",
   "fastMode": true,
   "tui": "fullscreen",

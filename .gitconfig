@@ -22,3 +22,5 @@
 	gpgsign = true
 [rebase]
 	autoStash = true
+[datadog]
+	team = team-cloud-siem-backend

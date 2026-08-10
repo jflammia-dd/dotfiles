@@ -17,6 +17,7 @@
 - [DataDog repo layout](reference_datadog_repo_layout.md): real repo checkouts live under `~/go/src/github.com/DataDog/`, not near the vault; stray nested `logs-backend` clone found and removed.
 - [isolation:worktree cross-repo limitation](reference_isolation_worktree_limitation.md): Agent tool's isolation:worktree can't target a repo outside the parent session's directory or set the worktree name; use WorktreeCreate/WorktreeRemove hooks instead.
 - [Commit hook pipeline](reference_commit_hook_pipeline.md): three PreToolUse Bash hooks gate every commit, message-exists, prose-style, subject-format, in that order.
+- [Playwright auth pause](feedback_playwright_auth_pause.md): pause and re-check page state after navigating to an authenticated Slack/etc page, don't assume a sign-in redirect means no session; Justin authenticates manually each time.
 
 ## User Profile
 - Justin Flammia, Cloud SIEM team, K9 security org at Datadog. NYC (America/New_York). Email justin.flammia@datadoghq.com.
@@ -25,6 +26,7 @@
 - Git branch convention: `justin.flammia/<ticket>-<description>`
 - [code-review skill auto-posts without approval](feedback_code_review_skill_no_autopost.md): do NOT use the `code-review:code-review` skill; review manually, present findings for approval first.
 - [NYC conference room booking preference](user_nyc_conference_room_preference.md): order is 29th floor, then 30th, then rest of Bank A, then Bank B.
+- [Loïc is Director and Justin's manager](user_loic_is_director_and_manager.md): not EM2/peer-level, frame his asks and feedback with manager-level weight.
 
 ## NYC Office
 - [Elevator bank floor groupings](reference_nyc_office_elevator_banks.md): Bank A = 28-43 (Justin's floor 29 included); Bank B = 17-18, 44-51. Confirmed from the panel photo.

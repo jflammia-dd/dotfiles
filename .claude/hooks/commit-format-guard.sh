@@ -80,7 +80,15 @@ def extract_subject(cmd, cwd):
 
     msgs = flag_values(tokens, ["-m", "--message"])
     if msgs:
-        return msgs[0].splitlines()[0] if msgs[0].splitlines() else None
+        raw = msgs[0]
+        if raw.lstrip().startswith("$("):
+            # shlex captured the unexpanded `$(cat <<'EOF' ...)` substitution
+            # itself, not what bash would actually pass at runtime. Recover
+            # the real message from the heredoc body instead.
+            body = heredoc_body(cmd)
+            if body is not None:
+                raw = body
+        return raw.splitlines()[0] if raw.splitlines() else None
 
     files = flag_values(tokens, ["-F", "--file"])
     if files:
