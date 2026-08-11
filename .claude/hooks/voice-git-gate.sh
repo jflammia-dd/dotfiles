@@ -11,7 +11,7 @@ at all and says nothing about its content. That hook runs first and blocks the
 no-message case, so this one only ever sees a message it can read.
 
 Escape hatch: export VOICE_GATE_OFF=1 before launching Claude.
-Rules and calibration: agents/skills/voice/SKILL.md
+Rules and calibration: agents/skills/justins-voice/SKILL.md
 """
 
 import json
@@ -22,7 +22,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-CHECKER = Path.home() / ".claude/skills/voice/style_check.py"
+CHECKER = Path.home() / ".claude/skills/justins-voice/style_check.py"
 
 
 def emit_block(reason):
@@ -149,7 +149,7 @@ def main():
             "written, so each error is yours to fix. Correct it and re-run the "
             "command.\n\n" + "\n\n".join(reports) +
             "\n\nWarnings do not block. If an error is a false positive, say so with "
-            "the rule id rather than editing rules.json. Rules: agents/skills/voice/SKILL.md")
+            "the rule id rather than editing rules.json. Rules: agents/skills/justins-voice/SKILL.md")
 
 
 if __name__ == "__main__":

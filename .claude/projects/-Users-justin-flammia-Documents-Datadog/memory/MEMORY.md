@@ -139,6 +139,7 @@
 ## ERS PoC / Ops
 - [Branching](project_ers_branching.md) (single branch `justin.flammia/SEC-30573-entity-resolution-poc`), [local dev](project_ers_local_dev.md) (`DD_ENV=dev rapid run -s siem-entity-resolution-api`), [staging TD](project_ers_staging_td.md) (`suzuki-x-90`, `rapid-td-suzuki-x-90.us1.staging.dog:443`), [prod deploy](project_siem_era_prod_deploy_cmd.md) (us1-only `rapid release`, ~35-45 min).
 - [Run commands yourself](feedback_run_commands_yourself.md), [document research in Jira](feedback_jira_research.md) before writing code, [ticket-by-ticket cadence](feedback_work_cadence.md).
+- [Staging integration branch already synced](feedback_staging_integration_branch_already_synced.md): don't re-run `ddr devflow integrate --pr` on a PR already merge-queued into the branch, it duplicates the diff; deploy the branch tip directly instead.
 
 ## Obsidian Doc Management
 - [Retire stale docs](feedback_retire_stale_docs.md): delete superseded docs outright, no archive/"superseded" headers; flag stale docs proactively.

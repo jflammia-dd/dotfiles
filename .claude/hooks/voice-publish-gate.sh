@@ -17,7 +17,7 @@
 # from the shell environment, so a tool call cannot set it to route around the
 # gate.
 #
-# Rules and calibration: agents/skills/voice/SKILL.md
+# Rules and calibration: agents/skills/justins-voice/SKILL.md
 
 if ! command -v jq &>/dev/null; then
   exit 0
@@ -25,7 +25,7 @@ fi
 
 [ -n "${VOICE_GATE_OFF:-}" ] && exit 0
 
-CHECKER="$HOME/.claude/skills/voice/style_check.py"
+CHECKER="$HOME/.claude/skills/justins-voice/style_check.py"
 # Fail open. A missing or broken linter must not block every publish.
 [ -f "$CHECKER" ] || exit 0
 
@@ -74,11 +74,11 @@ REPORT=$(printf '%s' "$CONTENT" | python3 "$CHECKER" --stdin --target "$TARGET" 
 [ -z "$REPORT" ] && exit 0
 
 if [ "$MODE" = "warn" ]; then
-  REASON=$(printf 'Style check on this %s payload found issues. This is a warning, not a block, because the payload carries existing content as well as your edit. Check whether any of these are in the text you added. If they are, fix them and retry. If they are pre-existing, proceed.\n\n%s\n\nRules: agents/skills/voice/SKILL.md' "$TOOL" "$REPORT")
+  REASON=$(printf 'Style check on this %s payload found issues. This is a warning, not a block, because the payload carries existing content as well as your edit. Check whether any of these are in the text you added. If they are, fix them and retry. If they are pre-existing, proceed.\n\n%s\n\nRules: agents/skills/justins-voice/SKILL.md' "$TOOL" "$REPORT")
   jq -n --arg r "$REASON" '{hookSpecificOutput: {hookEventName: "PreToolUse", permissionDecision: "ask", permissionDecisionReason: $r}}'
   exit 0
 fi
 
-REASON=$(printf 'Blocked: this content has not passed the style check. Every line here was written this session, so each violation is yours to fix. Correct the text and retry.\n\n%s\n\nIf a violation is a false positive, say so with the rule id rather than editing rules.json to silence it. Rules: agents/skills/voice/SKILL.md' "$REPORT")
+REASON=$(printf 'Blocked: this content has not passed the style check. Every line here was written this session, so each violation is yours to fix. Correct the text and retry.\n\n%s\n\nIf a violation is a false positive, say so with the rule id rather than editing rules.json to silence it. Rules: agents/skills/justins-voice/SKILL.md' "$REPORT")
 jq -n --arg r "$REASON" '{continue: false, stopReason: $r}'
 exit 0
