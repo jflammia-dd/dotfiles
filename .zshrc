@@ -216,3 +216,6 @@ export PATH="/Users/justin.flammia/.trajectory/bin:$PATH"
 
 # Per-repo GitHub account selection via direnv (see ~/.config/direnv/lib/).
 eval "$(direnv hook zsh)"
+
+# Disable high-context web search confirmation gate (prevents stuck sessions from concurrent confirm prompts)
+export PI_RESEARCH_WEB_CONFIRM_HIGH_CONTEXT=false
