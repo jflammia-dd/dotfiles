@@ -10,6 +10,7 @@
 - [deny costs tokens, ask does not](feedback_deny_vs_ask_token_asymmetry.md): deny forces model round-trips, ask is a UI prompt; reserve deny for what would never be approved.
 - [dotfiles cron rsyncs ~/.claude](reference_dotfiles_cron_rsync_backup.md): "dotfiles backup" commits understate their contents; check git status before assuming work is uncommitted.
 - [Datadog SaaS MCP config](reference_datadog_saas_mcp_config.md): atlassian/gmail/calendar/workspace must be native `type: http`, never `npx mcp-remote`; canonical EITAI page; prefer official atlassian plugin.
+- [Atlassian MCP contentFormat param](reference_atlassian_mcp_contentformat_param.md): official Atlassian MCP uses `contentFormat` not `bodyFormat`; wrong name silently falls back to markdown instead of erroring, across Pi and Claude Code alike.
 - [Startup hooks / slow startup](reference_claude_startup_hooks.md): marketplace-auto-update plugin caused ~75s block; replaced with throttled background hook; don't re-add the plugin.
 - [ccstatusline npx hook timeout](reference_ccstatusline_npx_hook_timeout.md): npx-based ccstatusline hook stalled on VPN flakiness, causing 30s UserPromptSubmit timeouts; fixed by installing the binary globally and dropping npx.
 - [Matt Pocock skills migration](project_mattpocock_skills_migration.md): consolidated onto the official claude-plugins-official marketplace plugin, globally scoped; retired legacy manual installs and three vault forks (grill-me, grill-with-docs, handoff); wrap-up stays custom.
