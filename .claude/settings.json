@@ -428,7 +428,8 @@
     "writing@datadog-claude-plugins": true,
     "pyright-lsp@claude-plugins-official": true,
     "trajectory@trajectory": true,
-    "mattpocock-skills@claude-plugins-official": true
+    "mattpocock-skills@claude-plugins-official": true,
+    "trajectory-security@trajectory": true
   },
   "extraKnownMarketplaces": {
     "openai-codex": {
