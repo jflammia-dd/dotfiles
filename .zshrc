@@ -219,3 +219,6 @@ eval "$(direnv hook zsh)"
 
 # Disable high-context web search confirmation gate (prevents stuck sessions from concurrent confirm prompts)
 export PI_RESEARCH_WEB_CONFIRM_HIGH_CONTEXT=false
+
+# pi-patch-layer wrapper: intercepts pi update --extensions to re-apply patches
+export PATH="$HOME/.pi/agent/patches/bin:$PATH"

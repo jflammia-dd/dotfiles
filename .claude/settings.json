@@ -146,6 +146,16 @@
     ],
     "PreToolUse": [
       {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/justin.flammia/.claude/hooks/obsidian-conventions-check.sh",
+            "statusMessage": "Checking Obsidian conventions..."
+          }
+        ]
+      },
+      {
         "matcher": "mcp__plugin_atlassian_atlassian__addCommentToJiraIssue|mcp__plugin_atlassian_atlassian__editJiraIssue|mcp__plugin_atlassian_atlassian__createJiraIssue|mcp__plugin_atlassian_atlassian__createConfluencePage|mcp__plugin_atlassian_atlassian__updateConfluencePage|mcp__plugin_atlassian_atlassian__createConfluenceFooterComment|mcp__plugin_atlassian_atlassian__createConfluenceInlineComment",
         "hooks": [
           {
