@@ -85,6 +85,7 @@
 
 ## Investigation Methodology
 - [Verify data sources before comparing results](feedback_investigation_methodology.md): when sources differ, first confirm both are live on the same data before theorizing about logic.
+- [No unverified claims](feedback_no_unverified_claims.md): never say "verified"/"confirmed" without naming the actual check just run; label inference separately from citations.
 
 ## Work OS Interaction Style
 - [/now should be interactive](feedback_now_interactive.md): one item at a time with action prompts, never a wall of text.
