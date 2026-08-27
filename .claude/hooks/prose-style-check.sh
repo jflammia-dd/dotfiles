@@ -27,6 +27,12 @@ case "$EXT" in
     exit 0 ;;
 esac
 
+# Step records and step specs are parsed by tooling rather than read as prose,
+# so the style rules do not apply to them.
+case "$FILE_PATH" in
+  */journal/*|*/steps/*) exit 0 ;;
+esac
+
 # Extract the written/changed content — one pass covers all three tool types
 if [ "$TOOL" = "Write" ]; then
   CONTENT=$(echo "$INPUT" | jq -r '.tool_input.content // ""')

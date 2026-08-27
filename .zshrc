@@ -222,3 +222,5 @@ export PI_RESEARCH_WEB_CONFIRM_HIGH_CONTEXT=false
 
 # pi-patch-layer wrapper: intercepts pi update --extensions to re-apply patches
 export PATH="$HOME/.pi/agent/patches/bin:$PATH"
+
+eval "$(/opt/dogbrew/bin/dogbrew init zsh)"
