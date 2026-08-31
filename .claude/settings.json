@@ -108,6 +108,7 @@
     ],
     "defaultMode": "auto"
   },
+  "model": "sonnet[1m]",
   "hooks": {
     "Notification": [
       {
@@ -484,6 +485,5 @@
   "skipWorkflowUsageWarning": true,
   "preferredNotifChannel": "notifications_disabled",
   "autoCompactEnabled": true,
-  "skipAutoPermissionPrompt": true,
-  "model": "opus"
+  "skipAutoPermissionPrompt": true
 }

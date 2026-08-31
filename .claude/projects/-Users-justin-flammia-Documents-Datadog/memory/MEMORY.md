@@ -84,6 +84,7 @@
 - [ERS prod redesign domain model](project_ers_prod_redesign_domain_model.md): clean-slate read-path design; locked decisions + open questions in the doc.
 
 ## Investigation Methodology
+- [Answer keys live audit-side](feedback_answer_key_audit_side.md): a step must not be able to import the answer it is gated on deriving.
 - [Verify data sources before comparing results](feedback_investigation_methodology.md): when sources differ, first confirm both are live on the same data before theorizing about logic.
 - [No unverified claims](feedback_no_unverified_claims.md): never say "verified"/"confirmed" without naming the actual check just run; label inference separately from citations.
 
