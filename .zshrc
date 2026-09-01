@@ -224,3 +224,7 @@ export PI_RESEARCH_WEB_CONFIRM_HIGH_CONTEXT=false
 export PATH="$HOME/.pi/agent/patches/bin:$PATH"
 
 eval "$(/opt/dogbrew/bin/dogbrew init zsh)"
+
+# Colima Docker socket
+export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
+export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock

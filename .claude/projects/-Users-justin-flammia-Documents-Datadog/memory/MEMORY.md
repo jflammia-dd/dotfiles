@@ -116,6 +116,7 @@
 
 ## EVP / Data Tools
 - [EVP Explorer = Events UI](reference_evp_explorer_events_ui.md): "EVP Explorer" means Events UI at `dd.datad0g.com/internal/events-ui/`; siementity `?track=siementity&query_type=list`.
+- [Temporal Husky agent query paths](reference_temporal_husky_retriever_cli.md): ODP MCP `query_tool` TrinoSQL (prod, preferred) or `retriever-cli -e trino` (staging); AS_OF is Unix SECONDS not ms, negative = relative.
 
 ## Internal Resources
 - [Talkforge](reference_talkforge.md): `datadog.talkforge.app`, AI content-planning tool (talks/demos/videos) from Datadog's advocacy team; has MCP support.
