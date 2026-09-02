@@ -228,3 +228,9 @@ eval "$(/opt/dogbrew/bin/dogbrew init zsh)"
 # Colima Docker socket
 export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
 export TESTCONTAINERS_DOCKER_SOCKET_OVERRIDE=/var/run/docker.sock
+
+# Ensure PI_CLIENT_SESSION_ID always has a value (prevents pi subagent auth failures)
+export PI_CLIENT_SESSION_ID="${PI_CLIENT_SESSION_ID:-unknown}"
+
+# Force-refresh ddtool token when pi auth errors occur
+alias pi-auth-refresh='ddtool auth login --datacenter us1.ddbuild.io --force && echo "Token refreshed"'
