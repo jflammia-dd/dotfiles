@@ -223,7 +223,7 @@ export PI_RESEARCH_WEB_CONFIRM_HIGH_CONTEXT=false
 # pi-patch-layer wrapper: intercepts pi update --extensions to re-apply patches
 export PATH="$HOME/.pi/agent/patches/bin:$PATH"
 
-eval "$(/opt/dogbrew/bin/dogbrew init zsh)"
+path=(/opt/dogbrew/shims/bin /opt/dogbrew/bin ${${path:#/opt/dogbrew/shims/bin}:#/opt/dogbrew/bin}); fpath=(/opt/dogbrew/share/zsh/site-functions ${fpath:#/opt/dogbrew/share/zsh/site-functions}); case ":${MANPATH-}:" in *:'/opt/dogbrew/share/man':*) ;; *) export MANPATH='/opt/dogbrew/share/man':${MANPATH-} ;; esac # dogbrew shell setup
 
 # Colima Docker socket
 export DOCKER_HOST="unix://$HOME/.colima/default/docker.sock"
