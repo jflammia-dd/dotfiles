@@ -1,0 +1,17 @@
+[2026-09-14T16:50:32.111Z] [supervisor] ─── daemon start ─── version=2.1.270 pid=11287 origin=transient
+[2026-09-14T16:50:32.130Z] [supervisor] auth: no token found, will re-check keychain every 30s
+[2026-09-14T16:50:32.141Z] [supervisor] workers=0
+[2026-09-14T16:50:32.143Z] [bg] bg: control socket bound at /tmp/cc-daemon-502/cea44e35/control.sock
+[2026-09-14T16:50:32.191Z] [bg] bg spare spawned host pid=11296
+[2026-09-14T16:50:32.348Z] [bg] bg claimed-spare 6c987d28 (slash)
+[2026-09-14T16:50:32.349Z] [bg] bg spawned 441ae090 (spare)
+[2026-09-14T16:50:32.351Z] [bg] bg spare spawned host pid=11304
+[2026-09-14T16:50:48.690Z] [bg] bg settled 441ae090 (killed)
+[2026-09-14T17:41:42.367Z] [bg] bg claimed-spare b729aabe (slash)
+[2026-09-14T17:41:42.368Z] [bg] bg spawned 4652687e (spare)
+[2026-09-14T17:41:42.371Z] [bg] bg spare spawned host pid=36200
+[2026-09-14T17:42:01.867Z] [bg] bg settled b729aabe (killed)
+[2026-09-14T17:42:03.837Z] [bg] bg settled 6c987d28 (killed)
+[2026-09-14T17:43:01.318Z] [bg] bg settled 4652687e (killed)
+[2026-09-14T17:43:06.320Z] [supervisor] idle 5s with no clients — exiting
+[2026-09-14T17:43:06.320Z] [supervisor] shutting down (cause=idle_exit, uptime=3154s, leases=0, live_workers=0)
