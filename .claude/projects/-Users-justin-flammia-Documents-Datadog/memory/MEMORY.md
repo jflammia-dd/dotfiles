@@ -95,6 +95,8 @@
 - [No local vault links in Jira](feedback_no_local_vault_links_jira.md): summarize vault-sourced facts inline instead, since local file paths are dead links for other devs.
 
 ## Confluence Workflow
+- [Annotations always stay intact](feedback_confluence_annotations_stay_intact.md): verify marks by walking parsed ADF, never regex; a bad regex reported 0 marks on a page with 7.
+- [Surgical prepend](reference_confluence_surgical_prepend.md): confluence-write has no prepend mode; fetch ADF, prepend the node, assert the rest is byte-identical, PUT.
 - Edits: [approval first](feedback_confluence_edit_approval.md) (verbatim before/after, never straight after a dry-run), [edit safety](feedback_confluence_edit_safety.md) (fetch live ADF, surgical only, never regenerate from Obsidian, verify node count after PUT), [tool limitations](feedback_tool_limitations.md) (check a Python/ADF approach before claiming a tool can't do it).
 - Comments: [one at a time](feedback_review_comment_workflow.md) (pre-load context, move to Responded after posting), [don't suggest resolving](feedback_confluence_comment_resolution.md) (threads stay open so others can follow).
 
@@ -151,7 +153,7 @@
 - [Check vault before asking user](feedback_check_vault_before_asking.md): check with obsidian tools before asking whether a vault file exists.
 
 ## Writing Rules
-- Voice: [always voice-pass drafts](feedback_always_voice_drafts.md) by default, [full scrub on revision](feedback_voice_full_scrub_on_revision.md) (re-check the whole draft, not just the flagged spot), [no comma before conjunction](feedback_comma_before_conjunction.md) (actively scan, not a background rule), [no "good catch" openers](feedback_no_catch_acknowledgment.md).
+- Voice: [always voice-pass drafts](feedback_always_voice_drafts.md) by default, [full scrub on revision](feedback_voice_full_scrub_on_revision.md) (re-check the whole draft, not just the flagged spot), [no comma before conjunction](feedback_comma_before_conjunction.md) (actively scan, not a background rule), [no "good catch" openers](feedback_no_catch_acknowledgment.md), [no section symbol](feedback_no_section_symbol.md) (name the section instead of using §).
 - Links: [always clickable](feedback_clickable_links.md) (never a bare ID), [code refs as GitHub deeplinks](feedback_code_deeplinks.md) (`DataDog/dd-source`, `main`), [full URLs in code comments](feedback_code_comment_references.md).
 - Content: [no TH abbreviation](feedback_no_TH_abbreviation.md) (write "Temporal Husky"), [Slack intro style](feedback_slack_intro_style.md) ("I'm from [team]", "we" for team concerns), [include customer demand data](feedback_include_customer_demand_data.md) (grounded and named, never fabricated).
 
